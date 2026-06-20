@@ -1,0 +1,34 @@
+[
+  {
+    "id": "physics_1",
+    "title": "فيزياء 1",
+    "source_filename": "فيزياء 1(1).pdf",
+    "pdf_pages": 214,
+    "role": "مصدر رسمي للتحقق من التعاريف والقوانين والأمثلة",
+    "status": "indexed_in_sprint_01"
+  },
+  {
+    "id": "physics_2",
+    "title": "فيزياء 2",
+    "source_filename": "فيزياء 2(1).pdf",
+    "pdf_pages": 242,
+    "role": "مصدر رسمي للتحقق من التعاريف والقوانين والأمثلة",
+    "status": "indexed_in_sprint_01"
+  },
+  {
+    "id": "physics_3_1",
+    "title": "فيزياء 3-1",
+    "source_filename": "فيزياء 3 الجزء الاول.pdf",
+    "pdf_pages": 315,
+    "role": "مصدر رسمي للتحقق من التعاريف والقوانين والأمثلة",
+    "status": "indexed_in_sprint_01"
+  },
+  {
+    "id": "physics_3_2",
+    "title": "فيزياء 3-2",
+    "source_filename": "فيزياء 3 الجزء الثاني.pdf",
+    "pdf_pages": 306,
+    "role": "مصدر رسمي للتحقق من التعاريف والقوانين والأمثلة",
+    "status": "indexed_in_sprint_01"
+  }
+]

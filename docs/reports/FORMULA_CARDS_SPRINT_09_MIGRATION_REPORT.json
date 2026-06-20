@@ -1,0 +1,63 @@
+{
+  "sprint": "09",
+  "goal": "standardize law content for future admin editing",
+  "law_card_schema": "data/law_card_schema.json",
+  "verbal_or_non_symbolic_candidates": [
+    {
+      "title": "الصيغة الكاملة للقياس",
+      "original_formula": "القياس = قيمة عددية + وحدة",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "التداخل البنّاء",
+      "original_formula": "الإزاحات في الاتجاه نفسه تتجمع",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "التداخل الهدّام",
+      "original_formula": "الإزاحات المتعاكسة تتناقص",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "إشارة المرآة المقعرة",
+      "original_formula": "f موجب للمرآة المقعرة",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "إشارة المرآة المحدبة",
+      "original_formula": "f سالب للمرآة المحدبة",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "إشارة العدسة المحدبة",
+      "original_formula": "f موجب للعدسة المحدبة",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "إشارة العدسة المقعرة",
+      "original_formula": "f سالب للعدسة المقعرة",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "وحدة المجال",
+      "original_formula": "N/C أو V/m",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "اتجاه المجال حول سلك",
+      "original_formula": "إبهام اليد اليمنى مع التيار والأصابع مع المجال",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    },
+    {
+      "title": "قانون لنز",
+      "original_formula": "اتجاه التيار الحثي يعاكس تغير الفيض",
+      "action": "remove_from_law_cards_and_keep_in_summary_if_missing"
+    }
+  ],
+  "duplicate_formula_rendering_removed": [
+    "u.law from إرشادات تطبيقية",
+    "formula row from comparison table",
+    "bottom احفظ القانون popup"
+  ],
+  "newton_third_formula": "F_AB = -F_BA"
+}

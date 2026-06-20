@@ -1,0 +1,15 @@
+{
+  "python_compile_ok": true,
+  "python_compile_error": "",
+  "js_syntax_ok": true,
+  "js_syntax_error": "",
+  "qudrat_choice_clean": true,
+  "quant_verbal_only": true,
+  "question_min_10": true,
+  "choice_min_10": true,
+  "passage_same_as_choice_size": true,
+  "passage_scroll_focus": true,
+  "result_gradient_by_score": true,
+  "math_symbols_inside_text": true,
+  "verbal_sample_reading_kept": true
+}

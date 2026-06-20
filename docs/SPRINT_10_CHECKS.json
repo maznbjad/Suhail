@@ -1,0 +1,13 @@
+{
+  "python_compile": true,
+  "json_validation": true,
+  "javascript_syntax": true,
+  "python_render_stub": true,
+  "organized_assets": true,
+  "organized_data": true,
+  "admin_application_management": true,
+  "content_management": true,
+  "subscription_management_placeholder": true,
+  "standard_summary_editor": true,
+  "local_preview_overrides": true
+}

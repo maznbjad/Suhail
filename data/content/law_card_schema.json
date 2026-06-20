@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "component": "standard_law_card",
+  "design_reference": "تمثيل الحركة - Sprint 06",
+  "required_fields": [
+    "id",
+    "title",
+    "formula",
+    "when_to_use",
+    "symbols",
+    "inputs",
+    "output",
+    "warning",
+    "definition",
+    "suhail_tip",
+    "source_page",
+    "status",
+    "order"
+  ],
+  "fields": {
+    "id": {
+      "type": "string",
+      "editable": false
+    },
+    "title": {
+      "type": "string",
+      "label": "اسم القانون",
+      "editable": true
+    },
+    "formula": {
+      "type": "math",
+      "label": "الصيغة الرياضية",
+      "storage": "MathML/source expression",
+      "preview": true,
+      "editable": true
+    },
+    "when_to_use": {
+      "type": "textarea",
+      "label": "متى أستخدمه؟",
+      "editable": true
+    },
+    "symbols": {
+      "type": "repeater",
+      "label": "معنى الرموز",
+      "items": [
+        "symbol",
+        "meaning"
+      ],
+      "editable": true
+    },
+    "inputs": {
+      "type": "textarea",
+      "label": "المعطيات المطلوبة",
+      "editable": true
+    },
+    "output": {
+      "type": "textarea",
+      "label": "المطلوب",
+      "editable": true
+    },
+    "warning": {
+      "type": "textarea",
+      "label": "انتبه",
+      "editable": true
+    },
+    "definition": {
+      "type": "textarea",
+      "label": "تعريف مختصر",
+      "editable": true
+    },
+    "suhail_tip": {
+      "type": "textarea",
+      "label": "تلميح سهيل",
+      "editable": true
+    },
+    "source_book": {
+      "type": "string",
+      "label": "الكتاب/المصدر",
+      "editable": true
+    },
+    "source_page": {
+      "type": "string",
+      "label": "الصفحة",
+      "editable": true
+    },
+    "status": {
+      "type": "enum",
+      "values": [
+        "draft",
+        "review",
+        "approved",
+        "hidden"
+      ],
+      "editable": true
+    },
+    "order": {
+      "type": "integer",
+      "editable": true
+    }
+  },
+  "validation": {
+    "formula_must_be_symbolic": true,
+    "no_mixed_arabic_latin_inside_equation": true,
+    "verbal_rules_are_not_laws": true,
+    "all_required_fields_before_approval": true,
+    "single_source_of_truth": true
+  }
+}

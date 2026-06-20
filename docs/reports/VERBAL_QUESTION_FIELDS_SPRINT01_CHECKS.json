@@ -1,0 +1,26 @@
+{
+  "base_check": {
+    "base_file": "suhail_v20_question_management_clean_rebuild_v3.zip",
+    "has_clean_rebuild_v3": true,
+    "has_qm_js": true,
+    "has_entry": true,
+    "has_review": true,
+    "splash_2_sec": true,
+    "sequential_ids": true
+  },
+  "python_compile_ok": true,
+  "python_compile_error": "",
+  "js_syntax_ok": true,
+  "js_syntax_error": "",
+  "removed_fath_buttons": true,
+  "has_dynamic_category_map": true,
+  "category_is_select": true,
+  "has_tahsili_subjects": true,
+  "has_verbal_categories": true,
+  "has_quant_categories": true,
+  "has_reading_passage_field": true,
+  "requires_reading_passage": true,
+  "stores_passage": true,
+  "review_shows_passage": true,
+  "student_passage_scroll_box": true
+}

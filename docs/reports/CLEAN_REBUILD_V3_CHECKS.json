@@ -1,0 +1,21 @@
+{
+  "base_check": {
+    "base_file": "suhail_v20_question_management_clean_rebuild_v2.zip",
+    "has_clean_rebuild_v2": true,
+    "has_v20_iframe_logo_fix": true,
+    "has_question_page": true,
+    "has_entry_review": true
+  },
+  "python_compile_ok": true,
+  "python_compile_error": "",
+  "js_syntax_ok": true,
+  "js_syntax_error": "",
+  "splash_duration_2000": true,
+  "splash_min_visible_1950": true,
+  "has_sequential_id_helper": true,
+  "uses_sequential_id": true,
+  "has_counter_key": true,
+  "has_clean_entry": true,
+  "has_clean_review": true,
+  "student_hidden_guard": true
+}

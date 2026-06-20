@@ -1,0 +1,28 @@
+{
+  "sprint": "FORMULA_CARDS_SPRINT_01",
+  "status": "passed",
+  "scope": [
+    "فيزياء 1",
+    "فيزياء 2"
+  ],
+  "checks": {
+    "python_compile": true,
+    "embedded_javascript_syntax": true,
+    "compact_card_css_present": true,
+    "expand_collapse_present": true,
+    "bookmark_storage_present": true,
+    "first_card_expanded": true,
+    "formula_focus_layout": true,
+    "when_to_use_panel": true,
+    "symbol_chips": true,
+    "current_logo_added": true,
+    "character_reference_added": true
+  },
+  "deferred_to_sprint_02": [
+    "المعطيات المطلوبة والمطلوب لكل قانون",
+    "تنبيه مخصص وتلميح سهيل لكل قانون",
+    "إكمال جميع الرموز الناقصة والتحقق العلمي منها",
+    "تعميم البطاقة على فيزياء 3-1 وفيزياء 3-2",
+    "الضبط النهائي للقوانين الطويلة والكسور"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "base_file": "suhail_v20_verbal_question_fields_sprint01_symbols_bigger_fix.zip",
+  "python_compile_ok": true,
+  "python_compile_error": "",
+  "js_syntax_ok": true,
+  "js_syntax_error": "",
+  "questions_json_count": 8,
+  "sample_verbal_count": 8,
+  "has_reading_question": true,
+  "reading_question_id": "VERB-S02-000001",
+  "all_samples_have_choices": true,
+  "all_samples_have_correct": true,
+  "keeps_question_management": true,
+  "keeps_passage_display": true,
+  "keeps_symbols_bigger": true
+}

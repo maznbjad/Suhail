@@ -1,0 +1,15 @@
+{
+  "root_cause": "إصلاح v19 أضاف CSS خارج iframe حق Streamlit، بينما واجهة التطبيق الفعلية داخل components.html iframe. لذلك بقيت الصورة داخل iframe بدون قياس، وظهرت بالحجم الطبيعي الكبير فبان جزء أخضر فقط.",
+  "fix": [
+    "أضفت CSS داخل html_code قبل </style> الثاني داخل iframe.",
+    "أخفيت السبيسر والتحية في صف الأعلى حتى يكون الشعار واضحًا في منتصف الهوم.",
+    "ثبتت حجم .s18-logo img إلى 220-232px بدل الحجم الطبيعي للصورة.",
+    "أبطلت CSS القديم الذي كان يعامل .s18-logo كنص متدرج.",
+    "حافظت على الشعار المقصوص الصحيح من v19."
+  ],
+  "compile_ok": true,
+  "compile_error": "",
+  "style_tags_count": 2,
+  "iframe_patch_present": true,
+  "home_has_img_logo": true
+}

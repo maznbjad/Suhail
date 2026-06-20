@@ -1,0 +1,21 @@
+{
+  "issue_from_screenshot": "الشعار كان يظهر كجزء أخضر فقط لأن ملف الشعار الأصلي فيه مساحات بيضاء كبيرة جدًا، فتظهر داخله أجزاء صغيرة من الرسم بدل الشعار كاملًا.",
+  "fix": [
+    "حفظت نسخة أصلية من الشعار في images/suhail_logo_full_original.png",
+    "قصيت الشعار الحقيقي وأزلت المساحات البيضاء الكبيرة وحفظته في images/suhail_logo.png",
+    "عدلت CSS للهوم واللوقن والبراند حتى يعرض الشعار كاملًا بدون قص أو تكبير خاطئ",
+    "حافظت على نفس تصميم الشعار، فقط قصيت الفراغات البيضاء حوله"
+  ],
+  "original_logo_size": [
+    1672,
+    941
+  ],
+  "cropped_logo_size": [
+    1486,
+    644
+  ],
+  "compile_ok": true,
+  "compile_error": "",
+  "original_hash": "1ac5a249cfa9ec1eb8695975eb90de1f9c4c84ccf01e4884540dd48152155e6c",
+  "cropped_hash": "cb0ee386fb5a9b4cbaf2273c8fcc0f45efce51a2d38e27fce0bf4eb4b56942c6"
+}

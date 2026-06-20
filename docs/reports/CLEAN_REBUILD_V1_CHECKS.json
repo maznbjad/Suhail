@@ -1,0 +1,29 @@
+{
+  "base_check": {
+    "base_file": "suhail_logo_inside_iframe_fix_v20.zip",
+    "has_v20_iframe_logo_fix": true,
+    "has_v20_report": true,
+    "has_profile_page": true,
+    "has_content": true
+  },
+  "python_compile_ok": true,
+  "python_compile_error": "",
+  "js_syntax_ok": true,
+  "js_syntax_error": "",
+  "structural": {
+    "content_idx": 1846411,
+    "qmp_idx": 1865929,
+    "ai_idx": 1866562,
+    "qmp_after_content_start": true,
+    "qmp_before_ai": true,
+    "has_content_close_before_ai_after_qmp": true
+  },
+  "has_user_x_python": true,
+  "has_user_y_python": true,
+  "has_profile_entry": true,
+  "student_default_hidden": true,
+  "has_question_page": true,
+  "has_entry_form": false,
+  "has_review_form": false,
+  "has_access_guard": true
+}

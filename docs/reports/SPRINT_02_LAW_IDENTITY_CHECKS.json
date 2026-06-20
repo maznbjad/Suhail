@@ -1,0 +1,19 @@
+{
+  "base_file": "suhail_law_identity_sprint01.zip",
+  "python_compile_ok": true,
+  "python_compile_error": "",
+  "js_syntax_ok": true,
+  "js_syntax_error": "",
+  "new_namespace_isolated": true,
+  "old_renderer_replaced": true,
+  "new_section_wrapper": true,
+  "character_asset_added": true,
+  "character_loader_added": true,
+  "character_inside_card": true,
+  "pendulum_inside_card": true,
+  "three_symbol_cards": true,
+  "textual_formula_mode": true,
+  "long_symbolic_formula_mode": true,
+  "physics1_2_kept": true,
+  "previous_fixes_kept": true
+}

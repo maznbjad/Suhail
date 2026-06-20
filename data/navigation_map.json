@@ -1,0 +1,69 @@
+{
+  "version": "sprint_08",
+  "main_tracks": [
+    {
+      "id": "qudrat",
+      "title": "قدرات",
+      "icon": "🎯",
+      "children": [
+        {
+          "id": "quant",
+          "title": "كمي",
+          "exam": "قدرات كمي",
+          "icon": "∑"
+        },
+        {
+          "id": "verbal",
+          "title": "لفظي",
+          "exam": "قدرات لفظي",
+          "icon": "ض"
+        }
+      ]
+    },
+    {
+      "id": "tahsili",
+      "title": "تحصيلي",
+      "icon": "⚗️",
+      "children": [
+        {
+          "id": "math",
+          "title": "رياضيات",
+          "subject": "رياضيات",
+          "icon": "π"
+        },
+        {
+          "id": "chemistry",
+          "title": "كيمياء",
+          "subject": "كيمياء",
+          "icon": "⚗️"
+        },
+        {
+          "id": "physics",
+          "title": "فيزياء",
+          "subject": "فيزياء",
+          "icon": "↯"
+        },
+        {
+          "id": "biology",
+          "title": "أحياء",
+          "subject": "أحياء",
+          "icon": "🧬"
+        }
+      ]
+    },
+    {
+      "id": "step",
+      "title": "STEP",
+      "icon": "A+",
+      "status": "future",
+      "children": []
+    }
+  ],
+  "notes": [
+    "main tracks are قدرات and تحصيلي",
+    "كمي and لفظي are children under قدرات",
+    "STEP is reserved as future main track",
+    "تحصيلي subjects open the smart-summary compass first",
+    "Sprint 08: ملخص ذكي starts with قدرات/تحصيلي, then subcards, then units, then summary cards"
+  ]
+}

@@ -1,0 +1,3 @@
+Bootstrap Icons are provided under the MIT License by The Bootstrap Authors.
+Source: https://icons.getbootstrap.com/
+License: https://github.com/twbs/icons/blob/main/LICENSE

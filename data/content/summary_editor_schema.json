@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "curricula": [
+    "تحصيلي",
+    "قدرات"
+  ],
+  "tahsili_books": [
+    "فيزياء 1",
+    "فيزياء 2",
+    "فيزياء 3-1",
+    "فيزياء 3-2"
+  ],
+  "summary_fields": [
+    "unit",
+    "icon",
+    "source_book",
+    "source_pages",
+    "lessons",
+    "idea",
+    "map",
+    "example",
+    "trap",
+    "application_guidance",
+    "formula_cards",
+    "definitions",
+    "relationship_cards",
+    "worked_examples",
+    "dont_confuse",
+    "keep_box",
+    "question",
+    "options",
+    "correct",
+    "tahsili_questions",
+    "tahsili_question_groups"
+  ],
+  "law_card_required_fields": [
+    "title",
+    "formula",
+    "when_to_use",
+    "symbols",
+    "inputs",
+    "output",
+    "warning",
+    "definition",
+    "suhail_tip",
+    "source_page"
+  ]
+}

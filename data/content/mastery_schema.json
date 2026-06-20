@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "scope": "unit",
+  "tracked_types": [
+    "definition",
+    "law"
+  ],
+  "statuses": [
+    "new",
+    "review",
+    "mastered"
+  ],
+  "unit_card_metrics": {
+    "definitions": "mastered_definitions / total_definitions",
+    "laws": "mastered_laws / total_laws"
+  }
+}

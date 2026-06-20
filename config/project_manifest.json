@@ -1,0 +1,9 @@
+{
+  "name": "Suhail",
+  "runtime": "streamlit-web-prototype",
+  "entrypoint": "app.py",
+  "data_root": "data",
+  "assets_root": "assets",
+  "future_mobile_root": "mobile",
+  "organization_version": "1.0"
+}

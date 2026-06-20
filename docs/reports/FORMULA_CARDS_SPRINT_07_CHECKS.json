@@ -1,0 +1,8 @@
+{
+  "all_stages_use_single_component": true,
+  "reference_unit": "تمثيل الحركة",
+  "formula_font_size_px": 20,
+  "legacy_fallback_renderer_removed": true,
+  "legacy_slaw2_styles_removed": true,
+  "single_renderer_expression": true
+}

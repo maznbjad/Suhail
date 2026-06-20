@@ -1,0 +1,86 @@
+{
+  "checks": {
+    "python_compile": true,
+    "home_uses_real_logo_img": true,
+    "old_home_text_logo_removed": true,
+    "logo_hash_matches_uploaded": true,
+    "has_final_physics_status": true,
+    "python_compile_after_write": true
+  },
+  "coverage_stats": {
+    "books": 4,
+    "chapters": 30,
+    "lessons": 72,
+    "lesson_status_counts": {
+      "partial_verified_sprint_02": 2,
+      "partial_verified_sprint_02_part2": 4,
+      "partial_verified_sprint_03": 3,
+      "partial_verified_sprint_04": 3,
+      "partial_verified_sprint_05": 3,
+      "partial_verified_sprint_06": 3,
+      "partial_verified_sprint_07": 5,
+      "partial_verified_sprint_08": 4,
+      "partial_verified_sprint_09": 4,
+      "partial_verified_sprint_10": 7,
+      "partial_verified_sprint_11": 4,
+      "partial_verified_sprint_12": 4,
+      "not_verified_yet": 1,
+      "partial_verified_sprint_13": 4,
+      "partial_verified_sprint_14": 2,
+      "partial_verified_sprint_15": 4,
+      "partial_verified_sprint_16": 4,
+      "partial_verified_sprint_17": 11
+    },
+    "smart_physics_units": 72,
+    "smart_units_by_stage": {
+      "فيزياء 1": 18,
+      "فيزياء 2": 13,
+      "فيزياء 3-1": 22,
+      "فيزياء 3-2": 19
+    }
+  },
+  "findings": [
+    {
+      "severity": "تم إصلاحه",
+      "area": "الشعار",
+      "finding": "واجهة Sprint 18 الرئيسية كانت تعرض كلمة سهيل كنص داخل .s18-logo بدل صورة الشعار.",
+      "action": "استبدلتها بصورة الشعار الحقيقي images/suhail_logo.png، ونسخت شعارك المرفوع نفسه داخل الحزمة."
+    },
+    {
+      "severity": "مهم",
+      "area": "دقة المحتوى",
+      "finding": "المحتوى الحالي ممتاز كملخص تعليمي تفاعلي، لكنه ليس استخراجًا حرفيًا كاملًا لكل تعريف/مثال من صفحات الكتاب. بعض التقارير القديمة كانت تستخدم كلمة مكتمل، والأدق: مكتمل إدخاليًا ويحتاج مطابقة صفحة بصفحة قبل ضمان 100%.",
+      "action": "أضفت تقرير مراجعة يوضح هذا بصراحة، وأبقيت عبارة needs_final_human_review في بيانات التغطية."
+    },
+    {
+      "severity": "تم إصلاحه",
+      "area": "الكهرومغناطيسية",
+      "finding": "صياغة القوة في مجالين كانت مختصرة بشكل قد يوحي بجمع عددي: F = qE + qvB sinθ.",
+      "action": "عدلتها إلى الصياغة المتجهة الأدق: F = qE + q(v×B)، مع توضيح أن مقدار الجزء المغناطيسي qvB sinθ."
+    },
+    {
+      "severity": "تم إصلاحه",
+      "area": "الفيزياء النووية",
+      "finding": "تعريف بيتا كان عامًا جدًا: يتغير العدد الذري، دون التفريق بين بيتا السالب والموجب.",
+      "action": "وضحت أن بيتا السالب يزيد Z بمقدار 1، وبيتا الموجب ينقص Z بمقدار 1، مع بقاء A غالبًا ثابتًا."
+    },
+    {
+      "severity": "تنبيه مراجعة",
+      "area": "إشارات المرايا والعدسات",
+      "finding": "المحتوى يستخدم اصطلاحات مدرسية عامة للإشارات مثل f موجب للمقعرة/المحدبة وسالب للمحدبة/المقعرة بحسب الجهاز البصري. يجب مطابقة اصطلاح الكتاب حرفيًا قبل الاعتماد النهائي.",
+      "action": "أدرجتها في قائمة ما يحتاج مطابقة صفحة بصفحة."
+    },
+    {
+      "severity": "تنبيه مراجعة",
+      "area": "الأمثلة",
+      "finding": "الأمثلة الموجودة مصاغة تعليميًا لتشرح فكرة الكتاب، لكنها ليست بالضرورة كل الأمثلة المحلولة نفسها كما وردت في الكتاب.",
+      "action": "وضعت ذلك كفرق واضح بين ملخص ذكي وبين استخراج حرفي كامل."
+    },
+    {
+      "severity": "تنبيه تقني",
+      "area": "قابلية الصيانة",
+      "finding": "جزء كبير من محتوى الفيزياء مضاف داخل app.py ككائنات JS بدل أن يكون كله في smart_summaries.json.",
+      "action": "لا يؤثر على التشغيل الآن، لكن الأفضل لاحقًا نقل المحتوى إلى JSON مستقل ليسهل تدقيقه وتعديله."
+    }
+  ]
+}

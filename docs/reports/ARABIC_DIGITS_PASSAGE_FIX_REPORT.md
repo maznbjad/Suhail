@@ -1,0 +1,41 @@
+# Arabic Digits + Passage Scroll Fix
+
+## الأساس
+تم البناء على:
+`suhail_v20_verbal_samples_sprint02_final_text_result_fix.zip`
+
+## التعديلات
+- أسئلة القدرات تعرض الأرقام بصيغة عربية:
+  - 123 تصبح ١٢٣
+- التحويل يتم في عرض:
+  - السؤال
+  - الخيارات
+  - نص استيعاب المقروء
+  - تفاصيل النتيجة للأسئلة
+- حذفت زر/انتقال **الانتقال إلى الملخص** بعد ظهور النتيجة.
+- نص استيعاب المقروء صار بدون مؤشر/سلايدر ظاهر.
+- على الآيفون: تحريك النص داخل مربع القطعة باللمس بدون نزول الصفحة.
+- على الكمبيوتر: تحريك نص القطعة بسكرول الماوس داخل المربع.
+- سؤال استيعاب المقروء التجريبي محفوظ.
+
+## الفحص
+```json
+{
+  "base_file": "suhail_v20_verbal_samples_sprint02_final_text_result_fix.zip",
+  "python_compile_ok": true,
+  "python_compile_error": "",
+  "js_syntax_ok": true,
+  "js_syntax_error": "",
+  "arabic_digits_function": true,
+  "qudrat_digits_display": true,
+  "question_digits_converted": true,
+  "passage_digits_converted": true,
+  "choices_digits_converted": true,
+  "summary_transition_removed_direct_text": true,
+  "passage_scrollbar_hidden": true,
+  "passage_touch_scroll": true,
+  "wheel_scroll_kept": true,
+  "verbal_sample_reading_kept": true,
+  "question_min_10_kept": true
+}
+```

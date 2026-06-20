@@ -1,0 +1,15 @@
+{
+  "python_compile_ok": true,
+  "python_compile_error": "",
+  "js_syntax_ok": true,
+  "js_syntax_error": "",
+  "hard_lock_css": true,
+  "hard_lock_js": true,
+  "touchmove_prevents_parent_scroll": true,
+  "wheel_prevents_parent_scroll": true,
+  "capture_phase": true,
+  "no_cursor_indicator": true,
+  "scrollbar_hidden": true,
+  "arabic_digits_kept": true,
+  "verbal_sample_reading_kept": true
+}

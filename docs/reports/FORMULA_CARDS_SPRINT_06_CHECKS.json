@@ -1,0 +1,7 @@
+{
+  "math_renderer": "native_mathml",
+  "uniform_formula_size_px": 20,
+  "suhail_tip_character_mirrored": true,
+  "formula_palette_unified": true,
+  "radical_uses_native_msqrt": true
+}

@@ -1,0 +1,8 @@
+{
+  "uniform_formula_size_px": 16,
+  "root_parser_rebuilt": true,
+  "nested_fraction_support": true,
+  "sqrt_fraction_support": true,
+  "multi_subscript_support": true,
+  "arabic_notes_separated": true
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "math_manhaji_1_2",
+    "track": "تحصيلي",
+    "subject": "رياضيات",
+    "title": "ملخص رياضيات 1-2 مسارات",
+    "file": "ملخص-رياضيات-1-2-مسارات-موقع-منهجي.pdf",
+    "pages": 96,
+    "status": "raw_pdf_scanned",
+    "note": "مصدر خام للتنظيم داخل ملخص ذكي"
+  },
+  {
+    "id": "biology_wajibat_1",
+    "track": "تحصيلي",
+    "subject": "أحياء",
+    "title": "ملخص أحياء 1",
+    "file": "mo_ahe1msf1_1_636qtpd9kd(1).pdf",
+    "pages": 27,
+    "status": "raw_pdf_scanned",
+    "note": "مصدر خام للتنظيم داخل ملخص ذكي"
+  },
+  {
+    "id": "chemistry_wajibat_1",
+    "track": "تحصيلي",
+    "subject": "كيمياء",
+    "title": "ملخص كيمياء 1",
+    "file": "molhgscem11ms.pdf",
+    "pages": 45,
+    "status": "raw_pdf_scanned",
+    "note": "مصدر خام للتنظيم داخل ملخص ذكي"
+  },
+  {
+    "id": "math_logic_proof",
+    "track": "تحصيلي",
+    "subject": "رياضيات",
+    "title": "ملخص رياضيات - التبرير والبرهان",
+    "file": "mulkhs-ryadeat1sm.pdf",
+    "pages": 26,
+    "status": "raw_pdf_partial_text",
+    "note": "مصدر خام للتنظيم داخل ملخص ذكي"
+  },
+  {
+    "id": "chemistry_moe_1",
+    "track": "تحصيلي",
+    "subject": "كيمياء",
+    "title": "ملخص كيمياء 1 مسارات",
+    "file": "mo-cem1f3_1_6q2ir24a56.pdf",
+    "pages": 33,
+    "status": "raw_pdf_scanned",
+    "note": "مصدر خام للتنظيم داخل ملخص ذكي"
+  }
+]
