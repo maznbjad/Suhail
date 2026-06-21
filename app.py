@@ -23968,4 +23968,17 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 55 account module: {exc}")
 
+# Sprint 56 extends the account appearance preference to the entire app.
+# The boot script is injected in <head> to avoid a light flash before rendering.
+s56_css_path = os.path.join("src", "ui", "sprint56_global_theme.css")
+s56_js_path = os.path.join("src", "ui", "sprint56_global_theme.js")
+try:
+    with open(s56_css_path, "r", encoding="utf-8") as style_file:
+        s56_css = style_file.read()
+    with open(s56_js_path, "r", encoding="utf-8") as theme_file:
+        s56_js = theme_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s56_css}</style><script>{s56_js}</script></head>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 56 global theme module: {exc}")
+
 components.html(html_code, height=930, scrolling=False)

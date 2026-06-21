@@ -1,4 +1,4 @@
-# Suhail Sprint 55 — هيكل المشروع
+# Suhail Sprint 56 — هيكل المشروع
 
 ## التشغيل
 
@@ -14,6 +14,8 @@
 - `src/ui/sprint54.css` — نظام التصميم النهائي وقواعد Main/Summary/Exam/Auth.
 - `src/ui/sprint55_account.js` — صفحة الحساب المجمعة والصفحات الداخلية التابعة لها.
 - `src/ui/sprint55_account.css` — تصميم الحساب المرجعي، صفوف الإعدادات، الوضع الداكن، والتذييل.
+- `src/ui/sprint56_global_theme.css` — ألوان الوضع الداكن الشامل لجميع الصفحات القديمة والجديدة.
+- `src/ui/sprint56_global_theme.js` — تهيئة المظهر مبكرًا، حفظ الاختيار، وتحديث لون النظام.
 
 ## النواة
 
@@ -51,7 +53,8 @@
 
 ## الفحص والتوثيق
 
-- `scripts/validate_project.py` — المدخل الرئيسي للفحص.
+- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 56.
+- `scripts/validate_sprint56.py` — فحص حقن المظهر، التخزين، البنية، وملفات QA.
 - `scripts/validate_sprint54.py` — فحص تفصيلي مع API مؤقت دون تلويث قاعدة التسليم.
 - `scripts/audit_question_bank.py` — تدقيق وإصلاحات بنك التطوير.
 - `docs/reports/SPRINT_48_54_IMPLEMENTATION_REPORT.md`

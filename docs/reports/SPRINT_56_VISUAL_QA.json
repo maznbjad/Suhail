@@ -1,0 +1,23 @@
+{
+  "release": "56.0.0",
+  "theme_initial": "dark",
+  "dark_body_class": true,
+  "toggle_roundtrip": {
+    "dark_to_light": "passed",
+    "light_body_class_removed": true,
+    "home_background_restored": true
+  },
+  "pages_checked": [
+    "homePage",
+    "reviewPage",
+    "tasksPage",
+    "summariesPage",
+    "profilePage",
+    "exercisePage",
+    "studentSetupPage",
+    "skillHubPage",
+    "errorReviewPage"
+  ],
+  "javascript_errors": 0,
+  "screenshots_directory": "docs/reports/qa_sprint56"
+}

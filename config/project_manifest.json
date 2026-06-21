@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 55",
-  "version": "55.0.0",
+  "release": "Sprint 56",
+  "version": "56.0.0",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 55,
+  "latest_sprint": 56,
   "question_bank": {
     "count": 1000,
     "status": "development_seed_not_release_eligible",
@@ -53,6 +53,21 @@
       "privacy",
       "terms",
       "faq"
+    ],
+    "global_dark_mode": true,
+    "dark_mode_scope": [
+      "home",
+      "review",
+      "summaries",
+      "summary_detail",
+      "tasks",
+      "diagnostics",
+      "exam_setup",
+      "exam",
+      "results",
+      "profile",
+      "challenges",
+      "admin"
     ]
   },
   "admin": {
@@ -68,5 +83,5 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 55 adds the approved grouped account/settings hub while preserving the independent Qudrat and Tahsili journeys. React Native/Expo, production legal copy, hosted database and editorial approval remain required before public App Store release."
+  "notes": "Sprint 56 extends the account dark-mode preference to the full application and adds early theme boot plus page-by-page visual QA. React Native/Expo, production legal copy, hosted database and editorial approval remain required before public App Store release."
 }

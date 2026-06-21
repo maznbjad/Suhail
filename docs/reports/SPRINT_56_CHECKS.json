@@ -1,0 +1,57 @@
+{
+  "release": "56.0.0",
+  "checks": {
+    "required_files": {
+      "ok": true,
+      "detail": 6
+    },
+    "app_injection": {
+      "ok": true,
+      "detail": "global theme injected after Sprint 55"
+    },
+    "theme_scope": {
+      "ok": true,
+      "detail": "home/review/tasks/summaries/account/auth/exam/legacy layers"
+    },
+    "javascript_syntax": {
+      "ok": true,
+      "detail": true
+    },
+    "python_syntax": {
+      "ok": true,
+      "detail": true
+    },
+    "account_toggle": {
+      "ok": true,
+      "detail": "saved preference and updated release label"
+    },
+    "manifest": {
+      "ok": true,
+      "detail": {
+        "latest_sprint": 56,
+        "global_dark_mode": true
+      }
+    },
+    "visual_qa": {
+      "ok": true,
+      "detail": {
+        "screenshots": [
+          "dark_account.png",
+          "dark_errors.png",
+          "dark_exam_setup.png",
+          "dark_home.png",
+          "dark_review.png",
+          "dark_skill.png",
+          "dark_student_setup.png",
+          "dark_summaries.png",
+          "dark_tasks.png"
+        ],
+        "javascript_errors": 0
+      }
+    }
+  },
+  "summary": {
+    "ok": true,
+    "scope": "full application"
+  }
+}
