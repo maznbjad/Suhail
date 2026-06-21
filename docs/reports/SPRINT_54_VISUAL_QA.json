@@ -1,0 +1,22 @@
+{
+  "auth_visible": true,
+  "auth_nav_hidden": true,
+  "release": "54.0.0",
+  "home_visible": true,
+  "home_final": true,
+  "fire_svg": true,
+  "main_nav_visible": true,
+  "legacy_nav_hidden": true,
+  "legacy_toast_hidden": true,
+  "both_goals": true,
+  "literary_profile": true,
+  "choice_separate": true,
+  "tahsili_exam_title": true,
+  "exam_nav_hidden": true,
+  "tahsili_question_only": true,
+  "nav_restored_after_exam": true,
+  "summary_main_nav_hidden": true,
+  "summary_lift_visible": true,
+  "home_guard": true,
+  "js_errors": []
+}

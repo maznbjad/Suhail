@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "flags": {
+    "sprint54_final_home": true,
+    "sprint54_bottom_navigation": true,
+    "summary_lift_navigation": true,
+    "exam_navigation_hidden": true,
+    "auth_navigation_hidden": true,
+    "independent_qudrat_tahsili_diagnostics": true,
+    "allow_qudrat_and_tahsili_together": true,
+    "qudrat_scientific_literary_tracks": true,
+    "tahsili_common_for_all_students": true,
+    "svg_streak_fire": true,
+    "streak_rescue_hourglass": true,
+    "friend_challenges": true,
+    "eight_avatars": true,
+    "deep_admin_settings": true,
+    "production_question_bank": false
+  }
+}

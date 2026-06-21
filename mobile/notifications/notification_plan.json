@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "quiet_hours": { "start": "22:30", "end": "07:30" },
+  "frequency_caps": { "maximum_per_day": 2, "streak_rescue_per_week": 2 },
+  "templates": [
+    {
+      "kind": "daily_plan",
+      "route": "tasks",
+      "title": "سهيل ينتظرك ✨",
+      "body": "جلسة قصيرة اليوم تحافظ على تقدمك وتقرّبك من درجتك المستهدفة."
+    },
+    {
+      "kind": "streak_rescue",
+      "route": "tasks",
+      "title": "لا تخلي السلسلة توقف",
+      "body": "باقي لك خطوة صغيرة اليوم، ونكمل الرحلة سوا."
+    },
+    {
+      "kind": "due_review",
+      "route": "review",
+      "title": "موعد تثبيت المعلومة",
+      "body": "عندك مراجعات قصيرة اختارها سهيل حسب وقت نسيانك المتوقع."
+    },
+    {
+      "kind": "result_celebration",
+      "route": "performance",
+      "title": "تقدمك واضح 🎉",
+      "body": "أداؤك ارتفع. افتح سهيل وشوف وش تغيّر في توقع درجتك."
+    },
+    {
+      "kind": "inactive_two_days",
+      "route": "home",
+      "title": "مكانك محفوظ عند سهيل",
+      "body": "نرجع بجلسة خفيفة بدون ضغط، ونكمل من آخر نقطة."
+    }
+  ]
+}

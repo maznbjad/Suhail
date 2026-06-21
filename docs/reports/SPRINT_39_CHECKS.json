@@ -1,0 +1,32 @@
+{
+  "release": "Sprint 39",
+  "python_compile": "passed",
+  "javascript_syntax": "passed",
+  "generated_html_smoke_test": "passed",
+  "question_count": 1000,
+  "unique_question_ids": 1000,
+  "diagnostic_count": 15,
+  "sqlite_question_count": 1000,
+  "app_lines": 23878,
+  "app_bytes": 1360253,
+  "embedded_html_smoke_test_bytes": 6092305,
+  "assets_total_bytes": 14672992,
+  "runtime_assets": {
+    "exam_quant.webp": 28868,
+    "exam_tahsili.webp": 36258,
+    "exam_verbal.webp": 33198,
+    "suhail_character_hero.webp": 17974,
+    "suhail_logo.webp": 30886,
+    "suhail_tip_face.webp": 61686,
+    "summary_gateway_banner.webp": 23640
+  },
+  "question_bank_status": "development_seed_editorial_review_required",
+  "native_push_status": "scaffold_requires_expo_apns_backend",
+  "production_scale_status": "not_load_tested_not_100k_ready",
+  "known_security_gate": "replace_local_demo_auth_before_store_release",
+  "sha256": {
+    "app.py": "a37fa8473bc88390e1175ee52ca44c6518a8b9ce9278c2fd5afcacb578bf3f0d",
+    "data/questions.json": "b63071ffcbba4fb4a98af5e703d0eee1166332ab8c91e922d120b8a2b777c137",
+    "src/ui/learning_journey.js": "493b6e20a59f16c91686ac8d0cd234ce63bf2cc21c4b74bcf8d6181a3e226a32"
+  }
+}

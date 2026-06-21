@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "disclaimer_ar": "هذا مؤشر داخلي يتحدث مع أداء الطالب داخل سهيل، وليس درجة رسمية أو معادلة معلنة من جهة الاختبار.",
+  "models": {
+    "qudrat_scientific": {
+      "quant_weight": 0.5,
+      "verbal_weight": 0.5,
+      "speed_bonus_max": 2,
+      "stability_bonus_max": 2
+    },
+    "qudrat_literary": {
+      "quant_weight": 0.3,
+      "verbal_weight": 0.7,
+      "speed_bonus_max": 2,
+      "stability_bonus_max": 2
+    },
+    "tahsili_common": {
+      "math_weight": 0.25,
+      "physics_weight": 0.25,
+      "chemistry_weight": 0.25,
+      "biology_weight": 0.25,
+      "speed_bonus_max": 1
+    }
+  },
+  "label_ar": "مؤشر جاهزيتك في سهيل"
+}

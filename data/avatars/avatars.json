@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "default": "male_01",
+  "items": [
+    {
+      "id": "male_01",
+      "name": "سلمان",
+      "gender": "ذكر",
+      "style": "نظارات",
+      "asset": "assets/avatars/male_01.svg",
+      "enabled": true,
+      "sort_order": 1
+    },
+    {
+      "id": "male_02",
+      "name": "راكان",
+      "gender": "ذكر",
+      "style": "ابتسامة",
+      "asset": "assets/avatars/male_02.svg",
+      "enabled": true,
+      "sort_order": 2
+    },
+    {
+      "id": "male_03",
+      "name": "ياسر",
+      "gender": "ذكر",
+      "style": "شعر مموج",
+      "asset": "assets/avatars/male_03.svg",
+      "enabled": true,
+      "sort_order": 3
+    },
+    {
+      "id": "male_04",
+      "name": "فهد",
+      "gender": "ذكر",
+      "style": "شماغ مبسط",
+      "asset": "assets/avatars/male_04.svg",
+      "enabled": true,
+      "sort_order": 4
+    },
+    {
+      "id": "female_01",
+      "name": "نورة",
+      "gender": "أنثى",
+      "style": "حجاب وردي",
+      "asset": "assets/avatars/female_01.svg",
+      "enabled": true,
+      "sort_order": 5
+    },
+    {
+      "id": "female_02",
+      "name": "لينا",
+      "gender": "أنثى",
+      "style": "حجاب أزرق",
+      "asset": "assets/avatars/female_02.svg",
+      "enabled": true,
+      "sort_order": 6
+    },
+    {
+      "id": "female_03",
+      "name": "ريم",
+      "gender": "أنثى",
+      "style": "حجاب بنفسجي",
+      "asset": "assets/avatars/female_03.svg",
+      "enabled": true,
+      "sort_order": 7
+    },
+    {
+      "id": "female_04",
+      "name": "جود",
+      "gender": "أنثى",
+      "style": "حجاب أخضر",
+      "asset": "assets/avatars/female_04.svg",
+      "enabled": true,
+      "sort_order": 8
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "release": "54.0.0",
+  "checks": {
+    "required_files": {
+      "ok": true,
+      "detail": 11
+    },
+    "diagnostic_config": {
+      "ok": true,
+      "detail": {
+        "qudrat_scientific": {
+          "quant": 6,
+          "verbal": 6
+        },
+        "qudrat_literary": {
+          "quant": 4,
+          "verbal": 8
+        },
+        "tahsili_common": {
+          "math": 3,
+          "physics": 3,
+          "chemistry": 3,
+          "biology": 3
+        }
+      }
+    },
+    "score_models_separate": {
+      "ok": true,
+      "detail": [
+        "qudrat_literary",
+        "qudrat_scientific",
+        "tahsili_common"
+      ]
+    },
+    "question_bank": {
+      "ok": true,
+      "detail": {
+        "count": 1000,
+        "distribution": {
+          "قدرات كمي": 300,
+          "قدرات لفظي": 300,
+          "تحصيلي": 400
+        },
+        "release_eligible": 0
+      }
+    },
+    "question_audit": {
+      "ok": true,
+      "detail": {
+        "repairs": 18,
+        "errors_after": 0
+      }
+    },
+    "plaintext_users_removed": {
+      "ok": true,
+      "detail": true
+    },
+    "sqlite_schema": {
+      "ok": true,
+      "detail": {
+        "questions": 1000,
+        "tables": [
+          "auth_tokens",
+          "auth_users",
+          "challenge_answers",
+          "challenges",
+          "diagnostic_results",
+          "diagnostic_sessions",
+          "friendship_requests",
+          "friendships",
+          "learning_activity",
+          "student_profiles"
+        ]
+      }
+    },
+    "syntax": {
+      "ok": true,
+      "detail": {
+        "python": 5,
+        "javascript": 1
+      }
+    },
+    "ui_contract": {
+      "ok": true,
+      "detail": "final navigation, SVG streak, independent diagnostics"
+    },
+    "api_question_security": {
+      "ok": true,
+      "detail": {
+        "page_size": 5,
+        "answers_hidden": true,
+        "server_grading": true
+      }
+    },
+    "api_diagnostics": {
+      "ok": true,
+      "detail": {
+        "mixed_rejected": true,
+        "answers_hidden": true,
+        "server_scored_sessions": true,
+        "qudrat_scientific": 12,
+        "qudrat_literary": 12,
+        "tahsili_common": 12
+      }
+    },
+    "api_accounts_social": {
+      "ok": true,
+      "detail": {
+        "profiles_support_both_goals": true,
+        "separate_diagnostic_records": true,
+        "friend_request_accept": true,
+        "challenge_invite_accept": true,
+        "challenge_server_scoring": true
+      }
+    }
+  },
+  "summary": {
+    "ok": true,
+    "question_count": 1000,
+    "development_questions_release_eligible": 0,
+    "diagnostic_paths": [
+      "qudrat",
+      "tahsili"
+    ],
+    "tahsili_model": "tahsili_common"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "release": "55.0.0",
+  "base_release": "54.0.0",
+  "checks": {
+    "required_files": {
+      "ok": true,
+      "detail": 4
+    },
+    "app_injection": {
+      "ok": true,
+      "detail": "Sprint 55 is injected after Sprint 54"
+    },
+    "account_sections": {
+      "ok": true,
+      "detail": 11
+    },
+    "account_design": {
+      "ok": true,
+      "detail": "grouped panel, separators, line icons, direct switch, footer"
+    },
+    "javascript_syntax": {
+      "ok": true,
+      "detail": true
+    },
+    "manifest": {
+      "ok": true,
+      "detail": {
+        "latest_sprint": 55,
+        "version": "55.0.0"
+      }
+    },
+    "visual_qa": {
+      "ok": true,
+      "detail": {
+        "mock_render": "passed",
+        "account_root": 1,
+        "menu_rows": 11,
+        "javascript_errors": 0,
+        "screenshot": "suhail55_account_qa.png"
+      }
+    }
+  }
+}

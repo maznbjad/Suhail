@@ -1,1 +1,4 @@
-streamlit>=1.36
+streamlit>=1.36,<1.59
+flask>=3.0,<4
+flask-cors>=4.0,<7
+waitress>=3.0,<4

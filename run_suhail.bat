@@ -1,4 +1,5 @@
 @echo off
+set SUHAIL_ENABLE_DEV_ACCOUNTS=1
 setlocal EnableExtensions
 cd /d "%~dp0"
 title Suhail - تشغيل تطبيق سهيل

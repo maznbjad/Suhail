@@ -1,0 +1,83 @@
+{
+  "release": "47.0.0",
+  "validation": "passed",
+  "python_compile": "passed",
+  "javascript_syntax": "passed",
+  "assembled_javascript_syntax": "passed",
+  "streamlit_runtime_test": "passed_streamlit_apptest_no_exceptions",
+  "question_count": 1000,
+  "sqlite_question_count": 1000,
+  "sqlite_tables": [
+    "challenges",
+    "friendships",
+    "questions",
+    "sqlite_sequence",
+    "student_profiles"
+  ],
+  "avatar_count": 8,
+  "avatar_gender_distribution": {
+    "male": 4,
+    "female": 4
+  },
+  "challenge_template_count": 3,
+  "splash_seconds": 3,
+  "navigation_contract": {
+    "normal_pages": "fixed_bottom_navigation",
+    "summary_detail": "hidden_with_lift_handle",
+    "active_exam": "fully_hidden"
+  },
+  "diagnostic_contract": {
+    "qudrat_scientific": {
+      "quant": 6,
+      "verbal": 6
+    },
+    "qudrat_literary": {
+      "quant": 4,
+      "verbal": 8
+    },
+    "tahsili_scientific": {
+      "math": 3,
+      "physics": 3,
+      "chemistry": 3,
+      "biology": 3
+    },
+    "tahsili_literary_enabled": false
+  },
+  "scoring_smoke": {
+    "qudrat_scientific_80_60": 70.0,
+    "qudrat_literary_80_60": 66.0,
+    "tahsili_scientific_80_each": 80.0,
+    "prediction_sample": {
+      "center": 70,
+      "low": 65,
+      "high": 75,
+      "confidence": "متوسطة",
+      "attempts": 4
+    }
+  },
+  "source_sizes": {
+    "app_py_lines": 23910,
+    "sprint47_js_bytes": 57024,
+    "sprint47_css_bytes": 22995,
+    "avatar_assets_bytes": 7722
+  },
+  "known_limits": [
+    "development_question_bank_requires_editorial_review",
+    "multi_device_friendships_and_challenges_require_production_backend",
+    "closed_app_push_notifications_require_expo_apns",
+    "literary_tahsili_requires_approved_question_bank",
+    "100k_concurrent_scale_not_claimed"
+  ],
+  "streamlit_version_tested": "1.58.0",
+  "streamlit_http_smoke": "passed_http_200",
+  "api_smoke": {
+    "health": 200,
+    "public_config": 200,
+    "avatars": 200,
+    "challenge_templates": 200,
+    "qudrat_literary_diagnostic_count": 12,
+    "tahsili_scientific_diagnostic_count": 12,
+    "tahsili_literary_available": false
+  },
+  "dependency_guard": "streamlit_pinned_below_1.59_until_components_html_migration_or_expo_transition"
+}

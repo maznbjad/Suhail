@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "templates": [
+    {"id": "daily_10", "title": "تحدي اليوم", "duration": "daily", "questions": 10, "time_limit_minutes": 12, "xp_reward": 30},
+    {"id": "speed_5", "title": "تحدي السرعة", "duration": "instant", "questions": 5, "time_limit_minutes": 4, "xp_reward": 20},
+    {"id": "weekly_35", "title": "تحدي الأسبوع", "duration": "weekly", "questions": 35, "time_limit_minutes": 45, "xp_reward": 90}
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "release": "54.0.0",
+  "question_count": 1000,
+  "unique_ids": 1000,
+  "auto_repaired": 18,
+  "errors": 18,
+  "warnings": 0,
+  "release_eligible": 0,
+  "development_only": 1000,
+  "issues": [
+    {
+      "id": "QNT-0002",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "6",
+      "expected": "6.6"
+    },
+    {
+      "id": "QNT-0003",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "9",
+      "expected": "9.6"
+    },
+    {
+      "id": "QNT-0005",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "16",
+      "expected": "16.8"
+    },
+    {
+      "id": "QNT-0007",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "9",
+      "expected": "9.6"
+    },
+    {
+      "id": "QNT-0008",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "13",
+      "expected": "13.6"
+    },
+    {
+      "id": "QNT-0010",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "22",
+      "expected": "22.8"
+    },
+    {
+      "id": "QNT-0012",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "12",
+      "expected": "12.6"
+    },
+    {
+      "id": "QNT-0013",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "17",
+      "expected": "17.6"
+    },
+    {
+      "id": "QNT-0015",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "28",
+      "expected": "28.8"
+    },
+    {
+      "id": "QNT-0017",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "15",
+      "expected": "15.6"
+    },
+    {
+      "id": "QNT-0018",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "21",
+      "expected": "21.6"
+    },
+    {
+      "id": "QNT-0020",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "34",
+      "expected": "34.8"
+    },
+    {
+      "id": "QNT-0022",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "18",
+      "expected": "18.6"
+    },
+    {
+      "id": "QNT-0023",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "25",
+      "expected": "25.6"
+    },
+    {
+      "id": "QNT-0025",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "40",
+      "expected": "40.8"
+    },
+    {
+      "id": "QNT-0027",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "21",
+      "expected": "21.6"
+    },
+    {
+      "id": "QNT-0028",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "29",
+      "expected": "29.6"
+    },
+    {
+      "id": "QNT-0030",
+      "severity": "error",
+      "code": "percentage_truncation",
+      "actual": "46",
+      "expected": "46.8"
+    }
+  ],
+  "note": "Auto-repair is limited to mathematically provable templates. Human pedagogical, linguistic and rights review is still required.",
+  "repairs_applied_total": 18,
+  "unresolved_auto_detected_errors": 0,
+  "errors_before_repair": 18,
+  "errors_after_repair": 0
+}

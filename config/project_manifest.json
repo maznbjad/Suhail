@@ -1,9 +1,72 @@
 {
   "name": "Suhail",
+  "release": "Sprint 55",
+  "version": "55.0.0",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
+  "api_entrypoint": "src.api.server:app",
   "data_root": "data",
   "assets_root": "assets",
+  "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
-  "organization_version": "1.0"
+  "organization_version": "4.0",
+  "latest_sprint": 55,
+  "question_bank": {
+    "count": 1000,
+    "status": "development_seed_not_release_eligible",
+    "repairs_applied_in_sprint_50": 18,
+    "release_eligible_count": 0
+  },
+  "student_experience": {
+    "single_final_home": true,
+    "fixed_bottom_navigation": true,
+    "summary_lift_navigation": true,
+    "exam_navigation_hidden": true,
+    "auth_navigation_hidden": true,
+    "svg_streak_fire": true,
+    "streak_rescue_hourglass_hours": 6,
+    "exam_goals_can_coexist": [
+      "qudrat",
+      "tahsili"
+    ],
+    "qudrat_academic_tracks": [
+      "scientific",
+      "literary"
+    ],
+    "tahsili_track_mode": "common_for_all_students",
+    "diagnostic_records": [
+      "qudrat",
+      "tahsili"
+    ],
+    "avatars": 8,
+    "friend_challenges": true,
+    "grouped_account_hub": true,
+    "account_sections": [
+      "learning_journey",
+      "diagnostics",
+      "dark_mode",
+      "notifications",
+      "friends_challenges",
+      "saved_questions",
+      "about",
+      "contact",
+      "privacy",
+      "terms",
+      "faq"
+    ]
+  },
+  "admin": {
+    "deep_settings": true,
+    "configuration_file": "data/admin/admin_settings.json",
+    "content_workflow": "data/admin/content_workflow.json",
+    "publish_requires_server_token": true,
+    "audit_log": true
+  },
+  "security": {
+    "plaintext_users_removed": true,
+    "api_password_hashing": "PBKDF2-HMAC-SHA256",
+    "api_tokens": true,
+    "rate_limit_foundation": true
+  },
+  "notes": "Sprint 55 adds the approved grouped account/settings hub while preserving the independent Qudrat and Tahsili journeys. React Native/Expo, production legal copy, hosted database and editorial approval remain required before public App Store release."
 }

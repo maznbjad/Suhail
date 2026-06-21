@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "statuses": ["draft", "review", "changes_requested", "approved", "published", "archived"],
+  "roles": {
+    "data_entry": ["create", "edit_own", "submit_review"],
+    "reviewer": ["review", "request_changes", "approve", "reject"],
+    "subject_lead": ["review", "approve_subject", "return_to_reviewer"],
+    "admin": ["create", "edit_all", "review", "approve", "publish", "unpublish", "archive", "configure", "restore_version"]
+  },
+  "workflow": [
+    {"from": "draft", "to": "review", "role": ["data_entry", "admin"]},
+    {"from": "review", "to": "changes_requested", "role": ["reviewer", "subject_lead", "admin"]},
+    {"from": "changes_requested", "to": "review", "role": ["data_entry", "admin"]},
+    {"from": "review", "to": "approved", "role": ["reviewer", "subject_lead", "admin"]},
+    {"from": "approved", "to": "published", "role": ["admin"]},
+    {"from": "published", "to": "archived", "role": ["admin"]}
+  ],
+  "quality_checks": [
+    "four_distinct_choices",
+    "correct_answer_matches_choice",
+    "mathematical_answer_verified",
+    "explanation_present",
+    "skill_present",
+    "difficulty_reviewed",
+    "source_present",
+    "rights_status_verified",
+    "duplicate_similarity_below_threshold",
+    "arabic_language_reviewed",
+    "mobile_render_reviewed"
+  ],
+  "publishing_rules": {
+    "minimum_reviewers": 1,
+    "require_subject_lead_for_bulk_publish": true,
+    "require_source": true,
+    "require_rights_clearance": true,
+    "retain_version_history": true,
+    "allow_rollback": true
+  }
+}
