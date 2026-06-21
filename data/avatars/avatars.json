@@ -4,7 +4,7 @@
   "items": [
     {
       "id": "male_01",
-      "name": "سلمان",
+      "name": "",
       "gender": "ذكر",
       "style": "مختبر العلوم",
       "asset": "assets/avatars/generated/male_01_card.webp",
@@ -14,13 +14,13 @@
       "avatar_asset": "assets/avatars/generated/male_01_avatar.webp",
       "half_asset": "assets/avatars/generated/male_01_half.webp",
       "full_asset": "assets/avatars/generated/male_01_full.webp",
-      "name_ar": "سلمان",
+      "name_ar": "",
       "gender_key": "male",
       "gender_label": "ولد"
     },
     {
       "id": "male_02",
-      "name": "راكان",
+      "name": "",
       "gender": "ذكر",
       "style": "ثوب وتوجيه",
       "asset": "assets/avatars/generated/male_02_card.webp",
@@ -30,13 +30,13 @@
       "avatar_asset": "assets/avatars/generated/male_02_avatar.webp",
       "half_asset": "assets/avatars/generated/male_02_half.webp",
       "full_asset": "assets/avatars/generated/male_02_full.webp",
-      "name_ar": "راكان",
+      "name_ar": "",
       "gender_key": "male",
       "gender_label": "ولد"
     },
     {
       "id": "male_03",
-      "name": "ياسر",
+      "name": "",
       "gender": "ذكر",
       "style": "طالب جامعي",
       "asset": "assets/avatars/generated/male_03_card.webp",
@@ -46,13 +46,13 @@
       "avatar_asset": "assets/avatars/generated/male_03_avatar.webp",
       "half_asset": "assets/avatars/generated/male_03_half.webp",
       "full_asset": "assets/avatars/generated/male_03_full.webp",
-      "name_ar": "ياسر",
+      "name_ar": "",
       "gender_key": "male",
       "gender_label": "ولد"
     },
     {
       "id": "male_04",
-      "name": "فهد",
+      "name": "",
       "gender": "ذكر",
       "style": "ثوب وترحيب",
       "asset": "assets/avatars/generated/male_04_card.webp",
@@ -62,13 +62,13 @@
       "avatar_asset": "assets/avatars/generated/male_04_avatar.webp",
       "half_asset": "assets/avatars/generated/male_04_half.webp",
       "full_asset": "assets/avatars/generated/male_04_full.webp",
-      "name_ar": "فهد",
+      "name_ar": "",
       "gender_key": "male",
       "gender_label": "ولد"
     },
     {
       "id": "female_01",
-      "name": "نورة",
+      "name": "",
       "gender": "أنثى",
       "style": "تركواز وتلميحات",
       "asset": "assets/avatars/generated/female_01_card.webp",
@@ -78,13 +78,13 @@
       "avatar_asset": "assets/avatars/generated/female_01_avatar.webp",
       "half_asset": "assets/avatars/generated/female_01_half.webp",
       "full_asset": "assets/avatars/generated/female_01_full.webp",
-      "name_ar": "نورة",
+      "name_ar": "",
       "gender_key": "female",
       "gender_label": "بنت"
     },
     {
       "id": "female_02",
-      "name": "لينا",
+      "name": "",
       "gender": "أنثى",
       "style": "وردي وترحيب",
       "asset": "assets/avatars/generated/female_02_card.webp",
@@ -94,13 +94,13 @@
       "avatar_asset": "assets/avatars/generated/female_02_avatar.webp",
       "half_asset": "assets/avatars/generated/female_02_half.webp",
       "full_asset": "assets/avatars/generated/female_02_full.webp",
-      "name_ar": "لينا",
+      "name_ar": "",
       "gender_key": "female",
       "gender_label": "بنت"
     },
     {
       "id": "female_03",
-      "name": "ريم",
+      "name": "",
       "gender": "أنثى",
       "style": "بنفسجي ومهام",
       "asset": "assets/avatars/generated/female_03_card.webp",
@@ -110,13 +110,13 @@
       "avatar_asset": "assets/avatars/generated/female_03_avatar.webp",
       "half_asset": "assets/avatars/generated/female_03_half.webp",
       "full_asset": "assets/avatars/generated/female_03_full.webp",
-      "name_ar": "ريم",
+      "name_ar": "",
       "gender_key": "female",
       "gender_label": "بنت"
     },
     {
       "id": "female_04",
-      "name": "جود",
+      "name": "",
       "gender": "أنثى",
       "style": "تحديات وإنجاز",
       "asset": "assets/avatars/generated/female_04_card.webp",
@@ -126,7 +126,7 @@
       "avatar_asset": "assets/avatars/generated/female_04_avatar.webp",
       "half_asset": "assets/avatars/generated/female_04_half.webp",
       "full_asset": "assets/avatars/generated/female_04_full.webp",
-      "name_ar": "جود",
+      "name_ar": "",
       "gender_key": "female",
       "gender_label": "بنت"
     }

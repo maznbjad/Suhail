@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 57",
-  "version": "57.0.0",
+  "release": "Sprint 58",
+  "version": "58.0.0",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,12 +10,17 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 57,
+  "latest_sprint": 58,
   "question_bank": {
-    "count": 1000,
-    "status": "development_seed_not_release_eligible",
-    "repairs_applied_in_sprint_50": 18,
-    "release_eligible_count": 0
+    "count": 280,
+    "status": "computerized_internal_qa_passed",
+    "format": "محوسب",
+    "quant_count": 195,
+    "verbal_count": 85,
+    "diagram_count": 21,
+    "archived_development_seed_count": 1000,
+    "source_method": "new wording, changed numbers, recomputed answers, original verbal passages",
+    "public_release_requires_final_editorial_review": true
   },
   "student_experience": {
     "single_final_home": true,
@@ -80,7 +85,26 @@
       "half",
       "full"
     ],
-    "registration_gender_required": true
+    "registration_gender_required": true,
+    "qudrat_test_formats": {
+      "computerized": "enabled",
+      "paper": "awaiting_user_compilations"
+    },
+    "planned_qudrat_track_change": {
+      "available_from_account_settings": true,
+      "confirmation_required": true,
+      "affects_only": [
+        "qudrat_diagnostic",
+        "qudrat_plan",
+        "qudrat_readiness"
+      ],
+      "does_not_affect": [
+        "tahsili"
+      ],
+      "preserve_previous_results": true,
+      "audit_history": true,
+      "status": "next_sprints_backlog"
+    }
   },
   "admin": {
     "deep_settings": true,
@@ -95,5 +119,5 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 57 replaces placeholder avatars with eight production character assets, filters choices by the account gender, and preserves the selected character across the home, account and challenge experiences. React Native/Expo, production legal copy, hosted database and editorial approval remain required before public App Store release."
+  "notes": "Sprint 58 installs a separate computerized Qudurat bank (195 quantitative, 85 verbal), archives the old 1000-question development seed, adds balanced answer positions, original diagrams and responsive question presentation. Paper Qudurat remains separate and will be enabled only after its own compilations are supplied."
 }

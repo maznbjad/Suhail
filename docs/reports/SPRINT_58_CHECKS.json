@@ -1,0 +1,253 @@
+{
+  "release": "58.0.0",
+  "qa_passed": true,
+  "errors": [],
+  "warnings": [],
+  "checks": {
+    "questions_is_list": {
+      "passed": true,
+      "detail": "list"
+    },
+    "question_count_280": {
+      "passed": true,
+      "detail": 280
+    },
+    "quant_count_195": {
+      "passed": true,
+      "detail": {
+        "قدرات كمي": 195,
+        "قدرات لفظي": 85
+      }
+    },
+    "verbal_count_85": {
+      "passed": true,
+      "detail": {
+        "قدرات كمي": 195,
+        "قدرات لفظي": 85
+      }
+    },
+    "unique_nonempty_ids": {
+      "passed": true,
+      "detail": 280
+    },
+    "unique_question_passage_pairs": {
+      "passed": true,
+      "detail": 280
+    },
+    "question_schema_and_answers": {
+      "passed": true,
+      "detail": []
+    },
+    "balanced_correct_positions": {
+      "passed": true,
+      "detail": [
+        70,
+        70,
+        70,
+        70
+      ]
+    },
+    "all_computerized_no_paper": {
+      "passed": true,
+      "detail": [
+        "محوسب"
+      ]
+    },
+    "diagram_count_21": {
+      "passed": true,
+      "detail": 21
+    },
+    "all_diagrams_exist": {
+      "passed": true,
+      "detail": []
+    },
+    "all_svgs_parse": {
+      "passed": true,
+      "detail": []
+    },
+    "development_seed_archived_1000": {
+      "passed": true,
+      "detail": 1000
+    },
+    "sqlite_count_matches": {
+      "passed": true,
+      "detail": 280
+    },
+    "sqlite_exam_counts_match": {
+      "passed": true,
+      "detail": {
+        "قدرات كمي": 195,
+        "قدرات لفظي": 85
+      }
+    },
+    "sqlite_ids_match_json": {
+      "passed": true,
+      "detail": 280
+    },
+    "eight_avatars": {
+      "passed": true,
+      "detail": 8
+    },
+    "avatar_names_hidden": {
+      "passed": true,
+      "detail": [
+        [
+          "male_01",
+          "",
+          ""
+        ],
+        [
+          "male_02",
+          "",
+          ""
+        ],
+        [
+          "male_03",
+          "",
+          ""
+        ],
+        [
+          "male_04",
+          "",
+          ""
+        ],
+        [
+          "female_01",
+          "",
+          ""
+        ],
+        [
+          "female_02",
+          "",
+          ""
+        ],
+        [
+          "female_03",
+          "",
+          ""
+        ],
+        [
+          "female_04",
+          "",
+          ""
+        ]
+      ]
+    },
+    "avatar_gender_split": {
+      "passed": true,
+      "detail": {
+        "male": 4,
+        "female": 4
+      }
+    },
+    "female_01_variants_exist": {
+      "passed": true,
+      "detail": {
+        "female_01_card.webp": {
+          "size": [
+            320,
+            420
+          ],
+          "mode": "RGBA",
+          "transparent_top_ratio": 1.0
+        },
+        "female_01_avatar.webp": {
+          "size": [
+            240,
+            240
+          ],
+          "mode": "RGBA",
+          "transparent_top_ratio": 1.0
+        },
+        "female_01_half.webp": {
+          "size": [
+            420,
+            520
+          ],
+          "mode": "RGBA",
+          "transparent_top_ratio": 1.0
+        },
+        "female_01_full.webp": {
+          "size": [
+            640,
+            900
+          ],
+          "mode": "RGBA",
+          "transparent_top_ratio": 1.0
+        }
+      }
+    },
+    "sprint58_assets_injected": {
+      "passed": true,
+      "detail": null
+    },
+    "paper_mode_disabled_until_sources": {
+      "passed": true,
+      "detail": null
+    },
+    "question_ui_responsive": {
+      "passed": true,
+      "detail": null
+    },
+    "version_58_present": {
+      "passed": true,
+      "detail": null
+    },
+    "python_and_javascript_syntax": {
+      "passed": true,
+      "detail": [
+        {
+          "command": [
+            "/opt/pyvenv/bin/python",
+            "-m",
+            "py_compile",
+            "/mnt/data/s58_work/Suhail_V1_Sprint58/app.py",
+            "/mnt/data/s58_work/Suhail_V1_Sprint58/src/api/server.py"
+          ],
+          "returncode": 0,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "/mnt/data/s58_work/Suhail_V1_Sprint58/src/ui/sprint58_question_bank.js"
+          ],
+          "returncode": 0,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "/mnt/data/s58_work/Suhail_V1_Sprint58/src/ui/sprint54_experience.js"
+          ],
+          "returncode": 0,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "/mnt/data/s58_work/Suhail_V1_Sprint58/src/ui/sprint55_account.js"
+          ],
+          "returncode": 0,
+          "stderr": ""
+        }
+      ]
+    }
+  },
+  "summary": {
+    "questions": 280,
+    "quantitative": 195,
+    "verbal": 85,
+    "diagrams": 21,
+    "correct_position_distribution": [
+      70,
+      70,
+      70,
+      70
+    ],
+    "archived_development_questions": 1000
+  }
+}

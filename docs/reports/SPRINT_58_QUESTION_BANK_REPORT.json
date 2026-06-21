@@ -1,0 +1,35 @@
+{
+  "release": "58.0.0",
+  "question_count": 280,
+  "by_exam": {
+    "قدرات كمي": 195,
+    "قدرات لفظي": 85
+  },
+  "by_category": {
+    "قدرات كمي / مسائل حسابية": 92,
+    "قدرات كمي / مسائل جبرية": 43,
+    "قدرات كمي / مسائل هندسية": 40,
+    "قدرات كمي / تحليل بيانات وإحصاء": 20,
+    "قدرات لفظي / تناظر لفظي": 25,
+    "قدرات لفظي / إكمال الجمل": 20,
+    "قدرات لفظي / الخطأ السياقي": 15,
+    "قدرات لفظي / المفردات": 15,
+    "قدرات لفظي / استيعاب مقروء": 10
+  },
+  "correct_position_distribution": [
+    70,
+    70,
+    70,
+    70
+  ],
+  "unique_ids": 280,
+  "unique_question_passage_pairs": 280,
+  "diagram_count": 21,
+  "errors": [],
+  "qa_passed": true,
+  "notes": [
+    "All quantitative values in this bank are newly authored and recomputed.",
+    "Verbal questions and reading passages are newly written; source compilations were used only to identify test patterns.",
+    "The bank is tagged computerized only and is not mixed with the future paper bank."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "errors": [],
+  "console_errors": [
+    {
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+      "location": {
+        "url": "https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "checks": {
+    "format_box_visible": true,
+    "paper_disabled": true,
+    "quant_question_visible": true,
+    "diagram_visible": true,
+    "four_choices_quant": true,
+    "progress_visible_quant": true,
+    "tag_count_quant": true,
+    "verbal_question_visible": true,
+    "passage_visible": true,
+    "four_choices_verbal": true,
+    "dark_mode_applied": true,
+    "bank_counts": {
+      "total": 280,
+      "quant": 195,
+      "verbal": 85
+    },
+    "format_value": "محوسب",
+    "version": "58.0.0"
+  },
+  "warnings": [
+    {
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+      "location": {
+        "url": "https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "qa_passed": true
+}

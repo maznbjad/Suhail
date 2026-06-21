@@ -1,0 +1,7 @@
+{
+  "release": "58.0.0",
+  "streamlit_started": true,
+  "health_endpoint": "ok",
+  "http_status": 200,
+  "checked_on_localhost": true
+}

@@ -36,7 +36,7 @@ from src.core.challenge_repository import ensure_social_schema, friend_code_for_
 ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = ROOT / "data" / "suhail_learning.db"
 SUMMARIES_PATH = ROOT / "data" / "smart_summaries.json"
-RELEASE = "57.0.0"
+RELEASE = "58.0.0"
 ALLOWED_EXAMS = {"قدرات كمي", "قدرات لفظي", "تحصيلي"}
 AUTH_WINDOW_SEC = 60
 AUTH_MAX_ATTEMPTS = 10
@@ -82,6 +82,11 @@ def _question_query() -> tuple[str, list[Any]]:
     diagnostic = (request.args.get("diagnostic") or "").lower()
     if diagnostic in {"1", "true", "yes"}:
         filters.append("json_extract(payload_json, '$.diagnostic') = 1")
+    test_format = (request.args.get("test_format") or request.args.get("format") or "").strip()
+    if test_format:
+        normalized_format = "محوسب" if test_format.lower() in {"computerized", "digital", "محوسب"} else ("ورقي" if test_format.lower() in {"paper", "ورقي"} else test_format)
+        filters.append("json_extract(payload_json, '$.test_format') = ?")
+        params.append(normalized_format)
     sql = "SELECT payload_json FROM questions"
     if filters:
         sql += " WHERE " + " AND ".join(filters)
@@ -111,7 +116,7 @@ def _fetch_diagnostic(exam: str, count: int, subject: str | None = None) -> list
 def _public_question(question: dict[str, Any]) -> dict[str, Any]:
     """Return the fields required to render a question without leaking its answer."""
     hidden = {
-        "correct", "answer", "explanation", "release_eligible", "editorial_status",
+        "correct", "answer", "explain", "explanation", "release_eligible", "editorial_status",
         "rights_status", "source", "source_url", "review_notes",
     }
     return {key: value for key, value in question.items() if key not in hidden}
