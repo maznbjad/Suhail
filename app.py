@@ -124,6 +124,12 @@ header, footer, #MainMenu {
   margin-top:2px!important;
 }
 
+
+.s35-plan-card{border:1px solid #dbe8f4;background:#fff;border-radius:24px;padding:13px;box-shadow:0 12px 26px rgba(20,54,92,.065)}
+.s35-plan-days{display:grid;gap:9px;margin-top:11px}.s35-day{border:1px solid #e3edf7;background:#f8fbff;border-radius:17px;padding:10px;display:grid;grid-template-columns:56px 1fr 54px;gap:8px;align-items:center}
+.s35-day-num{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#3188f4,#56cf7d);color:#fff;display:grid;place-items:center;font-weight:950}
+.s35-day-title{font-size:12px;font-weight:950;color:#10255c}.s35-day-meta{font-size:10px;font-weight:850;color:#71839a;margin-top:3px}.s35-day-count{font-size:16px;font-weight:950;color:#176cd0;text-align:left}
+.s35-dedupe-head{display:grid;grid-template-columns:1fr 92px;gap:8px;align-items:center;margin-top:10px}.s35-dedupe-input{border:1px solid #dbe8f4;background:#fff;border-radius:15px;padding:10px;font-family:inherit;font-size:12px}.s35-dedupe-btn{border:0;background:#2675df;color:#fff;border-radius:15px;padding:10px;font-family:inherit;font-size:12px;font-weight:950}.s35-dupe-row{border:1px solid #e3edf7;background:#fff;border-radius:16px;padding:10px;margin-top:8px}.s35-dupe-score{display:inline-flex;background:#fff7ed;color:#d97800;border:1px solid #ffd8a4;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:950;margin-bottom:6px}.s35-dupe-text{font-size:11px;font-weight:850;color:#10255c;line-height:1.7}
 </style>
 """, unsafe_allow_html=True)
 
@@ -11094,8 +11100,8 @@ body.suhail-passage-lock .question-passage{
             <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.5 20v-5h5v5"/></svg>
           </span>
         </div>
-        <div class="page-title">خطتي</div>
-        <div class="page-sub">خطة تدريب ذكية حسب نتيجتك ونقاط ضعفك، مع متابعة يومية مختصرة.</div>
+        <div class="page-title">المراجعة</div>
+        <div class="page-sub">مركز متابعة سهيل للتعاريف والقوانين التي تحتاج مراجعة.</div>
 
         <div class="plan-hero-card">
           <div class="plan-hero-inner">
@@ -11108,7 +11114,7 @@ body.suhail-passage-lock .question-passage{
         </div>
 
         <div class="section-head">
-          <div class="section-title">أولوية التدريب</div>
+          <div class="section-title">🔥 أولويات اليوم</div>
           <div class="see-all" id="planTargetLabel">حسب الأداء</div>
         </div>
         <div id="planFocusList">
@@ -11116,7 +11122,7 @@ body.suhail-passage-lock .question-passage{
         </div>
 
         <div class="section-head">
-          <div class="section-title">آلية المتابعة</div>
+          <div class="section-title">رحلة الإتقان</div>
           <div class="see-all">يوميًا</div>
         </div>
         <div id="planTaskList"></div>
@@ -12976,6 +12982,7 @@ function qmAppRenderContentHome(){
       <div class="app-admin-card"><div class="app-admin-icon">✓</div><div class="app-admin-card-title">مراجعة طلبات الأسئلة</div><div class="app-admin-card-sub">قبول أو رفض أو طلب تعديل للأسئلة المرسلة.</div><button class="app-admin-btn" onclick="qmCleanRenderReview()">مراجعة الطلبات</button></div>
       <div class="app-admin-card full"><div class="app-admin-icon orange">✎</div><div class="app-admin-card-title">تعديل الملخصات</div><div class="app-admin-card-sub">اختيار المنهج ثم الكتاب والوحدة، وتعديل جميع عناصر الملخص القياسي وبطاقات القوانين.</div><button class="app-admin-btn" onclick="qmAppRenderSummaryCurricula()">تعديل الملخصات</button></div>
       <div class="app-admin-card full"><div class="app-admin-icon">🧪</div><div class="app-admin-card-title">اختبار سلامة البنك</div><div class="app-admin-card-sub">12 سؤال تجريبي: 4 كمي، 4 لفظي، 4 تحصيلي للتحقق من تغطية الأقسام.</div><button class="app-admin-btn" onclick="qmAppRenderQuestionCoverageTest()">فتح اختبار السلامة</button></div>
+<div class="app-admin-card full"><div class="app-admin-icon">🔎</div><div class="app-admin-card-title">كاشف التكرار</div><div class="app-admin-card-sub">يكشف الأسئلة المتشابهة بنسبة أعلى من 80%.</div><button class="app-admin-btn" onclick="qmAppRenderDuplicateChecker()">فتح الكاشف</button></div>
 
     </div></div>`;
 }
@@ -13003,6 +13010,12 @@ function qmAppRenderQuestionCoverageTest(){
     <div class="s28-test-grid">${groups.map(g=>`<div class="s28-test-card"><h3>${g}</h3>${S28_COVERAGE_QUESTIONS.filter(x=>x.group===g).map(x=>`<div class="s28-test-q"><div class="s28-test-type">${x.type}</div><div class="s28-test-text">${x.q}</div>${x.opts.map(o=>`<div class="s28-test-opt">${o===x.ans?'✅':'○'} ${o}</div>`).join('')}</div>`).join('')}</div>`).join('')}</div>
   </div>`;
 }
+
+
+function qmAppSimilarity(a,b){a=String(a||'').replace(/[^\u0600-\u06FFa-zA-Z0-9 ]/g,' ').replace(/\s+/g,' ').trim();b=String(b||'').replace(/[^\u0600-\u06FFa-zA-Z0-9 ]/g,' ').replace(/\s+/g,' ').trim();if(!a||!b)return 0;return Math.round(SequenceMatcherRatio(a,b)*100)}
+function SequenceMatcherRatio(a,b){let m=a.length,n=b.length,dp=Array(m+1).fill(0).map(()=>Array(n+1).fill(0));for(let i=1;i<=m;i++){for(let j=1;j<=n;j++){dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1])}}return (2*dp[m][n])/(m+n||1)}
+function qmAppRenderDuplicateChecker(){const box=qmAppBox();if(!box||!qmAppAdminOnly())return qmCleanRenderHome();qmAppSetPageHeading("كاشف التكرار","يكشف الأسئلة المتشابهة بنسبة أعلى من 80%.");box.innerHTML=`<div class="app-admin-shell"><button class="app-admin-back" onclick="qmAppRenderContentHome()">رجوع لإدارة المحتوى</button><div class="app-admin-hero"><div class="app-admin-kicker">الجودة</div><div class="app-admin-title">كاشف التكرار</div><div class="app-admin-sub">افحص بنك الأسئلة الحالي وحدد التشابه العالي.</div></div><div class="s35-dedupe-head"><input id="s35DedupeThreshold" class="s35-dedupe-input" type="number" value="80" min="50" max="100"><button class="s35-dedupe-btn" onclick="qmAppRunDuplicateChecker()">فحص</button></div><div id="s35DedupeResults"><div class="qm-clean-empty">اضغط فحص لعرض النتائج.</div></div></div>`}
+function qmAppRunDuplicateChecker(){const threshold=Number(document.getElementById('s35DedupeThreshold')?.value||80),qs=(typeof questions!=='undefined'?questions:[]),out=[];for(let i=0;i<qs.length;i++){for(let j=i+1;j<qs.length;j++){let score=qmAppSimilarity(qs[i].question,qs[j].question);if(score>=threshold)out.push({score,a:qs[i],b:qs[j]});if(out.length>60)break}if(out.length>60)break}const box=document.getElementById('s35DedupeResults');if(!box)return;if(!out.length){box.innerHTML='<div class="qm-clean-empty">لا توجد أسئلة متشابهة فوق النسبة المحددة.</div>';return}box.innerHTML=out.sort((a,b)=>b.score-a.score).map(x=>`<div class="s35-dupe-row"><div class="s35-dupe-score">${x.score}% تشابه</div><div class="s35-dupe-text">1) ${x.a.question}</div><div class="s35-dupe-text">2) ${x.b.question}</div></div>`).join('')}
 
 function qmAppGetSubscriptions(){try{const x=JSON.parse(localStorage.getItem(SUHAIL_SUBSCRIPTIONS_KEY)||"[]");return Array.isArray(x)?x:[]}catch(_){return[]}}
 function qmAppRenderSubscriptions(){
@@ -13991,6 +14004,8 @@ function renderHighlights() {
 }
 
 function renderPlanPage() {
+  if (window.s31RenderReviewPage && !window.__s31Rendering) { window.__s31Rendering = true; try { window.s31RenderReviewPage(); } finally { window.__s31Rendering = false; } return; }
+
   const data = getPerformanceSnapshot();
   const target = data.target;
 
@@ -16155,7 +16170,7 @@ function activatePage(pageId) {
   }
 
   if (pageId === "exercisePage") prepareExerciseSelection(false);
-  if (pageId === "reviewPage") renderPlanPage();
+  if (pageId === "reviewPage") { if (window.s31RenderReviewPage) window.s31RenderReviewPage(); else renderPlanPage(); }
   if (pageId === "savedQuestionsPage") renderHighlights();
   if (pageId === "statsPage") renderPerformancePage();
   if (pageId === "summariesPage") renderSummariesPage();
@@ -16167,6 +16182,291 @@ function activatePage(pageId) {
   const content = document.querySelector(".content");
   if (content) content.scrollTop = 0;
 }
+
+
+
+/* Sprint 31: Suhail Smart Review Center */
+(function(){
+  const style=document.createElement('style');
+  style.textContent=`
+    #reviewPage{background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%)!important}
+    .s31-review-shell{direction:rtl;text-align:right;display:grid;gap:14px}
+    .s31-hero{position:relative;overflow:hidden;border:1px solid #dbe8f4;border-radius:28px;background:linear-gradient(135deg,#ffffff 0%,#f3f9ff 58%,#f4fff8 100%);box-shadow:0 16px 34px rgba(22,73,120,.09);min-height:150px;padding:16px 16px 14px;display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:center}
+    .s31-hero::after{content:'';position:absolute;left:-30px;bottom:-45px;width:150px;height:150px;border-radius:50%;background:rgba(49,136,244,.09)}
+    .s31-hero-img{width:108px;height:128px;object-fit:contain;object-position:bottom center;position:relative;z-index:1}
+    .s31-hero-title{font-size:20px;font-weight:950;color:#10255c;line-height:1.35}
+    .s31-hero-sub{font-size:12.4px;font-weight:850;color:#526981;line-height:1.8;margin-top:6px}
+    .s31-hero-sub b{color:#16a15f}
+    .s31-pill-time{display:inline-flex;align-items:center;gap:5px;margin-top:7px;background:#eef7ff;border:1px solid #d8eafb;color:#176cd0;border-radius:999px;padding:6px 10px;font-size:10.5px;font-weight:950}
+    .s31-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .s31-stat{border:1px solid #dbe8f4;background:#fff;border-radius:22px;padding:13px 12px;box-shadow:0 12px 26px rgba(20,54,92,.07);display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:center}
+    .s31-stat-icon{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;color:#fff;font-size:22px;background:linear-gradient(135deg,#3188f4,#65d18a)}
+    .s31-stat.laws .s31-stat-icon{background:linear-gradient(135deg,#2ab46f,#7cdd8a)}
+    .s31-stat-num{font-size:24px;font-weight:950;color:#10255c;line-height:1}
+    .s31-stat-label{font-size:11px;font-weight:850;color:#637897;margin-top:4px}
+    .s31-sec-head{display:flex;align-items:center;justify-content:space-between;margin:2px 2px -2px}
+    .s31-sec-title{font-size:16px;font-weight:950;color:#10255c}
+    .s31-sec-link{font-size:11px;font-weight:900;color:#2675df}
+    .s31-priority-list,.s31-achieve-list,.s31-journey-list{display:grid;gap:10px}
+    .s31-priority{border:1px solid #dbe8f4;background:#fff;border-radius:22px;padding:12px;box-shadow:0 12px 26px rgba(20,54,92,.065);display:grid;grid-template-columns:48px 1fr 82px;gap:10px;align-items:center}
+    .s31-priority-icon{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;font-size:22px;color:#fff;background:linear-gradient(135deg,#3188f4,#65d18a)}
+    .s31-priority.law .s31-priority-icon{background:linear-gradient(135deg,#1eaa65,#57ce7a)}
+    .s31-priority-type{display:inline-flex;width:max-content;background:#eef7ff;color:#176cd0;border:1px solid #d9eafb;border-radius:999px;padding:3px 8px;font-size:9.5px;font-weight:950;margin-bottom:4px}
+    .s31-priority.law .s31-priority-type{background:#eefcf3;color:#129154;border-color:#ccefd8}
+    .s31-priority-title{font-size:13px;font-weight:950;color:#10255c;line-height:1.4}
+    .s31-priority-meta{font-size:10.5px;font-weight:800;color:#75869b;margin-top:3px}
+    .s31-priority-btn{border:1px solid #ccefd8;background:#f5fff8;color:#149657;border-radius:15px;padding:9px 8px;font-family:inherit;font-size:11px;font-weight:950;cursor:pointer}
+    .s31-overview{border:1px solid #dbe8f4;background:#fff;border-radius:24px;padding:13px;box-shadow:0 12px 26px rgba(20,54,92,.065)}
+    .s31-overview-grid{display:grid;grid-template-columns:84px 1fr;gap:13px;align-items:center}
+    .s31-ring{width:82px;height:82px;border-radius:50%;background:conic-gradient(#3188f4 var(--p),#e9f1fa 0);display:grid;place-items:center}
+    .s31-ring-inner{width:62px;height:62px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:18px;font-weight:950;color:#10255c}
+    .s31-overview-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .s31-mini-stat{border-right:1px solid #edf3f8;padding-right:8px}
+    .s31-mini-stat:first-child{border-right:0}
+    .s31-mini-stat b{display:block;font-size:17px;color:#10255c}.s31-mini-stat span{font-size:10px;font-weight:850;color:#6d7e94}
+    .s31-journey{border:1px solid #dbe8f4;background:#fff;border-radius:22px;padding:12px;box-shadow:0 12px 26px rgba(20,54,92,.065)}
+    .s31-journey-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .s31-journey-name{font-size:14px;font-weight:950;color:#10255c}
+    .s31-journey-pct{font-size:20px;font-weight:950;color:#176cd0}
+    .s31-bars{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+    .s31-bar-label{display:flex;justify-content:space-between;font-size:10px;font-weight:900;color:#53677f;margin-bottom:5px}
+    .s31-bar-track{height:6px;border-radius:999px;background:#eaf2fb;overflow:hidden}
+    .s31-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#3188f4,#56cf7d);width:0%}
+    .s31-bar.laws .s31-bar-fill{background:linear-gradient(90deg,#16a15f,#73d98f)}
+    .s31-achieve{border:1px solid #dbe8f4;background:linear-gradient(135deg,#fff,#f8fbff);border-radius:18px;padding:10px;display:grid;grid-template-columns:36px 1fr 28px;gap:8px;align-items:center}
+    .s31-achieve-icon{width:36px;height:36px;border-radius:14px;display:grid;place-items:center;background:#eefcf3;color:#139353;font-weight:950}
+    .s31-achieve-title{font-size:12px;font-weight:950;color:#10255c}.s31-achieve-meta{font-size:10px;color:#71839a;margin-top:2px}
+    .s31-empty{border:1px dashed #cfe0f2;background:#f8fbff;border-radius:22px;padding:18px;text-align:center;font-size:12px;font-weight:850;color:#71839a;line-height:1.8}
+    .s31-filter-row{display:flex;gap:8px;overflow:auto;padding-bottom:2px}
+    .s31-filter{border:1px solid #dbe8f4;background:#fff;border-radius:999px;padding:8px 13px;font-size:11px;font-weight:950;color:#526981;white-space:nowrap}
+    .s31-filter.active{background:#2675df;color:#fff;border-color:#2675df}
+    .s33-track-grid{display:grid;grid-template-columns:1fr;gap:10px}
+    .s33-track-card{border:1px solid #dbe8f4;background:#fff;border-radius:24px;padding:13px;box-shadow:0 12px 26px rgba(20,54,92,.065);cursor:pointer;position:relative;overflow:hidden}
+    .s33-track-card.done{border-color:#bdebd0;background:linear-gradient(135deg,#fff,#f5fff8)}
+    .s33-track-top{display:grid;grid-template-columns:48px 1fr 54px;gap:10px;align-items:center}
+    .s33-track-icon{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;color:#fff;font-size:22px;background:linear-gradient(135deg,#3188f4,#56cf7d)}
+    .s33-track-card.verbal .s33-track-icon{background:linear-gradient(135deg,#7e6cf4,#4fa5ff)}
+    .s33-track-card.quant .s33-track-icon{background:linear-gradient(135deg,#2f85f4,#58d186)}
+    .s33-track-card.tahsili .s33-track-icon{background:linear-gradient(135deg,#19b879,#6ed98c)}
+    .s33-track-name{font-size:15px;font-weight:950;color:#10255c}
+    .s33-track-sub{font-size:10.5px;font-weight:850;color:#70839a;margin-top:4px}
+    .s33-track-pct{font-size:20px;font-weight:950;color:#176cd0;text-align:left}
+    .s33-track-done{position:absolute;top:10px;left:10px;width:24px;height:24px;border-radius:50%;background:#19b969;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:950}
+    .s33-track-bars{display:grid;gap:7px;margin-top:11px}
+    .s33-section-row{display:grid;grid-template-columns:82px 1fr 42px;gap:8px;align-items:center}
+    .s33-section-name{font-size:10px;font-weight:900;color:#53677f}
+    .s33-section-track{height:6px;border-radius:999px;background:#eaf2fb;overflow:hidden}
+    .s33-section-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#3188f4,#56cf7d);width:0%}
+    .s33-section-pct{font-size:10px;font-weight:950;color:#176cd0;text-align:left}
+    .s33-track-detail{display:none;margin-top:10px;border-top:1px solid #edf3f8;padding-top:10px}
+    .s33-track-card.open .s33-track-detail{display:grid;gap:8px}
+    .s33-detail-chip{border:1px solid #e1ecf7;background:#f8fbff;border-radius:15px;padding:9px;display:grid;grid-template-columns:1fr 42px;align-items:center;gap:8px}
+    .s33-detail-name{font-size:11px;font-weight:950;color:#10255c}.s33-detail-meta{font-size:9.5px;color:#75869b;margin-top:2px}
+    .s33-detail-pct{font-size:13px;font-weight:950;color:#176cd0;text-align:left}
+    .s34-smart-start{width:100%;border:0;border-radius:18px;background:linear-gradient(135deg,#3188f4,#53cc7c);color:#fff;font-family:inherit;font-size:13px;font-weight:950;padding:13px;margin-top:10px;box-shadow:0 12px 24px rgba(49,136,244,.18);cursor:pointer}
+    .s34-session-backdrop{position:fixed;inset:0;background:rgba(15,31,55,.38);z-index:9998;display:none}.s34-session-backdrop.show{display:block}
+    .s34-session{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;background:#fff;border:1px solid #dbe8f4;border-radius:28px;box-shadow:0 24px 64px rgba(9,33,68,.22);padding:14px;direction:rtl;text-align:right;display:none;max-height:82vh;overflow:auto}.s34-session.show{display:block}
+    .s34-session-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.s34-session-title{font-size:17px;font-weight:950;color:#10255c}.s34-session-sub{font-size:11px;font-weight:850;color:#72849a;margin-top:3px}
+    .s34-close{width:34px;height:34px;border-radius:50%;border:1px solid #e0eaf5;background:#f8fbff;color:#526981;font-size:18px;font-weight:950}
+    .s34-review-card{border:1px solid #dbe8f4;background:linear-gradient(135deg,#fff,#f8fbff);border-radius:22px;padding:14px;box-shadow:0 10px 22px rgba(20,54,92,.065)}
+    .s34-review-badge{display:inline-flex;background:#eef7ff;border:1px solid #d9eafb;color:#176cd0;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:950;margin-bottom:8px}
+    .s34-review-title{font-size:18px;font-weight:950;color:#10255c;line-height:1.5}.s34-review-meta{font-size:11px;font-weight:850;color:#71839a;margin-top:5px}
+    .s34-review-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px}.s34-action{border:1px solid #dbe8f4;background:#f8fbff;border-radius:16px;padding:12px 8px;font-family:inherit;font-size:11px;font-weight:950;color:#526981;cursor:pointer}.s34-action.mastered{background:#f5fff8;border-color:#bdebd0;color:#159353}.s34-action.review{background:#fff9f0;border-color:#ffd8a4;color:#d97800}
+    .s34-progress-line{height:7px;border-radius:999px;background:#eaf2fb;overflow:hidden;margin-top:12px}.s34-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#3188f4,#56cf7d);width:0%}
+    .s34-complete{border:1px solid #dbe8f4;background:linear-gradient(135deg,#fff,#f5fff8);border-radius:24px;padding:18px;text-align:center}.s34-trophy{font-size:52px}.s34-complete-title{font-size:20px;font-weight:950;color:#10255c;margin-top:4px}.s34-complete-sub{font-size:12px;font-weight:850;color:#637897;line-height:1.8;margin-top:6px}
+  `;
+  document.head.appendChild(style);
+
+  const SUHAIL_HEAD_SRC="__SUHAIL_CHARACTER_SRC__";
+  function s31Store(){try{return JSON.parse(localStorage.getItem('suhail_mastery_v1')||'{}')}catch(_){return {}}}
+  function s31Parse(k){
+    const p=String(k).split('/');
+    return {key:k,stage:p[0]||'',unit:p[1]||'',type:p[2]||'',id:p.slice(3).join('/')||''};
+  }
+  function s31Title(x){
+    if(x.type==='law') return String(x.id).split('::')[2]||'قانون';
+    return String(x.id).replace(/^def_\d+_/,'').replace(/_/g,' ')||'تعريف';
+  }
+  function s31All(){
+    const s=s31Store();
+    return Object.entries(s).map(([key,status])=>({...s31Parse(key),status,title:''})).map(x=>({...x,title:s31Title(x)}));
+  }
+  function s31Pct(a,b){return b?Math.round(a/b*100):0}
+  function s31Set(key,status){
+    const s=s31Store();
+    if(status==='new') delete s[key]; else s[key]=status;
+    localStorage.setItem('suhail_mastery_v1',JSON.stringify(s));
+    s31RenderReviewPage();
+  }
+  window.s31SetMastery=s31Set;
+  function s31GroupedJourney(items){
+    const map={};
+    items.forEach(x=>{
+      const name=x.stage||'غير محدد';
+      map[name] ||= {stage:name,defs:0,laws:0,defsM:0,lawsM:0};
+      if(x.type==='definition'){map[name].defs++; if(x.status==='mastered')map[name].defsM++}
+      if(x.type==='law'){map[name].laws++; if(x.status==='mastered')map[name].lawsM++}
+    });
+    return Object.values(map).filter(x=>x.defs||x.laws);
+  }
+
+  function s33TrackKind(x){
+    const txt=`${x.stage} ${x.unit} ${x.id}`.toLowerCase();
+    if(/لفظ|verbal|تناظر|استيعاب|مقروء|مفرد|جمل/.test(txt))return 'verbal';
+    if(/قدرات|كمي|حساب|جبر|هندس|بيانات|quant/.test(txt))return 'quant';
+    return 'tahsili';
+  }
+  const S33_TRACKS=[
+    {id:'verbal',name:'قدرات لفظي',icon:'🔤',cls:'verbal',sections:['تناظر لفظي','إكمال الجمل','المفردة الشاذة','استيعاب مقروء']},
+    {id:'quant',name:'قدرات كمي',icon:'➗',cls:'quant',sections:['الحسابية','الجبر','الهندسة','تحليل البيانات']},
+    {id:'tahsili',name:'تحصيلي',icon:'⚗️',cls:'tahsili',sections:['فيزياء','كيمياء','أحياء','رياضيات']}
+  ];
+  function s33SectionName(x,track){
+    const txt=`${x.stage} ${x.unit} ${x.id}`;
+    const arr=track.sections;
+    return arr.find(s=>txt.includes(s.replace('ال',''))) || arr.find(s=>txt.includes(s)) || (x.stage||track.name);
+  }
+  function s33TrackData(items){
+    return S33_TRACKS.map(t=>{
+      const list=items.filter(x=>s33TrackKind(x)===t.id);
+      const mastered=list.filter(x=>x.status==='mastered').length;
+      const pct=s31Pct(mastered,list.length);
+      const sections=t.sections.map(sec=>{
+        const secList=list.filter(x=>s33SectionName(x,t)===sec || (`${x.stage} ${x.unit} ${x.id}`).includes(sec));
+        const m=secList.filter(x=>x.status==='mastered').length;
+        return {name:sec,total:secList.length,mastered:m,pct:s31Pct(m,secList.length)};
+      });
+      // For current physics-only data, put it under Tahsili > Physics so the card is meaningful.
+      if(t.id==='tahsili' && list.length && sections.every(s=>!s.total)){
+        sections[0]={name:'فيزياء',total:list.length,mastered, pct};
+      }
+      return {...t,total:list.length,mastered,pct,sections};
+    });
+  }
+  window.s33ToggleTrack=function(el){el.closest('.s33-track-card')?.classList.toggle('open');};
+  function s33TracksHtml(items){
+    const tracks=s33TrackData(items);
+    return `<div class="s31-sec-head"><div class="s31-sec-title">مسارات الإتقان الرئيسية</div><div class="s31-sec-link">3 مسارات</div></div>
+      <div class="s33-track-grid">${tracks.map(t=>`<div class="s33-track-card ${t.cls} ${t.pct>=100&&t.total?'done':''}" onclick="s33ToggleTrack(this)">
+        ${t.pct>=100&&t.total?'<div class="s33-track-done">✓</div>':''}
+        <div class="s33-track-top"><div class="s33-track-icon">${t.icon}</div><div><div class="s33-track-name">${t.name}</div><div class="s33-track-sub">${t.mastered}/${t.total} عنصر متقن</div></div><div class="s33-track-pct">${t.pct}%</div></div>
+        <div class="s33-track-bars">${t.sections.slice(0,4).map(s=>`<div class="s33-section-row"><div class="s33-section-name">${s.name}</div><div class="s33-section-track"><div class="s33-section-fill" style="width:${s.pct}%"></div></div><div class="s33-section-pct">${s.pct}%</div></div>`).join('')}</div>
+        <div class="s33-track-detail">${t.sections.map(s=>`<div class="s33-detail-chip"><div><div class="s33-detail-name">${s.name}</div><div class="s33-detail-meta">${s.mastered}/${s.total} عناصر</div></div><div class="s33-detail-pct">${s.pct}%</div></div>`).join('')}</div>
+      </div>`).join('')}</div>`;
+  }
+
+
+  let s34SessionItems=[],s34SessionIndex=0;
+  function s34OpenSession(){
+    const all=s31All();
+    const review=all.filter(x=>x.status==='review');
+    s34SessionItems=review.length?review:all.filter(x=>x.status!=='mastered');
+    s34SessionIndex=0;
+    s34EnsureSession();
+    s34RenderSession();
+  }
+  window.s34OpenSession=s34OpenSession;
+  function s34EnsureSession(){
+    let back=document.getElementById('s34SessionBackdrop'),box=document.getElementById('s34Session');
+    if(!back){back=document.createElement('div');back.id='s34SessionBackdrop';back.className='s34-session-backdrop';back.onclick=s34CloseSession;document.body.appendChild(back);}
+    if(!box){box=document.createElement('div');box.id='s34Session';box.className='s34-session';document.body.appendChild(box);}
+    back.classList.add('show');box.classList.add('show');
+  }
+  window.s34CloseSession=function(){document.getElementById('s34SessionBackdrop')?.classList.remove('show');document.getElementById('s34Session')?.classList.remove('show');};
+  window.s34Pick=function(status){
+    const item=s34SessionItems[s34SessionIndex];
+    if(item){s31SetMastery(item.key,status);}
+    s34SessionIndex++;
+    s34RenderSession();
+  };
+  function s34RenderSession(){
+    const box=document.getElementById('s34Session'); if(!box)return;
+    const total=s34SessionItems.length;
+    if(!total){
+      box.innerHTML=`<div class="s34-session-head"><div><div class="s34-session-title">جلسة مراجعة ذكية</div><div class="s34-session-sub">لا توجد عناصر جاهزة للمراجعة</div></div><button class="s34-close" onclick="s34CloseSession()">×</button></div><div class="s34-complete"><div class="s34-trophy">🏆</div><div class="s34-complete-title">كل شيء ممتاز</div><div class="s34-complete-sub">لا توجد عناصر مؤجلة حاليًا.</div></div>`;
+      return;
+    }
+    if(s34SessionIndex>=total){
+      box.innerHTML=`<div class="s34-session-head"><div><div class="s34-session-title">جلسة مراجعة ذكية</div><div class="s34-session-sub">انتهت الجلسة</div></div><button class="s34-close" onclick="s34CloseSession()">×</button></div><div class="s34-complete"><div class="s34-trophy">🏆</div><div class="s34-complete-title">أحسنت!</div><div class="s34-complete-sub">راجعت ${total} عناصر. استمر بنفس الوتيرة.</div><button class="s34-smart-start" onclick="s34CloseSession();s31RenderReviewPage()">العودة للمراجعة</button></div>`;
+      return;
+    }
+    const x=s34SessionItems[s34SessionIndex];
+    const pct=Math.round((s34SessionIndex/total)*100);
+    box.innerHTML=`<div class="s34-session-head"><div><div class="s34-session-title">جلسة مراجعة ذكية</div><div class="s34-session-sub">${s34SessionIndex+1} من ${total}</div></div><button class="s34-close" onclick="s34CloseSession()">×</button></div>
+      <div class="s34-review-card">
+        <div class="s34-review-badge">${x.type==='law'?'📐 قانون':'📘 تعريف'}</div>
+        <div class="s34-review-title">${x.title}</div>
+        <div class="s34-review-meta">${x.stage} • ${x.unit}</div>
+        <div class="s34-progress-line"><div class="s34-progress-fill" style="width:${pct}%"></div></div>
+        <div class="s34-review-actions">
+          <button class="s34-action" onclick="s34Pick('new')">تجاهل</button>
+          <button class="s34-action review" onclick="s34Pick('review')">أراجع لاحقًا</button>
+          <button class="s34-action mastered" onclick="s34Pick('mastered')">أتقنت</button>
+        </div>
+      </div>`;
+  }
+
+
+  function s35AllQuestions(){try{return questions||[]}catch(_){return []}}
+  function s35PlanHtml(){
+    const total=s35AllQuestions().length, perDay=Math.max(20,Math.ceil(total/30));
+    const days=[1,2,3,4,5].map(d=>`<div class="s35-day"><div class="s35-day-num">${d}</div><div><div class="s35-day-title">اليوم ${d}</div><div class="s35-day-meta">حل دفعة موزعة حسب الأقسام</div></div><div class="s35-day-count">${Math.min(perDay,Math.max(0,total-(d-1)*perDay))}</div></div>`).join('');
+    return `<div class="s35-plan-card"><div class="s31-sec-head"><div class="s31-sec-title">خطتي الدراسية</div><div class="s31-sec-link">${total} سؤال</div></div><div class="s31-empty" style="text-align:right">الهدف: إنجاز كامل بنك الأسئلة تدريجيًا يومًا بعد يوم.</div><div class="s35-plan-days">${days}</div></div>`;
+  }
+
+  window.s31RenderReviewPage=function(){
+    const title=document.getElementById('planMainTitle');
+    const badge=document.getElementById('planStatusBadge');
+    const intro=document.getElementById('planIntroText');
+    const focus=document.getElementById('planFocusList');
+    const tasks=document.getElementById('planTaskList');
+    const target=document.getElementById('planTargetLabel');
+    if(!focus||!tasks)return;
+    const all=s31All();
+    const review=all.filter(x=>x.status==='review');
+    const mastered=all.filter(x=>x.status==='mastered');
+    const reviewDefs=review.filter(x=>x.type==='definition');
+    const reviewLaws=review.filter(x=>x.type==='law');
+    const totalTracked=all.length;
+    const pct=s31Pct(mastered.length,totalTracked);
+    if(title)title.textContent='مركز المراجعة';
+    if(badge)badge.textContent=review.length?`${review.length} للمراجعة`:'ممتاز';
+    if(target)target.textContent='التعاريف والقوانين';
+    if(intro)intro.textContent='كل عنصر تؤجله يظهر هنا لتراجعه بسرعة وتكمل رحلة الإتقان.';
+    const minutes=Math.max(1,Math.ceil(review.length*1.2));
+    const priorities=review.slice(0,3);
+    const journey=s31GroupedJourney(all);
+    focus.innerHTML=`<div class="s31-review-shell">
+      <div class="s31-hero">
+        <img class="s31-hero-img" src="${SUHAIL_HEAD_SRC}" alt="سهيل">
+        <div><div class="s31-hero-title">مرحبًا بك في متابعة سهيل</div><div class="s31-hero-sub">لديك <b>${review.length}</b> عناصر تحتاج مراجعة. كل خطوة صغيرة تقرّبك من هدفك.</div><div class="s31-pill-time">⏱ لن تحتاج أكثر من ${minutes} دقائق اليوم</div></div>
+      </div>
+      <div class="s31-stats">
+        <div class="s31-stat"><div class="s31-stat-icon">📘</div><div><div class="s31-stat-num">${reviewDefs.length}</div><div class="s31-stat-label">تعريفات تحتاج مراجعة</div></div></div>
+        <div class="s31-stat laws"><div class="s31-stat-icon">⚖</div><div><div class="s31-stat-num">${reviewLaws.length}</div><div class="s31-stat-label">قوانين تحتاج مراجعة</div></div></div>
+      </div>
+      ${s33TracksHtml(all)}
+      <div class="s31-sec-head"><div class="s31-sec-title">🔥 أولويات اليوم</div><div class="s31-sec-link">${priorities.length} عناصر</div></div>
+      <div class="s31-priority-list">${priorities.length?priorities.map(x=>`<div class="s31-priority ${x.type==='law'?'law':''}">
+        <div class="s31-priority-icon">${x.type==='law'?'⚖':'📘'}</div>
+        <div><div class="s31-priority-type">${x.type==='law'?'قانون':'تعريف'}</div><div class="s31-priority-title">${x.title}</div><div class="s31-priority-meta">${x.stage} • ${x.unit}</div></div>
+        <button class="s31-priority-btn" onclick="s31SetMastery('${x.key.replace(/'/g,"\\'")}','mastered')">أتقنت</button>
+      </div>`).join(''):'<div class="s31-empty">لا توجد أولويات الآن. أضف عنصرًا للمراجعة من الملخص أو صفحة القوانين.</div>'}</div>
+      <button class="s34-smart-start" onclick="s34OpenSession()">ابدأ المراجعة الذكية ✨</button>
+      <div class="s31-overview"><div class="s31-overview-grid"><div class="s31-ring" style="--p:${pct}%"><div class="s31-ring-inner">${pct}%</div></div><div class="s31-overview-cols"><div class="s31-mini-stat"><b>${all.length}</b><span>عناصر</span></div><div class="s31-mini-stat"><b>${mastered.length}</b><span>أتقنت</span></div><div class="s31-mini-stat"><b>${review.length}</b><span>تراجع</span></div></div></div></div>
+    </div>`;
+    tasks.innerHTML=`<div class="s31-review-shell">
+      <div class="s31-sec-head"><div class="s31-sec-title">رحلة الإتقان</div><div class="s31-sec-link">حسب المادة</div></div>
+      <div class="s31-journey-list">${journey.length?journey.map(j=>{
+        const jp=s31Pct(j.defsM+j.lawsM,j.defs+j.laws);
+        return `<div class="s31-journey"><div class="s31-journey-top"><div class="s31-journey-name">${j.stage}</div><div class="s31-journey-pct">${jp}%</div></div><div class="s31-bars"><div class="s31-bar"><div class="s31-bar-label"><span>التعاريف</span><span>${j.defsM}/${j.defs}</span></div><div class="s31-bar-track"><div class="s31-bar-fill" style="width:${s31Pct(j.defsM,j.defs)}%"></div></div></div><div class="s31-bar laws"><div class="s31-bar-label"><span>القوانين</span><span>${j.lawsM}/${j.laws}</span></div><div class="s31-bar-track"><div class="s31-bar-fill" style="width:${s31Pct(j.lawsM,j.laws)}%"></div></div></div></div></div>`;
+      }).join(''):'<div class="s31-empty">رحلة الإتقان تظهر بعد تحديد حالات التعاريف والقوانين.</div>'}</div>
+      <div class="s31-sec-head"><div class="s31-sec-title">🏆 آخر ما أتقنته</div><div class="s31-sec-link">${mastered.length}</div></div>
+      <div class="s31-achieve-list">${mastered.slice(-4).reverse().map(x=>`<div class="s31-achieve"><div class="s31-achieve-icon">✓</div><div><div class="s31-achieve-title">${x.title}</div><div class="s31-achieve-meta">${x.type==='law'?'قانون':'تعريف'} • ${x.stage}</div></div><div>🏆</div></div>`).join('') || '<div class="s31-empty">لم تُتقن عناصر بعد. ابدأ بأول أولوية اليوم.</div>'}</div>
+      ${s35PlanHtml()}
+    </div>`;
+  };
+})();
 
 function showPage(pageId) {
   if (pageId === "questionManagementPage" && !qmCleanCanAccess()) {
@@ -16188,6 +16488,12 @@ function showPage(pageId) {
   }
 
   activatePage(pageId);
+  if (pageId === "reviewPage") {
+    setTimeout(() => {
+      if (window.s31RenderReviewPage) window.s31RenderReviewPage();
+      else if (window.s30RenderReviewPage) window.s30RenderReviewPage();
+    }, 30);
+  }
 }
 
 
@@ -23495,6 +23801,14 @@ document.addEventListener("wheel", function(e){
 }, {passive:false, capture:true});
 
 </script>
+
+<script>
+setTimeout(function(){
+  var rp=document.getElementById('reviewPage');
+  if(rp && rp.classList.contains('active') && window.s31RenderReviewPage){ window.s31RenderReviewPage(); }
+}, 300);
+</script>
+
 </body>
 </html>
 """

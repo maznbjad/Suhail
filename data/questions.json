@@ -129,5 +129,3456 @@
     "answer": "حل",
     "explain": "الفكرة الناجحة تعالج مشكلة حقيقية، لذلك كلمة حل هي الأنسب.",
     "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_sample_001",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا تضاعفت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع:",
+    "options": [
+      "يقل إلى النصف",
+      "يتضاعف",
+      "يبقى ثابتًا",
+      "ينعدم"
+    ],
+    "answer": 1,
+    "explanation": "حسب قانون نيوتن الثاني F = ma، عند ثبات الكتلة يتناسب التسارع طرديًا مع القوة.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_sample_002",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة تستخدم لقياس:",
+    "options": [
+      "الحجم",
+      "الضغط",
+      "كمية المادة",
+      "الكثافة"
+    ],
+    "answer": 2,
+    "explanation": "المول هو وحدة قياس كمية المادة في الكيمياء.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_sample_003",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي:",
+    "options": [
+      "النسيج",
+      "العضو",
+      "الخلية",
+      "الجهاز"
+    ],
+    "answer": 2,
+    "explanation": "الخلية هي الوحدة الأساسية للتركيب والوظيفة في الكائنات الحية.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_sample_004",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3² فإن الناتج يساوي:",
+    "options": [
+      "6",
+      "9",
+      "12",
+      "18"
+    ],
+    "answer": 1,
+    "explanation": "3² تعني 3 × 3، والناتج 9.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_001",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع:",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_002",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس:",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_004",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x =",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_005",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 5)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_006",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 6)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_007",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 7)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_008",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 8)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_009",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 9)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_010",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 10)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_011",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 11)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_012",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 12)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_013",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 13)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_014",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 14)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_015",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 15)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_016",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 16)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_017",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 17)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_018",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 18)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_019",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 19)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_020",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 20)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_021",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 21)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_022",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 22)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_023",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 23)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_024",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 24)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_025",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 25)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_026",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 26)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_027",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 27)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_028",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 28)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_029",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 29)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_030",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 30)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_031",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 31)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_032",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 32)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_033",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 33)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_034",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 34)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_035",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 35)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_036",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 36)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_037",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 37)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_038",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 38)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_039",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 39)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_040",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 40)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_041",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 41)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_042",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 42)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_043",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 43)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_044",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 44)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_045",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 45)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_046",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 46)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_047",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 47)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_048",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 48)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_049",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 49)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_050",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 50)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_051",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 51)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_052",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 52)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_053",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 53)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_054",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 54)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_055",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 55)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_056",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 56)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_057",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 57)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_058",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 58)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_059",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 59)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_060",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 60)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_061",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 61)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_062",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 62)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_063",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 63)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_064",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 64)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_065",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 65)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_066",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 66)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_067",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 67)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_068",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 68)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_069",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 69)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_070",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 70)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_071",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 71)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_072",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 72)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_073",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 73)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_074",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 74)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_075",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 75)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_076",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 76)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_077",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 77)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_078",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 78)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_079",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 79)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_080",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 80)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_081",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 81)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_082",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 82)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_083",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 83)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_084",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 84)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_085",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 85)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_086",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 86)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_087",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 87)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_088",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 88)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_089",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 89)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_090",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 90)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_091",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 91)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_092",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 92)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_093",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 93)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_094",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 94)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_095",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 95)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_096",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 96)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_097",
+    "exam": "تحصيلي",
+    "category": "فيزياء",
+    "section": "فيزياء",
+    "question": "إذا زادت القوة المؤثرة على جسم وثبتت كتلته فإن التسارع: (نموذج 97)",
+    "options": [
+      "يزداد",
+      "ينقص",
+      "يثبت",
+      "ينعدم"
+    ],
+    "answer": 0,
+    "explanation": "التسارع يتناسب طرديًا مع القوة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_098",
+    "exam": "تحصيلي",
+    "category": "كيمياء",
+    "section": "كيمياء",
+    "question": "المول وحدة لقياس: (نموذج 98)",
+    "options": [
+      "كمية المادة",
+      "الضغط",
+      "الحجم",
+      "الكثافة"
+    ],
+    "answer": 0,
+    "explanation": "المول يقيس كمية المادة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_099",
+    "exam": "تحصيلي",
+    "category": "أحياء",
+    "section": "أحياء",
+    "question": "الوحدة الأساسية في بناء الكائن الحي هي: (نموذج 99)",
+    "options": [
+      "الخلية",
+      "النسيج",
+      "العضو",
+      "الجهاز"
+    ],
+    "answer": 0,
+    "explanation": "الخلية وحدة البناء والوظيفة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "tahsili_100",
+    "exam": "تحصيلي",
+    "category": "رياضيات",
+    "section": "رياضيات",
+    "question": "إذا كان 3x = 12 فإن x = (نموذج 100)",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "نقسم الطرفين على 3.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_001",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم:",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_002",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x =",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_003",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي:",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_004",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي:",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_005",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_006",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها.",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_007",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_008",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة:",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_009",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 9)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_010",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 10)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_011",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 11)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_012",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 12)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_013",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 13)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_014",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 14)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_015",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 15)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_016",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 16)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_017",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 17)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_018",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 18)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_019",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 19)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_020",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 20)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_021",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 21)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_022",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 22)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_023",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 23)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_024",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 24)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_025",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 25)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_026",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 26)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_027",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 27)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_028",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 28)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_029",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 29)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_030",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 30)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_031",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 31)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_032",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 32)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_033",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 33)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_034",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 34)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_035",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 35)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_036",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 36)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_037",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 37)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_038",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 38)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_039",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 39)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_040",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 40)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_041",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 41)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_042",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 42)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_043",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 43)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_044",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 44)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_045",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 45)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_046",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 46)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_047",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 47)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_048",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 48)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_049",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 49)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_050",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 50)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_051",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 51)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_052",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 52)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_053",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 53)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_054",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 54)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_055",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 55)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_056",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 56)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_057",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 57)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_058",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 58)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_059",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 59)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_060",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 60)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_061",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 61)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_062",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 62)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_063",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 63)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_064",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 64)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_065",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 65)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_066",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 66)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_067",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 67)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_068",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 68)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_069",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 69)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_070",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 70)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_071",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 71)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_072",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 72)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_073",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 73)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_074",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 74)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_075",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 75)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_076",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 76)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_077",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 77)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_078",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 78)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_079",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 79)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_080",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 80)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_081",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 81)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_082",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 82)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_083",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 83)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_084",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 84)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_085",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 85)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_086",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 86)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_087",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 87)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_088",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 88)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_089",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 89)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_090",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 90)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_091",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 91)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_092",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 92)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_093",
+    "exam": "قدرات لفظي",
+    "category": "التناظر اللفظي",
+    "section": "التناظر اللفظي",
+    "question": "طبيب : مستشفى (تدريب 93)",
+    "options": [
+      "معلم : مدرسة",
+      "قلم : كتاب",
+      "بحر : سفينة",
+      "سيارة : طريق"
+    ],
+    "answer": 0,
+    "explanation": "العلاقة مكان العمل.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_094",
+    "exam": "قدرات لفظي",
+    "category": "إكمال الجمل",
+    "section": "إكمال الجمل",
+    "question": "الطالب المجتهد ______ واجباته في وقتها. (تدريب 94)",
+    "options": [
+      "ينجز",
+      "يهمل",
+      "ينسى",
+      "يؤجل"
+    ],
+    "answer": 0,
+    "explanation": "المجتهد ينجز واجباته.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_095",
+    "exam": "قدرات لفظي",
+    "category": "المفردة الشاذة",
+    "section": "المفردة الشاذة",
+    "question": "اختر الكلمة الشاذة: تفاح، برتقال، سيارة، موز (تدريب 95)",
+    "options": [
+      "تفاح",
+      "برتقال",
+      "سيارة",
+      "موز"
+    ],
+    "answer": 2,
+    "explanation": "السيارة ليست فاكهة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_096",
+    "exam": "قدرات لفظي",
+    "category": "استيعاب مقروء",
+    "section": "استيعاب مقروء",
+    "question": "النص: القراءة توسع المعرفة. الفكرة الرئيسة: (تدريب 96)",
+    "options": [
+      "أهمية القراءة",
+      "أنواع الكتب",
+      "سرعة القراءة",
+      "أماكن المكتبات"
+    ],
+    "answer": 0,
+    "explanation": "الفكرة هي أهمية القراءة.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_097",
+    "exam": "قدرات كمي",
+    "category": "الحسابية",
+    "section": "الحسابية",
+    "question": "إذا كان سعر منتج 100 ريال وخصمه 20% فالسعر بعد الخصم: (تدريب 97)",
+    "options": [
+      "80",
+      "90",
+      "70",
+      "60"
+    ],
+    "answer": 0,
+    "explanation": "20% من 100 = 20.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_098",
+    "exam": "قدرات كمي",
+    "category": "الجبر",
+    "section": "الجبر",
+    "question": "إذا كان 2x + 4 = 14 فإن x = (تدريب 98)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "2x=10 إذن x=5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_099",
+    "exam": "قدرات كمي",
+    "category": "الهندسة",
+    "section": "الهندسة",
+    "question": "مساحة مستطيل طوله 8 وعرضه 3 تساوي: (تدريب 99)",
+    "options": [
+      "11",
+      "18",
+      "24",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "المساحة = الطول × العرض.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
+  },
+  {
+    "id": "qudrat_100",
+    "exam": "قدرات كمي",
+    "category": "تحليل البيانات",
+    "section": "تحليل البيانات",
+    "question": "متوسط القيم 2، 4، 6، 8 يساوي: (تدريب 100)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "المجموع 20 ÷ 4 = 5.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 60
   }
 ]
