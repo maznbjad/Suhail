@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS student_profiles (
     user_id TEXT PRIMARY KEY,
     display_name TEXT NOT NULL,
     academic_track TEXT NOT NULL DEFAULT 'scientific',
+    gender TEXT NOT NULL DEFAULT 'male',
     exam_goals_json TEXT NOT NULL DEFAULT '["qudrat","tahsili"]',
     avatar_id TEXT NOT NULL DEFAULT 'male_01',
     friend_code TEXT UNIQUE,
@@ -121,6 +122,7 @@ def ensure_social_schema(db_path: str | Path) -> None:
     with sqlite3.connect(Path(db_path)) as connection:
         connection.executescript(SCHEMA)
         # Older databases used target_exam and smaller profile/challenge tables.
+        _add_column(connection, "student_profiles", "gender TEXT NOT NULL DEFAULT 'male'")
         _add_column(connection, "student_profiles", "exam_goals_json TEXT NOT NULL DEFAULT '[\"qudrat\",\"tahsili\"]'")
         _add_column(connection, "student_profiles", "friend_code TEXT")
         _add_column(connection, "friendships", "status TEXT NOT NULL DEFAULT 'accepted'")

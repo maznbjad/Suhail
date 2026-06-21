@@ -10820,6 +10820,12 @@ body.suhail-passage-lock .question-passage{
             <input class="auth-input rtl" id="registerName" type="text" placeholder="الاسم">
             <input class="auth-input ltr" id="registerEmail" type="email" placeholder="student@gmail.com">
             <input class="auth-input ltr" id="registerPassword" type="password" placeholder="كلمة المرور">
+            <div class="auth-gender-title">نوع الحساب</div>
+            <div class="auth-gender-grid" role="group" aria-label="نوع الحساب">
+              <button type="button" class="auth-gender-choice" data-gender="male" onclick="selectRegisterGender('male')"><span>♂</span><b>ولد</b></button>
+              <button type="button" class="auth-gender-choice" data-gender="female" onclick="selectRegisterGender('female')"><span>♀</span><b>بنت</b></button>
+            </div>
+            <input id="registerGender" type="hidden" value="">
             <button class="auth-btn" onclick="registerUser()">إنشاء حساب جديد</button>
             <div class="auth-note">الحسابات الجديدة تُحفظ محليًا على نفس الجهاز والمتصفح.</div>
           </div>
@@ -13558,7 +13564,8 @@ function loginUser() {
   setAuthSession({
     email: user.email || email,
     name: user.name || email.split("@")[0],
-    role: user.role || "student"
+    role: user.role || "student",
+    gender: user.gender === "female" ? "female" : "male"
   });
 
   document.getElementById("loginPassword").value = "";
@@ -13568,13 +13575,23 @@ setInterval(qmCleanUpdateAccess, 800);
   activatePage("homePage");
 }
 
+function selectRegisterGender(gender) {
+  if (!["male", "female"].includes(gender)) return;
+  const input = document.getElementById("registerGender");
+  if (input) input.value = gender;
+  document.querySelectorAll(".auth-gender-choice").forEach(button => {
+    button.classList.toggle("selected", button.dataset.gender === gender);
+  });
+}
+
 function registerUser() {
   const name = document.getElementById("registerName").value.trim();
   const email = document.getElementById("registerEmail").value.trim().toLowerCase();
   const password = document.getElementById("registerPassword").value.trim();
+  const gender = document.getElementById("registerGender").value;
 
-  if (!name || !email || !password) {
-    showAuthMessage("error", "أكمل بيانات التسجيل أولًا");
+  if (!name || !email || !password || !["male", "female"].includes(gender)) {
+    showAuthMessage("error", "أكمل بيانات التسجيل واختر ولد أو بنت");
     return;
   }
   if (!email.includes("@")) {
@@ -13597,6 +13614,7 @@ function registerUser() {
     password: password,
     role: "student",
     name: name,
+    gender: gender,
     active: true
   });
   saveExtraUsers(extras);
@@ -13605,6 +13623,8 @@ function registerUser() {
   document.getElementById("registerName").value = "";
   document.getElementById("registerEmail").value = "";
   document.getElementById("registerPassword").value = "";
+  document.getElementById("registerGender").value = "";
+  document.querySelectorAll(".auth-gender-choice").forEach(button => button.classList.remove("selected"));
   switchAuthTab("login");
   document.getElementById("loginEmail").value = email;
 }
@@ -23925,17 +23945,29 @@ try:
     s54_challenges = load_json(os.path.join("data", "challenges", "challenge_templates.json"), {"templates": []})
     s54_score_models = load_json(os.path.join("data", "scoring", "score_models.json"), {"models": {}})
     s54_avatar_assets = {}
+    s54_avatar_portrait_assets = {}
+    s54_avatar_half_assets = {}
+    s54_avatar_full_assets = {}
     for avatar in s54_avatars.get("items", []):
         avatar_id = str(avatar.get("id", "")).strip()
-        avatar_path = str(avatar.get("asset", "")).strip()
-        if avatar_id and avatar_path:
-            s54_avatar_assets[avatar_id] = asset_data_uri(avatar_path)
+        card_path = str(avatar.get("card_asset") or avatar.get("asset", "")).strip()
+        portrait_path = str(avatar.get("avatar_asset") or card_path).strip()
+        half_path = str(avatar.get("half_asset") or card_path).strip()
+        full_path = str(avatar.get("full_asset") or card_path).strip()
+        if avatar_id and card_path:
+            s54_avatar_assets[avatar_id] = asset_data_uri(card_path)
+            s54_avatar_portrait_assets[avatar_id] = asset_data_uri(portrait_path)
+            s54_avatar_half_assets[avatar_id] = asset_data_uri(half_path)
+            s54_avatar_full_assets[avatar_id] = asset_data_uri(full_path)
 
     with open(s54_js_path, "r", encoding="utf-8") as experience_file:
         s54_js = experience_file.read()
     s54_js = s54_js.replace("__S54_ADMIN_SETTINGS__", compact_json(s54_admin_settings))
     s54_js = s54_js.replace("__S54_AVATARS__", compact_json(s54_avatars))
     s54_js = s54_js.replace("__S54_AVATAR_ASSETS__", compact_json(s54_avatar_assets))
+    s54_js = s54_js.replace("__S54_AVATAR_PORTRAIT_ASSETS__", compact_json(s54_avatar_portrait_assets))
+    s54_js = s54_js.replace("__S54_AVATAR_HALF_ASSETS__", compact_json(s54_avatar_half_assets))
+    s54_js = s54_js.replace("__S54_AVATAR_FULL_ASSETS__", compact_json(s54_avatar_full_assets))
     s54_js = s54_js.replace("__S54_CHALLENGES__", compact_json(s54_challenges))
     s54_js = s54_js.replace("__S54_SCORE_MODELS__", compact_json(s54_score_models))
     html_code = html_code.replace("</body>", f"<script>{s54_js}</script></body>", 1)
@@ -23956,7 +23988,7 @@ try:
     s55_avatar_assets = {}
     for avatar in s55_avatars.get("items", []):
         avatar_id = str(avatar.get("id", "")).strip()
-        avatar_path = str(avatar.get("asset", "")).strip()
+        avatar_path = str(avatar.get("avatar_asset") or avatar.get("asset", "")).strip()
         if avatar_id and avatar_path:
             s55_avatar_assets[avatar_id] = asset_data_uri(avatar_path)
 

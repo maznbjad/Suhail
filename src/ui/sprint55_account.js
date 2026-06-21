@@ -1,7 +1,7 @@
 /* Suhail Sprint 55 — final grouped account/settings hub. */
 (function(){
   'use strict';
-  const VERSION='56.0.0';
+  const VERSION='57.0.0';
   const AVATARS=__S55_AVATARS__;
   const AVATAR_ASSETS=__S55_AVATAR_ASSETS__;
   let legacyShowPage=null;
@@ -14,7 +14,7 @@
   function userId(){const raw=String(session()?.email||'guest').toLowerCase();return raw.replace(/[^a-z0-9]/g,'_')||'guest';}
   function hash(text){let h=2166136261;for(const c of String(text)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
   function friendCode(){return `SH-${String(hash(userId())).slice(-6).padStart(6,'0')}`;}
-  function profile(){const s=session()||{};const p=parse(localStorage.getItem(`s54_profile_${userId()}`)||'',{});return {displayName:p.displayName||s.name||'طالب سهيل',academicTrack:p.academicTrack||'scientific',examGoals:Array.isArray(p.examGoals)&&p.examGoals.length?p.examGoals:['qudrat','tahsili'],avatarId:p.avatarId||AVATARS.default||'male_01'};}
+  function profile(){const s=session()||{};const p=parse(localStorage.getItem(`s54_profile_${userId()}`)||'',{});return {displayName:p.displayName||s.name||'طالب سهيل',gender:p.gender||s.gender||(String(p.avatarId||'').startsWith('female_')?'female':'male'),academicTrack:p.academicTrack||'scientific',examGoals:Array.isArray(p.examGoals)&&p.examGoals.length?p.examGoals:['qudrat','tahsili'],avatarId:p.avatarId||AVATARS.default||'male_02'};}
   function avatarSrc(id){return AVATAR_ASSETS[id]||AVATAR_ASSETS[AVATARS.default]||'';}
   function goalsLabel(gs){const g=Array.isArray(gs)?gs:[];return g.includes('qudrat')&&g.includes('tahsili')?'قدرات وتحصيلي':g.includes('tahsili')?'تحصيلي':'قدرات';}
   function trackLabel(t){return t==='literary'?'أدبي':'علمي';}
@@ -61,7 +61,7 @@
       ${row('faq','الأسئلة الشائعة',"s55OpenInfo('faq')")}
     </div>
     ${isAdmin()?`<div class="s55-admin-label">إدارة سهيل</div><div class="s55-admin-card">${row('admin','لوحة إعدادات الأدمن',"showPage('adminSettingsPage')")}${row('content','إدارة المحتوى',"showPage('questionManagementPage')")}</div>`:''}
-    <div class="s55-version"><b>V.1.0.56</b><span>2026 سهيل</span></div>
+    <div class="s55-version"><b>V.1.0.57</b><span>2026 سهيل</span></div>
     <div class="s55-company"><b>سهيل — تعلم بذكاء</b><span>تطبيق تعليمي للقدرات والتحصيلي<br>جميع الحقوق محفوظة</span></div>
     <button class="s55-logout" onclick="logoutUser()">تسجيل الخروج</button>
   </div>`;applyTheme();requestAnimationFrame(()=>{document.querySelector('#s54BottomNav [data-s54-nav="profile"]')?.classList.add('active');});}

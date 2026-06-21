@@ -36,7 +36,7 @@ from src.core.challenge_repository import ensure_social_schema, friend_code_for_
 ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = ROOT / "data" / "suhail_learning.db"
 SUMMARIES_PATH = ROOT / "data" / "smart_summaries.json"
-RELEASE = "54.0.0"
+RELEASE = "57.0.0"
 ALLOWED_EXAMS = {"قدرات كمي", "قدرات لفظي", "تحصيلي"}
 AUTH_WINDOW_SEC = 60
 AUTH_MAX_ATTEMPTS = 10
@@ -225,6 +225,7 @@ def _profile_payload(row: sqlite3.Row) -> dict[str, Any]:
         "user_id": row["user_id"],
         "display_name": row["display_name"],
         "academic_track": row["academic_track"],
+        "gender": row["gender"] if "gender" in row.keys() else "male",
         "exam_goals": goals,
         "avatar_id": row["avatar_id"],
         "friend_code": row["friend_code"] or friend_code_for_user(row["user_id"]),
@@ -334,14 +335,24 @@ def create_app() -> Flask:
         academic_track = str(payload.get("academic_track", "scientific"))
         if academic_track not in {"scientific", "literary"}:
             return jsonify({"error": "invalid_academic_track"}), 400
+        gender = str(payload.get("gender", "male"))
+        if gender not in {"male", "female"}:
+            return jsonify({"error": "invalid_gender"}), 400
+        avatar_id = str(payload.get("avatar_id") or ("female_01" if gender == "female" else "male_02"))
+        avatar_catalog = {str(item.get("id")): item for item in load_avatars().get("items", [])}
+        avatar = avatar_catalog.get(avatar_id)
+        avatar_gender = str((avatar or {}).get("gender_key") or avatar_id.split("_", 1)[0])
+        if not avatar or avatar_gender != gender or avatar.get("enabled") is False:
+            return jsonify({"error": "avatar_gender_mismatch"}), 400
         with _connect() as connection:
             connection.execute(
                 """INSERT INTO student_profiles
-                   (user_id, display_name, academic_track, exam_goals_json, avatar_id, friend_code, updated_at)
-                   VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                   (user_id, display_name, academic_track, gender, exam_goals_json, avatar_id, friend_code, updated_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                    ON CONFLICT(user_id) DO UPDATE SET
                      display_name=excluded.display_name,
                      academic_track=excluded.academic_track,
+                     gender=excluded.gender,
                      exam_goals_json=excluded.exam_goals_json,
                      avatar_id=excluded.avatar_id,
                      updated_at=CURRENT_TIMESTAMP""",
@@ -349,8 +360,9 @@ def create_app() -> Flask:
                     str(user["id"]),
                     str(payload.get("display_name") or user["display_name"]),
                     academic_track,
+                    gender,
                     json.dumps(goals, ensure_ascii=False),
-                    str(payload.get("avatar_id", "male_01")),
+                    avatar_id,
                     friend_code_for_user(str(user["id"])),
                 ),
             )

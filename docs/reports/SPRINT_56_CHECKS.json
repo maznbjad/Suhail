@@ -22,36 +22,8 @@
       "detail": true
     },
     "account_toggle": {
-      "ok": true,
-      "detail": "saved preference and updated release label"
-    },
-    "manifest": {
-      "ok": true,
-      "detail": {
-        "latest_sprint": 56,
-        "global_dark_mode": true
-      }
-    },
-    "visual_qa": {
-      "ok": true,
-      "detail": {
-        "screenshots": [
-          "dark_account.png",
-          "dark_errors.png",
-          "dark_exam_setup.png",
-          "dark_home.png",
-          "dark_review.png",
-          "dark_skill.png",
-          "dark_student_setup.png",
-          "dark_summaries.png",
-          "dark_tasks.png"
-        ],
-        "javascript_errors": 0
-      }
+      "ok": false,
+      "detail": "V.1.0.56"
     }
-  },
-  "summary": {
-    "ok": true,
-    "scope": "full application"
   }
 }

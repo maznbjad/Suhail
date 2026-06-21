@@ -1,4 +1,4 @@
-# Suhail Sprint 56 — هيكل المشروع
+# Suhail Sprint 57 — هيكل المشروع
 
 ## التشغيل
 
@@ -34,14 +34,14 @@
 - `data/admin/admin_settings.json` — إعدادات الرحلة والقياس والستريك والتحديات والأداء.
 - `data/admin/feature_flags.json` — مفاتيح Sprint 54.
 - `data/admin/content_workflow.json` — صلاحيات ومسار اعتماد المحتوى.
-- `data/avatars/avatars.json` — 8 شخصيات.
+- `data/avatars/avatars.json` — كتالوج 8 شخصيات مصنفة حسب نوع الحساب، مع مسارات قصّات card/avatar/half/full.
 - `data/challenges/challenge_templates.json` — قوالب التحديات.
 - `data/scoring/score_models.json` — قدرات علمي/أدبي + تحصيلي موحد.
 - `data/users.json` — فارغ في الحزمة؛ لا توجد كلمات مرور نصية للإنتاج.
 
 ## الأصول
 
-- `assets/avatars/` — 8 شخصيات SVG خفيفة.
+- `assets/avatars/generated/` — 32 أصل WebP محسّنًا: أربع قصّات لكل واحدة من الشخصيات الثماني.
 - `assets/runtime/` — أصول WebP المستخدمة أثناء التشغيل.
 - `assets/source/` — المصادر الأصلية.
 - `assets/brand/` — هوية سهيل.
@@ -53,7 +53,8 @@
 
 ## الفحص والتوثيق
 
-- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 56.
+- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 57.
+- `scripts/validate_sprint57.py` — فحص كتالوج الشخصيات، الأصول، فصل الجنسين، التسجيل، والـAPI.
 - `scripts/validate_sprint56.py` — فحص حقن المظهر، التخزين، البنية، وملفات QA.
 - `scripts/validate_sprint54.py` — فحص تفصيلي مع API مؤقت دون تلويث قاعدة التسليم.
 - `scripts/audit_question_bank.py` — تدقيق وإصلاحات بنك التطوير.
@@ -63,3 +64,6 @@
 - `docs/reports/SPRINT_54_VISUAL_QA.json`
 - `docs/reports/SPRINT_55_ACCOUNT_PAGE_REPORT.md`
 - `docs/reports/SPRINT_55_CHECKS.json`
+
+- `docs/reports/SPRINT_57_CHARACTER_SYSTEM.md` — تقرير نظام الشخصيات الرسمية.
+- `docs/reports/SPRINT_57_CHECKS.json` — نتائج فحص Sprint 57.

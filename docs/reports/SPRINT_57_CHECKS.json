@@ -1,0 +1,75 @@
+{
+  "release": "57.0.0",
+  "checks": {
+    "required_files": {
+      "ok": true,
+      "detail": 7
+    },
+    "catalog": {
+      "ok": true,
+      "detail": {
+        "total": 8,
+        "male": 4,
+        "female": 4,
+        "default": "male_02"
+      }
+    },
+    "avatar_assets": {
+      "ok": true,
+      "detail": {
+        "count": 32,
+        "bytes": 850954
+      }
+    },
+    "app_injection": {
+      "ok": true,
+      "detail": "registration gender plus four runtime avatar maps"
+    },
+    "ui_gender_filter": {
+      "ok": true,
+      "detail": "four matching characters shown after account gender choice"
+    },
+    "character_design": {
+      "ok": true,
+      "detail": "2x2 character cards and gender selector"
+    },
+    "api_and_schema": {
+      "ok": true,
+      "detail": "gender persisted and avatar mismatch rejected"
+    },
+    "api_gender_runtime": {
+      "ok": true,
+      "detail": {
+        "matching_avatar": 200,
+        "mismatched_avatar": 400
+      }
+    },
+    "syntax": {
+      "ok": true,
+      "detail": {
+        "python": true,
+        "javascript": true
+      }
+    },
+    "manifest": {
+      "ok": true,
+      "detail": {
+        "latest_sprint": 57,
+        "gender_filtering": true
+      }
+    },
+    "visual_qa": {
+      "ok": true,
+      "detail": [
+        "avatar_variants_montage.jpg",
+        "female_character_selection.png",
+        "male_character_selection.png",
+        "selected_character_account.png"
+      ]
+    }
+  },
+  "summary": {
+    "ok": true,
+    "scope": "8 production character assets, account gender filtering, persistence, and API guard"
+  }
+}
