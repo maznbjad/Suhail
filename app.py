@@ -20516,17 +20516,34 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 68 feedback module: {exc}")
 
-# Sprint 69 links approved physics summary blocks to questions and saved-question review.
-s69_css_path = os.path.join("src", "ui", "sprint69_knowledge_links.css")
-s69_js_path = os.path.join("src", "ui", "sprint69_knowledge_links.js")
-try:
+# Sprint 69 links every approved physics question to an exact knowledge block.
+s69_css_path = os.path.join("src", "ui", "sprint69_summary_knowledge.css")
+s69_js_path = os.path.join("src", "ui", "sprint69_summary_knowledge.js")
+if os.path.exists(s69_css_path) and os.path.exists(s69_js_path):
     with open(s69_css_path, "r", encoding="utf-8") as style_file:
         s69_css = style_file.read()
     with open(s69_js_path, "r", encoding="utf-8") as script_file:
         s69_js = script_file.read()
     html_code = html_code.replace("</head>", f"<style>{s69_css}</style></head>", 1)
     html_code = html_code.replace("</body>", f"<script>{s69_js}</script></body>", 1)
-except OSError as exc:
-    print(f"Suhail warning: missing Sprint 69 knowledge-link module: {exc}")
 
-components.html(html_code, height=930, scrolling=False)
+# Sprint 70 is the final ownership layer for runtime safety, dark-mode contrast,
+# onboarding clarity, icon consistency and one navigation/design language.
+s70_boot_path = os.path.join("src", "ui", "sprint70_boot.js")
+s70_css_path = os.path.join("src", "ui", "sprint70_unified_app.css")
+s70_js_path = os.path.join("src", "ui", "sprint70_unified_app.js")
+try:
+    with open(s70_boot_path, "r", encoding="utf-8") as boot_file:
+        s70_boot_js = boot_file.read()
+    with open(s70_css_path, "r", encoding="utf-8") as style_file:
+        s70_css = style_file.read()
+    with open(s70_js_path, "r", encoding="utf-8") as script_file:
+        s70_js = script_file.read()
+    # Boot guard must execute before the large legacy script in <body>.
+    html_code = html_code.replace("</head>", f"<script>{s70_boot_js}</script><style>{s70_css}</style></head>", 1)
+    # The experience layer executes last so it can normalize every historical page.
+    html_code = html_code.replace("</body>", f"<script>{s70_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 70 unified UI module: {exc}")
+
+components.html(html_code, height=960, scrolling=False)

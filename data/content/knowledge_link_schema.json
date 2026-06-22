@@ -1,0 +1,19 @@
+{
+  "version": "69.0.0",
+  "entity": "question_summary_link",
+  "required": [
+    "summary_id",
+    "summary_block_id",
+    "summary_subject",
+    "summary_unit",
+    "summary_title",
+    "summary_block_title"
+  ],
+  "rules": {
+    "max_primary_blocks_per_question": 1,
+    "secondary_blocks_optional": true,
+    "deep_link_exact_block": true,
+    "student_visible_keywords": false,
+    "admin_editable": true
+  }
+}

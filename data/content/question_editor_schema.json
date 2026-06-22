@@ -30,10 +30,13 @@
     "editorial_status",
     "release_eligible",
     "summary_id",
-    "misconception_block_id",
-    "linked_summary_title",
-    "linked_block_title",
-    "linked_block_excerpt"
+    "summary_stage",
+    "summary_unit",
+    "summary_title",
+    "summary_block_type",
+    "summary_block_title",
+    "summary_block_excerpt",
+    "knowledge_link_status"
   ],
   "image_rules": {
     "preferred_format": "svg_or_webp",
@@ -50,9 +53,10 @@
     "hint_optional": true
   },
   "knowledge_link_rules": {
-    "summary_id_required_when_available": true,
-    "summary_block_id_required_for_published_physics_questions": true,
+    "primary_link_required_for_approved_physics": true,
+    "max_primary_links": 1,
+    "exact_block_preview": true,
     "keywords_hidden_from_student": true,
-    "deep_link_enabled": true
+    "admin_can_override": true
   }
 }

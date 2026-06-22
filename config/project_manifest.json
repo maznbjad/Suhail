@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 69",
-  "version": "1.0.69",
+  "release": "Sprint 70",
+  "version": "1.0.70",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,10 +10,11 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 69,
+  "latest_sprint": 70,
   "question_bank": {
     "count": 5400,
-    "status": "internal_qa_with_exact_physics_knowledge_links",
+    "status": "internal_qa_linked_physics_v1",
+    "format": "unified",
     "qudrat_count": 3000,
     "tahsili_count": 2400,
     "physics_count": 600,
@@ -22,7 +23,7 @@
   "student_experience": {
     "single_final_home": true,
     "fixed_bottom_navigation": true,
-    "summary_lift_navigation": true,
+    "summary_lift_navigation": false,
     "exam_navigation_hidden": true,
     "auth_navigation_hidden": true,
     "svg_streak_fire": true,
@@ -102,7 +103,12 @@
       "audit_history": true,
       "status": "next_sprints_backlog"
     },
-    "global_dark_mode_high_contrast": true
+    "global_dark_mode_high_contrast": true,
+    "unified_design_system": true,
+    "onboarding_step_guide": true,
+    "onboarding_sticky_start_action": true,
+    "runtime_storage_fallback": true,
+    "splash_failsafe": true
   },
   "admin": {
     "deep_settings": true,
@@ -117,7 +123,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 66 improves dark-mode heading contrast across the app and combines Biology with Environmental Science as one Tahsili section.",
+  "notes": "Sprint 70 stabilizes startup, adds a local-storage fallback and splash fail-safe, unifies icons/navigation/pages, improves onboarding clarity, and applies high-contrast dark mode across the full application.",
   "summary_content": {
     "published_total": 72,
     "published_subjects": {
@@ -133,17 +139,16 @@
     "policy": "No generated summaries. New content appears only after admin review and approval.",
     "physics_source": "data/smart_summaries.json"
   },
-  "sprint": 66,
-  "knowledge_linking": {
-    "schema_version": "1.0",
-    "approved_summary_subjects": [
+  "sprint": 70,
+  "summary_knowledge": {
+    "published_subjects": [
       "فيزياء"
     ],
     "summary_count": 72,
     "knowledge_block_count": 936,
-    "linked_physics_questions": 600,
-    "link_rate_percent": 100.0,
-    "deep_link_from_saved_questions": true,
-    "exact_block_link_after_result_reveal": true
+    "linked_question_count": 600,
+    "exact_block_deep_link": true,
+    "saved_question_explanation": true,
+    "admin_editable_links": true
   }
 }

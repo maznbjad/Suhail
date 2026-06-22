@@ -1,27 +1,24 @@
 {
-  "sprint": 69,
+  "release": "Sprint 69",
   "python_compile": true,
   "javascript_syntax": true,
-  "generated_html_bytes": 19188830,
-  "generated_html_contains_s69": true,
-  "approved_summary_count": 72,
-  "new_non_physics_summaries_added": 0,
-  "knowledge_block_count": 936,
+  "question_count": 5400,
   "physics_question_count": 600,
-  "physics_questions_linked": 600,
-  "physics_links_reference_valid_block": 600,
-  "unique_linked_summaries": 22,
-  "unique_linked_blocks": 36,
-  "all_links_explicit_skill_mapping": true,
-  "sqlite_physics_links": 600,
-  "saved_questions_deep_link_code": true,
-  "result_reveal_gate_code": true,
-  "dark_mode_css": true,
-  "knowledge_report_link_rate": 100.0,
-  "summaries_with_current_questions": 22,
-  "summaries_without_current_questions": 50,
-  "limitations": [
-    "Streamlit runtime package is not installed in this execution environment; HTML generation was validated with a Streamlit-compatible stub.",
-    "Content remains subject to final human educational review."
-  ]
+  "physics_summary_count": 72,
+  "knowledge_block_count": 936,
+  "linked_physics_questions": 600,
+  "unlinked_physics_questions": [],
+  "block_type_counts": {
+    "idea": 72,
+    "definition": 216,
+    "rule": 72,
+    "relationship": 72,
+    "trap": 72,
+    "tip": 144,
+    "example": 72,
+    "comparison": 216
+  },
+  "all_links_point_to_existing_blocks": true,
+  "sqlite_question_count": 5400,
+  "browser_visual_qa": "not_run_streamlit_runtime_unavailable_in_build_environment"
 }

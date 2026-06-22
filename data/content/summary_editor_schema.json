@@ -34,8 +34,13 @@
     "tahsili_question_groups",
     "summary_id",
     "knowledge_blocks",
-    "knowledge_block_count",
-    "knowledge_schema_version"
+    "linked_question_count",
+    "content_status",
+    "suhail_tip",
+    "key_points",
+    "laws",
+    "test_ideas",
+    "common_mistakes"
   ],
   "law_card_required_fields": [
     "title",
@@ -49,6 +54,15 @@
     "suhail_tip",
     "source_page"
   ],
+  "knowledge_block_fields": [
+    "id",
+    "type",
+    "title",
+    "content",
+    "keywords",
+    "order",
+    "is_core"
+  ],
   "knowledge_block_types": [
     "idea",
     "definition",
@@ -59,13 +73,10 @@
     "example",
     "comparison"
   ],
-  "knowledge_block_required_fields": [
-    "id",
-    "summary_id",
-    "type",
-    "title",
-    "content",
-    "keywords",
-    "status"
-  ]
+  "linking_rules": {
+    "one_primary_block_per_question": true,
+    "blocks_editable_from_admin": true,
+    "block_ids_immutable_after_publish": true,
+    "physics_only_in_this_release": true
+  }
 }

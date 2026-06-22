@@ -1,0 +1,30 @@
+{
+  "python_syntax": true,
+  "boot_javascript_syntax": true,
+  "unified_javascript_syntax": true,
+  "sprint70_injected_last": true,
+  "boot_injected_in_head": true,
+  "component_mobile_height": true,
+  "storage_fallback": true,
+  "splash_failsafe": true,
+  "dark_tokens": true,
+  "dark_text_overrides": true,
+  "auth_nav_hidden": true,
+  "onboarding_nav_hidden": true,
+  "one_final_nav": true,
+  "unified_back_icon": true,
+  "onboarding_guide": true,
+  "home_start_guide": true,
+  "dynamic_port_runner": true,
+  "lan_runner": true,
+  "preflight_runner": true,
+  "question_total": 5400,
+  "question_counts": {
+    "قدرات كمي": 1500,
+    "قدرات لفظي": 1500,
+    "تحصيلي": 2400
+  },
+  "smart_summary_total": 72,
+  "biology_name_unified": true,
+  "passed": true
+}

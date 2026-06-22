@@ -1,16 +1,24 @@
 @echo off
-set SUHAIL_ENABLE_DEV_ACCOUNTS=1
-setlocal EnableExtensions
+chcp 65001 >nul
+setlocal EnableExtensions EnableDelayedExpansion
 cd /d "%~dp0"
 title Suhail - تشغيل تطبيق سهيل
+set SUHAIL_ENABLE_DEV_ACCOUNTS=1
 
 set "PYEXE="
-
-rem Prefer the active Python command when available.
-where python >nul 2>nul
-if not errorlevel 1 set "PYEXE=python"
-
-rem Common Anaconda / Miniconda locations on Windows.
+set "PYARGS="
+if exist ".venv\Scripts\python.exe" set "PYEXE=%CD%\.venv\Scripts\python.exe"
+if not defined PYEXE (
+  where py >nul 2>nul
+  if not errorlevel 1 (
+    set "PYEXE=py"
+    set "PYARGS=-3"
+  )
+)
+if not defined PYEXE (
+  where python >nul 2>nul
+  if not errorlevel 1 set "PYEXE=python"
+)
 if not defined PYEXE if exist "%USERPROFILE%\anaconda3\python.exe" set "PYEXE=%USERPROFILE%\anaconda3\python.exe"
 if not defined PYEXE if exist "%USERPROFILE%\miniconda3\python.exe" set "PYEXE=%USERPROFILE%\miniconda3\python.exe"
 if not defined PYEXE if exist "C:\ProgramData\anaconda3\python.exe" set "PYEXE=C:\ProgramData\anaconda3\python.exe"
@@ -18,47 +26,79 @@ if not defined PYEXE if exist "C:\ProgramData\miniconda3\python.exe" set "PYEXE=
 
 if not defined PYEXE (
   echo.
-  echo [خطأ] لم يتم العثور على Python أو Anaconda.
-  echo افتح Anaconda Prompt وشغّل الملف مرة أخرى، أو ثبّت Python أولاً.
+  echo [خطأ] لم يتم العثور على Python.
+  echo ثبّت Python 3 ثم شغّل هذا الملف مرة أخرى.
   echo.
   pause
   exit /b 1
 )
 
 echo ==========================================
-echo        تشغيل تطبيق سهيل
- echo ==========================================
-echo Python: %PYEXE%
+echo              تشغيل سهيل
+echo ==========================================
+echo Python: "%PYEXE%" %PYARGS%
 echo المجلد: %CD%
 echo.
 
-"%PYEXE%" -c "import streamlit" >nul 2>nul
+"%PYEXE%" %PYARGS% -c "import streamlit" >nul 2>nul
 if errorlevel 1 (
-  echo Streamlit غير مثبت. سيتم تثبيت المتطلبات الآن...
-  "%PYEXE%" -m pip install -r requirements.txt
+  echo تثبيت متطلبات سهيل لأول مرة...
+  "%PYEXE%" %PYARGS% -m pip install --disable-pip-version-check -r requirements.txt
   if errorlevel 1 (
     echo.
-    echo [خطأ] فشل تثبيت المتطلبات.
-    echo صوّر هذه النافذة وأرسلها لي.
+    echo [خطأ] فشل تثبيت المتطلبات. تحقق من اتصال الإنترنت ثم أعد المحاولة.
     echo.
     pause
     exit /b 1
   )
 )
 
+"%PYEXE%" %PYARGS% scripts\preflight.py
+if errorlevel 1 (
+  echo.
+  echo [خطأ] فشل فحص التشغيل الموضح أعلاه.
+  echo.
+  pause
+  exit /b 1
+)
+
+set /a PORT=8501
+:CHECK_PORT
+netstat -ano | findstr /R /C:":!PORT! .*LISTENING" >nul 2>nul
+if not errorlevel 1 (
+  set /a PORT+=1
+  if !PORT! LEQ 8510 goto CHECK_PORT
+  echo [خطأ] المنافذ من 8501 إلى 8510 مستخدمة. أغلق نسخة سهيل القديمة ثم حاول مجددًا.
+  pause
+  exit /b 1
+)
+
+set "LOCAL_IP="
+for /f "usebackq delims=" %%I in (`powershell -NoProfile -Command "$ip=(Get-NetIPAddress -AddressFamily IPv4 ^| Where-Object {$_.IPAddress -notlike '127.*' -and $_.PrefixOrigin -ne 'WellKnown'} ^| Select-Object -First 1 -ExpandProperty IPAddress); if($ip){$ip}" 2^>nul`) do set "LOCAL_IP=%%I"
+
 echo.
-echo سيتم فتح سهيل على:
-echo http://127.0.0.1:8501
+echo افتح سهيل على الكمبيوتر:
+echo http://127.0.0.1:!PORT!
+if defined LOCAL_IP (
+  echo.
+  echo ومن الجوال على نفس شبكة الواي فاي:
+  echo http://!LOCAL_IP!:!PORT!
+)
 echo.
-echo اترك هذه النافذة مفتوحة أثناء استخدام التطبيق.
-echo للإيقاف اضغط Ctrl+C ثم Y.
+echo اترك هذه النافذة مفتوحة. للإيقاف اضغط Ctrl+C.
+echo إذا ظهر تنبيه جدار الحماية اختر السماح للشبكات الخاصة فقط.
 echo.
 
-"%PYEXE%" -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
+"%PYEXE%" %PYARGS% -m streamlit run app.py ^
+  --server.address 0.0.0.0 ^
+  --server.port !PORT! ^
+  --server.headless false ^
+  --server.fileWatcherType none ^
+  --browser.gatherUsageStats false
 
 if errorlevel 1 (
   echo.
-  echo [خطأ] توقف التطبيق. صوّر رسالة الخطأ الموجودة أعلاه وأرسلها لي.
+  echo [خطأ] توقف سهيل. انسخ آخر رسالة خطأ ظاهرة في هذه النافذة.
   echo.
   pause
 )
