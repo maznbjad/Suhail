@@ -1,0 +1,56 @@
+/* Suhail Sprint 60 — high-contrast dark mode and summary content safety. */
+html[data-theme="dark"],body.s55-dark{
+  --s56-text:#f8fbff;
+  --s56-muted:#d0dce7;
+  --s56-border:#395469;
+  --s59-navy:#f8fbff;
+  --s59-muted:#d0dce7;
+  --s59-border:#395469;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.s55-dark .page,
+body.s55-dark .s59-page,
+body.s55-dark .s17-page,
+body.s55-dark .s17-units-page{color:#f8fbff!important}
+body.s55-dark :is(.s59-header-copy h1,.s59-card-copy b,.s59-section-title b,.s59-unit-copy b,.s59-summary-intro p,
+.s59-accordion summary b,.s59-list p,.s59-related-question>b,.s59-empty b,.s59-catalog-empty b,
+.s17-units-hero-title,.s17-course-title,.s17-unit-title,.s17-section-title,.s17-page-title-laws,
+.s14-card-title,.s14-question-text,.s13-lesson-title,.s13-unit-title,.s16-unit-title,.s16-lesson-name){
+  color:#f8fbff!important;opacity:1!important;text-shadow:none!important;
+}
+body.s55-dark :is(.s59-header-copy p,.s59-card-copy small,.s59-section-title span,.s59-search-meta,.s59-unit-copy small,
+.s59-tags span,.s59-hierarchy-note span,.s59-empty,.s59-catalog-empty p,.s59-related-question>small,
+.s17-units-hero-sub,.s17-course-sub,.s17-unit-sub,.s17-search-meta,.s17-modern-card .s17-unit-sub,
+.s16-unit-sub,.s16-lesson-desc,.s14-card .s14-sub,.s13-lesson-sub,.s13-unit-sub,.s13-meta,.s13-text){
+  color:#d0dce7!important;opacity:1!important;text-shadow:none!important;
+}
+body.s55-dark :is(.s59-search input,.s17-search input,input,textarea,select){
+  color:#f8fbff!important;caret-color:#75c4ff!important;
+}
+body.s55-dark :is(.s59-search input,.s17-search input,input,textarea)::placeholder{
+  color:#b8c8d6!important;opacity:1!important;
+}
+body.s55-dark :is(.s59-card,.s59-unit,.s59-accordion,.s59-related-question,.s59-catalog-empty,
+.s17-modern-card,.s17-search,.s17-quiz-picker,.s14-card,.s13-card,.s16-unit){
+  border-color:#395469!important;
+}
+body.s55-dark .s59-card-copy em{background:#17364d!important;color:#8dd0ff!important}
+body.s55-dark .s59-tags span{background:#182b3b!important;color:#d0dce7!important}
+body.s55-dark .s59-search button{color:#d0dce7!important}
+body.s55-dark .s59-chevron,body.s55-dark .s17-modern-arrow{color:#69e0ad!important}
+body.s55-dark .s17-modern-number{background:#18354d!important;border-color:#34536b!important;color:#9ad6ff!important}
+body.s55-dark .s17-unit-count{background:#123628!important;border-color:#2d624e!important;color:#8ce7bb!important}
+body.s55-dark .s17-modern-arrow{background:#172a3a!important;border-color:#395469!important}
+body.s55-dark .s54-nav-btn{color:#c4d2de!important}
+body.s55-dark .s54-nav-btn.active{color:#8ed0ff!important}
+
+/* Unpublished sections use the same spacing, shell and card language as physics. */
+.s59-catalog-page{min-height:100%;}
+.s59-catalog-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 14px 18px}
+.s59-catalog-empty{grid-column:1/-1;min-height:205px;border:1px solid var(--s59-border);border-radius:25px;background:linear-gradient(160deg,var(--s59-card) 0%,var(--s59-soft) 100%);box-shadow:0 14px 30px rgba(20,54,92,.075);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 20px;color:var(--s59-navy)}
+.s59-catalog-icon{width:64px;height:64px;border-radius:22px;background:linear-gradient(135deg,var(--s59-blue),var(--s59-green));display:grid;place-items:center;color:#fff;box-shadow:0 14px 26px rgba(38,139,202,.20);margin-bottom:14px}
+.s59-catalog-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.s59-catalog-empty b{font-size:16px;line-height:1.45;font-weight:950;color:var(--s59-navy)}
+.s59-catalog-empty p{max-width:290px;margin:8px 0 0;font-size:12px;line-height:1.8;font-weight:760;color:var(--s59-muted)}
+@media(max-width:430px){.s59-catalog-empty{min-height:190px}.s59-catalog-grid{margin-inline:14px}}

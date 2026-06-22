@@ -3,7 +3,7 @@
 (function(){
   'use strict';
 
-  const VERSION='59.0.0';
+  const VERSION='60.0.0';
   const legacySummaryRender=typeof window.renderSummariesPage==='function' ? window.renderSummariesPage : null;
   const legacyOpenPhysics=typeof window.s28OpenPhysics==='function' ? window.s28OpenPhysics : null;
   const ORDER={
@@ -103,31 +103,46 @@
     return `<div class="s59-header"><button class="s59-back s59-unified-back" onclick="${backAction}" aria-label="العودة">${BACK_SVG}</button><div class="s59-header-copy"><h1>${esc(title)}</h1>${subtitle?`<p>${esc(subtitle)}</p>`:''}</div><div class="s59-header-mark">${icon('book')}</div></div>`;
   }
 
-  function card(title,subtitle,iconName,count,action,tone){
-    return `<button class="s59-card ${tone||''}" onclick="${action}"><span class="s59-card-icon">${icon(iconName)}</span><span class="s59-card-copy"><b>${esc(title)}</b><small>${esc(subtitle)}</small>${count!=null?`<em>${esc(count)} ملخص</em>`:''}</span><span class="s59-chevron">‹</span></button>`;
+  function card(title,subtitle,iconName,badge,action,tone){
+    const badgeText=badge===null||badge===undefined?'':(typeof badge==='number'?`${badge} ملخص`:String(badge));
+    return `<button class="s59-card ${tone||''}" onclick="${action}"><span class="s59-card-icon">${icon(iconName)}</span><span class="s59-card-copy"><b>${esc(title)}</b><small>${esc(subtitle)}</small>${badgeText?`<em>${esc(badgeText)}</em>`:''}</span><span class="s59-chevron">‹</span></button>`;
   }
 
   function renderGateway(page){
-    const counts={
-      'تحصيلي':items('تحصيلي').length,
-      'قدرات لفظي':items('قدرات لفظي').length,
-      'قدرات كمي':items('قدرات كمي').length
-    };
-    page.innerHTML=`<div class="s59-page">${header('الملخصات','اختر المسار ثم انتقل للمادة أو المهارة',"showPage('homePage')")}<div class="s59-path-grid">
-      ${card('تحصيلي','فيزياء، كيمياء، رياضيات، أحياء','tahsili',counts['تحصيلي'],"s59OpenExam('تحصيلي')",'tahsili')}
-      ${card('قدرات لفظي','تناظر، إكمال، خطأ سياقي، استيعاب','verbal',counts['قدرات لفظي'],"s59OpenExam('قدرات لفظي')",'verbal')}
-      ${card('قدرات كمي','حسابي، هندسي، جبري، تحليل بيانات','quant',counts['قدرات كمي'],"s59OpenExam('قدرات كمي')",'quant')}
-    </div><div class="s59-hierarchy-note"><b>التقسيم المعتمد</b><span>مواد التحصيلي تبقى داخل التحصيلي، ومهارات القدرات تبقى داخل مسارها دون خلط.</span></div></div>`;
+    const physicsCount=physicsItems().length;
+    page.innerHTML=`<div class="s59-page">${header('الملخصات','اختر المسار المناسب',"showPage('homePage')")}<div class="s59-path-grid">
+      ${card('تحصيلي','فيزياء، كيمياء، رياضيات، أحياء','tahsili',physicsCount,"s59OpenExam('تحصيلي')",'tahsili')}
+      ${card('قدرات لفظي','يُضاف المحتوى المعتمد من لوحة الأدمن','verbal','قريبًا',"s59OpenExam('قدرات لفظي')",'verbal')}
+      ${card('قدرات كمي','يُضاف المحتوى المعتمد من لوحة الأدمن','quant','قريبًا',"s59OpenExam('قدرات كمي')",'quant')}
+    </div></div>`;
   }
 
   function renderTahsili(page){
+    const physicsCount=physicsItems().length;
     const rows=[
-      ['فيزياء','الكتب والوحدات والقوانين والتعاريف','physics','s59OpenSubject(\'فيزياء\')'],
-      ['كيمياء','المفاهيم والتفاعلات والقوانين','chemistry','s59OpenSubject(\'كيمياء\')'],
-      ['رياضيات','الدوال والجبر والهندسة والاحتمالات','math','s59OpenSubject(\'رياضيات\')'],
-      ['أحياء','الخلية والوراثة والأنظمة الحيوية','biology','s59OpenSubject(\'أحياء\')']
+      ['فيزياء','الكتب والوحدات والقوانين والتعاريف','physics',physicsCount,"s59OpenSubject('فيزياء')"],
+      ['كيمياء','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','chemistry','قريبًا',"s59OpenSubject('كيمياء')"],
+      ['رياضيات','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','math','قريبًا',"s59OpenSubject('رياضيات')"],
+      ['أحياء','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','biology','قريبًا',"s59OpenSubject('أحياء')"]
     ];
-    page.innerHTML=`<div class="s59-page">${header('التحصيلي','اختر المادة ثم الوحدة المناسبة',"s59OpenGateway()")}<div class="s59-section-title"><b>مواد التحصيلي</b><span>${items('تحصيلي').length} ملخصًا</span></div><div class="s59-path-grid">${rows.map(r=>card(r[0],r[1],r[2],items('تحصيلي',r[0]).length,r[3],'subject')).join('')}</div></div>`;
+    page.innerHTML=`<div class="s59-page">${header('التحصيلي','اختر المادة',"s59OpenGateway()")}
+      <div class="s59-section-title"><b>مواد التحصيلي</b><span>${physicsCount} ملخصًا معتمدًا</span></div>
+      <div class="s59-path-grid">${rows.map(r=>card(r[0],r[1],r[2],r[3],r[4],'subject')).join('')}</div>
+    </div>`;
+  }
+
+  function renderUnavailable(page,exam,subject){
+    const title=exam==='تحصيلي'?subject:exam;
+    const back=exam==='تحصيلي'?"s59OpenExam('تحصيلي')":"s59OpenGateway()";
+    page.innerHTML=`<div class="s59-page s59-catalog-page">${header(title,'المحتوى يضاف بعد مراجعته واعتماده',back)}
+      <div class="s59-catalog-grid">
+        <section class="s59-catalog-empty">
+          <span class="s59-catalog-icon">${icon(exam==='قدرات لفظي'?'verbal':exam==='قدرات كمي'?'quant':subject==='كيمياء'?'chemistry':subject==='رياضيات'?'math':'biology')}</span>
+          <b>لا توجد ملخصات منشورة هنا حاليًا</b>
+          <p>لن يضاف أي محتوى تلقائي. يظهر المحتوى فقط بعد إدخاله ومراجعته واعتماده من لوحة الأدمن.</p>
+        </section>
+      </div>
+    </div>`;
   }
 
   function renderUnitList(page,exam,subject){
@@ -190,6 +205,7 @@
     else if(state.view==='units')renderUnitList(page,state.exam,state.subject);
     else if(state.view==='detail')renderDetail(page,state.exam,state.subject,state.unit);
     else if(state.view==='related')renderRelated(page,state.exam,state.subject,state.unit);
+    else if(state.view==='empty')renderUnavailable(page,state.exam,state.subject);
     else renderGateway(page);
     normalizeBackIcons(page);syncNavigation();
   }
@@ -198,7 +214,7 @@
   window.s59OpenExam=function(exam){
     exam=String(exam||'').trim();
     if(exam==='تحصيلي'){Object.assign(state,{view:'tahsili',exam,subject:'',unit:'',richPhysics:false});}
-    else{const subject=exam==='قدرات لفظي'?'لفظي':'كمي';Object.assign(state,{view:'units',exam,subject,unit:'',richPhysics:false});}
+    else{const subject=exam==='قدرات لفظي'?'لفظي':'كمي';Object.assign(state,{view:'empty',exam,subject,unit:'',richPhysics:false});}
     window.__s28Passthrough=false;showSummaryPage();
   };
   window.s59OpenSubject=function(subject,forcedExam){
@@ -211,7 +227,7 @@
       setTimeout(syncNavigation,30);
       return;
     }
-    Object.assign(state,{view:'units',exam,subject,unit:'',richPhysics:false});
+    Object.assign(state,{view:'empty',exam,subject,unit:'',richPhysics:false});
     window.__s28Passthrough=false;showSummaryPage();
   };
   window.s59OpenUnit=function(exam,subject,unit){Object.assign(state,{view:'detail',exam,subject,unit,richPhysics:false});window.__s28Passthrough=false;showSummaryPage();};

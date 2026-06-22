@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 58",
-  "version": "58.0.0",
+  "release": "Sprint 60",
+  "version": "60.0.0",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 58,
+  "latest_sprint": 60,
   "question_bank": {
     "count": 280,
     "status": "computerized_internal_qa_passed",
@@ -104,7 +104,8 @@
       "preserve_previous_results": true,
       "audit_history": true,
       "status": "next_sprints_backlog"
-    }
+    },
+    "global_dark_mode_high_contrast": true
   },
   "admin": {
     "deep_settings": true,
@@ -119,5 +120,20 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 58 installs a separate computerized Qudurat bank (195 quantitative, 85 verbal), archives the old 1000-question development seed, adds balanced answer positions, original diagrams and responsive question presentation. Paper Qudurat remains separate and will be enabled only after its own compilations are supplied."
+  "notes": "Sprint 60 removes all generated summary content, preserves the previously curated 72 physics summaries, keeps other sections as admin-managed empty states, and strengthens dark-mode text contrast.",
+  "summary_content": {
+    "published_total": 72,
+    "published_subjects": {
+      "تحصيلي": {
+        "فيزياء": 72,
+        "كيمياء": 0,
+        "رياضيات": 0,
+        "أحياء": 0
+      },
+      "قدرات لفظي": 0,
+      "قدرات كمي": 0
+    },
+    "policy": "No generated summaries. New content appears only after admin review and approval.",
+    "physics_source": "data/smart_summaries.json"
+  }
 }

@@ -1,0 +1,20 @@
+{
+  "python_syntax": true,
+  "javascript_syntax": true,
+  "generated_fallback_summaries_removed": true,
+  "generated_qudrat_summaries_removed": true,
+  "published_summary_count": 72,
+  "published_summary_distribution": {
+    "تحصيلي / فيزياء": 72
+  },
+  "physics_only": true,
+  "canonical_top_order": true,
+  "unpublished_sections_are_empty_states": true,
+  "physics_legacy_experience_preserved": true,
+  "bottom_navigation_contract_preserved": true,
+  "dark_text_high_contrast": true,
+  "dark_placeholders_readable": true,
+  "catalog_visual_consistency": true,
+  "sprint60_css_injected_after_sprint59": true,
+  "passed": true
+}
