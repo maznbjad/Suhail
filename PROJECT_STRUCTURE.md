@@ -78,3 +78,7 @@
 - `src/ui/sprint60_summary_cleanup.css`: تحسين تباين الوضع الداكن وتوحيد حالات الأقسام غير المنشورة.
 - `docs/reports/SPRINT_60_SUMMARY_CLEANUP_REPORT.md`: تقرير التنفيذ.
 - `docs/reports/SPRINT_60_CHECKS.json`: نتائج الفحص.
+
+## Sprint 63
+- `src/ui/sprint63_test_entry.css`: prominent home-page test button.
+- `src/ui/sprint63_test_entry.js`: resilient test-entry injection and routing.

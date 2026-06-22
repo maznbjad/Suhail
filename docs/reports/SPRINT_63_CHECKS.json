@@ -1,0 +1,13 @@
+{
+  "sprint": 63,
+  "checks": {
+    "python_syntax": true,
+    "button_label_exact": true,
+    "prominent_button_css": true,
+    "opens_exam_setup": true,
+    "survives_home_rerender": true,
+    "module_injected_last": true,
+    "account_version_63": true
+  },
+  "passed": true
+}

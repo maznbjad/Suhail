@@ -1,0 +1,74 @@
+/* Sprint 63 — a single unmistakable test entry on the home page. */
+#homePage .s63-test-entry-wrap{
+  margin:12px 0 14px;
+}
+#homePage .s63-test-entry{
+  width:100%;
+  min-height:76px;
+  border:0;
+  border-radius:24px;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  direction:rtl;
+  color:#fff;
+  background:linear-gradient(135deg,#2588ff 0%,#19b99a 100%);
+  box-shadow:0 14px 30px rgba(32,123,213,.25);
+  cursor:pointer;
+  font-family:'Tajawal',system-ui,sans-serif;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;
+}
+#homePage .s63-test-entry:hover{filter:brightness(1.025);box-shadow:0 16px 34px rgba(32,123,213,.29)}
+#homePage .s63-test-entry:active{transform:scale(.985)}
+#homePage .s63-test-entry-main{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+#homePage .s63-test-entry-icon{
+  width:46px;
+  height:46px;
+  border-radius:17px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.28);
+  flex:0 0 auto;
+}
+#homePage .s63-test-entry-icon svg,
+#homePage .s63-test-entry-arrow svg{
+  width:25px;
+  height:25px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+#homePage .s63-test-entry-label{
+  font-size:23px;
+  line-height:1;
+  font-weight:950;
+  letter-spacing:0;
+}
+#homePage .s63-test-entry-arrow{
+  width:36px;
+  height:36px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.16);
+  flex:0 0 auto;
+}
+html[data-theme='dark'] #homePage .s63-test-entry,
+body.dark-mode #homePage .s63-test-entry{
+  box-shadow:0 14px 34px rgba(0,0,0,.32);
+}
+@media(max-width:430px){
+  #homePage .s63-test-entry{min-height:70px;border-radius:22px;padding:12px 15px}
+  #homePage .s63-test-entry-icon{width:43px;height:43px;border-radius:16px}
+  #homePage .s63-test-entry-label{font-size:21px}
+}

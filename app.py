@@ -20476,4 +20476,19 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 62 question standard module: {exc}")
 
+
+# Sprint 63 adds one unmistakable test entry to the home page. It is injected
+# after all previous experience modules so later home re-renders cannot hide it.
+s63_css_path = os.path.join("src", "ui", "sprint63_test_entry.css")
+s63_js_path = os.path.join("src", "ui", "sprint63_test_entry.js")
+try:
+    with open(s63_css_path, "r", encoding="utf-8") as style_file:
+        s63_css = style_file.read()
+    with open(s63_js_path, "r", encoding="utf-8") as script_file:
+        s63_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s63_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s63_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 63 test-entry module: {exc}")
+
 components.html(html_code, height=930, scrolling=False)
