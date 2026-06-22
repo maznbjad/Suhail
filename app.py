@@ -24027,4 +24027,19 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 58 question module: {exc}")
 
+# Sprint 59 restores the canonical summaries hierarchy and owns the final
+# navigation contract: one persistent bottom bar everywhere after login, hidden
+# only during active questions. It is intentionally injected last.
+s59_css_path = os.path.join("src", "ui", "sprint59_summaries_navigation.css")
+s59_js_path = os.path.join("src", "ui", "sprint59_summaries_navigation.js")
+try:
+    with open(s59_css_path, "r", encoding="utf-8") as style_file:
+        s59_css = style_file.read()
+    with open(s59_js_path, "r", encoding="utf-8") as script_file:
+        s59_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s59_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s59_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 59 summaries/navigation module: {exc}")
+
 components.html(html_code, height=930, scrolling=False)

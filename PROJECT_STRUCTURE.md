@@ -1,4 +1,4 @@
-# Suhail Sprint 57 — هيكل المشروع
+# Suhail Sprint 59 — هيكل المشروع
 
 ## التشغيل
 
@@ -16,6 +16,8 @@
 - `src/ui/sprint55_account.css` — تصميم الحساب المرجعي، صفوف الإعدادات، الوضع الداكن، والتذييل.
 - `src/ui/sprint56_global_theme.css` — ألوان الوضع الداكن الشامل لجميع الصفحات القديمة والجديدة.
 - `src/ui/sprint56_global_theme.js` — تهيئة المظهر مبكرًا، حفظ الاختيار، وتحديث لون النظام.
+- `src/ui/sprint59_summaries_navigation.js` — المالك النهائي لبوابة الملخصات، ترتيب المسارات، تفاصيل الوحدات، البحث، سلوك القائمة، وأيقونة العودة.
+- `src/ui/sprint59_summaries_navigation.css` — تصميم بوابة الملخصات والمواد والوحدات والتفاصيل مع دعم الوضع الداكن.
 
 ## النواة
 
@@ -29,7 +31,7 @@
 
 ## البيانات
 
-- `data/questions.json` — 1000 سؤال تطوير غير مؤهل للنشر.
+- `data/questions.json` — بنك القدرات المحوسب النشط من 280 سؤالًا، مع إبقاء بنك التطوير السابق داخل `data/archive/`.
 - `data/suhail_learning.db` — الأسئلة وجداول الحسابات والقياسات والنشاط والأصدقاء والتحديات.
 - `data/admin/admin_settings.json` — إعدادات الرحلة والقياس والستريك والتحديات والأداء.
 - `data/admin/feature_flags.json` — مفاتيح Sprint 54.
@@ -53,7 +55,8 @@
 
 ## الفحص والتوثيق
 
-- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 57.
+- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 59.
+- `scripts/validate_sprint59.py` — فحص تقسيم الملخصات، منع الخلط، القائمة السفلية، أيقونة العودة، والبحث.
 - `scripts/validate_sprint57.py` — فحص كتالوج الشخصيات، الأصول، فصل الجنسين، التسجيل، والـAPI.
 - `scripts/validate_sprint56.py` — فحص حقن المظهر، التخزين، البنية، وملفات QA.
 - `scripts/validate_sprint54.py` — فحص تفصيلي مع API مؤقت دون تلويث قاعدة التسليم.
@@ -67,3 +70,6 @@
 
 - `docs/reports/SPRINT_57_CHARACTER_SYSTEM.md` — تقرير نظام الشخصيات الرسمية.
 - `docs/reports/SPRINT_57_CHECKS.json` — نتائج فحص Sprint 57.
+
+- `docs/reports/SPRINT_59_SUMMARIES_NAVIGATION_REPORT.md` — تقرير إصلاح الملخصات والتنقل.
+- `docs/reports/SPRINT_59_CHECKS.json` — نتائج فحص Sprint 59.

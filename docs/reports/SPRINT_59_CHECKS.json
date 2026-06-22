@@ -1,0 +1,29 @@
+{
+  "python_syntax": true,
+  "javascript_syntax": true,
+  "module_injected_after_sprint58": true,
+  "summary_total": 80,
+  "exam_counts": {
+    "تحصيلي": 72,
+    "قدرات كمي": 4,
+    "قدرات لفظي": 4
+  },
+  "tahsili_subject_counts": {
+    "رياضيات": 18,
+    "فيزياء": 18,
+    "كيمياء": 18,
+    "أحياء": 18
+  },
+  "canonical_top_order": true,
+  "tahsili_only_contains_subjects": true,
+  "tahsili_subjects_have_18_each": true,
+  "qudrat_subjects_not_mixed": true,
+  "bottom_nav_visible_in_summaries": true,
+  "bottom_nav_hidden_in_exam": true,
+  "lift_nav_disabled": true,
+  "unified_back_icon": true,
+  "search_min_two_chars": true,
+  "physics_rich_path_preserved": true,
+  "related_questions_route": true,
+  "passed": true
+}

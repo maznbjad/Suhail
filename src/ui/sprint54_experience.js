@@ -3,7 +3,7 @@
    diagnostics, multi-goal profile, live streak rescue, deep admin and QA hooks. */
 (function(){
   'use strict';
-  const VERSION='58.0.0';
+  const VERSION='59.0.0';
   const DAY=86400000;
   const DEFAULT_ADMIN=__S54_ADMIN_SETTINGS__;
   const AVATAR_CATALOG=__S54_AVATARS__;
