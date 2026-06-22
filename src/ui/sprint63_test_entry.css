@@ -72,3 +72,18 @@ body.dark-mode #homePage .s63-test-entry{
   #homePage .s63-test-entry-icon{width:43px;height:43px;border-radius:16px}
   #homePage .s63-test-entry-label{font-size:21px}
 }
+
+/* Sprint 64 — test chooser */
+.s64-test-chooser-backdrop{position:fixed;inset:0;z-index:99999;background:rgba(11,26,46,.42);backdrop-filter:blur(8px);display:grid;place-items:end center;padding:20px 16px calc(20px + env(safe-area-inset-bottom));direction:rtl}
+.s64-test-chooser{width:min(430px,100%);background:#fff;border-radius:28px;padding:18px;box-shadow:0 24px 70px rgba(0,0,0,.24);position:relative}
+.s64-test-close{position:absolute;left:16px;top:12px;width:38px;height:38px;border:0;border-radius:14px;background:#f1f5f9;color:#17375e;font-size:27px;line-height:1;cursor:pointer}
+.s64-test-title{text-align:center;font-size:24px;font-weight:950;color:#102b55;margin:8px 0 20px}
+.s64-test-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.s64-test-choice{min-height:128px;border:1px solid #d9e5f2;border-radius:22px;background:linear-gradient(145deg,#eff7ff,#fff);color:#123565;font-family:'Tajawal',system-ui,sans-serif;font-size:18px;font-weight:900;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer}
+.s64-test-choice.green{background:linear-gradient(145deg,#eefcf7,#fff);border-color:#cfeee3;color:#126852}
+.s64-choice-symbol{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#368cff,#59c8a2);color:#fff;font-size:27px;font-weight:950}
+html[data-theme='dark'] .s64-test-chooser,body.dark-mode .s64-test-chooser{background:#142238;border:1px solid #31445f}
+html[data-theme='dark'] .s64-test-title,body.dark-mode .s64-test-title{color:#f7fbff}
+html[data-theme='dark'] .s64-test-close,body.dark-mode .s64-test-close{background:#23344c;color:#f7fbff}
+html[data-theme='dark'] .s64-test-choice,body.dark-mode .s64-test-choice{background:#1a2b43;border-color:#38506f;color:#f4f8ff}
+@media(max-width:360px){.s64-test-grid{grid-template-columns:1fr}.s64-test-choice{min-height:96px}}

@@ -229,5 +229,5 @@ node --check src/ui/sprint59_summaries_navigation.js
 - تم رفع تباين النصوص في الوضع الداكن، بما يشمل النص الثانوي وحقول البحث والتنقل.
 - بقي تصميم الفيزياء السابق كما هو، وأصبحت الصفحات غير المنشورة تستخدم نفس لغة البطاقات والمسافات.
 
-### Sprint 63
+### Sprint 64
 The home page now contains a prominent, full-width **اختبار** entry that opens test setup directly.

@@ -79,6 +79,6 @@
 - `docs/reports/SPRINT_60_SUMMARY_CLEANUP_REPORT.md`: تقرير التنفيذ.
 - `docs/reports/SPRINT_60_CHECKS.json`: نتائج الفحص.
 
-## Sprint 63
+## Sprint 64
 - `src/ui/sprint63_test_entry.css`: prominent home-page test button.
 - `src/ui/sprint63_test_entry.js`: resilient test-entry injection and routing.
