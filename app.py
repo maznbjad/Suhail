@@ -20416,8 +20416,7 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 56 global theme module: {exc}")
 
-# Sprint 58 replaces the development seed bank with a validated, computerized-only
-# Qudurat bank and standardizes question/passage/diagram presentation.
+# Sprint 58 provides the validated Qudurat bank and standardizes question, passage and diagram presentation. Sprint 62 unifies all Qudurat sources into one bank.
 s58_css_path = os.path.join("src", "ui", "sprint58_question_bank.css")
 s58_js_path = os.path.join("src", "ui", "sprint58_question_bank.js")
 try:
@@ -20460,5 +20459,21 @@ try:
     html_code = html_code.replace("</head>", f"<style>{s60_css}</style></head>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 60 cleanup module: {exc}")
+
+
+# Sprint 62 standardizes the unified Qudurat question experience: visible 2026
+# public IDs, transparent high-resolution diagrams, zoom, structured explanations
+# and close-option clarification only where it adds teaching value.
+s62_css_path = os.path.join("src", "ui", "sprint62_question_standard.css")
+s62_js_path = os.path.join("src", "ui", "sprint62_question_standard.js")
+try:
+    with open(s62_css_path, "r", encoding="utf-8") as style_file:
+        s62_css = style_file.read()
+    with open(s62_js_path, "r", encoding="utf-8") as script_file:
+        s62_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s62_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s62_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 62 question standard module: {exc}")
 
 components.html(html_code, height=930, scrolling=False)

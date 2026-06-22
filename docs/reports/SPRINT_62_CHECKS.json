@@ -1,0 +1,151 @@
+{
+  "release": "62.0.0",
+  "qa_passed": true,
+  "errors": [],
+  "warnings": [],
+  "checks": {
+    "question_count_292": {
+      "passed": true,
+      "detail": 292
+    },
+    "unique_internal_ids": {
+      "passed": true,
+      "detail": 292
+    },
+    "public_ids_sequential": {
+      "passed": true,
+      "detail": [
+        [
+          260001,
+          260002,
+          260003
+        ],
+        [
+          260290,
+          260291,
+          260292
+        ]
+      ]
+    },
+    "public_ids_unique": {
+      "passed": true,
+      "detail": 292
+    },
+    "unified_bank_no_format_fields": {
+      "passed": true,
+      "detail": null
+    },
+    "all_have_explanation": {
+      "passed": true,
+      "detail": 0
+    },
+    "all_have_four_choices": {
+      "passed": true,
+      "detail": null
+    },
+    "answers_match": {
+      "passed": true,
+      "detail": null
+    },
+    "pilot_image_questions_12": {
+      "passed": true,
+      "detail": 12
+    },
+    "pilot_structured_explanations": {
+      "passed": true,
+      "detail": null
+    },
+    "pilot_close_choice_notes": {
+      "passed": true,
+      "detail": null
+    },
+    "image_count_33": {
+      "passed": true,
+      "detail": 33
+    },
+    "all_images_exist": {
+      "passed": true,
+      "detail": []
+    },
+    "all_svgs_parse": {
+      "passed": true,
+      "detail": []
+    },
+    "full_canvas_backgrounds_removed": {
+      "passed": true,
+      "detail": []
+    },
+    "image_metadata_complete": {
+      "passed": true,
+      "detail": null
+    },
+    "sqlite_matches_json": {
+      "passed": true,
+      "detail": 292
+    },
+    "s62_module_injected": {
+      "passed": true,
+      "detail": null
+    },
+    "public_id_ui": {
+      "passed": true,
+      "detail": null
+    },
+    "zoom_ui": {
+      "passed": true,
+      "detail": null
+    },
+    "structured_explanation_ui": {
+      "passed": true,
+      "detail": null
+    },
+    "format_selector_removed": {
+      "passed": true,
+      "detail": null
+    },
+    "syntax_checks": {
+      "passed": true,
+      "detail": [
+        {
+          "cmd": [
+            "/opt/pyvenv/bin/python",
+            "-m",
+            "py_compile",
+            "/mnt/data/sprint62_work/Suhail_V1_Sprint61/app.py",
+            "/mnt/data/sprint62_work/Suhail_V1_Sprint61/src/api/server.py"
+          ],
+          "returncode": 0,
+          "stderr": ""
+        },
+        {
+          "cmd": [
+            "node",
+            "--check",
+            "/mnt/data/sprint62_work/Suhail_V1_Sprint61/src/ui/sprint58_question_bank.js"
+          ],
+          "returncode": 0,
+          "stderr": ""
+        },
+        {
+          "cmd": [
+            "node",
+            "--check",
+            "/mnt/data/sprint62_work/Suhail_V1_Sprint61/src/ui/sprint62_question_standard.js"
+          ],
+          "returncode": 0,
+          "stderr": ""
+        }
+      ]
+    }
+  },
+  "summary": {
+    "questions": 292,
+    "image_questions": 33,
+    "pilot_image_questions": 12,
+    "by_exam": {
+      "قدرات كمي": 207,
+      "قدرات لفظي": 85
+    },
+    "next_public_id": 260293
+  }
+}

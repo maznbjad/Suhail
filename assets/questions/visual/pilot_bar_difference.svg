@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img"><style>
+text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#17324d;font-weight:700}
+.shape{stroke:#168bb7;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.soft{stroke:#52bea1;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.guide{stroke:#9bb0c0;stroke-width:3;fill:none;stroke-dasharray:8 8}
+.label{font-size:25px}.small{font-size:20px}.tiny{font-size:17px}.fill{fill:#52bea1}.pale{fill:#dff5ee}.bluefill{fill:#dff1fa}
+</style>
+<line class="guide" x1="70" y1="300" x2="580" y2="300"/>
+<rect class="fill" x="105" y="180" width="70" height="120" rx="12"/><text class="label" x="140" y="165" text-anchor="middle">١٢</text><text class="small" x="140" y="334" text-anchor="middle">أ</text>
+<rect class="fill" x="225" y="120" width="70" height="180" rx="12"/><text class="label" x="260" y="105" text-anchor="middle">١٨</text><text class="small" x="260" y="334" text-anchor="middle">ب</text>
+<rect class="fill" x="345" y="150" width="70" height="150" rx="12"/><text class="label" x="380" y="135" text-anchor="middle">١٥</text><text class="small" x="380" y="334" text-anchor="middle">ج</text>
+<rect class="fill" x="465" y="90" width="70" height="210" rx="12"/><text class="label" x="500" y="75" text-anchor="middle">٢١</text><text class="small" x="500" y="334" text-anchor="middle">د</text>
+</svg>

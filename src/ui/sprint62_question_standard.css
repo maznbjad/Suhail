@@ -1,0 +1,23 @@
+/* Sprint 62 — unified question standard, public IDs, clear images and explanations. */
+.s58-format-box{display:none!important}
+.s58-question-tag.format{display:none!important}
+.s62-public-id{display:inline-flex;align-items:center;gap:5px;margin:0 0 8px;padding:3px 8px;border-radius:999px;background:rgba(35,137,232,.08);border:1px solid rgba(35,137,232,.13);color:var(--s58-muted);font-size:9.5px;font-weight:900;direction:rtl}
+.s62-public-id b{color:var(--s58-navy);font-weight:950;font-family:Arial,sans-serif;letter-spacing:.35px}
+#exercisePage .question-image{position:relative!important;background:#fff!important;border:1px solid #dce8f1!important;padding:10px!important;min-height:150px!important;cursor:zoom-in!important}
+#exercisePage .question-image img{width:100%!important;max-height:290px!important;object-fit:contain!important;background:transparent!important}
+#exercisePage .question-image::after{content:'اضغط للتكبير';position:absolute;left:10px;bottom:8px;padding:3px 7px;border-radius:999px;background:rgba(16,43,78,.72);color:#fff;font-size:8.5px;font-weight:900;pointer-events:none}
+.s62-explanation{direction:rtl;text-align:right;border:1px solid #d9e8f0;border-radius:20px;background:#f8fbfd;padding:13px 14px;line-height:1.85;color:#243f59;font-weight:750}
+.s62-explanation-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.s62-explanation-head b{font-size:14px;color:#102b4e}.s62-explanation-head span{font-size:9px;color:#6e8197;font-weight:900}
+.s62-explanation p{margin:0;font-size:12.5px}.s62-explanation ol{margin:8px 0 0;padding-right:21px}.s62-explanation li{font-size:12px;margin:4px 0}
+.s62-tip,.s62-close-choice{margin-top:9px;border-radius:14px;padding:9px 10px;font-size:11.5px;line-height:1.75}.s62-tip{background:#edf9f4;border:1px solid #d3eee3;color:#176e56}.s62-close-choice{background:#fff7e8;border:1px solid #f2e1b7;color:#7c571a}.s62-close-choice b,.s62-tip b{font-weight:950}
+.s62-zoom{position:fixed;inset:0;z-index:999999;background:rgba(4,12,20,.82);display:none;align-items:center;justify-content:center;padding:18px}.s62-zoom.open{display:flex}.s62-zoom-card{position:relative;width:min(94vw,680px);max-height:88vh;border-radius:24px;background:#fff;padding:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 80px rgba(0,0,0,.4)}.s62-zoom-card img{max-width:100%;max-height:78vh;object-fit:contain;background:transparent}.s62-zoom-close{position:absolute;top:9px;right:9px;width:38px;height:38px;border:0;border-radius:14px;background:#102b4e;color:#fff;font-size:22px;cursor:pointer}
+body.s55-dark .s62-public-id{background:#14283a;border-color:#284257;color:#aebdca}body.s55-dark .s62-public-id b{color:#edf5fb}
+body.s55-dark #exercisePage .question-image{background:#fff!important;border-color:#32485b!important}
+body.s55-dark .s62-explanation{background:#132333;border-color:#2c455a;color:#dbe8f2}body.s55-dark .s62-explanation-head b{color:#fff}body.s55-dark .s62-explanation-head span{color:#aebdca}body.s55-dark .s62-tip{background:#14352d;border-color:#285143;color:#8ce0bd}body.s55-dark .s62-close-choice{background:#382f1d;border-color:#594927;color:#f1cb80}
+/* Account page should end naturally above the fixed navigation. */
+.s55-account-page{min-height:auto!important;padding-bottom:calc(var(--s54-nav-h,78px) + 28px)!important}
+.s55-logout{margin-bottom:0!important}.s55-company{padding-bottom:0!important}
+/* Compact internal summary headers based on the approved Tahsili header. */
+.s59-header{min-height:118px!important;border-radius:0 0 25px 25px!important;padding:18px 62px 17px 18px!important;margin:-12px -15px 14px!important}
+.s59-header-copy h1{font-size:27px!important}.s59-header-copy p{margin-top:4px!important;font-size:11.5px!important}.s59-header-mark{display:none!important}.s59-header::after{left:20px!important;top:18px!important;font-size:12px!important}.s59-back{right:13px!important;top:13px!important}
+@media(max-width:430px){.s62-explanation{padding:12px}.s62-explanation p{font-size:12px}.s59-header{min-height:112px!important}.s59-header-copy h1{font-size:25px!important}}

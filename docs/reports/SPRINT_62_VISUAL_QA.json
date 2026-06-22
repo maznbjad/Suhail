@@ -1,0 +1,16 @@
+{
+  "release": "62.0.0",
+  "viewport": "430x932",
+  "question_checked": 260283,
+  "checks": {
+    "public_id_visible": true,
+    "image_clear": true,
+    "image_background_removed": true,
+    "image_zoom_works": true,
+    "choices_aligned": true,
+    "structured_explanation_visible": true,
+    "close_choice_explanation_supported": true,
+    "suhail_hint_visible": true,
+    "javascript_errors": 0
+  }
+}

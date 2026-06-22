@@ -1,0 +1,9 @@
+{
+  "year": 2026,
+  "prefix": "26",
+  "first_public_id": 260001,
+  "last_assigned_public_id": 260292,
+  "next_public_id": 260293,
+  "display_pattern": "YYNNNN",
+  "note": "The first two digits represent the creation year. Public IDs are never reused."
+}

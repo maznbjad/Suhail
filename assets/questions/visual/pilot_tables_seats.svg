@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img"><style>
+text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#17324d;font-weight:700}
+.shape{stroke:#168bb7;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.soft{stroke:#52bea1;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.guide{stroke:#9bb0c0;stroke-width:3;fill:none;stroke-dasharray:8 8}
+.label{font-size:25px}.small{font-size:20px}.tiny{font-size:17px}.fill{fill:#52bea1}.pale{fill:#dff5ee}.bluefill{fill:#dff1fa}
+</style>
+<rect class="shape" x="120" y="120" width="400" height="150" rx="8"/><line class="shape" x1="253" y1="120" x2="253" y2="270"/><line class="shape" x1="386" y1="120" x2="386" y2="270"/>
+<g class="fill"><circle cx="120" cy="95" r="10"/><circle cx="253" cy="95" r="10"/><circle cx="386" cy="95" r="10"/><circle cx="520" cy="95" r="10"/><circle cx="120" cy="295" r="10"/><circle cx="253" cy="295" r="10"/><circle cx="386" cy="295" r="10"/><circle cx="520" cy="295" r="10"/><circle cx="95" cy="195" r="10"/><circle cx="545" cy="195" r="10"/></g>
+
+</svg>
