@@ -17,6 +17,8 @@ REQUIRED_FILES = [
     ROOT / "src" / "ui" / "sprint70_boot.js",
     ROOT / "src" / "ui" / "sprint70_unified_app.css",
     ROOT / "src" / "ui" / "sprint70_unified_app.js",
+    ROOT / "src" / "ui" / "sprint71_exam_summary_unification.css",
+    ROOT / "src" / "ui" / "sprint71_exam_summary_unification.js",
 ]
 JSON_FILES = [
     ROOT / "data" / "questions.json",

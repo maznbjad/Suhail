@@ -1,7 +1,7 @@
 /* Suhail Sprint 70 — final navigation, onboarding and consistency layer. */
 (function () {
   'use strict';
-  const VERSION = '70.0.0';
+  const VERSION = '71.0.0';
   const backIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
 
   function activePage() {
@@ -116,11 +116,11 @@
 
     const finalNav = document.getElementById('s54BottomNav');
     if (finalNav) {
-      if (auth || onboarding || document.body.classList.contains('s54-mode-exam')) {
-        finalNav.style.setProperty('display', 'none', 'important');
-      } else {
-        finalNav.style.removeProperty('display');
-      }
+      const shouldHideNav = auth || onboarding || document.body.classList.contains('s54-mode-exam');
+      finalNav.classList.toggle('s70-force-hidden', shouldHideNav);
+      // Clear the old inline display rule once. Reapplying an inline style while
+      // observing style mutations caused an endless update loop in exam mode.
+      if (finalNav.style.getPropertyValue('display')) finalNav.style.removeProperty('display');
     }
 
     if (page) {
@@ -164,7 +164,7 @@
       window.clearTimeout(window.__s70ModeTimer);
       window.__s70ModeTimer = window.setTimeout(updateMode, 30);
     });
-    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
 
     window.addEventListener('storage', updateMode);
     // Historical modules can re-render a page after their own delayed timers.

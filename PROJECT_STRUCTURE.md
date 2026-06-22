@@ -1,4 +1,4 @@
-# Suhail Sprint 59 — هيكل المشروع
+# Suhail Sprint 71 — هيكل المشروع
 
 ## التشغيل
 
@@ -18,6 +18,10 @@
 - `src/ui/sprint56_global_theme.js` — تهيئة المظهر مبكرًا، حفظ الاختيار، وتحديث لون النظام.
 - `src/ui/sprint59_summaries_navigation.js` — المالك النهائي لبوابة الملخصات، ترتيب المسارات، تفاصيل الوحدات، البحث، سلوك القائمة، وأيقونة العودة.
 - `src/ui/sprint59_summaries_navigation.css` — تصميم بوابة الملخصات والمواد والوحدات والتفاصيل مع دعم الوضع الداكن.
+- `src/ui/sprint68_feedback_control.js` — التحكم في عرض النتيجة؛ انتقال تلقائي عند الإخفاء وعرض التفسير عند التفعيل.
+- `src/ui/sprint69_summary_knowledge.js` — ربط السؤال بالمعلومة مع حماية من حلقات تحديث DOM.
+- `src/ui/sprint70_unified_app.js/.css` — طبقة الهوية والتنقل والمود الداكن النهائية.
+- `src/ui/sprint71_exam_summary_unification.js/.css` — حارس ثبات الاختبار والمالك النهائي لقوائم المسارات والمواد والكتب والوحدات.
 
 ## النواة
 
@@ -55,7 +59,7 @@
 
 ## الفحص والتوثيق
 
-- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 59.
+- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 71.
 - `scripts/validate_sprint59.py` — فحص تقسيم الملخصات، منع الخلط، القائمة السفلية، أيقونة العودة، والبحث.
 - `scripts/validate_sprint57.py` — فحص كتالوج الشخصيات، الأصول، فصل الجنسين، التسجيل، والـAPI.
 - `scripts/validate_sprint56.py` — فحص حقن المظهر، التخزين، البنية، وملفات QA.

@@ -246,3 +246,5 @@ body.s70-onboarding .s54-toast,body.s54-mode-exam .s54-toast{bottom:24px!importa
 /* Toast text must stay readable over its dark floating surface in both themes. */
 .s54-toast,.s54-toast *{color:#ffffff!important}
 .s54-toast{background:#12314d!important;border:1px solid rgba(255,255,255,.08)!important}
+
+#s54BottomNav.s70-force-hidden{display:none!important;}

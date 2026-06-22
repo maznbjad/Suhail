@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 70",
-  "version": "1.0.70",
+  "release": "Sprint 71",
+  "version": "1.0.71",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 70,
+  "latest_sprint": 71,
   "question_bank": {
     "count": 5400,
     "status": "internal_qa_linked_physics_v1",
@@ -108,7 +108,18 @@
     "onboarding_step_guide": true,
     "onboarding_sticky_start_action": true,
     "runtime_storage_fallback": true,
-    "splash_failsafe": true
+    "splash_failsafe": true,
+    "exam_result_reveal_default": false,
+    "exam_auto_advance_when_result_hidden": true,
+    "unified_summary_hierarchy": true,
+    "summary_hierarchy": [
+      "المسار",
+      "المادة",
+      "الكتاب",
+      "الوحدة",
+      "المحتوى"
+    ],
+    "exam_runtime_freeze_guard": true
   },
   "admin": {
     "deep_settings": true,
@@ -123,7 +134,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 70 stabilizes startup, adds a local-storage fallback and splash fail-safe, unifies icons/navigation/pages, improves onboarding clarity, and applies high-contrast dark mode across the full application.",
+  "notes": "Sprint 71 fixes the exam-only freeze in all three banks, verifies both result-display modes, auto-advances without revealing correctness when result display is off, prevents legacy summary renderers from overwriting the current page, and unifies summary, subject, book and unit lists with accessible light/dark colors.",
   "summary_content": {
     "published_total": 72,
     "published_subjects": {
@@ -139,7 +150,7 @@
     "policy": "No generated summaries. New content appears only after admin review and approval.",
     "physics_source": "data/smart_summaries.json"
   },
-  "sprint": 70,
+  "sprint": 71,
   "summary_knowledge": {
     "published_subjects": [
       "فيزياء"

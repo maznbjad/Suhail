@@ -1,0 +1,176 @@
+{
+  "release": "71.0.0",
+  "passed": true,
+  "exam": {
+    "قدرات كمي": {
+      "start": {
+        "active": "exercisePage",
+        "quizHidden": false,
+        "choices": 4,
+        "enabled": true,
+        "nextDisabled": true,
+        "examClass": true,
+        "finalNavHidden": true
+      },
+      "result_off": {
+        "startIndex": 0,
+        "answered": true,
+        "nextDisabled": false,
+        "resultDisplay": "none",
+        "selected": true,
+        "resultText": "",
+        "afterIndex": 1,
+        "advanced": true
+      },
+      "result_on": {
+        "startIndex": 1,
+        "answered": true,
+        "nextDisabled": false,
+        "resultDisplay": "block",
+        "resultText": "63",
+        "painted": true,
+        "afterIndex": 1,
+        "stayed": true
+      },
+      "responsive_after_wait": {
+        "now": 1782158301251,
+        "question": 20,
+        "buttons": 4,
+        "bodyClass": "s47-ready s54-ready s59-nav-visible s54-mode-exam s59-exam-active s47-exam-mode s71-exam-active s28-branch-page s39-force-exam"
+      }
+    },
+    "قدرات لفظي": {
+      "start": {
+        "active": "exercisePage",
+        "quizHidden": false,
+        "choices": 4,
+        "enabled": true,
+        "nextDisabled": true,
+        "examClass": true,
+        "finalNavHidden": true
+      },
+      "result_off": {
+        "startIndex": 0,
+        "answered": true,
+        "nextDisabled": false,
+        "resultDisplay": "none",
+        "selected": true,
+        "resultText": "",
+        "afterIndex": 1,
+        "advanced": true
+      },
+      "result_on": {
+        "startIndex": 1,
+        "answered": true,
+        "nextDisabled": false,
+        "resultDisplay": "block",
+        "resultText": "حاجة وما يزيلها.",
+        "painted": true,
+        "afterIndex": 1,
+        "stayed": true
+      },
+      "responsive_after_wait": {
+        "now": 1782158302188,
+        "question": 40,
+        "buttons": 4,
+        "bodyClass": "s47-ready s54-ready s59-nav-visible s47-exam-mode s54-mode-exam s59-exam-active s28-branch-page s71-exam-active s39-force-exam"
+      }
+    },
+    "تحصيلي": {
+      "start": {
+        "active": "exercisePage",
+        "quizHidden": false,
+        "choices": 4,
+        "enabled": true,
+        "nextDisabled": true,
+        "examClass": true,
+        "finalNavHidden": true
+      },
+      "result_off": {
+        "startIndex": 0,
+        "answered": true,
+        "nextDisabled": false,
+        "resultDisplay": "none",
+        "selected": true,
+        "resultText": "",
+        "afterIndex": 1,
+        "advanced": true
+      },
+      "result_on": {
+        "startIndex": 1,
+        "answered": true,
+        "nextDisabled": false,
+        "resultDisplay": "block",
+        "resultText": "محصلة القوة تساوي الكتلة مضروبة في التسارع",
+        "painted": true,
+        "afterIndex": 1,
+        "stayed": true
+      },
+      "responsive_after_wait": {
+        "now": 1782158303167,
+        "question": 55,
+        "buttons": 4,
+        "bodyClass": "s47-ready s54-ready s59-nav-visible s54-mode-exam s59-exam-active s71-exam-active s39-force-exam s28-branch-page s47-exam-mode"
+      }
+    }
+  },
+  "summaries": {
+    "gateway": {
+      "count": 3,
+      "titles": [
+        "تحصيلي",
+        "قدرات كمي",
+        "قدرات لفظي"
+      ]
+    },
+    "tahsili": {
+      "count": 4,
+      "titles": [
+        "فيزياء",
+        "كيمياء",
+        "رياضيات",
+        "الأحياء وعلم البيئة"
+      ]
+    },
+    "stages": {
+      "count": 4,
+      "titles": [
+        "فيزياء 1",
+        "فيزياء 2",
+        "فيزياء 3-1",
+        "فيزياء 3-2"
+      ]
+    },
+    "units": {
+      "count": 6,
+      "titles": [
+        "مدخل إلى علم الفيزياء",
+        "تمثيل الحركة",
+        "الحركة المتسارعة",
+        "القوى في بعد واحد",
+        "القوى في بعدين",
+        "الحركة في بعدين"
+      ],
+      "search": true
+    },
+    "search": {
+      "empty": true,
+      "cards": 0
+    },
+    "detail": {
+      "legacy": "1",
+      "unitSummary": true,
+      "lessonTitles": 1,
+      "text": "ملخص ذكي ✨\nفيزياء 1 • وحدة كاملة\n📚 فيزياء 1 • ص 9-29\nمدخل إلى علم الفيزياء\n⚙️\n📐\nقوانين الوحدة\nعرض جميع القوانين الخاصة بهذه الوحدة\n‹\n📖\nخريطة الفكرة\n📘\nعلم وت"
+    }
+  },
+  "contrast": {
+    "background": "rgb(17, 33, 48)",
+    "title": "rgb(244, 249, 253)",
+    "subtitle": "rgb(201, 215, 227)",
+    "titleRatio": 15.431764428221696,
+    "subtitleRatio": 11.146615436948414
+  },
+  "page_errors": [],
+  "note": "The ignored browser console entry was an external resource DNS failure caused by the isolated file-based QA fixture; application JavaScript page errors were zero."
+}

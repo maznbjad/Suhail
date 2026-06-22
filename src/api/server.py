@@ -36,7 +36,7 @@ from src.core.challenge_repository import ensure_social_schema, friend_code_for_
 ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = ROOT / "data" / "suhail_learning.db"
 SUMMARIES_PATH = ROOT / "data" / "smart_summaries.json"
-RELEASE = "70.0.0"
+RELEASE = "71.0.0"
 ALLOWED_EXAMS = {"قدرات كمي", "قدرات لفظي", "تحصيلي"}
 AUTH_WINDOW_SEC = 60
 AUTH_MAX_ATTEMPTS = 10

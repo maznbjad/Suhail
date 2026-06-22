@@ -43,6 +43,18 @@
     r.answered=true;r.correct=!!isCorrect;r.selectedIndex=selected;r.section=q.skill||q.category||currentExam;
     document.querySelectorAll('#choicesBox .choice').forEach(b=>b.disabled=true);
     sync();
+    // When result reveal is disabled, keep the test moving without exposing
+    // correctness. The index guard prevents a double jump if the student taps
+    // Next before this short transition finishes.
+    if(!isOn()){
+      const answeredIndex=Number(activeIndex);
+      setTimeout(()=>{
+        try{
+          if(examFinished||Number(activeIndex)!==answeredIndex)return;
+          if(answeredIndex<activeQuestions.length-1&&typeof nextQuiz==='function')nextQuiz();
+        }catch(_){}
+      },180);
+    }
   }
   answer.__s62=true; answer.__s68=true;
   function patch(){
@@ -63,7 +75,7 @@
   }
   function install(){
     if(typeof window.SUHAIL_SHOW_RESULT!=='boolean'){let v=false;try{v=localStorage.getItem(KEY)==='1'}catch(_){}window.SUHAIL_SHOW_RESULT=v}
-    ensureToggle();patch();setInterval(()=>{patch();ensureToggle()},1000);new MutationObserver(()=>{patch();ensureToggle()}).observe(document.body,{childList:true,subtree:true});window.SuhailFeedback68={set:setOn,sync};
+    ensureToggle();patch();setInterval(()=>{patch();ensureToggle()},1000);let observerTimer=null;new MutationObserver(()=>{clearTimeout(observerTimer);observerTimer=setTimeout(()=>{patch();ensureToggle()},25)}).observe(document.body,{childList:true,subtree:true});window.SuhailFeedback68={set:setOn,sync};
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();

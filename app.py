@@ -11427,221 +11427,8 @@ function loadCurrentQuestion() {
 
   
 
-/* Sprint 06 runtime patch: main track hierarchy + searchable smart summary hub */
-(function(){
-  const style = document.createElement('style');
-  style.textContent = `
-    .sprint06-track-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 6px;direction:rtl;}
-    .sprint06-track-card{min-height:142px;border:1px solid #e1edf6;border-radius:28px;background:#fff;box-shadow:0 14px 30px rgba(15,35,66,.075);padding:16px;position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;transition:transform .18s ease, box-shadow .18s ease;}
-    .sprint06-track-card:active{transform:scale(.985);}
-    .sprint06-track-card.primary{background:linear-gradient(135deg,rgba(37,136,255,.10),rgba(89,211,110,.12)),#fff;}
-    .sprint06-track-card::after{content:'';position:absolute;inset:auto -20px -30px auto;width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg,rgba(47,125,255,.12),rgba(84,211,109,.18));}
-    .sprint06-track-icon{width:54px;height:54px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#2588ff,#59d36e);color:#fff;font-size:24px;font-weight:900;box-shadow:0 14px 26px rgba(37,136,255,.22);}
-    .sprint06-track-title{font-size:22px;font-weight:900;color:#10255c;margin-top:10px;line-height:1.1;}
-    .sprint06-track-sub{font-size:12px;font-weight:800;color:#78879b;margin-top:5px;line-height:1.5;min-height:18px;}
-    .sprint06-track-count{display:inline-flex;align-items:center;gap:5px;margin-top:8px;color:#198e70;background:#effbf5;border:1px solid #d8f3e5;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;width:max-content;}
-    .sprint06-sub-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 6px;direction:rtl;}
-    .sprint06-sub-card{border:1px solid #dfeaf4;background:#fff;border-radius:24px;min-height:116px;padding:15px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;box-shadow:0 12px 26px rgba(15,35,66,.065);}
-    .sprint06-sub-icon{font-size:26px;color:#257cff;font-weight:900;}
-    .sprint06-sub-title{font-size:17px;font-weight:900;color:#10255c;}
-    .sprint06-sub-count{font-size:11px;font-weight:900;color:#16a067;background:#effbf5;border-radius:999px;padding:5px 8px;width:max-content;}
-    .sprint06-back-chip{height:38px;border:1px solid #dfeaf4;border-radius:16px;background:#fff;color:#257cff;font-family:'Tajawal',sans-serif!important;font-weight:900;padding:0 12px;box-shadow:0 8px 18px rgba(15,35,66,.05);cursor:pointer;margin-bottom:8px;}
-    .sprint06-summary-shell{font-family:'Tajawal',sans-serif!important;direction:rtl;padding:0 0 118px;}
-    .sprint06-summary-head{border-radius:30px;padding:18px 16px 16px;background:linear-gradient(135deg,#2588ff,#23c783);color:#fff;box-shadow:0 16px 34px rgba(37,136,255,.22);margin-bottom:14px;}
-    .sprint06-summary-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-    .sprint06-summary-title{font-size:27px;font-weight:900;line-height:1.1;}
-    .sprint06-summary-sub{font-size:12px;font-weight:800;opacity:.86;margin-top:4px;}
-    .sprint06-round{width:42px;height:42px;border-radius:16px;border:0;background:rgba(255,255,255,.94);color:#1769ff;font-family:'Tajawal',sans-serif!important;font-size:17px;font-weight:900;display:grid;place-items:center;cursor:pointer;}
-    .sprint06-search{height:48px;border-radius:18px;background:#fff;border:1px solid #dfeaf4;display:flex;align-items:center;gap:8px;padding:0 13px;margin:12px 0;box-shadow:0 10px 24px rgba(15,35,66,.06);}
-    .sprint06-search input{flex:1;border:0;outline:0;background:transparent;font-family:'Tajawal',sans-serif!important;font-size:14px;font-weight:800;color:#10255c;text-align:right;}
-    .sprint06-chip-row{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none;}
-    .sprint06-chip-row::-webkit-scrollbar{display:none;}
-    .sprint06-chip{height:40px;border-radius:15px;border:1px solid #dfeaf4;background:#fff;color:#10255c;padding:0 12px;font-family:'Tajawal',sans-serif!important;font-size:13px;font-weight:900;white-space:nowrap;cursor:pointer;box-shadow:0 8px 18px rgba(15,35,66,.04);}
-    .sprint06-chip.active{background:linear-gradient(135deg,#2588ff,#59d36e);color:#fff;border-color:transparent;}
-    .sprint06-hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
-    .sprint06-hub-card{min-height:128px;border-radius:25px;background:#fff;border:1px solid #e1edf6;box-shadow:0 13px 28px rgba(15,35,66,.07);padding:15px;cursor:pointer;position:relative;overflow:hidden;}
-    .sprint06-hub-card::after{content:'';position:absolute;left:-20px;bottom:-28px;width:86px;height:86px;border-radius:50%;background:rgba(37,136,255,.08);}
-    .sprint06-hub-icon{font-size:26px;width:50px;height:50px;border-radius:18px;background:linear-gradient(135deg,rgba(37,136,255,.12),rgba(89,211,110,.14));display:grid;place-items:center;margin-bottom:9px;}
-    .sprint06-hub-title{font-size:19px;font-weight:900;color:#10255c;}
-    .sprint06-hub-sub{font-size:12px;font-weight:800;color:#7a8797;margin-top:5px;}
-    .sprint06-result-list{display:grid;gap:10px;}
-    .sprint06-result-card{border:1px solid #e1edf6;background:#fff;border-radius:22px;padding:14px;box-shadow:0 11px 24px rgba(15,35,66,.06);cursor:pointer;}
-    .sprint06-result-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
-    .sprint06-mini{border-radius:999px;background:#f0f6ff;color:#1769ff;padding:4px 8px;font-size:11px;font-weight:900;}
-    .sprint06-result-title{font-size:17px;font-weight:900;color:#10255c;line-height:1.45;}
-    .sprint06-result-sub{font-size:12px;font-weight:800;color:#7a8797;margin-top:5px;line-height:1.6;}
-    .sprint06-empty{border:1px dashed #cfdae8;border-radius:22px;background:#fbfdff;padding:18px;text-align:center;color:#7a8797;font-weight:900;line-height:1.7;}
-    .sprint06-source-card{border:1px solid #e9edf4;background:#fff;border-radius:20px;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 9px 20px rgba(15,35,66,.045);}
-    .sprint06-source-title{font-size:14px;font-weight:900;color:#10255c;line-height:1.5;}
-    .sprint06-source-sub{font-size:11px;font-weight:800;color:#8290a1;}
-  `;
-  document.head.appendChild(style);
+/* Sprint 71: the track/summary runtime patch is installed once outside the question renderer. */
 
-  const HIERARCHY = [
-    {id:'qudrat', title:'قدرات', icon:'🎯', sub:'كمي ولفظي', children:[
-      {id:'quant', title:'كمي', exam:'قدرات كمي', icon:'∑'},
-      {id:'verbal', title:'لفظي', exam:'قدرات لفظي', icon:'ض'}
-    ]},
-    {id:'tahsili', title:'تحصيلي', icon:'⚗️', sub:'مواد التحصيلي', exam:'تحصيلي', children:[
-      {id:'math', title:'رياضيات', subject:'رياضيات', icon:'π'},
-      {id:'physics', title:'فيزياء', subject:'فيزياء', icon:'↯'},
-      {id:'chemistry', title:'كيمياء', subject:'كيمياء', icon:'⚗️'},
-      {id:'biology', title:'الأحياء وعلم البيئة', subject:'الأحياء وعلم البيئة', icon:'🧬'}
-    ]}
-  ];
-
-  const SOURCE_DOCS = [
-    {track:'تحصيلي', subject:'رياضيات', title:'رياضيات 1-2 مسارات', pages:96},
-    {track:'تحصيلي', subject:'أحياء', title:'أحياء 1', pages:27},
-    {track:'تحصيلي', subject:'كيمياء', title:'كيمياء 1', pages:45},
-    {track:'تحصيلي', subject:'رياضيات', title:'التبرير والبرهان', pages:26},
-    {track:'تحصيلي', subject:'كيمياء', title:'كيمياء 1 مسارات', pages:33}
-  ];
-
-  window.suhailHierarchy = HIERARCHY;
-
-  function examCount(exam){
-    try { return (questions || []).filter(q => String(q.exam || inferExamClient(q)) === exam).length; } catch(e){ return 0; }
-  }
-  function inferExamClient(q){
-    const cat = String((q && q.category) || '');
-    if (cat.includes('لفظ')) return 'قدرات لفظي';
-    if (cat.includes('تحصيلي')) return 'تحصيلي';
-    return 'قدرات كمي';
-  }
-  function trackCount(track){
-    if (track.id === 'qudrat') return examCount('قدرات كمي') + examCount('قدرات لفظي');
-    if (track.id === 'tahsili') return examCount('تحصيلي');
-    return 0;
-  }
-  function renderMainTracks(target){
-    target.innerHTML = `<div class="sprint06-track-grid">${HIERARCHY.map(t => `
-      <div class="sprint06-track-card primary" onclick="openSuhailTrack('${t.id}')">
-        <div><div class="sprint06-track-icon">${t.icon}</div><div class="sprint06-track-title">${t.title}</div><div class="sprint06-track-sub">${t.sub}</div></div>
-        <div class="sprint06-track-count">${trackCount(t)} سؤال</div>
-      </div>`).join('')}</div>`;
-  }
-  window.openSuhailTrack = function(trackId){
-    const target = document.getElementById('homeExamCircles');
-    const track = HIERARCHY.find(t => t.id === trackId);
-    if (!target || !track) return false;
-    if (track.id === 'tahsili') {
-      openExamSetup('تحصيلي');
-      return false;
-    }
-    target.innerHTML = `<button class="sprint06-back-chip" onclick="buildExamCircles('homeExamCircles')">رجوع</button>
-      <div class="sprint06-sub-grid">${track.children.map(c => `
-        <div class="sprint06-sub-card" onclick="openExamSetup('${c.exam}')">
-          <div class="sprint06-sub-icon">${c.icon}</div>
-          <div class="sprint06-sub-title">${c.title}</div>
-          <div class="sprint06-sub-count">${examCount(c.exam)} سؤال</div>
-        </div>`).join('')}</div>`;
-    return false;
-  };
-  window.buildExamCircles = function(targetId){
-    const target = document.getElementById(targetId);
-    if (!target) return;
-    renderMainTracks(target);
-  };
-  window.goToExercise = function(){
-    const target = document.getElementById('homeExamCircles');
-    if (target) {
-      openSuhailTrack('qudrat');
-      target.scrollIntoView({behavior:'smooth', block:'center'});
-    }
-    return false;
-  };
-
-  let smartFilter = {track:'الكل', child:'الكل', q:''};
-  function textOf(x){ return String(x || '').toLowerCase(); }
-  function allSmartItems(){
-    const lessons = (smartSummaries || []).map(x => ({...x, kind:'lesson', track:x.track || x.exam || 'تحصيلي'}));
-    const sources = SOURCE_DOCS.map(x => ({...x, kind:'source', title:x.title, track:x.track, subject:x.subject, short:'مصدر خام جاهز للتنظيم'}));
-    return lessons.concat(sources);
-  }
-  function matchesSmart(item){
-    const q = textOf(smartFilter.q).trim();
-    const trackOk = smartFilter.track === 'الكل' || item.track === smartFilter.track || item.exam === smartFilter.track;
-    let childOk = true;
-    if (smartFilter.child !== 'الكل') {
-      childOk = item.subtrack === smartFilter.child || item.subject === smartFilter.child || item.exam === ('قدرات ' + smartFilter.child);
-    }
-    const hay = textOf([item.title,item.subject,item.unit,item.short,item.simple_idea,(item.keywords||[]).join(' ')].join(' '));
-    const qOk = !q || hay.includes(q);
-    return trackOk && childOk && qOk;
-  }
-  function setSmartFilter(track, child){
-    smartFilter.track = track || 'الكل';
-    smartFilter.child = child || 'الكل';
-    renderSummariesPage();
-  }
-  window.setSmartFilter = setSmartFilter;
-  window.updateSmartQuery = function(v){ smartFilter.q = v || ''; renderSummariesPage(); };
-  function renderFilterChips(){
-    const chips = [
-      ['الكل','الكل','⌂'], ['قدرات','الكل','🎯'], ['قدرات','كمي','∑'], ['قدرات','لفظي','ض'],
-      ['تحصيلي','الكل','⚗️'], ['تحصيلي','رياضيات','π'], ['تحصيلي','فيزياء','↯'], ['تحصيلي','كيمياء','⚗️'], ['تحصيلي','الأحياء وعلم البيئة','🧬']
-    ];
-    return chips.map(([t,c,ico]) => `<button class="sprint06-chip ${(smartFilter.track===t && smartFilter.child===c)?'active':''}" onclick="setSmartFilter('${t}','${c}')">${ico} ${c==='الكل'?t:c}</button>`).join('');
-  }
-  function openSmartLesson(id){
-    const item = (smartSummaries || []).find(x => x.id === id);
-    if (!item) return;
-    // reuse Sprint 05 lesson renderer by temporarily placing the lesson first
-    const idx = smartSummaries.findIndex(x => x.id === id);
-    if (idx > 0) {
-      const [x] = smartSummaries.splice(idx,1);
-      smartSummaries.unshift(x);
-    }
-    renderSprint05Lesson();
-  }
-  window.openSmartLesson = openSmartLesson;
-  const renderSprint05Lesson = window.renderSummariesPage || renderSummariesPage;
-
-  window.renderSummariesPage = function(){
-    const page = document.getElementById('summariesPage');
-    if (!page) return;
-    const items = allSmartItems().filter(matchesSmart);
-    const results = items.map(item => {
-      const meta = [item.track || item.exam, item.subtrack, item.subject].filter(Boolean).map(x => `<span class="sprint06-mini">${escapeHtml(x)}</span>`).join('');
-      const sub = item.kind === 'source' ? `${escapeHtml(item.pages || '')} صفحة • قيد التنظيم` : escapeHtml(item.simple_idea || item.subtitle || 'ملخص ذكي');
-      const click = item.kind === 'lesson' ? `onclick="openSmartLesson('${escapeHtml(item.id)}')"` : '';
-      return `<div class="sprint06-result-card" ${click}>
-        <div class="sprint06-result-meta">${meta}<span class="sprint06-mini">${item.kind === 'source' ? 'PDF' : 'بطاقة'}</span></div>
-        <div class="sprint06-result-title">${escapeHtml(item.title)}</div>
-        <div class="sprint06-result-sub">${sub}</div>
-      </div>`;
-    }).join('') || `<div class="sprint06-empty">لا توجد نتيجة مطابقة.</div>`;
-
-    page.className = 'page active';
-    page.innerHTML = `<div class="sprint06-summary-shell">
-      <div class="sprint06-summary-head">
-        <div class="sprint06-summary-top">
-          <button class="sprint06-round" onclick="showPage('homePage')">‹</button>
-          <div><div class="sprint06-summary-title">ملخص ذكي</div><div class="sprint06-summary-sub">بوصلة بين قدرات وتحصيلي</div></div>
-          <button class="sprint06-round" onclick="setSmartFilter('الكل','الكل')">⌂</button>
-        </div>
-      </div>
-      <div class="sprint06-search"><span>⌕</span><input value="${escapeHtml(smartFilter.q)}" oninput="updateSmartQuery(this.value)" placeholder="ابحث عن مفهوم... مثل الضغط، النسبة، التناظر"></div>
-      <div class="sprint06-chip-row">${renderFilterChips()}</div>
-      <div class="sprint06-hub-grid">
-        <div class="sprint06-hub-card" onclick="setSmartFilter('قدرات','الكل')"><div class="sprint06-hub-icon">🎯</div><div class="sprint06-hub-title">قدرات</div><div class="sprint06-hub-sub">كمي / لفظي</div></div>
-        <div class="sprint06-hub-card" onclick="setSmartFilter('تحصيلي','الكل')"><div class="sprint06-hub-icon">⚗️</div><div class="sprint06-hub-title">تحصيلي</div><div class="sprint06-hub-sub">رياضيات / علوم</div></div>
-      </div>
-      <div class="sprint06-result-list">${results}</div>
-    </div>`;
-  };
-
-  setTimeout(() => {
-    try { buildExamCircles('homeExamCircles'); } catch(e) {}
-    const authPills = document.querySelectorAll('.auth-pill');
-    if (authPills && authPills.length >= 3) {
-      authPills[0].textContent = 'قدرات';
-      authPills[1].textContent = 'تحصيلي';
-      authPills[2].textContent = 'STEP لاحقًا';
-    }
-  }, 50);
-})();
 
 
 applyQuestionTextSize(questionTextSize);
@@ -11757,6 +11544,9 @@ applyQuestionTextSize(questionTextSize);
 
   refreshSavedVisuals();
 }
+
+
+/* Sprint 71: removed duplicate Sprint 06 runtime installer from the question path. */
 
 function answerQuiz(button, selectedIndex, isCorrect) {
   const q = activeQuestions[activeIndex];
@@ -19241,7 +19031,7 @@ function s17LawCard(f,u,idx){
     card.querySelectorAll('.s21-acc-btn').forEach(b=>b.textContent=isOpen?'إخفاء التفاصيل':'عرض التفاصيل');
     try{localStorage.setItem(card.dataset.s21Key,isOpen?'1':'0');}catch(_){}
   };
-  window.s17OpenLaws=function(){S17.view='laws'; renderSummariesPage();};
+  window.s17OpenLaws=function(){S17.view='laws'; (window.s17RenderSummariesPage||renderSummariesPage)();};
 
   function renderDetail(page){
     const u=slawPrepareUnit(unitData());
@@ -19265,7 +19055,7 @@ function s17LawCard(f,u,idx){
     const sourceBadge = u.source_pages ? `<div class="s17-source-badge">📚 ${esc(u.source_book||'المصدر')} • ${esc(u.source_pages)}</div>` : '';
     page.innerHTML=`<div class="s14-page s17-unit-summary"><div class="s14-hero"><div class="s14-top"><button class="s14-round s23-round-icon" onclick="s17Units('${esc(S17.stage)}')" aria-label="العودة">${s23BackSvg()}</button><div class="s14-head-center"><div class="s14-head-title">ملخص ذكي ✨</div><div class="s14-head-sub">${esc(S17.stage)} • وحدة كاملة</div>${sourceBadge}</div><button class="s14-round s23-round-icon" onclick="s17OpenLaws()" aria-label="الانتقال إلى القوانين"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="s23-home-svg" d="M14 12h28a8 8 0 0 1 8 8v34H20a6 6 0 0 1-6-6V12zm8 8v24h20V20H22zm5 6h10v4H27v-4zm0 8h10v4H27v-4z"/></svg></button></div></div><div class="s14-body"><div class="s14-title-row"><div class="s14-lesson-title">${esc(u.unit)}</div><div class="s14-subject-icon">${esc(u.icon||'⚛️')}</div></div><div class="s14-card s21-law-shortcut" onclick="s17OpenLaws()"><div class="s21-law-row"><div class="s21-law-icon">📐</div><div><div class="s21-law-title">قوانين الوحدة</div><div class="s21-law-sub">عرض جميع القوانين الخاصة بهذه الوحدة</div></div><div class="s21-law-go">‹</div></div></div>${s21Acc('map','خريطة الفكرة','📖',`<div class="s14-concepts">${concepts}</div>`,false)}${s21Acc('idea','الخلاصة','💡',`<div class="s14-info-text">${esc(u.idea)}</div>`,true)}${s21Acc('lessons','دروس الوحدة','🔗',`<div class="s17-lesson-list">${lessonPills}</div>`,false)}${s21Acc('guidance','إرشادات تطبيقية','ƒ',`<div class="s17-law-list">${laws.map(v=>`<div class="s17-law-item">${esc(v)}</div>`).join('')}</div>`,false)}${s21Acc('quick_example','مثال سريع','★',`<div class="s14-example-text">${esc(u.example)}</div>`,false)}${s21Acc('compare','قارن','⚖',`<table class="s14-table"><thead><tr><th>العنصر</th><th>دوره</th><th>مثال</th></tr></thead><tbody>${rows}</tbody></table>`,false)}${defs?s21Acc('definitions','التعاريف','📘',`<div class="s17-mini-grid">${defs}</div>`,false):''}${rels?s21Acc('relationships','الربط المفاهيمي','🔗',`<div class="s17-rel-list">${rels}</div>`,false):''}${examples?s21Acc('examples','أمثلة الكتاب','🧪',`<div class="s17-example-steps">${examples}</div>`,false):''}${conf?s21Acc('confuse','لا تخلط','⚠',`<div class="s17-confuse-list">${conf}</div>`,false):''}${keep?s21Acc('keep','احفظ هذا','✅',`<div class="s17-keep-list">${keep}</div>`,false):''}${s21Acc('fix_question','سؤال تثبيت','؟',`<div class="s14-question-text">${esc(u.question||defaultUnit.question)}</div><div class="s14-options">${opts}</div><div class="s14-feedback"></div>`,false)}${(tqGroups||tq)?s21Acc('tahsili','تأكد من فهمك — أمثلة تحصيلي','🎯',`${tqGroups||tq}`,false):''}<div class="s14-bottom"><button class="s14-action blue" onclick="s17Pop('relationship')">🧠 افهم العلاقة</button><button class="s14-action orange" onclick="s17Pop('trap')">⚠ انتبه للفخ</button></div><div id="s17pop_relationship" class="s14-pop">${esc((u.map||[]).join(' ← '))}</div><div id="s17pop_trap" class="s14-pop">${esc(u.trap)}</div></div></div>`;
   }
-  window.s17BackToSummary=function(){S17.view='detail'; renderSummariesPage();};
+  window.s17BackToSummary=function(){S17.view='detail'; (window.s17RenderSummariesPage||renderSummariesPage)();};
   function renderLaws(page){
     const u=slawPrepareUnit(unitData());
     const formulas=(u.formula_cards||[]).map((f,fi)=>s17LawCard(f,u,fi)).join('');
@@ -19274,6 +19064,18 @@ function s17LawCard(f,u,idx){
   }
 
   window.renderSummariesPage=function(){const page=document.getElementById('summariesPage'); if(!page)return; page.className='page active'; if(S17.view==='laws'){renderLaws(page); setTimeout(()=>s26AttachLongPress(page),30); return;} if(S17.view==='detail'){renderDetail(page); setTimeout(()=>s26AttachLongPress(page),30); return;} if(S17.view==='units')return renderUnits(page); renderCourses(page);};
+  const s17StableRenderer=window.renderSummariesPage;
+  window.s17RenderSummariesPage=s17StableRenderer;
+  window.s17OpenUnitStable=function(encodedStage,encodedUnit){
+    let stage='',unit='';
+    try{stage=decodeURIComponent(encodedStage||'');}catch(_){stage=String(encodedStage||'');}
+    try{unit=decodeURIComponent(encodedUnit||'');}catch(_){unit=String(encodedUnit||'');}
+    if(stage)S17.stage=stage;
+    S17.view='detail'; S17.unit=unit; S17.q='';
+    s17StableRenderer();
+  };
+  window.s17OpenLaws=function(){S17.view='laws';s17StableRenderer();};
+  window.s17BackToSummary=function(){S17.view='detail';s17StableRenderer();};
   window.suhailAdminGetBooks=function(){return courses.map(c=>c.stage);};
   window.suhailAdminGetUnits=function(stage){return stageUnits(stage).map(u=>({unit:u.unit,lessons:(u.lessons||[]).length,laws:(slawPrepareUnit(u).formula_cards||[]).length}));};
   window.suhailAdminGetSummary=function(stage,unitName){
@@ -20545,5 +20347,20 @@ try:
     html_code = html_code.replace("</body>", f"<script>{s70_js}</script></body>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 70 unified UI module: {exc}")
+
+# Sprint 71 is the final exam-stability and summaries-hierarchy layer. It fixes
+# the test-screen mutation loop, preserves both result-display modes, and gives
+# all summary/material/book/unit lists one consistent visual component.
+s71_css_path = os.path.join("src", "ui", "sprint71_exam_summary_unification.css")
+s71_js_path = os.path.join("src", "ui", "sprint71_exam_summary_unification.js")
+try:
+    with open(s71_css_path, "r", encoding="utf-8") as style_file:
+        s71_css = style_file.read()
+    with open(s71_js_path, "r", encoding="utf-8") as script_file:
+        s71_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s71_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s71_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 71 exam/summary module: {exc}")
 
 components.html(html_code, height=960, scrolling=False)

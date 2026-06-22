@@ -72,7 +72,7 @@
         body.classList.add('s54-mode-main','s59-nav-visible');
       }
       const page=activePage();
-      if(page?.id==='summariesPage'&&!state.richPhysics&&!page.querySelector('.s59-page')){
+      if(page?.id==='summariesPage'&&!window.SuhailSprint71&&!state.richPhysics&&!page.querySelector('.s59-page')){
         requestAnimationFrame(render);
       }
       const key=navKeyForPage(page?.id||'homePage');
@@ -202,6 +202,9 @@
   }
 
   function render(){
+    // Sprint 71 owns the summaries hierarchy. Historical delayed timers from
+    // Sprint 59 must never overwrite a modern list or a legacy unit detail.
+    if(window.SuhailSprint71)return;
     if(state.richPhysics&&legacySummaryRender){
       syncNavigation();
       const result=legacySummaryRender();
@@ -264,7 +267,7 @@
     window.__s59ShowPatched=true;
     window.showPage=function(id){
       const result=previousShow.apply(this,arguments);
-      if(id==='summariesPage'&&!state.richPhysics)setTimeout(render,30);
+      if(id==='summariesPage'&&!window.SuhailSprint71&&!state.richPhysics)setTimeout(render,30);
       setTimeout(syncNavigation,45);
       return result;
     };
