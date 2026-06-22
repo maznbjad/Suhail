@@ -1,0 +1,24 @@
+{
+  "release": "Sprint 69",
+  "python_compile": true,
+  "javascript_syntax": true,
+  "question_count": 5400,
+  "physics_question_count": 600,
+  "physics_summary_count": 72,
+  "knowledge_block_count": 936,
+  "linked_physics_questions": 600,
+  "unlinked_physics_questions": [],
+  "block_type_counts": {
+    "idea": 72,
+    "definition": 216,
+    "rule": 72,
+    "relationship": 72,
+    "trap": 72,
+    "tip": 144,
+    "example": 72,
+    "comparison": 216
+  },
+  "all_links_point_to_existing_blocks": true,
+  "sqlite_question_count": 5400,
+  "browser_visual_qa": "not_run_streamlit_runtime_unavailable_in_build_environment"
+}

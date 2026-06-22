@@ -1,13 +1,42 @@
 {
   "version": "62.0.0",
   "entity": "question",
-  "immutable_fields": ["id", "public_id", "created_year"],
+  "immutable_fields": [
+    "id",
+    "public_id",
+    "created_year"
+  ],
   "editable_fields": [
-    "exam", "category", "skill", "difficulty", "question", "passage",
-    "choices", "correct", "answer", "explain", "explanation", "hint",
-    "image", "image_alt", "image_caption", "keywords", "concept_id",
-    "summary_block_id", "misconception_id", "time_per_question_sec",
-    "editorial_status", "release_eligible"
+    "exam",
+    "category",
+    "skill",
+    "difficulty",
+    "question",
+    "passage",
+    "choices",
+    "correct",
+    "answer",
+    "explain",
+    "explanation",
+    "hint",
+    "image",
+    "image_alt",
+    "image_caption",
+    "keywords",
+    "concept_id",
+    "summary_block_id",
+    "misconception_id",
+    "time_per_question_sec",
+    "editorial_status",
+    "release_eligible",
+    "summary_id",
+    "summary_stage",
+    "summary_unit",
+    "summary_title",
+    "summary_block_type",
+    "summary_block_title",
+    "summary_block_excerpt",
+    "knowledge_link_status"
   ],
   "image_rules": {
     "preferred_format": "svg_or_webp",
@@ -22,5 +51,12 @@
     "trap_optional": true,
     "similar_choices_only_when_relevant": true,
     "hint_optional": true
+  },
+  "knowledge_link_rules": {
+    "primary_link_required_for_approved_physics": true,
+    "max_primary_links": 1,
+    "exact_block_preview": true,
+    "keywords_hidden_from_student": true,
+    "admin_can_override": true
   }
 }

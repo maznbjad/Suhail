@@ -20503,4 +20503,28 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 66 contrast module: {exc}")
 
+# Sprint 68 adds a default-off "عرض النتيجة" control and direct, label-free feedback.
+s68_css_path = os.path.join("src", "ui", "sprint68_feedback_control.css")
+s68_js_path = os.path.join("src", "ui", "sprint68_feedback_control.js")
+try:
+    with open(s68_css_path, "r", encoding="utf-8") as style_file:
+        s68_css = style_file.read()
+    with open(s68_js_path, "r", encoding="utf-8") as script_file:
+        s68_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s68_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s68_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 68 feedback module: {exc}")
+
+# Sprint 69 links every approved physics question to an exact knowledge block.
+s69_css_path = os.path.join("src", "ui", "sprint69_summary_knowledge.css")
+s69_js_path = os.path.join("src", "ui", "sprint69_summary_knowledge.js")
+if os.path.exists(s69_css_path) and os.path.exists(s69_js_path):
+    with open(s69_css_path, "r", encoding="utf-8") as style_file:
+        s69_css = style_file.read()
+    with open(s69_js_path, "r", encoding="utf-8") as script_file:
+        s69_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s69_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s69_js}</script></body>", 1)
+
 components.html(html_code, height=930, scrolling=False)

@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 60",
-  "version": "1.0.66",
+  "release": "Sprint 69",
+  "version": "1.0.69",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,16 +10,14 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 60,
+  "latest_sprint": 69,
   "question_bank": {
-    "count": 280,
-    "status": "computerized_internal_qa_passed",
-    "format": "محوسب",
-    "quant_count": 195,
-    "verbal_count": 85,
-    "diagram_count": 21,
-    "archived_development_seed_count": 1000,
-    "source_method": "new wording, changed numbers, recomputed answers, original verbal passages",
+    "count": 5400,
+    "status": "internal_qa_linked_physics_v1",
+    "format": "unified",
+    "qudrat_count": 3000,
+    "tahsili_count": 2400,
+    "physics_count": 600,
     "public_release_requires_final_editorial_review": true
   },
   "student_experience": {
@@ -136,5 +134,16 @@
     "policy": "No generated summaries. New content appears only after admin review and approval.",
     "physics_source": "data/smart_summaries.json"
   },
-  "sprint": 66
+  "sprint": 66,
+  "summary_knowledge": {
+    "published_subjects": [
+      "فيزياء"
+    ],
+    "summary_count": 72,
+    "knowledge_block_count": 936,
+    "linked_question_count": 600,
+    "exact_block_deep_link": true,
+    "saved_question_explanation": true,
+    "admin_editable_links": true
+  }
 }

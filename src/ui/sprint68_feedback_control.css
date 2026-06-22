@@ -1,0 +1,21 @@
+/* Sprint 68 - answer reveal control and direct feedback. */
+.s68-result-toggle{margin:12px 0 2px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:58px;padding:0 14px;border:1px solid #dce7f0;border-radius:18px;background:#fff}
+.s68-result-toggle-title{font-size:14px;font-weight:950;color:#102b4e}
+.s68-switch{position:relative;display:inline-block;width:52px;height:30px;flex:0 0 auto}
+.s68-switch input{opacity:0;width:0;height:0}
+.s68-slider{position:absolute;inset:0;border-radius:999px;background:#d7e0e8;cursor:pointer;transition:.2s}
+.s68-slider::before{content:"";position:absolute;width:24px;height:24px;right:3px;top:3px;border-radius:50%;background:#fff;box-shadow:0 2px 7px rgba(16,43,78,.22);transition:.2s}
+.s68-switch input:checked + .s68-slider{background:linear-gradient(135deg,#2389e8,#47bd8a)}
+.s68-switch input:checked + .s68-slider::before{transform:translateX(-22px)}
+#choicesBox .choice.s68-selected{border-color:#5f87aa!important;background:#eef5fb!important;color:#153653!important;box-shadow:0 0 0 2px rgba(35,137,232,.08)!important}
+.s68-direct-feedback{direction:rtl;text-align:right;border:1px solid #d9e8f0;border-radius:18px;background:#f8fbfd;padding:12px 13px;color:#243f59;line-height:1.8;font-weight:750}
+.s68-direct-answer{font-size:14px;font-weight:950;color:#102b4e;margin-bottom:6px}
+.s68-direct-text{font-size:12.5px}
+.s68-direct-feedback ol{margin:7px 0 0;padding-right:20px}.s68-direct-feedback li{font-size:12px;margin:3px 0}
+.s68-direct-note{margin-top:8px;padding:8px 10px;border-radius:13px;background:#fff7e8;border:1px solid #f2e1b7;color:#795619;font-size:11.5px}
+.s68-direct-hint{margin-top:8px;padding:8px 10px;border-radius:13px;background:#edf9f4;border:1px solid #d3eee3;color:#176e56;font-size:11.5px}
+.s68-result-choice{font-size:12px;font-weight:800;color:#526676;margin-top:7px}.s68-result-correct{font-size:13px;font-weight:950;color:#13754f;margin-top:5px}.s68-result-explain{font-size:11.5px;line-height:1.75;color:#526676;margin-top:5px}
+body.s55-dark .s68-result-toggle{background:#132333;border-color:#2c455a}body.s55-dark .s68-result-toggle-title{color:#f3f8fc}body.s55-dark .s68-slider{background:#405468}
+body.s55-dark #choicesBox .choice.s68-selected{background:#1c3448!important;border-color:#6388a7!important;color:#eff6fb!important}
+body.s55-dark .s68-direct-feedback{background:#132333;border-color:#2c455a;color:#dbe8f2}body.s55-dark .s68-direct-answer{color:#fff}body.s55-dark .s68-direct-note{background:#382f1d;border-color:#594927;color:#f1cb80}body.s55-dark .s68-direct-hint{background:#14352d;border-color:#285143;color:#8ce0bd}
+body.s55-dark .s68-result-choice,body.s55-dark .s68-result-explain{color:#c6d4df}body.s55-dark .s68-result-correct{color:#8de0bd}

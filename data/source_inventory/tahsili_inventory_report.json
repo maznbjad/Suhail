@@ -1,0 +1,40 @@
+{
+  "method": "A-option marker inventory from embedded PDF text; exact normalized contexts deduplicated. Counts are source candidates, not approved student questions.",
+  "sources": [
+    {
+      "subject": "فيزياء",
+      "source_file": "��كتاب الفيزياء�.pdf",
+      "pages": 217,
+      "raw_a_option_markers": 2596,
+      "unique_exact_contexts": 2592,
+      "pages_with_candidates": 169
+    },
+    {
+      "subject": "كيمياء",
+      "source_file": "تجميعات الكيمياء 2025.pdf",
+      "pages": 108,
+      "raw_a_option_markers": 1399,
+      "unique_exact_contexts": 1398,
+      "pages_with_candidates": 103
+    },
+    {
+      "subject": "رياضيات",
+      "source_file": "��كتاب الرياضيات�.pdf",
+      "pages": 144,
+      "raw_a_option_markers": 1978,
+      "unique_exact_contexts": 1977,
+      "pages_with_candidates": 139
+    },
+    {
+      "subject": "الأحياء وعلم البيئة",
+      "source_file": "كتاب الأحياء وعلم البيئة.pdf",
+      "pages": 225,
+      "raw_a_option_markers": 2829,
+      "unique_exact_contexts": 1149,
+      "pages_with_candidates": 160
+    }
+  ],
+  "raw_candidates": 8802,
+  "unique_exact_contexts": 7116,
+  "student_bank_policy": "Only rewritten, independently solved, quality-checked questions are release eligible."
+}

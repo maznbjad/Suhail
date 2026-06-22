@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "checks": {
+    "total_questions": true,
+    "qudrat_3000": true,
+    "tahsili_2400": true,
+    "subject_distribution": true,
+    "unique_internal_ids": true,
+    "public_ids_contiguous": true,
+    "choices_and_answers": true,
+    "explanation_schema": true,
+    "all_images_exist": true,
+    "svg_valid": true,
+    "inventory_raw_8802": true,
+    "inventory_unique_7116": true,
+    "sqlite_5400": true,
+    "toggle_default_off": true,
+    "label_free_feedback": true,
+    "s68_injected": true
+  },
+  "counts": {
+    "total": 5400,
+    "qudrat": 3000,
+    "tahsili": 2400,
+    "by_subject": {
+      "فيزياء": 600,
+      "كيمياء": 600,
+      "رياضيات": 600,
+      "الأحياء وعلم البيئة": 600
+    },
+    "image_questions": 250,
+    "inventory_raw": 8802,
+    "inventory_unique": 7116,
+    "last_public_id": 265400
+  },
+  "notes": [
+    "Source inventory candidates are not automatically release eligible.",
+    "Student-facing questions are rewritten and independently solved."
+  ]
+}
