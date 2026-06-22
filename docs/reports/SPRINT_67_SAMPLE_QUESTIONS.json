@@ -1,0 +1,1104 @@
+[
+  {
+    "id": "TAH-PHY-0001",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "فيزياء",
+    "subject": "فيزياء",
+    "unit": "القياس",
+    "skill": "القياس",
+    "question": "أي العبارات الآتية تصف القياس وصفًا صحيحًا؟",
+    "choices": [
+      "تحويل الطاقة من صورة لأخرى",
+      "مقارنة كمية مجهولة بكمية معيارية معلومة",
+      "تحديد اتجاه القوة فقط",
+      "توقع نتيجة التجربة دون اختبار"
+    ],
+    "correct": 1,
+    "answer": "مقارنة كمية مجهولة بكمية معيارية معلومة",
+    "explain": "القياس يعني مقارنة كمية مجهولة بوحدة أو معيار معروف.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "فيزياء",
+      "القياس",
+      "القياس"
+    ],
+    "concept_id": "tahsili.phy.القياس.القياس",
+    "summary_block_id": "",
+    "misconception_id": "القياس_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الفيزياء 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "القياس",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "القياس يعني مقارنة كمية مجهولة بوحدة أو معيار معروف.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263001
+  },
+  {
+    "id": "TAH-PHY-0002",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "فيزياء",
+    "subject": "فيزياء",
+    "unit": "القياس",
+    "skill": "دقة القياس",
+    "question": "أي العبارات الآتية تصف دقة القياس وصفًا صحيحًا؟",
+    "choices": [
+      "تزداد كلما زاد هامش الخطأ",
+      "لا تتأثر بالأداة",
+      "تعني قرب القياس من القيمة الحقيقية فقط",
+      "ترتبط بأصغر تدريج في أداة القياس"
+    ],
+    "correct": 3,
+    "answer": "ترتبط بأصغر تدريج في أداة القياس",
+    "explain": "كلما كان أصغر تدريج أصغر أمكن قراءة قيم أدق، بينما الضبط يتعلق بقرب القياس من القيمة الصحيحة.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "فيزياء",
+      "القياس",
+      "دقة القياس"
+    ],
+    "concept_id": "tahsili.phy.القياس.دقة_القياس",
+    "summary_block_id": "",
+    "misconception_id": "دقة_القياس_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الفيزياء 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "دقة القياس",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "كلما كان أصغر تدريج أصغر أمكن قراءة قيم أدق، بينما الضبط يتعلق بقرب القياس من القيمة الصحيحة.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263002
+  },
+  {
+    "id": "TAH-PHY-0003",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "فيزياء",
+    "subject": "فيزياء",
+    "unit": "الحركة",
+    "skill": "المسافة",
+    "question": "أي العبارات الآتية تصف المسافة وصفًا صحيحًا؟",
+    "choices": [
+      "التغير المتجه في الموقع",
+      "طول المسار الفعلي الذي قطعه الجسم",
+      "معدل تغير السرعة",
+      "الزمن اللازم للحركة"
+    ],
+    "correct": 1,
+    "answer": "طول المسار الفعلي الذي قطعه الجسم",
+    "explain": "المسافة كمية قياسية تمثل طول المسار ولا تعتمد على الاتجاه.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "فيزياء",
+      "الحركة",
+      "المسافة"
+    ],
+    "concept_id": "tahsili.phy.الحركة.المسافة",
+    "summary_block_id": "",
+    "misconception_id": "المسافة_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الفيزياء 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "المسافة",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "المسافة كمية قياسية تمثل طول المسار ولا تعتمد على الاتجاه.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263003
+  },
+  {
+    "id": "TAH-PHY-0271",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "فيزياء",
+    "subject": "فيزياء",
+    "unit": "الحركة",
+    "skill": "مساحة منحنى السرعة-الزمن",
+    "question": "يمثل الشكل حركة بسرعة تزداد خطيًا من الصفر. إذا كانت النقطة النهائية كما في الرسم، فما الإزاحة خلال الزمن الموضح؟",
+    "choices": [
+      "24 m",
+      "12 m",
+      "10 m",
+      "1.5 m"
+    ],
+    "correct": 1,
+    "answer": "12 m",
+    "explain": "الإزاحة تساوي مساحة المثلث تحت منحنى السرعة-الزمن: ½×4×6=12 m.",
+    "difficulty": "صعب",
+    "time_per_question_sec": 110,
+    "diagnostic": false,
+    "keywords": [
+      "فيزياء",
+      "الحركة",
+      "مساحة منحنى السرعة-الزمن"
+    ],
+    "concept_id": "tahsili.phy.الحركة.مساحة_منحنى_السرعة_الزمن",
+    "summary_block_id": "",
+    "misconception_id": "",
+    "display_variant": "diagram",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الفيزياء 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "مساحة منحنى السرعة-الزمن",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "full",
+    "explanation": {
+      "summary": "الإزاحة تساوي مساحة المثلث تحت منحنى السرعة-الزمن: ½×4×6=12 m.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "image": "assets/questions/generated67/physics_vt_000.svg",
+    "image_alt": "منحنى سرعة-زمن خطي من الصفر إلى نقطة نهائية",
+    "image_caption": "",
+    "public_id": 263271
+  },
+  {
+    "id": "TAH-PHY-0272",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "فيزياء",
+    "subject": "فيزياء",
+    "unit": "الحركة الدائرية",
+    "skill": "اتجاه القوة المركزية",
+    "question": "في الشكل يتحرك الجسم لحظيًا باتجاه السرعة v. ما اتجاه القوة المركزية؟",
+    "choices": [
+      "في اتجاه السرعة المماسية",
+      "بعيدًا عن مركز الدائرة",
+      "لا توجد قوة",
+      "نحو مركز المسار الدائري"
+    ],
+    "correct": 3,
+    "answer": "نحو مركز المسار الدائري",
+    "explain": "القوة المركزية تكون دائمًا باتجاه مركز المسار وتكون عمودية على السرعة المماسية.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 85,
+    "diagnostic": false,
+    "keywords": [
+      "فيزياء",
+      "الحركة الدائرية",
+      "اتجاه القوة المركزية"
+    ],
+    "concept_id": "tahsili.phy.الحركة_الدائرية.اتجاه_القوة_المركزية",
+    "summary_block_id": "",
+    "misconception_id": "",
+    "display_variant": "diagram",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الفيزياء 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "اتجاه القوة المركزية",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "full",
+    "explanation": {
+      "summary": "القوة المركزية تكون دائمًا باتجاه مركز المسار وتكون عمودية على السرعة المماسية.",
+      "steps": [],
+      "similar_choices": [
+        {
+          "choice_index": 0,
+          "choice": "في اتجاه السرعة المماسية",
+          "note": "هذا اتجاه السرعة اللحظية، وليس اتجاه القوة المركزية."
+        }
+      ]
+    },
+    "image": "assets/questions/generated67/physics_circle_001.svg",
+    "image_alt": "جسم على مسار دائري مع سهم سرعة مماسي وسهم نحو المركز",
+    "image_caption": "",
+    "public_id": 263272
+  },
+  {
+    "id": "TAH-CHEM-0001",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "كيمياء",
+    "subject": "كيمياء",
+    "unit": "مقدمة الكيمياء",
+    "skill": "الكيمياء التحليلية",
+    "question": "أي العبارات الآتية تصف الكيمياء التحليلية وصفًا صحيحًا؟",
+    "choices": [
+      "يدرس مركبات الكربون فقط",
+      "فرع يحدد مكونات المادة وكمياتها",
+      "يدرس التغيرات النووية فقط",
+      "يدرس كيمياء الكائنات الحية حصراً"
+    ],
+    "correct": 1,
+    "answer": "فرع يحدد مكونات المادة وكمياتها",
+    "explain": "الكيمياء التحليلية تهتم بالتعرف على مكونات العينة وقياس كمياتها.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "كيمياء",
+      "مقدمة الكيمياء",
+      "الكيمياء التحليلية"
+    ],
+    "concept_id": "tahsili.chem.مقدمة_الكيمياء.الكيمياء_التحليلية",
+    "summary_block_id": "",
+    "misconception_id": "الكيمياء_التحليلية_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "تجميعات الكيمياء 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "الكيمياء التحليلية",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "الكيمياء التحليلية تهتم بالتعرف على مكونات العينة وقياس كمياتها.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263301
+  },
+  {
+    "id": "TAH-CHEM-0002",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "كيمياء",
+    "subject": "كيمياء",
+    "unit": "مقدمة الكيمياء",
+    "skill": "الكيمياء العضوية",
+    "question": "أي العبارات الآتية تصف الكيمياء العضوية وصفًا صحيحًا؟",
+    "choices": [
+      "يحدد مكونات العينة وكمياتها",
+      "يدرس سلوك النواة فقط",
+      "يدرس طاقة التفاعل دون تركيب المادة",
+      "فرع يدرس غالبًا مركبات الكربون"
+    ],
+    "correct": 3,
+    "answer": "فرع يدرس غالبًا مركبات الكربون",
+    "explain": "المركبات العضوية ترتكز غالبًا على الكربون والهيدروجين.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "كيمياء",
+      "مقدمة الكيمياء",
+      "الكيمياء العضوية"
+    ],
+    "concept_id": "tahsili.chem.مقدمة_الكيمياء.الكيمياء_العضوية",
+    "summary_block_id": "",
+    "misconception_id": "الكيمياء_العضوية_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "تجميعات الكيمياء 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "الكيمياء العضوية",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "المركبات العضوية ترتكز غالبًا على الكربون والهيدروجين.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263302
+  },
+  {
+    "id": "TAH-CHEM-0003",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "كيمياء",
+    "subject": "كيمياء",
+    "unit": "المادة",
+    "skill": "العنصر",
+    "question": "أي العبارات الآتية تصف العنصر وصفًا صحيحًا؟",
+    "choices": [
+      "مزيج متجانس من مواد",
+      "مادة نقية لا يمكن تحليلها كيميائيًا إلى أبسط",
+      "اتحاد فيزيائي لمادتين",
+      "مركب بنسب متغيرة"
+    ],
+    "correct": 1,
+    "answer": "مادة نقية لا يمكن تحليلها كيميائيًا إلى أبسط",
+    "explain": "العنصر يتكون من نوع واحد من الذرات.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "كيمياء",
+      "المادة",
+      "العنصر"
+    ],
+    "concept_id": "tahsili.chem.المادة.العنصر",
+    "summary_block_id": "",
+    "misconception_id": "العنصر_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "تجميعات الكيمياء 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "العنصر",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "العنصر يتكون من نوع واحد من الذرات.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263303
+  },
+  {
+    "id": "TAH-CHEM-0266",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "كيمياء",
+    "subject": "كيمياء",
+    "unit": "الروابط",
+    "skill": "تركيب جزيء الماء",
+    "question": "ما نوع الروابط داخل جزيء الماء الموضح؟",
+    "choices": [
+      "روابط أيونية",
+      "روابط فلزية",
+      "قوى تشتت فقط",
+      "روابط تساهمية قطبية"
+    ],
+    "correct": 3,
+    "answer": "روابط تساهمية قطبية",
+    "explain": "تشارك ذرتا الهيدروجين والأكسجين بالإلكترونات، لكن الأكسجين أعلى سالبية فتكون الروابط تساهمية قطبية.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 85,
+    "diagnostic": false,
+    "keywords": [
+      "كيمياء",
+      "الروابط",
+      "تركيب جزيء الماء"
+    ],
+    "concept_id": "tahsili.chem.الروابط.تركيب_جزيء_الماء",
+    "summary_block_id": "",
+    "misconception_id": "",
+    "display_variant": "diagram",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "تجميعات الكيمياء 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "تركيب جزيء الماء",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "full",
+    "explanation": {
+      "summary": "تشارك ذرتا الهيدروجين والأكسجين بالإلكترونات، لكن الأكسجين أعلى سالبية فتكون الروابط تساهمية قطبية.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "image": "assets/questions/generated67/chem_molecule_000.svg",
+    "image_alt": "نموذج مبسط لجزيء ماء H-O-H",
+    "image_caption": "",
+    "public_id": 263566
+  },
+  {
+    "id": "TAH-CHEM-0267",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "كيمياء",
+    "subject": "كيمياء",
+    "unit": "الكيمياء الحرارية",
+    "skill": "منحنى طاقة التفاعل",
+    "question": "بالاعتماد على الرسم، ماذا يحدث لطاقة التنشيط عند إضافة محفز؟",
+    "choices": [
+      "تزداد لأن سرعة التفاعل تزداد",
+      "تنخفض لأن المحفز يوفر مسارًا بديلًا",
+      "لا تتغير مطلقًا",
+      "تساوي طاقة النواتج"
+    ],
+    "correct": 1,
+    "answer": "تنخفض لأن المحفز يوفر مسارًا بديلًا",
+    "explain": "المحفز يسرّع التفاعل بتوفير مسار ذي طاقة تنشيط أقل، ولا يغير فرق الطاقة بين المتفاعلات والنواتج.",
+    "difficulty": "متوسط",
+    "time_per_question_sec": 85,
+    "diagnostic": false,
+    "keywords": [
+      "كيمياء",
+      "الكيمياء الحرارية",
+      "منحنى طاقة التفاعل"
+    ],
+    "concept_id": "tahsili.chem.الكيمياء_الحرارية.منحنى_طاقة_التفاعل",
+    "summary_block_id": "",
+    "misconception_id": "",
+    "display_variant": "diagram",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "تجميعات الكيمياء 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "منحنى طاقة التفاعل",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "full",
+    "explanation": {
+      "summary": "المحفز يسرّع التفاعل بتوفير مسار ذي طاقة تنشيط أقل، ولا يغير فرق الطاقة بين المتفاعلات والنواتج.",
+      "steps": [],
+      "similar_choices": [
+        {
+          "choice_index": 0,
+          "choice": "تزداد لأن سرعة التفاعل تزداد",
+          "note": "زيادة سرعة التفاعل لا تعني زيادة طاقة التنشيط؛ العكس هو الصحيح عند استخدام محفز."
+        }
+      ]
+    },
+    "image": "assets/questions/generated67/chem_energy_001.svg",
+    "image_alt": "منحنى طاقة تفاعل مع قمة تمثل طاقة التنشيط",
+    "image_caption": "",
+    "public_id": 263567
+  },
+  {
+    "id": "TAH-MATH-0001",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "رياضيات",
+    "subject": "رياضيات",
+    "unit": "المنطق والبرهان",
+    "skill": "المثال المضاد",
+    "question": "أي العبارات الآتية تصف المثال المضاد وصفًا صحيحًا؟",
+    "choices": [
+      "دليل يثبت صحة العبارة في جميع الحالات",
+      "مثال واحد يثبت أن التخمين غير صحيح دائمًا",
+      "تعريف لمصطلح هندسي",
+      "عبارة شرطية صحيحة دائمًا"
+    ],
+    "correct": 1,
+    "answer": "مثال واحد يثبت أن التخمين غير صحيح دائمًا",
+    "explain": "يكفي مثال مضاد واحد لنقض تخمين عام.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "رياضيات",
+      "المنطق والبرهان",
+      "المثال المضاد"
+    ],
+    "concept_id": "tahsili.math.المنطق_والبرهان.المثال_المضاد",
+    "summary_block_id": "",
+    "misconception_id": "المثال_المضاد_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الرياضيات 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "المثال المضاد",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "يكفي مثال مضاد واحد لنقض تخمين عام.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263601
+  },
+  {
+    "id": "TAH-MATH-0002",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "رياضيات",
+    "subject": "رياضيات",
+    "unit": "المنطق والبرهان",
+    "skill": "العبارة الشرطية",
+    "question": "أي العبارات الآتية تصف العبارة الشرطية وصفًا صحيحًا؟",
+    "choices": [
+      "عبارة تربط قضيتين بواو فقط",
+      "نفي عبارة بسيطة",
+      "معادلة جبرية بلا فرض",
+      "عبارة على صورة إذا كان p فإن q"
+    ],
+    "correct": 3,
+    "answer": "عبارة على صورة إذا كان p فإن q",
+    "explain": "في p→q يكون p الفرض وq النتيجة.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "رياضيات",
+      "المنطق والبرهان",
+      "العبارة الشرطية"
+    ],
+    "concept_id": "tahsili.math.المنطق_والبرهان.العبارة_الشرطية",
+    "summary_block_id": "",
+    "misconception_id": "العبارة_الشرطية_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الرياضيات 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "العبارة الشرطية",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "في p→q يكون p الفرض وq النتيجة.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263602
+  },
+  {
+    "id": "TAH-MATH-0003",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "رياضيات",
+    "subject": "رياضيات",
+    "unit": "الهندسة",
+    "skill": "متوازي الأضلاع",
+    "question": "أي العبارات الآتية تصف متوازي الأضلاع وصفًا صحيحًا؟",
+    "choices": [
+      "شكل رباعي له ضلعان فقط متساويان",
+      "شكل رباعي كل ضلعين متقابلين فيه متوازيان",
+      "مثلث له ضلعان متطابقان",
+      "دائرة لها وتران متوازيان"
+    ],
+    "correct": 1,
+    "answer": "شكل رباعي كل ضلعين متقابلين فيه متوازيان",
+    "explain": "من خواص متوازي الأضلاع أن الأضلاع المتقابلة متطابقة والقطرين ينصف كل منهما الآخر.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "رياضيات",
+      "الهندسة",
+      "متوازي الأضلاع"
+    ],
+    "concept_id": "tahsili.math.الهندسة.متوازي_الأضلاع",
+    "summary_block_id": "",
+    "misconception_id": "متوازي_الأضلاع_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الرياضيات 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "متوازي الأضلاع",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "من خواص متوازي الأضلاع أن الأضلاع المتقابلة متطابقة والقطرين ينصف كل منهما الآخر.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263603
+  },
+  {
+    "id": "TAH-MATH-0261",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "رياضيات",
+    "subject": "رياضيات",
+    "unit": "الهندسة",
+    "skill": "مساحة المثلث",
+    "question": "ما مساحة المثلث الموضح في الشكل؟",
+    "choices": [
+      "50 cm²",
+      "25 cm²",
+      "15 cm²",
+      "7.5 cm²"
+    ],
+    "correct": 1,
+    "answer": "25 cm²",
+    "explain": "المساحة=½×10×5=25 cm².",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "رياضيات",
+      "الهندسة",
+      "مساحة المثلث"
+    ],
+    "concept_id": "tahsili.math.الهندسة.مساحة_المثلث",
+    "summary_block_id": "",
+    "misconception_id": "",
+    "display_variant": "diagram",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الرياضيات 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "مساحة المثلث",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "brief",
+    "explanation": {
+      "summary": "المساحة=½×10×5=25 cm².",
+      "steps": [],
+      "similar_choices": []
+    },
+    "image": "assets/questions/generated67/math_triangle_000.svg",
+    "image_alt": "مثلث موضح عليه طول القاعدة والارتفاع",
+    "image_caption": "",
+    "public_id": 263861
+  },
+  {
+    "id": "TAH-MATH-0262",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "رياضيات",
+    "subject": "رياضيات",
+    "unit": "الدائرة",
+    "skill": "محيط الدائرة",
+    "question": "ما محيط الدائرة الموضحة بدلالة π؟",
+    "choices": [
+      "25π",
+      "5π",
+      "20π",
+      "10π"
+    ],
+    "correct": 3,
+    "answer": "10π",
+    "explain": "C=2πr=2π×5=10π.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "رياضيات",
+      "الدائرة",
+      "محيط الدائرة"
+    ],
+    "concept_id": "tahsili.math.الدائرة.محيط_الدائرة",
+    "summary_block_id": "",
+    "misconception_id": "",
+    "display_variant": "diagram",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الرياضيات 2025.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "محيط الدائرة",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "full",
+    "explanation": {
+      "summary": "C=2πr=2π×5=10π.",
+      "steps": [],
+      "similar_choices": [
+        {
+          "choice_index": 0,
+          "choice": "25π",
+          "note": "هذه صيغة مساحة الدائرة πr²، وليست المحيط."
+        }
+      ]
+    },
+    "image": "assets/questions/generated67/math_circle_001.svg",
+    "image_alt": "دائرة موضح عليها نصف القطر",
+    "image_caption": "",
+    "public_id": 263862
+  },
+  {
+    "id": "TAH-BIO-0001",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "الأحياء وعلم البيئة",
+    "subject": "الأحياء وعلم البيئة",
+    "unit": "التصنيف",
+    "skill": "النوع",
+    "question": "أي العبارات الآتية تصف النوع وصفًا صحيحًا؟",
+    "choices": [
+      "مجموعة تضم عدة أجناس",
+      "مجموعة مخلوقات تستطيع التزاوج وإنتاج نسل خصب",
+      "أعلى مستوى تصنيفي",
+      "مجموعة كائنات في موطن واحد دون تكاثر"
+    ],
+    "correct": 1,
+    "answer": "مجموعة مخلوقات تستطيع التزاوج وإنتاج نسل خصب",
+    "explain": "النوع هو الوحدة الأساسية في التصنيف ويضم أفرادًا متشابهين قادرين على إنتاج نسل خصب.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "الأحياء وعلم البيئة",
+      "التصنيف",
+      "النوع"
+    ],
+    "concept_id": "tahsili.bio.التصنيف.النوع",
+    "summary_block_id": "",
+    "misconception_id": "النوع_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الأحياء وعلم البيئة 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "النوع",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "النوع هو الوحدة الأساسية في التصنيف ويضم أفرادًا متشابهين قادرين على إنتاج نسل خصب.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263901
+  },
+  {
+    "id": "TAH-BIO-0002",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "الأحياء وعلم البيئة",
+    "subject": "الأحياء وعلم البيئة",
+    "unit": "التصنيف",
+    "skill": "التسمية الثنائية",
+    "question": "أي العبارات الآتية تصف التسمية الثنائية وصفًا صحيحًا؟",
+    "choices": [
+      "اسم الشعبة والطائفة",
+      "اسم المملكة فقط",
+      "وصف سلوكي للكائن",
+      "اسم علمي يتكون من اسم الجنس واسم النوع"
+    ],
+    "correct": 3,
+    "answer": "اسم علمي يتكون من اسم الجنس واسم النوع",
+    "explain": "توحّد التسمية الثنائية أسماء المخلوقات عالميًا.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "الأحياء وعلم البيئة",
+      "التصنيف",
+      "التسمية الثنائية"
+    ],
+    "concept_id": "tahsili.bio.التصنيف.التسمية_الثنائية",
+    "summary_block_id": "",
+    "misconception_id": "التسمية_الثنائية_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الأحياء وعلم البيئة 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "التسمية الثنائية",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "توحّد التسمية الثنائية أسماء المخلوقات عالميًا.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263902
+  },
+  {
+    "id": "TAH-BIO-0003",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "الأحياء وعلم البيئة",
+    "subject": "الأحياء وعلم البيئة",
+    "unit": "الفيروسات",
+    "skill": "الفيروس",
+    "question": "أي العبارات الآتية تصف الفيروس وصفًا صحيحًا؟",
+    "choices": [
+      "خلية بدائية النواة كاملة",
+      "مادة وراثية محاطة بغلاف بروتيني ولا يتكاثر منفردًا",
+      "كائن ذاتي التغذي",
+      "فطر وحيد الخلية"
+    ],
+    "correct": 1,
+    "answer": "مادة وراثية محاطة بغلاف بروتيني ولا يتكاثر منفردًا",
+    "explain": "الفيروس يحتاج خلية مضيفة لإنتاج نسخ جديدة منه.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "الأحياء وعلم البيئة",
+      "الفيروسات",
+      "الفيروس"
+    ],
+    "concept_id": "tahsili.bio.الفيروسات.الفيروس",
+    "summary_block_id": "",
+    "misconception_id": "الفيروس_confusion",
+    "display_variant": "standard",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الأحياء وعلم البيئة 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "الفيروس",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "none",
+    "explanation": {
+      "summary": "الفيروس يحتاج خلية مضيفة لإنتاج نسخ جديدة منه.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "public_id": 263903
+  },
+  {
+    "id": "TAH-BIO-0241",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "الأحياء وعلم البيئة",
+    "subject": "الأحياء وعلم البيئة",
+    "unit": "الخلية",
+    "skill": "النواة",
+    "question": "أي تركيب يمثله الرقم 1 ويحتوي معظم المادة الوراثية للخلية حقيقية النواة؟",
+    "choices": [
+      "الغشاء البلازمي",
+      "النواة",
+      "الريبوسوم",
+      "السيتوبلازم"
+    ],
+    "correct": 1,
+    "answer": "النواة",
+    "explain": "النواة هي العضية المحاطة بغشاء التي تحتوي معظم DNA في الخلية حقيقية النواة.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "الأحياء وعلم البيئة",
+      "الخلية",
+      "النواة"
+    ],
+    "concept_id": "tahsili.bio.الخلية.النواة",
+    "summary_block_id": "",
+    "misconception_id": "",
+    "display_variant": "diagram",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الأحياء وعلم البيئة 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "النواة",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "brief",
+    "explanation": {
+      "summary": "النواة هي العضية المحاطة بغشاء التي تحتوي معظم DNA في الخلية حقيقية النواة.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "image": "assets/questions/generated67/bio_cell_000.svg",
+    "image_alt": "رسم مبسط لخلية حقيقية النواة تظهر فيها النواة",
+    "image_caption": "",
+    "public_id": 264141
+  },
+  {
+    "id": "TAH-BIO-0242",
+    "exam": "تحصيلي",
+    "eligible_tracks": [
+      "علمي",
+      "أدبي"
+    ],
+    "category": "الأحياء وعلم البيئة",
+    "subject": "الأحياء وعلم البيئة",
+    "unit": "الخلية",
+    "skill": "الانتشار",
+    "question": "أي عملية يمثلها انتقال الجزيئات في الشكل دون استهلاك مباشر للطاقة؟",
+    "choices": [
+      "النقل النشط",
+      "البلعمة",
+      "الإخراج الخلوي",
+      "الانتشار"
+    ],
+    "correct": 3,
+    "answer": "الانتشار",
+    "explain": "الحركة من تركيز مرتفع إلى منخفض دون ATP تمثل الانتشار.",
+    "difficulty": "سهل",
+    "time_per_question_sec": 65,
+    "diagnostic": false,
+    "keywords": [
+      "الأحياء وعلم البيئة",
+      "الخلية",
+      "الانتشار"
+    ],
+    "concept_id": "tahsili.bio.الخلية.الانتشار",
+    "summary_block_id": "",
+    "misconception_id": "",
+    "display_variant": "diagram",
+    "source_status": "original_generated_from_curriculum_map",
+    "source_documents": [
+      "كتاب الأحياء وعلم البيئة 2026.pdf"
+    ],
+    "source_pages": "",
+    "source_pattern": "الانتشار",
+    "copyright_method": "original_question_new_values_new_wording",
+    "editorial_status": "qa_passed_internal",
+    "release_eligible": true,
+    "rights_status": "original",
+    "bank": "تحصيلي موحد",
+    "created_year": 2026,
+    "explanation_mode": "brief",
+    "explanation": {
+      "summary": "الحركة من تركيز مرتفع إلى منخفض دون ATP تمثل الانتشار.",
+      "steps": [],
+      "similar_choices": []
+    },
+    "image": "assets/questions/generated67/bio_diffusion_001.svg",
+    "image_alt": "جزيئات تنتقل من منطقة عالية التركيز إلى منخفضة التركيز",
+    "image_caption": "",
+    "public_id": 264142
+  }
+]

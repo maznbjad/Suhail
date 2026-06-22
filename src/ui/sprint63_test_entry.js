@@ -33,6 +33,7 @@
       <button type="button" class="s64-test-close" aria-label="إغلاق">×</button>
       <div class="s64-test-title" id="s64TestTitle">اختبار</div>
       <div class="s64-test-grid">
+        <button type="button" class="s64-test-choice tahsili" data-exam="تحصيلي"><span class="s64-choice-symbol">⚗</span><span>تحصيلي</span></button>
         <button type="button" class="s64-test-choice" data-exam="قدرات كمي"><span class="s64-choice-symbol">∑</span><span>قدرات كمي</span></button>
         <button type="button" class="s64-test-choice green" data-exam="قدرات لفظي"><span class="s64-choice-symbol">ض</span><span>قدرات لفظي</span></button>
       </div>

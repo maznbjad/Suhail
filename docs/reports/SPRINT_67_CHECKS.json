@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "question_count": 4200,
+  "subjects": {
+    "فيزياء": 300,
+    "كيمياء": 300,
+    "رياضيات": 300,
+    "الأحياء وعلم البيئة": 300
+  },
+  "image_questions_total": 250,
+  "tahsili_explanation_modes": {
+    "none": 453,
+    "full": 667,
+    "brief": 80
+  },
+  "errors": []
+}

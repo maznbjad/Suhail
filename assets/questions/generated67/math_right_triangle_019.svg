@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img">
+<style>
+text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#153653;font-weight:700}
+.line{stroke:#1a86b8;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.soft{stroke:#4bbb9e;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.guide{stroke:#8ca7b8;stroke-width:3;fill:none;stroke-dasharray:8 8}
+.fill{fill:#dff5ee;stroke:#4bbb9e;stroke-width:4} .fill2{fill:#e7f1ff;stroke:#1a86b8;stroke-width:4}
+.label{font-size:24px} .small{font-size:18px} .tiny{font-size:15px}
+</style><polygon class="fill2" points="130,280 500,280 130,70"/><rect x="130" y="250" width="30" height="30" fill="none" stroke="#153653" stroke-width="4"/><text class="label" x="280" y="330">4</text><text class="label" x="85" y="180">5</text><text class="label" x="330" y="160">?</text></svg>

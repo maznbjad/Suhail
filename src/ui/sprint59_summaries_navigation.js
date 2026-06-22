@@ -8,7 +8,7 @@
   const legacyOpenPhysics=typeof window.s28OpenPhysics==='function' ? window.s28OpenPhysics : null;
   const ORDER={
     exams:['تحصيلي','قدرات لفظي','قدرات كمي'],
-    tahsili:['فيزياء','كيمياء','رياضيات','أحياء']
+    tahsili:['فيزياء','كيمياء','رياضيات','الأحياء وعلم البيئة']
   };
   const state={view:'gateway',exam:'',subject:'',unit:'',richPhysics:false};
 
@@ -132,7 +132,7 @@
       ['فيزياء','الكتب والوحدات والقوانين والتعاريف','physics',physicsCount,"s59OpenSubject('فيزياء')"],
       ['كيمياء','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','chemistry','غير منشور',"s59OpenSubject('كيمياء')"],
       ['رياضيات','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','math','غير منشور',"s59OpenSubject('رياضيات')"],
-      ['أحياء','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','biology','غير منشور',"s59OpenSubject('أحياء')"]
+      ['الأحياء وعلم البيئة','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','biology','غير منشور',"s59OpenSubject('الأحياء وعلم البيئة')"]
     ];
     page.innerHTML=`<div class="s59-page">${header('التحصيلي','اختر المادة',"s59OpenGateway()")}
       <div class="s59-section-title"><b>مواد التحصيلي</b><span>${physicsCount} ملخصًا معتمدًا</span></div>

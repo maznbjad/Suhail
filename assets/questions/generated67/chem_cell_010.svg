@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img">
+<style>
+text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#153653;font-weight:700}
+.line{stroke:#1a86b8;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.soft{stroke:#4bbb9e;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.guide{stroke:#8ca7b8;stroke-width:3;fill:none;stroke-dasharray:8 8}
+.fill{fill:#dff5ee;stroke:#4bbb9e;stroke-width:4} .fill2{fill:#e7f1ff;stroke:#1a86b8;stroke-width:4}
+.label{font-size:24px} .small{font-size:18px} .tiny{font-size:15px}
+</style><rect class="fill2" x="130" y="90" width="140" height="180" rx="18"/><rect class="fill" x="370" y="90" width="140" height="180" rx="18"/><line class="line" x1="270" y1="130" x2="370" y2="130"/><line class="line" x1="270" y1="230" x2="370" y2="230"/><text class="label" x="185" y="185">Zn</text><text class="label" x="425" y="185">Cu</text><text class="small" x="290" y="65">e−</text></svg>

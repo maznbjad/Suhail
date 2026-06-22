@@ -1,0 +1,47 @@
+/* Suhail Sprint 66 — dark contrast hardening + combined biology/ecology label. */
+html[data-theme="dark"], body.s55-dark{
+  --s66-title:#fbfdff;
+  --s66-body:#eaf2f8;
+  --s66-muted:#c9d7e3;
+  --s66-border:#3d586d;
+}
+html[data-theme="dark"] body :is(
+  h1,h2,h3,h4,
+  .page-title,.section-title,.top-title,.quick-title,
+  .s54-title,.s54-section-head b,.s54-hero h1,.s54-card b,.s54-kpi b,.s54-question-text,
+  .s55-account-title,.s55-row-label,.s55-info-card h2,.s55-faq summary,
+  .s59-header-copy h1,.s59-section-title b,.s59-card-copy b,.s59-unit-copy b,
+  .s59-summary-intro p,.s59-accordion summary b,.s59-list p,.s59-related-question>b,
+  .s17-units-hero-title,.s17-course-title,.s17-unit-title,.s17-section-title,.s17-page-title-laws,
+  .s16-unit-title,.s16-lesson-name,.s14-card-title,.s14-question-text,.s13-lesson-title,.s13-unit-title,
+  .s62-explanation-head b
+){color:var(--s66-title)!important;opacity:1!important;text-shadow:none!important}
+
+html[data-theme="dark"] body :is(
+  p,small,
+  .page-sub,.s54-subtitle,.s54-card small,.s54-kpi span,.s54-question-meta,
+  .s55-profile-copy span,.s55-row-value,.s55-info-card p,.s55-info-card li,.s55-notify-row span,
+  .s59-header-copy p,.s59-card-copy small,.s59-section-title span,.s59-search-meta,
+  .s59-unit-copy small,.s59-tags span,.s59-hierarchy-note span,.s59-empty,.s59-catalog-empty p,
+  .s17-units-hero-sub,.s17-course-sub,.s17-unit-sub,.s17-search-meta,
+  .s16-unit-sub,.s16-lesson-desc,.s14-sub,.s13-lesson-sub,.s13-unit-sub,.s13-meta,.s13-text,
+  .s62-explanation-head span
+){color:var(--s66-muted)!important;opacity:1!important;text-shadow:none!important}
+
+html[data-theme="dark"] body :is(
+  .s59-card,.s59-unit,.s59-accordion,.s59-related-question,.s59-catalog-empty,
+  .s54-card,.s54-kpi,.s54-today,.s54-readiness,.s54-settings,.s54-setting,.s54-question,
+  .s55-profile-strip,.s55-menu-card,.s55-info-card,.s55-notify-list,
+  input,textarea,select
+){border-color:var(--s66-border)!important}
+
+html[data-theme="dark"] body :is(input,textarea,select){color:var(--s66-title)!important}
+html[data-theme="dark"] body :is(input,textarea)::placeholder{color:#aebfcd!important;opacity:1!important}
+
+/* Long combined label stays readable on cards and narrow iPhone screens. */
+.s59-card-copy b,.s54-card b{overflow-wrap:anywhere}
+.s59-card.subject .s59-card-copy b[data-subject="biology"]{font-size:16px}
+@media(max-width:430px){
+  .s59-card-copy b{font-size:16px}
+  .s59-card.subject .s59-card-copy b{line-height:1.45}
+}

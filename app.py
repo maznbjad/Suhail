@@ -8587,7 +8587,7 @@ function renderPerformancePage() {
 
 const summaryExams = ["تحصيلي", "قدرات كمي", "قدرات لفظي"];
 const summaryExamSubjects = {
-  "تحصيلي": ["رياضيات", "فيزياء", "كيمياء", "أحياء"],
+  "تحصيلي": ["رياضيات", "فيزياء", "كيمياء", "الأحياء وعلم البيئة"],
   "قدرات كمي": ["كمي"],
   "قدرات لفظي": ["لفظي"]
 };
@@ -8645,7 +8645,7 @@ function summaryIcon(subject) {
   if (subject === "رياضيات") return "√x";
   if (subject === "فيزياء") return "⚛";
   if (subject === "كيمياء") return "⚗";
-  if (subject === "أحياء") return "♧";
+  if (subject === "أحياء" || subject === "الأحياء وعلم البيئة") return "♧";
   return "▤";
 }
 
@@ -9231,7 +9231,7 @@ function qmCleanUpdateAccess(){
 function qmCleanCategoryMap(exam){
   const e = String(exam || "").trim();
   if(e === "تحصيلي"){
-    return ["فيزياء","كيمياء","أحياء","رياضيات"];
+    return ["فيزياء","كيمياء","الأحياء وعلم البيئة","رياضيات"];
   }
   if(e === "قدرات لفظي"){
     return ["تناظر لفظي","استيعاب مقروء","إكمال جمل","خطأ سياقي","ارتباط واختلاف","مفردة شاذة"];
@@ -10306,7 +10306,7 @@ function inferExam(item) {
   const raw = String(item.exam || item.category || item.type || item.section || item.skill || item.subject || item.material || "");
   if (raw.includes("لفظ")) return "قدرات لفظي";
   if (raw.includes("تحصيلي")) return "تحصيلي";
-  if (raw.includes("فيزياء") || raw.includes("كيمياء") || raw.includes("أحياء") || raw.includes("احياء") || raw.includes("رياضيات")) return "تحصيلي";
+  if (raw.includes("فيزياء") || raw.includes("كيمياء") || raw.includes("أحياء") || raw.includes("احياء") || raw.includes("علم البيئة") || raw.includes("رياضيات")) return "تحصيلي";
   if (raw.includes("كمي")) return "قدرات كمي";
   return item.exam || "قدرات كمي";
 }
@@ -11486,7 +11486,7 @@ function loadCurrentQuestion() {
       {id:'math', title:'رياضيات', subject:'رياضيات', icon:'π'},
       {id:'physics', title:'فيزياء', subject:'فيزياء', icon:'↯'},
       {id:'chemistry', title:'كيمياء', subject:'كيمياء', icon:'⚗️'},
-      {id:'biology', title:'أحياء', subject:'أحياء', icon:'🧬'}
+      {id:'biology', title:'الأحياء وعلم البيئة', subject:'الأحياء وعلم البيئة', icon:'🧬'}
     ]}
   ];
 
@@ -11580,7 +11580,7 @@ function loadCurrentQuestion() {
   function renderFilterChips(){
     const chips = [
       ['الكل','الكل','⌂'], ['قدرات','الكل','🎯'], ['قدرات','كمي','∑'], ['قدرات','لفظي','ض'],
-      ['تحصيلي','الكل','⚗️'], ['تحصيلي','رياضيات','π'], ['تحصيلي','فيزياء','↯'], ['تحصيلي','كيمياء','⚗️'], ['تحصيلي','أحياء','🧬']
+      ['تحصيلي','الكل','⚗️'], ['تحصيلي','رياضيات','π'], ['تحصيلي','فيزياء','↯'], ['تحصيلي','كيمياء','⚗️'], ['تحصيلي','الأحياء وعلم البيئة','🧬']
     ];
     return chips.map(([t,c,ico]) => `<button class="sprint06-chip ${(smartFilter.track===t && smartFilter.child===c)?'active':''}" onclick="setSmartFilter('${t}','${c}')">${ico} ${c==='الكل'?t:c}</button>`).join('');
   }
@@ -12823,7 +12823,7 @@ function showPage(pageId) {
       {id:'math', title:'رياضيات', subject:'رياضيات', icon:'π'},
       {id:'physics', title:'فيزياء', subject:'فيزياء', icon:'↯'},
       {id:'chemistry', title:'كيمياء', subject:'كيمياء', icon:'⚗️'},
-      {id:'biology', title:'أحياء', subject:'أحياء', icon:'🧬'}
+      {id:'biology', title:'الأحياء وعلم البيئة', subject:'الأحياء وعلم البيئة', icon:'🧬'}
     ]}
   ];
 
@@ -12917,7 +12917,7 @@ function showPage(pageId) {
   function renderFilterChips(){
     const chips = [
       ['الكل','الكل','⌂'], ['قدرات','الكل','🎯'], ['قدرات','كمي','∑'], ['قدرات','لفظي','ض'],
-      ['تحصيلي','الكل','⚗️'], ['تحصيلي','رياضيات','π'], ['تحصيلي','فيزياء','↯'], ['تحصيلي','كيمياء','⚗️'], ['تحصيلي','أحياء','🧬']
+      ['تحصيلي','الكل','⚗️'], ['تحصيلي','رياضيات','π'], ['تحصيلي','فيزياء','↯'], ['تحصيلي','كيمياء','⚗️'], ['تحصيلي','الأحياء وعلم البيئة','🧬']
     ];
     return chips.map(([t,c,ico]) => `<button class="sprint06-chip ${(smartFilter.track===t && smartFilter.child===c)?'active':''}" onclick="setSmartFilter('${t}','${c}')">${ico} ${c==='الكل'?t:c}</button>`).join('');
   }
@@ -13047,7 +13047,7 @@ setTimeout(forceLoadSuhailTabbarIcons, 350);
       {id:'math', title:'رياضيات', exam:'تحصيلي', subject:'رياضيات', icon:'π'},
       {id:'physics', title:'فيزياء', exam:'تحصيلي', subject:'فيزياء', icon:'↯'},
       {id:'chemistry', title:'كيمياء', exam:'تحصيلي', subject:'كيمياء', icon:'⚗️'},
-      {id:'biology', title:'أحياء', exam:'تحصيلي', subject:'أحياء', icon:'🧬'}
+      {id:'biology', title:'الأحياء وعلم البيئة', exam:'تحصيلي', subject:'الأحياء وعلم البيئة', icon:'🧬'}
     ]}
   ];
 
@@ -13218,7 +13218,7 @@ setTimeout(forceLoadSuhailTabbarIcons, 350);
       {track:'تحصيلي', subject:'رياضيات', title:'رياضيات', icon:'π', sub:'قوانين وعلاقات'},
       {track:'تحصيلي', subject:'كيمياء', title:'كيمياء', icon:'⚗️', sub:'مادة وتفاعلات'},
       {track:'تحصيلي', subject:'فيزياء', title:'فيزياء', icon:'↯', sub:'قوى وطاقة'},
-      {track:'تحصيلي', subject:'أحياء', title:'أحياء', icon:'🧬', sub:'حياة وأنظمة'}
+      {track:'تحصيلي', subject:'الأحياء وعلم البيئة', title:'الأحياء وعلم البيئة', icon:'🧬', sub:'الحياة والأنظمة البيئية'}
     ]
   };
 
@@ -13368,7 +13368,7 @@ setTimeout(forceLoadSuhailTabbarIcons, 350);
     {id:'qudrat', title:'قدرات', icon:'🎯', sub:'كمي ولفظي', children:[
       {title:'كمي', exam:'قدرات كمي', icon:'∑'}, {title:'لفظي', exam:'قدرات لفظي', icon:'ض'}]},
     {id:'tahsili', title:'تحصيلي', icon:'⚗️', sub:'مواد التحصيلي', children:[
-      {title:'رياضيات', subject:'رياضيات', icon:'π'}, {title:'كيمياء', subject:'كيمياء', icon:'⚗️'}, {title:'فيزياء', subject:'فيزياء', icon:'↯'}, {title:'أحياء', subject:'أحياء', icon:'🧬'}]}
+      {title:'رياضيات', subject:'رياضيات', icon:'π'}, {title:'كيمياء', subject:'كيمياء', icon:'⚗️'}, {title:'فيزياء', subject:'فيزياء', icon:'↯'}, {title:'الأحياء وعلم البيئة', subject:'الأحياء وعلم البيئة', icon:'🧬'}]}
   ];
   function homeCount(track){ try { return track.id==='qudrat' ? ((questions||[]).filter(q=>String(q.exam||q.category).includes('كمي')).length + (questions||[]).filter(q=>String(q.exam||q.category).includes('لفظ')).length) : countItems({track:'تحصيلي'}); } catch(e){ return 0; } }
   window.buildExamCircles = function(targetId){
@@ -13462,7 +13462,7 @@ setTimeout(forceLoadSuhailTabbarIcons, 350);
     {track:'تحصيلي', subject:'رياضيات', title:'رياضيات', icon:'π', sub:'قوانين وعلاقات'},
     {track:'تحصيلي', subject:'كيمياء', title:'كيمياء', icon:'⚗️', sub:'مادة وتفاعلات'},
     {track:'تحصيلي', subject:'فيزياء', title:'فيزياء', icon:'↯', sub:'قوى وطاقة'},
-    {track:'تحصيلي', subject:'أحياء', title:'أحياء', icon:'🧬', sub:'حياة وأنظمة'}
+    {track:'تحصيلي', subject:'الأحياء وعلم البيئة', title:'الأحياء وعلم البيئة', icon:'🧬', sub:'الحياة والأنظمة البيئية'}
   ];
   const RAW_SOURCES = [
     {track:'تحصيلي', subject:'رياضيات', title:'رياضيات 1-2 مسارات', pages:96},
@@ -13936,7 +13936,7 @@ setTimeout(forceLoadSuhailTabbarIcons, 350);
   }
   const ROOTS=[{track:'قدرات',title:'قدرات',icon:'🎯',sub:'كمي / لفظي'},{track:'تحصيلي',title:'تحصيلي',icon:'⚗️',sub:'مواد التحصيلي'}];
   const Q=[{child:'كمي',title:'كمي',icon:'∑',sub:'مسائل وعلاقات'},{child:'لفظي',title:'لفظي',icon:'ض',sub:'لغة وسياق'}];
-  const T=[{subject:'رياضيات',title:'رياضيات',icon:'π',sub:'قوانين وبرهان'},{subject:'كيمياء',title:'كيمياء',icon:'⚗️',sub:'مادة وتغيرات'},{subject:'فيزياء',title:'فيزياء',icon:'↯',sub:'قوى وطاقة'},{subject:'أحياء',title:'أحياء',icon:'🧬',sub:'حياة وأنظمة'}];
+  const T=[{subject:'رياضيات',title:'رياضيات',icon:'π',sub:'قوانين وبرهان'},{subject:'كيمياء',title:'كيمياء',icon:'⚗️',sub:'مادة وتغيرات'},{subject:'فيزياء',title:'فيزياء',icon:'↯',sub:'قوى وطاقة'},{subject:'الأحياء وعلم البيئة',title:'الأحياء وعلم البيئة',icon:'🧬',sub:'الحياة والأنظمة البيئية'}];
   function render(){
     const page=document.getElementById('summariesPage'); if(!page)return;
     let body='';
@@ -20114,7 +20114,7 @@ setTimeout(function(){
   function renderGateway(page){
     setNavState('main');
     page.innerHTML = `<div class="s28-page">${hero('الملخصات','',"showPage('homePage')")}<div class="s28-grid main">
-      ${card('تحصيلي','فيزياء، كيمياء، رياضيات، أحياء','🎯',"s28OpenSection('tahsili')",'كتب ووحدات')}
+      ${card('تحصيلي','فيزياء، كيمياء، رياضيات، الأحياء وعلم البيئة','🎯',"s28OpenSection('tahsili')",'كتب ووحدات')}
       ${card('قدرات كمي','حسابية، جبرية، هندسية، بيانات','➗',"s28OpenSection('quant')",'مهارات')}
       ${card('قدرات لفظي','تناظر، استيعاب، إكمال، مفردات','أب',"s28OpenSection('verbal')",'مهارات')}
     </div></div>`;
@@ -20125,7 +20125,7 @@ setTimeout(function(){
       ${card('فيزياء','فيزياء 1، فيزياء 2، فيزياء 3-1، فيزياء 3-2','⚛️',"s28OpenPhysics()",'متاح')}
       ${card('كيمياء','الكتب والوحدات والتعاريف والقوانين','⚗️',"s28ComingSoon('كيمياء')",'قريبًا')}
       ${card('رياضيات','الوحدات والقوانين والأمثلة','📐',"s28ComingSoon('رياضيات')",'قريبًا')}
-      ${card('أحياء','المفاهيم، التعاريف، المقارنات','🧬',"s28ComingSoon('أحياء')",'قريبًا')}
+      ${card('الأحياء وعلم البيئة','المفاهيم، التعاريف، والأنظمة البيئية','🧬',"s28ComingSoon('أحياء')",'قريبًا')}
     </div></div>`;
   }
   function renderQuant(page){
@@ -20490,5 +20490,17 @@ try:
     html_code = html_code.replace("</body>", f"<script>{s63_js}</script></body>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 63 test-entry module: {exc}")
+
+
+# Sprint 66 hardens dark-mode title contrast across every screen and renames
+# the Tahsili biology section to "الأحياء وعلم البيئة" without creating a
+# separate ecology section.
+s66_css_path = os.path.join("src", "ui", "sprint66_dark_contrast.css")
+try:
+    with open(s66_css_path, "r", encoding="utf-8") as style_file:
+        s66_css = style_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s66_css}</style></head>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 66 contrast module: {exc}")
 
 components.html(html_code, height=930, scrolling=False)

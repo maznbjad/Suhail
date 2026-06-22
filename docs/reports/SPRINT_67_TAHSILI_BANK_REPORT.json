@@ -1,0 +1,19 @@
+{
+  "total_questions": 4200,
+  "qudrat_questions": 3000,
+  "tahsili_questions": 1200,
+  "by_subject": {
+    "فيزياء": 300,
+    "كيمياء": 300,
+    "رياضيات": 300,
+    "الأحياء وعلم البيئة": 300
+  },
+  "image_questions": 165,
+  "public_id_first_tahsili": 263001,
+  "public_id_last": 264200,
+  "explanation_modes": {
+    "none": 453,
+    "full": 667,
+    "brief": 80
+  }
+}

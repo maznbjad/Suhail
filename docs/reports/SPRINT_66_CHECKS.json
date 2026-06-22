@@ -1,0 +1,9 @@
+{
+  "css_exists": true,
+  "app_injects_css": true,
+  "new_label_in_summaries": true,
+  "old_card_label_removed": true,
+  "dark_title_color": true,
+  "manifest_sprint_66": true,
+  "no_new_summaries": true
+}

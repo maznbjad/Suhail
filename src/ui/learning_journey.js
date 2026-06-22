@@ -524,7 +524,7 @@
     return (Array.isArray(smartSummaries) ? smartSummaries : []).filter(x => [x.subject, x.unit, x.title, x.category, x.skill].some(v => String(v || '').includes(term))).slice(0, 8);
   }
   window.s39OpenSkillHub = function (name) {
-    const tahsili = ['فيزياء', 'كيمياء', 'رياضيات', 'أحياء'].includes(name);
+    const tahsili = ['فيزياء', 'كيمياء', 'رياضيات', 'أحياء', 'الأحياء وعلم البيئة'].includes(name);
     const quant = ['حسابية', 'جبرية', 'هندسية', 'تحليل بيانات وإحصاء'].includes(name);
     const exam = tahsili ? 'تحصيلي' : quant ? 'قدرات كمي' : 'قدرات لفظي';
     skillHubState = { name, exam };

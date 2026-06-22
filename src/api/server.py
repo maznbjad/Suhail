@@ -36,7 +36,7 @@ from src.core.challenge_repository import ensure_social_schema, friend_code_for_
 ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = ROOT / "data" / "suhail_learning.db"
 SUMMARIES_PATH = ROOT / "data" / "smart_summaries.json"
-RELEASE = "62.0.0"
+RELEASE = "67.0.0"
 ALLOWED_EXAMS = {"قدرات كمي", "قدرات لفظي", "تحصيلي"}
 AUTH_WINDOW_SEC = 60
 AUTH_MAX_ATTEMPTS = 10
@@ -153,7 +153,7 @@ def _score_diagnostic_items(
             float(groups.get(subject, {}).get("percent", 0)) * float(model.get(weight_key, 0.25))
             for subject, weight_key in (
                 ("رياضيات", "math_weight"), ("فيزياء", "physics_weight"),
-                ("كيمياء", "chemistry_weight"), ("أحياء", "biology_weight"),
+                ("كيمياء", "chemistry_weight"), ("الأحياء وعلم البيئة", "biology_weight"),
             )
         )
     return {
@@ -480,7 +480,7 @@ def create_app() -> Flask:
             # Tahsili is intentionally common. requested_track is ignored and never persisted.
             track = None
             config = settings.get("tahsili_common", {})
-            for subject, key in (("رياضيات", "math"), ("فيزياء", "physics"), ("كيمياء", "chemistry"), ("أحياء", "biology")):
+            for subject, key in (("رياضيات", "math"), ("فيزياء", "physics"), ("كيمياء", "chemistry"), ("الأحياء وعلم البيئة", "biology")):
                 items.extend(_fetch_diagnostic("تحصيلي", int(config.get(key, 3)), subject))
 
         session_id = secrets.token_urlsafe(20)

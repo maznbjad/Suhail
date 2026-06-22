@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
   "release": "Sprint 60",
-  "version": "60.0.0",
+  "version": "1.0.66",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -120,7 +120,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 60 removes all generated summary content, preserves the previously curated 72 physics summaries, keeps other sections as admin-managed empty states, and strengthens dark-mode text contrast.",
+  "notes": "Sprint 66 improves dark-mode heading contrast across the app and combines Biology with Environmental Science as one Tahsili section.",
   "summary_content": {
     "published_total": 72,
     "published_subjects": {
@@ -128,12 +128,13 @@
         "فيزياء": 72,
         "كيمياء": 0,
         "رياضيات": 0,
-        "أحياء": 0
+        "الأحياء وعلم البيئة": 0
       },
       "قدرات لفظي": 0,
       "قدرات كمي": 0
     },
     "policy": "No generated summaries. New content appears only after admin review and approval.",
     "physics_source": "data/smart_summaries.json"
-  }
+  },
+  "sprint": 66
 }

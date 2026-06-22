@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img">
+<style>
+text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#153653;font-weight:700}
+.line{stroke:#1a86b8;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.soft{stroke:#4bbb9e;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.guide{stroke:#8ca7b8;stroke-width:3;fill:none;stroke-dasharray:8 8}
+.fill{fill:#dff5ee;stroke:#4bbb9e;stroke-width:4} .fill2{fill:#e7f1ff;stroke:#1a86b8;stroke-width:4}
+.label{font-size:24px} .small{font-size:18px} .tiny{font-size:15px}
+</style><rect class="fill2" x="80" y="120" width="150" height="100" rx="14"/><rect class="fill" x="410" y="120" width="150" height="100" rx="14"/><text class="label" x="130" y="180">R=2Ω</text><text class="label" x="450" y="180">R=8Ω</text><line class="line" x1="230" y1="170" x2="410" y2="170"/><text class="label" x="270" y="90">V=12V</text></svg>

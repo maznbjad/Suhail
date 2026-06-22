@@ -30,7 +30,7 @@ def weighted_tahsili(subject_scores: dict[str, float], academic_track: str | Non
     academic_track is accepted for backwards compatibility but intentionally ignored;
     the scientific/literary distinction belongs to Qudrat only.
     """
-    weights = {"رياضيات": 0.25, "فيزياء": 0.25, "كيمياء": 0.25, "أحياء": 0.25}
+    weights = {"رياضيات": 0.25, "فيزياء": 0.25, "كيمياء": 0.25, "الأحياء وعلم البيئة": 0.25}
     present = [(float(subject_scores.get(subject, 0)), weight) for subject, weight in weights.items()]
     return sum(score * weight for score, weight in present)
 

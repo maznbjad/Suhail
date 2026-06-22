@@ -82,6 +82,10 @@ body.dark-mode #homePage .s63-test-entry{
 .s64-test-choice{min-height:128px;border:1px solid #d9e5f2;border-radius:22px;background:linear-gradient(145deg,#eff7ff,#fff);color:#123565;font-family:'Tajawal',system-ui,sans-serif;font-size:18px;font-weight:900;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer}
 .s64-test-choice.green{background:linear-gradient(145deg,#eefcf7,#fff);border-color:#cfeee3;color:#126852}
 .s64-choice-symbol{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#368cff,#59c8a2);color:#fff;font-size:27px;font-weight:950}
+
+.s64-test-choice.tahsili{grid-column:1/-1;min-height:104px;background:linear-gradient(145deg,#fff7ec,#fff);border-color:#f1dcc0;color:#815022}
+.s64-test-choice.tahsili .s64-choice-symbol{background:linear-gradient(135deg,#f59e0b,#ef6f61)}
+html[data-theme='dark'] .s64-test-choice.tahsili,body.dark-mode .s64-test-choice.tahsili{background:#2b251d;border-color:#725b3d;color:#fff7e8}
 html[data-theme='dark'] .s64-test-chooser,body.dark-mode .s64-test-chooser{background:#142238;border:1px solid #31445f}
 html[data-theme='dark'] .s64-test-title,body.dark-mode .s64-test-title{color:#f7fbff}
 html[data-theme='dark'] .s64-test-close,body.dark-mode .s64-test-close{background:#23344c;color:#f7fbff}
