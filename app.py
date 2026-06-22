@@ -20516,15 +20516,17 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 68 feedback module: {exc}")
 
-# Sprint 69 links every approved physics question to an exact knowledge block.
-s69_css_path = os.path.join("src", "ui", "sprint69_summary_knowledge.css")
-s69_js_path = os.path.join("src", "ui", "sprint69_summary_knowledge.js")
-if os.path.exists(s69_css_path) and os.path.exists(s69_js_path):
+# Sprint 69 links approved physics summary blocks to questions and saved-question review.
+s69_css_path = os.path.join("src", "ui", "sprint69_knowledge_links.css")
+s69_js_path = os.path.join("src", "ui", "sprint69_knowledge_links.js")
+try:
     with open(s69_css_path, "r", encoding="utf-8") as style_file:
         s69_css = style_file.read()
     with open(s69_js_path, "r", encoding="utf-8") as script_file:
         s69_js = script_file.read()
     html_code = html_code.replace("</head>", f"<style>{s69_css}</style></head>", 1)
     html_code = html_code.replace("</body>", f"<script>{s69_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 69 knowledge-link module: {exc}")
 
 components.html(html_code, height=930, scrolling=False)

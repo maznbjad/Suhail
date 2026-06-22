@@ -13,8 +13,7 @@
   "latest_sprint": 69,
   "question_bank": {
     "count": 5400,
-    "status": "internal_qa_linked_physics_v1",
-    "format": "unified",
+    "status": "internal_qa_with_exact_physics_knowledge_links",
     "qudrat_count": 3000,
     "tahsili_count": 2400,
     "physics_count": 600,
@@ -135,15 +134,16 @@
     "physics_source": "data/smart_summaries.json"
   },
   "sprint": 66,
-  "summary_knowledge": {
-    "published_subjects": [
+  "knowledge_linking": {
+    "schema_version": "1.0",
+    "approved_summary_subjects": [
       "فيزياء"
     ],
     "summary_count": 72,
     "knowledge_block_count": 936,
-    "linked_question_count": 600,
-    "exact_block_deep_link": true,
-    "saved_question_explanation": true,
-    "admin_editable_links": true
+    "linked_physics_questions": 600,
+    "link_rate_percent": 100.0,
+    "deep_link_from_saved_questions": true,
+    "exact_block_link_after_result_reveal": true
   }
 }
