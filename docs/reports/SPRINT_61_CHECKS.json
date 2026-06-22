@@ -1,0 +1,14 @@
+{
+  "python_syntax": true,
+  "javascript_syntax": true,
+  "physics_items_function_defined": true,
+  "physics_items_reads_smart_summaries": true,
+  "published_physics_count": 72,
+  "physics_count_is_72": true,
+  "gateway_shows_physics_availability": true,
+  "empty_sections_not_labeled_coming_soon": true,
+  "fallback_no_longer_says_coming_soon": true,
+  "runtime_self_heal_for_gateway": true,
+  "no_new_nonphysics_summaries": true,
+  "passed": true
+}

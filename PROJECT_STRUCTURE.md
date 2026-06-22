@@ -74,7 +74,7 @@
 - `docs/reports/SPRINT_59_SUMMARIES_NAVIGATION_REPORT.md` — تقرير إصلاح الملخصات والتنقل.
 - `docs/reports/SPRINT_59_CHECKS.json` — نتائج فحص Sprint 59.
 
-### Sprint 60
+### Sprint 61
 - `src/ui/sprint60_summary_cleanup.css`: تحسين تباين الوضع الداكن وتوحيد حالات الأقسام غير المنشورة.
 - `docs/reports/SPRINT_60_SUMMARY_CLEANUP_REPORT.md`: تقرير التنفيذ.
 - `docs/reports/SPRINT_60_CHECKS.json`: نتائج الفحص.

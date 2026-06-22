@@ -3,7 +3,7 @@
 (function(){
   'use strict';
 
-  const VERSION='60.0.0';
+  const VERSION='61.0.0';
   const legacySummaryRender=typeof window.renderSummariesPage==='function' ? window.renderSummariesPage : null;
   const legacyOpenPhysics=typeof window.s28OpenPhysics==='function' ? window.s28OpenPhysics : null;
   const ORDER={
@@ -15,6 +15,12 @@
   function esc(v){return String(v==null?'':v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
   function norm(v){return String(v||'').normalize('NFKD').replace(/[\u064B-\u065F\u0670]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[^\u0600-\u06FFa-zA-Z0-9]+/g,' ').trim().toLowerCase();}
   function allItems(){try{return Array.isArray(summaries)?summaries:[];}catch(_){return [];}}
+  function physicsItems(){
+    try{
+      const bank=(typeof smartSummaries!=='undefined'&&Array.isArray(smartSummaries))?smartSummaries:[];
+      return bank.filter(x=>String(x.exam||x.track||'تحصيلي').trim()==='تحصيلي'&&String(x.subject||'').trim()==='فيزياء');
+    }catch(_){return [];}
+  }
   function items(exam,subject){return allItems().filter(x=>String(x.exam||'تحصيلي').trim()===exam&&(!subject||String(x.subject||'').trim()===subject));}
   function exactItem(exam,subject,unit){return items(exam,subject).find(x=>String(x.unit||'').trim()===String(unit||'').trim())||null;}
   function activePage(){return document.querySelector('.page.active');}
@@ -66,6 +72,9 @@
         body.classList.add('s54-mode-main','s59-nav-visible');
       }
       const page=activePage();
+      if(page?.id==='summariesPage'&&!state.richPhysics&&!page.querySelector('.s59-page')){
+        requestAnimationFrame(render);
+      }
       const key=navKeyForPage(page?.id||'homePage');
       document.querySelectorAll('#s54BottomNav .s54-nav-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.s54Nav===key));
       normalizeBackIcons(page||document);
@@ -111,9 +120,9 @@
   function renderGateway(page){
     const physicsCount=physicsItems().length;
     page.innerHTML=`<div class="s59-page">${header('الملخصات','اختر المسار المناسب',"showPage('homePage')")}<div class="s59-path-grid">
-      ${card('تحصيلي','فيزياء، كيمياء، رياضيات، أحياء','tahsili',physicsCount,"s59OpenExam('تحصيلي')",'tahsili')}
-      ${card('قدرات لفظي','يُضاف المحتوى المعتمد من لوحة الأدمن','verbal','قريبًا',"s59OpenExam('قدرات لفظي')",'verbal')}
-      ${card('قدرات كمي','يُضاف المحتوى المعتمد من لوحة الأدمن','quant','قريبًا',"s59OpenExam('قدرات كمي')",'quant')}
+      ${card('تحصيلي','الفيزياء متاحة، وبقية المواد تظهر بعد اعتمادها','tahsili',`${physicsCount} ملخص فيزياء`,"s59OpenExam('تحصيلي')",'tahsili')}
+      ${card('قدرات لفظي','لا يوجد محتوى منشور حتى الآن','verbal','غير منشور',"s59OpenExam('قدرات لفظي')",'verbal')}
+      ${card('قدرات كمي','لا يوجد محتوى منشور حتى الآن','quant','غير منشور',"s59OpenExam('قدرات كمي')",'quant')}
     </div></div>`;
   }
 
@@ -121,9 +130,9 @@
     const physicsCount=physicsItems().length;
     const rows=[
       ['فيزياء','الكتب والوحدات والقوانين والتعاريف','physics',physicsCount,"s59OpenSubject('فيزياء')"],
-      ['كيمياء','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','chemistry','قريبًا',"s59OpenSubject('كيمياء')"],
-      ['رياضيات','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','math','قريبًا',"s59OpenSubject('رياضيات')"],
-      ['أحياء','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','biology','قريبًا',"s59OpenSubject('أحياء')"]
+      ['كيمياء','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','chemistry','غير منشور',"s59OpenSubject('كيمياء')"],
+      ['رياضيات','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','math','غير منشور',"s59OpenSubject('رياضيات')"],
+      ['أحياء','سيظهر المحتوى بعد اعتماده من لوحة الأدمن','biology','غير منشور',"s59OpenSubject('أحياء')"]
     ];
     page.innerHTML=`<div class="s59-page">${header('التحصيلي','اختر المادة',"s59OpenGateway()")}
       <div class="s59-section-title"><b>مواد التحصيلي</b><span>${physicsCount} ملخصًا معتمدًا</span></div>

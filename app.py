@@ -7490,8 +7490,8 @@ body.suhail-passage-lock .question-passage{
       <div class="page summaries-soon-page" id="summariesPage">
         <div class="soon-card">
           <div class="soon-badge">سهيل</div>
-          <div class="soon-title">قريبًا</div>
-          <div class="soon-sub">نعمل على تجهيز الملخصات بشكل أفضل.</div>
+          <div class="soon-title">الملخصات</div>
+          <div class="soon-sub">جارٍ تحميل المحتوى المعتمد…</div>
         </div>
       </div>
 
@@ -20444,6 +20444,11 @@ try:
     html_code = html_code.replace("</body>", f"<script>{s59_js}</script></body>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 59 summaries/navigation module: {exc}")
+
+
+# Sprint 61 fixes the summaries gateway runtime regression: the published
+# physics count is read from smart_summaries.json while the generic catalog
+# remains intentionally empty. No new summary content is added.
 
 # Sprint 60 is a content-safety and visual-consistency pass: it adds no new
 # summaries, strengthens dark-mode contrast, and keeps non-physics sections as
