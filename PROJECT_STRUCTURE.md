@@ -31,7 +31,7 @@
 
 ## البيانات
 
-- `data/questions.json` — بنك القدرات المحوسب النشط من 280 سؤالًا، مع إبقاء بنك التطوير السابق داخل `data/archive/`.
+- `data/questions.json` — بنك القدرات الموحد النشط من 3000 سؤال، مع إبقاء بنك التطوير السابق داخل `data/archive/`.
 - `data/suhail_learning.db` — الأسئلة وجداول الحسابات والقياسات والنشاط والأصدقاء والتحديات.
 - `data/admin/admin_settings.json` — إعدادات الرحلة والقياس والستريك والتحديات والأداء.
 - `data/admin/feature_flags.json` — مفاتيح Sprint 54.

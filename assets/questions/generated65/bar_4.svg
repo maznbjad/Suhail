@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img">
+<style>
+text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#17324d;font-weight:700}
+.shape{stroke:#168bb7;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.soft{stroke:#52bea1;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.guide{stroke:#9bb0c0;stroke-width:3;fill:none;stroke-dasharray:8 8}
+.fill{fill:#dff5ee;stroke:#52bea1;stroke-width:4} .bar{fill:#65b9da} .label{font-size:24px} .small{font-size:19px}
+</style><line class="shape" x1="70" y1="300" x2="580" y2="300"/><line class="shape" x1="70" y1="60" x2="70" y2="300"/><rect class="bar" x="100" y="108" width="55" height="192" rx="5"/><text class="small" x="92" y="330">الأحد</text><rect class="bar" x="220" y="192" width="55" height="108" rx="5"/><text class="small" x="212" y="330">الاثنين</text><rect class="bar" x="340" y="108" width="55" height="192" rx="5"/><text class="small" x="332" y="330">الثلاثاء</text><rect class="bar" x="460" y="144" width="55" height="156" rx="5"/><text class="small" x="452" y="330">الأربعاء</text></svg>

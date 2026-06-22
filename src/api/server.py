@@ -82,11 +82,6 @@ def _question_query() -> tuple[str, list[Any]]:
     diagnostic = (request.args.get("diagnostic") or "").lower()
     if diagnostic in {"1", "true", "yes"}:
         filters.append("json_extract(payload_json, '$.diagnostic') = 1")
-    test_format = (request.args.get("test_format") or request.args.get("format") or "").strip()
-    if test_format:
-        normalized_format = "محوسب" if test_format.lower() in {"computerized", "digital", "محوسب"} else ("ورقي" if test_format.lower() in {"paper", "ورقي"} else test_format)
-        filters.append("json_extract(payload_json, '$.test_format') = ?")
-        params.append(normalized_format)
     sql = "SELECT payload_json FROM questions"
     if filters:
         sql += " WHERE " + " AND ".join(filters)

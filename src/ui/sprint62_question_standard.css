@@ -21,3 +21,6 @@ body.s55-dark .s62-explanation{background:#132333;border-color:#2c455a;color:#db
 .s59-header{min-height:118px!important;border-radius:0 0 25px 25px!important;padding:18px 62px 17px 18px!important;margin:-12px -15px 14px!important}
 .s59-header-copy h1{font-size:27px!important}.s59-header-copy p{margin-top:4px!important;font-size:11.5px!important}.s59-header-mark{display:none!important}.s59-header::after{left:20px!important;top:18px!important;font-size:12px!important}.s59-back{right:13px!important;top:13px!important}
 @media(max-width:430px){.s62-explanation{padding:12px}.s62-explanation p{font-size:12px}.s59-header{min-height:112px!important}.s59-header-copy h1{font-size:25px!important}}
+.s62-explanation-minimal{padding:10px 12px!important}
+.s62-explanation-minimal .s62-explanation-head{margin-bottom:0!important}
+.s62-explanation-brief .s62-explanation-head{margin-bottom:6px!important}

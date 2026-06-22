@@ -1,0 +1,22 @@
+{
+  "total_3000": true,
+  "quant_1500": true,
+  "verbal_1500": true,
+  "public_ids_contiguous": true,
+  "unique_internal_ids": true,
+  "unified_bank_only": true,
+  "api_has_no_format_filter": true,
+  "answers_match": true,
+  "explanation_modes_valid": true,
+  "easy_without_long_explanation": true,
+  "close_choice_is_selective": true,
+  "question_260154_fixed": true,
+  "image_count": true,
+  "no_literal_figure_numbers": true,
+  "all_images_exist": true,
+  "svg_valid_and_no_full_background": true,
+  "sqlite_3000": true,
+  "python_syntax": true,
+  "javascript_syntax": true,
+  "passed": true
+}

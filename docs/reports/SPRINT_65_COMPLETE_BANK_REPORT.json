@@ -1,0 +1,43 @@
+{
+  "version": "65.0.0",
+  "total": 3000,
+  "quant": 1500,
+  "verbal": 1500,
+  "public_id_start": 260001,
+  "public_id_end": 263000,
+  "images": 85,
+  "transparent_svg_images": 85,
+  "explanation_modes": {
+    "none": 977,
+    "full": 2010,
+    "brief": 13
+  },
+  "questions_with_close_choice_explanation": 81,
+  "categories": {
+    "مسائل حسابية": 651,
+    "مسائل جبرية": 43,
+    "مسائل هندسية": 40,
+    "تحليل بيانات وإحصاء": 20,
+    "تناظر لفظي": 25,
+    "إكمال الجمل": 320,
+    "الخطأ السياقي": 265,
+    "المفردات": 15,
+    "استيعاب مقروء": 10,
+    "تحليل بيانات": 2,
+    "هندسة": 4,
+    "مقارنة": 1,
+    "هندسة تحليلية": 2,
+    "أنماط وعد": 1,
+    "كسور": 1,
+    "مجموعات": 1,
+    "الجبر": 434,
+    "الإحصاء": 133,
+    "مسائل تطبيقية": 124,
+    "الهندسة": 43,
+    "التناظر اللفظي": 330,
+    "المفردة الشاذة": 306,
+    "استيعاب المقروء": 229
+  },
+  "source_policy": "skill-pattern reference only; questions, numbers, wording, drawings and explanations are original",
+  "fixed_literal_figure_references": true
+}

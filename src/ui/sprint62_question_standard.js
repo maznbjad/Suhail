@@ -15,9 +15,16 @@
   function explanationData(q){const x=q?.explanation;return x&&typeof x==='object'?x:{summary:q?.explain||'',steps:[],similar_choices:[]};}
   function renderExplanation(q,selected,correct){
     const x=explanationData(q),steps=Array.isArray(x.steps)?x.steps:[],notes=Array.isArray(x.similar_choices)?x.similar_choices:[];
+    const mode=String(q?.explanation_mode||'full');
+    const answer=esc(q?.answer||q?.choices?.[q?.correct]||'');
+    if(mode==='none'){
+      return `<div class="s62-explanation s62-explanation-minimal"><div class="s62-explanation-head"><b>${correct?'إجابة صحيحة':'الإجابة الصحيحة: '+answer}</b><span dir="ltr">سؤال ${esc(q.public_id||'')}</span></div></div>`;
+    }
+    if(mode==='brief'){
+      return `<div class="s62-explanation s62-explanation-brief"><div class="s62-explanation-head"><b>${correct?'أحسنت':'التوضيح'}</b><span dir="ltr">سؤال ${esc(q.public_id||'')}</span></div><p>${esc(x.summary||q.explain||'')}</p></div>`;
+    }
     let note=null;
     if(!correct) note=notes.find(n=>Number(n.choice_index)===Number(selected))||null;
-    if(correct&&!note&&notes.length) note=notes[0];
     return `<div class="s62-explanation"><div class="s62-explanation-head"><b>${correct?'أحسنت — التوضيح':'الإجابة الصحيحة والتوضيح'}</b><span dir="ltr">سؤال ${esc(q.public_id||'')}</span></div><p>${esc(x.summary||q.explain||'')}</p>${steps.length?`<ol>${steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>`:''}${x.trap?`<div class="s62-close-choice"><b>انتبه:</b> ${esc(x.trap)}</div>`:''}${note?`<div class="s62-close-choice"><b>لماذا الخيار القريب مختلف؟</b> ${esc(note.note||'')}</div>`:''}${q.hint?`<div class="s62-tip"><b>تلميح سهيل:</b> ${esc(q.hint)}</div>`:''}</div>`;
   }
   function paintCorrect(selected){

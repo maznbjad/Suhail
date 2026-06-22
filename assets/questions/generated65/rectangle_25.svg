@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img">
+<style>
+text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#17324d;font-weight:700}
+.shape{stroke:#168bb7;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.soft{stroke:#52bea1;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.guide{stroke:#9bb0c0;stroke-width:3;fill:none;stroke-dasharray:8 8}
+.fill{fill:#dff5ee;stroke:#52bea1;stroke-width:4} .bar{fill:#65b9da} .label{font-size:24px} .small{font-size:19px}
+</style><rect class="shape" x="120" y="85" width="400" height="210" rx="6"/><text class="label" x="310" y="325">15 سم</text><text class="label" x="52" y="200">12 سم</text></svg>
