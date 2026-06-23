@@ -1,0 +1,20 @@
+{
+  "release": "84.0.0",
+  "base": "Sprint 83 rebuilt from Sprint 80",
+  "python_compile": true,
+  "javascript_syntax": true,
+  "preflight": true,
+  "streamlit_http": 200,
+  "question_bank": 5400,
+  "tahsili_questions": 2400,
+  "exact_summary_links": 600,
+  "interactive_fixture_questions": 3,
+  "source_title_contrast_dark": 15.63,
+  "source_subtitle_contrast_dark": 10.14,
+  "unanswered_text_contrast_dark": 12.35,
+  "unanswered_badge": "لم يُجب",
+  "direct_summary_buttons": 3,
+  "summary_destination_active": true,
+  "summary_destination_exact_marker": true,
+  "javascript_page_errors": 0
+}

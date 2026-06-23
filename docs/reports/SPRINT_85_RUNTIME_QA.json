@@ -1,0 +1,17 @@
+{
+  "release": "85.0.0",
+  "qa_harness": "Playwright Chromium",
+  "checks": {
+    "incomplete_account_forced_to_setup": true,
+    "bottom_navigation_hidden_before_confirmation": true,
+    "confirmation_button_visible": true,
+    "confirmation_button_label": "تأكيد إنشاء الحساب",
+    "account_completion_opens_home": true,
+    "navigation_visible_after_completion": true,
+    "home_account_avatar_match": true,
+    "wheel_delta_input": 100,
+    "wheel_scroll_output_px": 255,
+    "computed_body_font_size": "12px",
+    "javascript_errors": 0
+  }
+}

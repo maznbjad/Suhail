@@ -1,4 +1,4 @@
-# Suhail Sprint 72 — هيكل المشروع
+# Suhail Sprint 86 — هيكل المشروع
 
 ## التشغيل
 
@@ -18,6 +18,10 @@
 - `src/ui/sprint56_global_theme.js` — تهيئة المظهر مبكرًا، حفظ الاختيار، وتحديث لون النظام.
 - `src/ui/sprint59_summaries_navigation.js` — المالك النهائي لبوابة الملخصات، ترتيب المسارات، تفاصيل الوحدات، البحث، سلوك القائمة، وأيقونة العودة.
 - `src/ui/sprint59_summaries_navigation.css` — تصميم بوابة الملخصات والمواد والوحدات والتفاصيل مع دعم الوضع الداكن.
+- `src/ui/sprint80_accessibility.css` — الطبقة النهائية لتباين النصوص وأحجام خط السؤال في الوضعين.
+- `src/ui/sprint80_accessibility.js` — تشغيل التكبير والتصغير وحفظ الحجم ومزامنته مع عارض الاختبار القديم.
+- `src/ui/sprint84_contrast_results.css` — المالك الدلالي النهائي لتباين عناوين ونصوص البطاقات وحالة الأسئلة غير المجابة.
+- `src/ui/sprint84_contrast_results.js` — إصلاح ربط متغيرات الاختبار، تمييز «لم تتم الإجابة»، وزر فتح الملخص الدقيق من النتيجة.
 - `src/ui/sprint68_feedback_control.js` — التحكم في عرض النتيجة؛ انتقال تلقائي عند الإخفاء وعرض التفسير عند التفعيل.
 - `src/ui/sprint69_summary_knowledge.js` — ربط السؤال بالمعلومة مع حماية من حلقات تحديث DOM.
 - `src/ui/sprint70_unified_app.js/.css` — طبقة الهوية والتنقل والمود الداكن النهائية.
@@ -86,3 +90,10 @@
 ## Sprint 64
 - `src/ui/sprint63_test_entry.css`: prominent home-page test button.
 - `src/ui/sprint63_test_entry.js`: resilient test-entry injection and routing.
+
+
+## Sprint 86
+- `src/ui/sprint86_summary_cards.css`: شبكة البطاقات، درج القوانين، وضبط قص الشخصية.
+- `src/ui/sprint86_summary_cards.js`: عارض الدرس الجديد والتفاعل مع الأمثلة والأسئلة والقوانين.
+- `scripts/validate_sprint86.py`: فحص الإصدار والبنك والروابط والقالب.
+- `docs/reports/SPRINT_86_SUMMARY_DESIGN_REPORT.md`: تقرير التصميم والاختبارات.

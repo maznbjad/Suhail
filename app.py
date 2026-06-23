@@ -20390,4 +20390,76 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 79 physics mastery module: {exc}")
 
+# Sprint 80 is the final accessibility ownership layer. It restores functional
+# question text scaling after legacy fixed-size rules and enforces readable
+# text contrast in light and dark modes.
+s80_css_path = os.path.join("src", "ui", "sprint80_accessibility.css")
+s80_js_path = os.path.join("src", "ui", "sprint80_accessibility.js")
+try:
+    with open(s80_css_path, "r", encoding="utf-8") as style_file:
+        s80_css = style_file.read()
+    with open(s80_js_path, "r", encoding="utf-8") as script_file:
+        s80_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s80_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s80_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 80 accessibility module: {exc}")
+
+# Sprint 83: stable visual/runtime fixes rebuilt directly on Sprint 80.
+s83_css_path = os.path.join("src", "ui", "sprint83_stable_polish.css")
+s83_js_path = os.path.join("src", "ui", "sprint83_stable_polish.js")
+try:
+    with open(s83_css_path, "r", encoding="utf-8") as style_file:
+        s83_css = style_file.read()
+    with open(s83_js_path, "r", encoding="utf-8") as script_file:
+        s83_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s83_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s83_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 83 stable module: {exc}")
+
+# Sprint 84 owns semantic dark-mode contrast for all card titles/subtitles,
+# visible unanswered-result states, and direct exact summary navigation.
+s84_css_path = os.path.join("src", "ui", "sprint84_contrast_results.css")
+s84_js_path = os.path.join("src", "ui", "sprint84_contrast_results.js")
+try:
+    with open(s84_css_path, "r", encoding="utf-8") as style_file:
+        s84_css = style_file.read()
+    with open(s84_js_path, "r", encoding="utf-8") as script_file:
+        s84_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s84_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s84_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 84 contrast/result module: {exc}")
+
+# Sprint 85 locks first-time account completion, keeps the selected avatar
+# consistent across home/account, compacts global typography, and accelerates
+# mouse-wheel scrolling while preserving touch and picker behavior.
+s85_css_path = os.path.join("src", "ui", "sprint85_account_completion.css")
+s85_js_path = os.path.join("src", "ui", "sprint85_account_completion.js")
+try:
+    with open(s85_css_path, "r", encoding="utf-8") as style_file:
+        s85_css = style_file.read()
+    with open(s85_js_path, "r", encoding="utf-8") as script_file:
+        s85_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s85_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s85_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 85 account-completion module: {exc}")
+
+# Sprint 86 owns the final visual lesson layout: paired compact cards,
+# a laws drawer beside the back action, one-example/one-question focus,
+# and safe full-character cropping in the avatar picker.
+s86_css_path = os.path.join("src", "ui", "sprint86_summary_cards.css")
+s86_js_path = os.path.join("src", "ui", "sprint86_summary_cards.js")
+try:
+    with open(s86_css_path, "r", encoding="utf-8") as style_file:
+        s86_css = style_file.read()
+    with open(s86_js_path, "r", encoding="utf-8") as script_file:
+        s86_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s86_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s86_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 86 summary-cards module: {exc}")
+
 components.html(html_code, height=960, scrolling=False)

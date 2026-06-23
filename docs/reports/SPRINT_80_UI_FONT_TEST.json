@@ -1,0 +1,70 @@
+{
+  "initial": {
+    "q": "18px",
+    "c": "17px",
+    "p": "17px",
+    "r": "14px",
+    "indicator": "100%",
+    "qColor": "rgb(8, 31, 58)",
+    "qBg": "rgb(255, 255, 255)",
+    "muted": "rgb(82, 106, 128)"
+  },
+  "plus": {
+    "q": "20px",
+    "c": "19px",
+    "p": "19px",
+    "r": "16px",
+    "indicator": "111%",
+    "qColor": "rgb(8, 31, 58)",
+    "qBg": "rgb(255, 255, 255)",
+    "muted": "rgb(82, 106, 128)"
+  },
+  "minus": {
+    "q": "18px",
+    "c": "17px",
+    "p": "17px",
+    "r": "14px",
+    "indicator": "100%",
+    "qColor": "rgb(8, 31, 58)",
+    "qBg": "rgb(255, 255, 255)",
+    "muted": "rgb(82, 106, 128)"
+  },
+  "after_legacy_rerender": {
+    "q": "20px",
+    "c": "19px",
+    "p": "19px",
+    "r": "16px",
+    "indicator": "111%",
+    "qColor": "rgb(8, 31, 58)",
+    "qBg": "rgb(255, 255, 255)",
+    "muted": "rgb(82, 106, 128)"
+  },
+  "dark": {
+    "q": "20px",
+    "c": "19px",
+    "p": "19px",
+    "r": "16px",
+    "indicator": "111%",
+    "qColor": "rgb(255, 255, 255)",
+    "qBg": "rgb(18, 37, 54)",
+    "muted": "rgb(196, 210, 222)"
+  },
+  "stored": "20",
+  "errors": [],
+  "contrast_ratios": {
+    "light_title_on_surface": 16.57,
+    "light_muted_on_surface": 5.63,
+    "dark_title_on_surface": 15.63,
+    "dark_muted_on_surface": 10.14,
+    "dark_accent_on_surface": 9.25,
+    "wcag_normal_text_target": 4.5,
+    "passed": true
+  },
+  "verified_behaviors": {
+    "legacy_fixed_important_overridden": true,
+    "question_choice_passage_feedback_scale_together": true,
+    "survives_legacy_question_rerender": true,
+    "preference_persisted": true,
+    "javascript_errors": 0
+  }
+}

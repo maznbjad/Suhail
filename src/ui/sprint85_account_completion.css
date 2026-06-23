@@ -1,0 +1,137 @@
+/* Suhail Sprint 85 — account-completion lock, compact typography and fast wheel scroll. */
+:root{
+  --s85-title:20px;
+  --s85-hero-title:22px;
+  --s85-section:15px;
+  --s85-card-title:13px;
+  --s85-body:12px;
+  --s85-small:10.5px;
+}
+
+/* Keep the application compact. Question text remains owned by Sprint 80 variables. */
+body.s54-ready,
+body.s54-ready button,
+body.s54-ready input,
+body.s54-ready textarea,
+body.s54-ready select{
+  font-size:var(--s85-body)!important;
+}
+:is(.page-title,.screen-title,.setup-title,.test-title,.summary-title,.auth-title,.main-title,
+.s54-title,.s55-account-title,.s59-header-copy h1,.s79-title,.summary-main-title){
+  font-size:var(--s85-title)!important;
+  line-height:1.35!important;
+}
+:is(.s54-hero h1,.home-hero-title,.s70-home-guide h1){
+  font-size:var(--s85-hero-title)!important;
+  line-height:1.35!important;
+}
+:is(.section-title,.quick-title,.s54-section-head b,.s79-section-title,.summary-home-section-title,
+.form-box h3,.app-admin-title){
+  font-size:var(--s85-section)!important;
+  line-height:1.5!important;
+}
+:is(.s54-choice b,.s54-setting b,.s54-readiness b,.source-option-title,.main-section-title,
+.summary-card-title,.summary-section-card-title,.summary-unit-title,.s59-card-copy b,.s59-unit-copy b,
+.s79-card-title,.s55-profile-copy b,.result-question-text){
+  font-size:var(--s85-card-title)!important;
+  line-height:1.55!important;
+}
+:is(.page-sub,.s54-subtitle,.s54-choice small,.s54-setting small,.s54-note,.source-option-sub,
+.main-section-sub,.summary-card-sub,.summary-section-card-sub,.summary-card-count,.s59-card-copy small,
+.s59-unit-copy small,.s79-card-sub,.s55-profile-copy span,.timer-sub,.setup-label){
+  font-size:var(--s85-small)!important;
+  line-height:1.65!important;
+}
+
+/* Preserve the student's explicit question-size preference. */
+#exercisePage .quiz-question{font-size:var(--s80-font-question)!important}
+#exercisePage #choicesBox .choice{font-size:var(--s80-font-choice)!important}
+#exercisePage .question-passage{font-size:var(--s80-font-passage)!important}
+#exercisePage :is(#quizResult,.s68-direct-feedback,.s68-direct-note,.s62-explanation,.s72-explanation,.s72-result-explanation){
+  font-size:var(--s80-font-feedback)!important;
+}
+
+/* Fast wheel updates should not be visually delayed by smooth-scroll rules. */
+.screen,.content,.auth-page,.page,.question-passage{
+  scroll-behavior:auto!important;
+  scrollbar-width:none!important;
+  -ms-overflow-style:none!important;
+}
+.screen::-webkit-scrollbar,.content::-webkit-scrollbar,.auth-page::-webkit-scrollbar,
+.page::-webkit-scrollbar,.question-passage::-webkit-scrollbar{
+  width:0!important;height:0!important;display:none!important;
+}
+
+/* Initial account completion is a locked route, not a normal account page. */
+body.s85-onboarding-lock #s54BottomNav,
+body.s85-onboarding-lock #s54LiftNav,
+body.s85-onboarding-lock .suhail-bottom-tabs,
+body.s85-onboarding-lock .bottom-tabs,
+body.s85-onboarding-lock .bottom-nav,
+body.s85-onboarding-lock .clean-bottom-nav,
+body.s85-onboarding-lock .premium-bottom-nav,
+body.s85-onboarding-lock .final-bottom-nav,
+body.s85-onboarding-lock #homePage .s18-bottom{
+  display:none!important;
+  pointer-events:none!important;
+  visibility:hidden!important;
+}
+body.s85-onboarding-lock .content{
+  padding-bottom:0!important;
+}
+body.s85-onboarding-lock #studentSetupPage .s54-page{
+  padding-bottom:108px!important;
+}
+body.s85-onboarding-lock #studentSetupPage .s54-back{
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+#studentSetupPage .s85-native-save{
+  display:none!important;
+}
+
+.s85-setup-footer{
+  position:absolute;
+  z-index:1200;
+  left:14px;
+  right:14px;
+  bottom:calc(12px + env(safe-area-inset-bottom));
+  padding:8px;
+  border:1px solid var(--s70-border,#d2e0eb);
+  border-radius:20px;
+  background:color-mix(in srgb,var(--s70-surface,#fff) 95%,transparent);
+  box-shadow:0 16px 38px rgba(8,48,80,.22);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.s85-setup-confirm{
+  width:100%;
+  min-height:50px;
+  border:0;
+  border-radius:15px;
+  background:linear-gradient(110deg,var(--s70-primary,#1688c9),var(--s70-primary-2,#38bd83));
+  color:#fff!important;
+  font-family:inherit!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  cursor:pointer;
+  box-shadow:0 10px 22px rgba(24,126,164,.20);
+  touch-action:manipulation;
+}
+.s85-setup-confirm:active{transform:scale(.985)}
+.s85-setup-footer[hidden]{display:none!important}
+
+/* The final step should fit naturally above the fixed confirmation action. */
+#studentSetupPage .s54-avatar-grid{gap:9px!important}
+#studentSetupPage .s54-avatar-option{min-height:206px!important}
+#studentSetupPage .s54-avatar-stage{height:158px!important}
+
+html[data-theme="dark"] .s85-setup-footer,body.s55-dark .s85-setup-footer{
+  background:rgba(15,31,45,.96)!important;
+  border-color:#41586d!important;
+}
+
+@media(max-width:430px){
+  :root{--s85-title:19px;--s85-hero-title:21px;--s85-section:14.5px;--s85-card-title:12.5px;--s85-body:11.75px;--s85-small:10px}
+  .s85-setup-footer{left:12px;right:12px;bottom:10px}
+}

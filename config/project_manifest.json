@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 79",
-  "version": "1.0.79",
+  "release": "Sprint 86",
+  "version": "1.0.86",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 79,
+  "latest_sprint": 86,
   "question_bank": {
     "count": 5400,
     "status": "internal_qa_physics_mastery_v2",
@@ -124,7 +124,24 @@
     "physics_mastery_threshold_percent": 80,
     "physics_lesson_internal_questions": 5,
     "physics_exact_reference_opening": true,
-    "physics_lesson_progress_persistence": true
+    "physics_lesson_progress_persistence": true,
+    "question_text_scaling": true,
+    "question_text_size_range_px": [
+      14,
+      28
+    ],
+    "question_text_size_persistence": true,
+    "accessible_text_contrast_pass": true,
+    "account_completion_required": true,
+    "navigation_locked_until_onboarding_complete": true,
+    "selected_avatar_shared_home_account": true,
+    "global_compact_typography": true,
+    "accelerated_mouse_wheel_scroll": true,
+    "summary_two_card_grid": true,
+    "summary_laws_top_drawer": true,
+    "summary_single_example_focus": true,
+    "summary_single_question_focus": true,
+    "avatar_picker_safe_contain_crop": true
   },
   "admin": {
     "deep_settings": true,
@@ -139,7 +156,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 79 completes the physics mastery experience: 72 lesson-level learning paths with prerequisites, diagnostics, from-zero explanations, concept maps, meaningful law cards, three worked examples, lesson-specific misconceptions, five mastery questions, exact question deep links, and an 80% mastery threshold.",
+  "notes": "Sprint 86 redesigns physics lessons into paired visual cards, moves laws to a dedicated drawer beside the back button, focuses examples and practice one at a time, and fixes full-character crop safety.",
   "summary_content": {
     "published_total": 72,
     "published_subjects": {
@@ -156,7 +173,7 @@
     "physics_source": "data/smart_summaries.json",
     "physics_template_version": "2.0.79"
   },
-  "sprint": 79,
+  "sprint": 86,
   "summary_knowledge": {
     "published_subjects": [
       "فيزياء"
@@ -170,6 +187,21 @@
     "internal_mastery_question_count": 360,
     "mastery_template_version": "2.0.79",
     "lessons_with_exact_external_links": 22,
-    "lessons_without_guessed_external_links": 50
+    "lessons_without_guessed_external_links": 50,
+    "tahsili_link_audit": {
+      "total_questions": 2400,
+      "linked_exact": 600,
+      "unlinked_unpublished_subjects": 1800,
+      "coverage_percent": 25.0,
+      "linked_subjects": {
+        "فيزياء": 600
+      },
+      "unpublished_subjects": {
+        "كيمياء": 600,
+        "رياضيات": 600,
+        "الأحياء وعلم البيئة": 600
+      },
+      "policy": "No guessed summary links are created before approved summaries exist."
+    }
   }
 }

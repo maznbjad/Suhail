@@ -1,0 +1,19 @@
+{
+  "release": "85.0.0",
+  "passed": true,
+  "checks": {
+    "release_manifest": true,
+    "api_release": true,
+    "module_injected": true,
+    "confirmation_action": true,
+    "navigation_lock": true,
+    "profile_avatar_continuity": true,
+    "compact_typography": true,
+    "question_scaling_preserved": true,
+    "fast_wheel": true,
+    "scrollbars_hidden": true,
+    "question_count": true,
+    "javascript_syntax": true
+  },
+  "question_count": 5400
+}

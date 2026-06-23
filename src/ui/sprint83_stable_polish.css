@@ -1,0 +1,126 @@
+/* Sprint 83 — stable polish rebuilt strictly on Sprint 80. */
+:root{
+  --s83-title:22px;
+  --s83-section:17px;
+  --s83-body:13px;
+  --s83-card-title:14px;
+  --s83-small:11px;
+}
+
+/* Hide visual scrollbars while preserving touch, mouse-wheel and keyboard scroll. */
+html,body,#appShell,.screen,.content,.page,.question-passage,.summary-page,.s79-unit-page,.s79-lesson-page{
+  scrollbar-width:none!important;
+  -ms-overflow-style:none!important;
+}
+html::-webkit-scrollbar,body::-webkit-scrollbar,#appShell::-webkit-scrollbar,.screen::-webkit-scrollbar,
+.content::-webkit-scrollbar,.page::-webkit-scrollbar,.question-passage::-webkit-scrollbar,
+.summary-page::-webkit-scrollbar,.s79-unit-page::-webkit-scrollbar,.s79-lesson-page::-webkit-scrollbar{
+  width:0!important;height:0!important;display:none!important;background:transparent!important;
+}
+.content,.screen,.page{ -webkit-overflow-scrolling:touch!important; touch-action:pan-y!important; }
+
+/* Balanced application typography: compact, readable, and consistent. */
+.page-title,.screen-title,.setup-title,.test-title,.summary-title,.s79-title,
+.auth-title,.main-title{font-size:var(--s83-title)!important;line-height:1.35!important;}
+.page-sub,.page-subtitle,.screen-subtitle,.setup-subtitle,.test-subtitle,.summary-subtitle,.s79-subtitle{
+  font-size:12px!important;line-height:1.75!important;
+}
+.section-title,.form-box h3,.summary-banner-title,.s79-section-title{font-size:var(--s83-section)!important;line-height:1.5!important;}
+body,button,input,textarea,select,.content,.page{font-size:var(--s83-body)!important;}
+.summary-card-title,.summary-section-card-title,.summary-unit-title,.main-section-title,.s79-card-title{
+  font-size:var(--s83-card-title)!important;line-height:1.55!important;
+}
+.summary-card-sub,.summary-section-card-sub,.summary-card-count,.summary-ref-pill,.main-section-sub,.s79-card-sub{
+  font-size:var(--s83-small)!important;line-height:1.65!important;
+}
+
+/* Tahsili subject cards: force names and counts visible in every theme/state. */
+.main-section-card{
+  min-height:72px!important;padding:12px 14px!important;
+  background:#f8fbfe!important;border:1px solid #cddbea!important;opacity:1!important;
+}
+.main-section-card.off{opacity:1!important;background:#f4f7fa!important;}
+.main-section-title,.main-section-card.off .main-section-title{
+  color:#102b4e!important;opacity:1!important;visibility:visible!important;text-shadow:none!important;
+}
+.main-section-sub,.main-section-card.off .main-section-sub{
+  color:#526a80!important;opacity:1!important;visibility:visible!important;
+}
+html[data-theme="dark"] .main-section-card,body.s55-dark .main-section-card,body.dark-mode .main-section-card{
+  background:#132638!important;border-color:#486078!important;box-shadow:none!important;
+}
+html[data-theme="dark"] .main-section-card.off,body.s55-dark .main-section-card.off,body.dark-mode .main-section-card.off{
+  background:#102232!important;opacity:1!important;
+}
+html[data-theme="dark"] .main-section-title,html[data-theme="dark"] .main-section-card.off .main-section-title,
+body.s55-dark .main-section-title,body.s55-dark .main-section-card.off .main-section-title,
+body.dark-mode .main-section-title,body.dark-mode .main-section-card.off .main-section-title{
+  color:#f7fbff!important;opacity:1!important;visibility:visible!important;
+}
+html[data-theme="dark"] .main-section-sub,html[data-theme="dark"] .main-section-card.off .main-section-sub,
+body.s55-dark .main-section-sub,body.s55-dark .main-section-card.off .main-section-sub,
+body.dark-mode .main-section-sub,body.dark-mode .main-section-card.off .main-section-sub{
+  color:#c4d2de!important;opacity:1!important;visibility:visible!important;
+}
+
+/* One compact bottom navigation treatment; no lifted centre item or oversized bubble. */
+.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav,#homePage .s18-bottom.s23-glass-nav{
+  left:14px!important;right:14px!important;bottom:10px!important;
+  width:auto!important;height:68px!important;min-height:68px!important;
+  padding:6px 8px!important;border-radius:23px!important;
+  display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:2px!important;align-items:center!important;
+  overflow:hidden!important;transform:none!important;
+  background:rgba(255,255,255,.94)!important;border:1px solid #d4e0ea!important;
+  box-shadow:0 10px 24px rgba(15,35,55,.10)!important;
+  backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important;
+}
+html[data-theme="dark"] :is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav,#homePage .s18-bottom.s23-glass-nav),
+body.s55-dark :is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav,#homePage .s18-bottom.s23-glass-nav){
+  background:rgba(14,29,43,.95)!important;border-color:#41586d!important;box-shadow:0 12px 28px rgba(0,0,0,.26)!important;
+}
+:is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-item,.clean-nav-item,.s54-nav-item,.home-main,.clean-home-main){
+  width:auto!important;height:54px!important;min-height:54px!important;max-height:54px!important;
+  margin:0!important;padding:3px 1px!important;transform:none!important;border-radius:16px!important;
+  display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;
+  background:transparent!important;box-shadow:none!important;color:#5d7083!important;
+}
+:is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-label,.clean-nav-label,.s54-nav-label,.home-label,.clean-home-label){
+  font-size:9.5px!important;line-height:1.1!important;font-weight:800!important;white-space:nowrap!important;color:inherit!important;
+}
+:is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-icon,.clean-nav-icon,.s54-nav-icon){
+  width:25px!important;height:25px!important;min-width:25px!important;min-height:25px!important;
+  margin:0!important;border:0!important;border-radius:10px!important;background:transparent!important;box-shadow:none!important;
+}
+:is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-icon,.clean-nav-icon,.s54-nav-icon) img{
+  width:20px!important;height:20px!important;
+}
+:is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-item,.clean-nav-item,.s54-nav-item).active{
+  color:#0d69a5!important;background:rgba(13,105,165,.10)!important;transform:none!important;
+}
+html[data-theme="dark"] :is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-item,.clean-nav-item,.s54-nav-item,.home-main,.clean-home-main),
+body.s55-dark :is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-item,.clean-nav-item,.s54-nav-item,.home-main,.clean-home-main){color:#bdcddd!important;}
+html[data-theme="dark"] :is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-item,.clean-nav-item,.s54-nav-item).active,
+body.s55-dark :is(.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav,#s54BottomNav) :is(.nav-item,.clean-nav-item,.s54-nav-item).active{
+  color:#ffffff!important;background:rgba(63,151,214,.20)!important;
+}
+.premium-bottom-nav .home-main .main-bubble,.clean-bottom-nav .clean-home-bubble,.final-bottom-nav .home-main .main-bubble{
+  width:auto!important;height:54px!important;min-height:54px!important;border-radius:16px!important;
+  background:transparent!important;box-shadow:none!important;transform:none!important;color:inherit!important;
+}
+.premium-bottom-nav .home-main .main-bubble::before,.clean-bottom-nav .clean-home-bubble::before,
+.final-bottom-nav .home-main .main-bubble::before,.nav-item.active::after{display:none!important;}
+.content{padding-bottom:96px!important;}
+
+/* Dark text/readability pass for summary cards. */
+html[data-theme="dark"] :is(.summary-subject-card,.summary-unit-card,.summary-section-card,.s79-card),
+body.s55-dark :is(.summary-subject-card,.summary-unit-card,.summary-section-card,.s79-card){
+  background:#132638!important;border-color:#486078!important;
+}
+html[data-theme="dark"] :is(.summary-card-title,.summary-section-card-title,.summary-unit-title,.s79-card-title),
+body.s55-dark :is(.summary-card-title,.summary-section-card-title,.summary-unit-title,.s79-card-title){color:#f7fbff!important;}
+html[data-theme="dark"] :is(.summary-card-sub,.summary-section-card-sub,.summary-card-count,.s79-card-sub),
+body.s55-dark :is(.summary-card-sub,.summary-section-card-sub,.summary-card-count,.s79-card-sub){color:#c4d2de!important;}
+
+/* Last-resort splash release: visual only, no mutation observer or render loop. */
+.suhail-splash{animation:s83ReleaseSplash .01s linear 4.5s forwards!important;}
+@keyframes s83ReleaseSplash{to{opacity:0;visibility:hidden;pointer-events:none;}}

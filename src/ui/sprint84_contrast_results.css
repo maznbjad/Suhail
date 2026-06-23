@@ -1,0 +1,130 @@
+/* Sprint 84 — semantic contrast ownership and reliable result deep links. */
+:root{
+  --s84-text:#102b4e;
+  --s84-text-strong:#081f3a;
+  --s84-muted:#526a80;
+  --s84-surface:#ffffff;
+  --s84-surface-soft:#f4f8fc;
+  --s84-border:#cfdde9;
+  --s84-accent:#096ca8;
+  --s84-warning:#8a5b00;
+  --s84-warning-soft:#fff7da;
+}
+html[data-theme="dark"],body.s55-dark,body.dark-mode{
+  --s84-text:#eef6fd;
+  --s84-text-strong:#ffffff;
+  --s84-muted:#c4d2de;
+  --s84-surface:#122536;
+  --s84-surface-soft:#172d40;
+  --s84-border:#486078;
+  --s84-accent:#83d0ff;
+  --s84-warning:#ffe29a;
+  --s84-warning-soft:#423819;
+}
+
+/*
+  Semantic typography ownership. Previous fixes targeted only material names;
+  these selectors cover the same title/subtitle roles wherever the card appears.
+*/
+:is(.page,.s54-page,.s55-account-page,.s79-unit-page,.s79-lesson-page) :is(
+  .quick-title,.source-option-title,.main-section-title,.tool-title,.home-saved-title,
+  .readiness-title,.performance-value,.summary-card-title,.summary-section-card-title,
+  .summary-unit-title,.result-question-top,.result-question-text,.section-result-top,
+  .summary-mini-value,.s79-card-title,.s79-lesson-copy b,.s54-choice b,.s54-setting b,
+  .s55-menu-row b,.s55-notify-row b
+){
+  color:var(--s84-text-strong)!important;
+  opacity:1!important;
+  visibility:visible!important;
+  text-shadow:none!important;
+}
+:is(.page,.s54-page,.s55-account-page,.s79-unit-page,.s79-lesson-page) :is(
+  .page-sub,.source-option-sub,.main-section-sub,.tool-sub,.home-saved-sub,
+  .readiness-sub,.performance-label,.performance-hint,.summary-card-sub,
+  .summary-section-card-sub,.summary-card-count,.result-answer-line,.summary-mini-label,
+  .s79-card-sub,.s79-lesson-copy span,.s54-choice small,.s54-setting small,
+  .s55-row-value,.s55-notify-row span
+){
+  color:var(--s84-muted)!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* Exam setup/source cards and result cards use one readable surface system. */
+#exercisePage :is(.form-box,.source-option-card,.main-section-card,.timer-card,.setup-item,
+.result-question-card,.section-result,.summary-mini,.selected-sections-strip){
+  background:var(--s84-surface)!important;
+  border-color:var(--s84-border)!important;
+  color:var(--s84-text)!important;
+}
+#exercisePage .source-option-card{
+  align-items:center!important;
+  min-height:84px!important;
+}
+#exercisePage :is(.source-option-title,.main-section-title,.quick-title,.setup-label,
+.timer-main,.result-question-top,.result-question-text,.section-result-top,.summary-mini-value){
+  color:var(--s84-text-strong)!important;
+}
+#exercisePage :is(.source-option-sub,.main-section-sub,.page-sub,.timer-sub,
+.result-answer-line,.s68-result-choice,.s68-result-explain,.summary-mini-label,.no-summary-link){
+  color:var(--s84-muted)!important;
+}
+#exercisePage .source-option-icon{
+  background:var(--s84-surface-soft)!important;
+  border:1px solid var(--s84-border)!important;
+  color:var(--s84-accent)!important;
+}
+
+/* Explicit state for skipped questions instead of treating them as invisible errors. */
+#exercisePage .result-question-card.s84-unanswered-card{
+  border-color:color-mix(in srgb,var(--s84-warning) 52%,var(--s84-border))!important;
+}
+#exercisePage .result-badge.skipped{
+  background:var(--s84-warning-soft)!important;
+  color:var(--s84-warning)!important;
+  border:1px solid color-mix(in srgb,var(--s84-warning) 38%,transparent)!important;
+}
+#exercisePage .result-answer-line.s84-unanswered-line,
+#exercisePage .result-answer-line.s84-unanswered-line *,
+#exercisePage .s68-result-choice.s84-unanswered-line,
+#exercisePage .s68-result-choice.s84-unanswered-line *{
+  color:var(--s84-warning)!important;
+  opacity:1!important;
+}
+
+/* Reliable direct summary button in the result screen. */
+#exercisePage .s84-result-summary-btn{
+  width:100%!important;
+  margin-top:10px!important;
+  min-height:48px!important;
+  border-radius:15px!important;
+  border:1px solid var(--s84-border)!important;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--s84-accent) 14%,var(--s84-surface)),var(--s84-surface-soft))!important;
+  color:var(--s84-text-strong)!important;
+  padding:10px 12px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:10px!important;
+  text-align:right!important;
+  font-family:inherit!important;
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  position:relative!important;
+  z-index:5!important;
+  touch-action:manipulation!important;
+}
+#exercisePage .s84-result-summary-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+#exercisePage .s84-result-summary-copy b{font-size:12.5px!important;color:var(--s84-text-strong)!important}
+#exercisePage .s84-result-summary-copy small{font-size:10.5px!important;color:var(--s84-muted)!important;line-height:1.55!important}
+#exercisePage .s84-result-summary-action{font-size:11px!important;font-weight:900!important;color:var(--s84-accent)!important;white-space:nowrap}
+#exercisePage .s84-result-summary-btn:active{transform:scale(.985)}
+
+/* Old passive pills must not cover or confuse the direct action. */
+#exercisePage .result-question-card > .summary-ref-pill{display:none!important}
+
+/* Ensure dark-mode text remains readable even when legacy --ink is still dark. */
+body.s55-dark #exercisePage :is(.source-option-card,.main-section-card,.result-question-card,.section-result,.summary-mini) *,
+html[data-theme="dark"] body #exercisePage :is(.source-option-card,.main-section-card,.result-question-card,.section-result,.summary-mini) *{
+  opacity:1;
+}

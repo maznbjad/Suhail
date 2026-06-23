@@ -1,0 +1,50 @@
+{
+  "release": "86.0.0",
+  "passed": true,
+  "checks": {
+    "release_manifest": true,
+    "api_release": true,
+    "module_injected": true,
+    "paired_card_grid": true,
+    "laws_next_to_back": true,
+    "laws_removed_from_story_flow": true,
+    "single_example_focus": true,
+    "single_question_focus": true,
+    "avatar_crop_safe": true,
+    "physics_lessons_72": true,
+    "lesson_shape_complete": true,
+    "question_bank_5400": true,
+    "physics_links_600": true,
+    "physics_links_valid": true,
+    "deep_link_override": true,
+    "dark_mode_supported": true,
+    "javascript_syntax": true
+  },
+  "counts": {
+    "question_bank": 5400,
+    "physics_lessons": 72,
+    "physics_exact_links": 600,
+    "lesson_tiles": 6
+  },
+  "design": {
+    "top_actions": [
+      "رجوع",
+      "القوانين"
+    ],
+    "paired_cards": [
+      "الفكرة من الصفر",
+      "خريطة الفهم",
+      "التعريفات الأساسية",
+      "لا تخلط",
+      "الفخاخ الشائعة",
+      "كيف يأتي في التحصيلي؟"
+    ],
+    "full_width_sections": [
+      "قبل أن تبدأ",
+      "الأمثلة المحلولة",
+      "اختبر فهمك",
+      "خلاصة الدرس"
+    ],
+    "laws_location": "drawer opened from the top-left action group beside back"
+  }
+}

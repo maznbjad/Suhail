@@ -1,8 +1,8 @@
 {
   "release": "79.0.0",
   "checks": {
-    "release_manifest": true,
-    "api_release": true,
+    "release_manifest": false,
+    "api_release": false,
     "summary_count": true,
     "question_count": true,
     "physics_question_count": true,
@@ -26,7 +26,7 @@
     "nuclear_routing": true,
     "db_question_count": true
   },
-  "passed": true,
+  "passed": false,
   "metrics": {
     "summaries": 72,
     "questions": 5400,

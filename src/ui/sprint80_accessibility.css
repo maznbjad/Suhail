@@ -1,0 +1,186 @@
+/* Suhail Sprint 80 — final font scaling and readable contrast ownership. */
+:root{
+  --s80-font-question:18px;
+  --s80-font-choice:17px;
+  --s80-font-passage:17px;
+  --s80-font-feedback:14px;
+  --s80-text:#102b4e;
+  --s80-text-strong:#081f3a;
+  --s80-muted:#526a80;
+  --s80-surface:#ffffff;
+  --s80-surface-soft:#f4f8fc;
+  --s80-border:#cfdde9;
+  --s80-accent:#096ca8;
+  --s80-success:#116846;
+  --s80-danger:#922936;
+  --s80-warning:#74500d;
+}
+html[data-theme="dark"],body.s55-dark{
+  --s80-text:#f5f9fd;
+  --s80-text-strong:#ffffff;
+  --s80-muted:#c4d2de;
+  --s80-surface:#122536;
+  --s80-surface-soft:#172d40;
+  --s80-border:#486078;
+  --s80-accent:#83d0ff;
+  --s80-success:#9aebc9;
+  --s80-danger:#ffc4cc;
+  --s80-warning:#ffdc9d;
+}
+
+/* The old Sprint 58 rules used fixed !important sizes. These final rules
+   deliberately use the live variables and are injected last. */
+#exercisePage .quiz-question{
+  font-size:var(--s80-font-question)!important;
+  line-height:1.9!important;
+  color:var(--s80-text-strong)!important;
+}
+#exercisePage .question-passage{
+  font-size:var(--s80-font-passage)!important;
+  line-height:2!important;
+  color:var(--s80-text)!important;
+  background:var(--s80-surface-soft)!important;
+  border-color:var(--s80-border)!important;
+}
+#exercisePage #choicesBox .choice{
+  font-size:var(--s80-font-choice)!important;
+  line-height:1.75!important;
+  color:var(--s80-text-strong)!important;
+  background:var(--s80-surface)!important;
+  border-color:var(--s80-border)!important;
+}
+#exercisePage #choicesBox .choice-text{font-size:inherit!important;color:inherit!important}
+#exercisePage .image-caption{
+  font-size:calc(var(--s80-font-choice) - 4px)!important;
+  color:var(--s80-muted)!important;
+}
+#exercisePage #quizResult,
+#exercisePage .s68-direct-feedback,
+#exercisePage .s68-direct-note,
+#exercisePage .s62-explanation,
+#exercisePage .s72-explanation,
+#exercisePage .s72-result-explanation{
+  font-size:var(--s80-font-feedback)!important;
+  line-height:1.85!important;
+  color:var(--s80-text)!important;
+}
+#exercisePage .s62-explanation p,
+#exercisePage .s62-explanation li,
+#exercisePage .s68-result-explain,
+#exercisePage .s68-result-choice,
+#exercisePage .s72-explanation p,
+#exercisePage .s72-explanation li{
+  font-size:inherit!important;
+  color:var(--s80-text)!important;
+}
+#exercisePage .quiz-question-card,
+#exercisePage .timer-card,
+#exercisePage #quizResult,
+#exercisePage .exam-summary{
+  background:var(--s80-surface)!important;
+  border-color:var(--s80-border)!important;
+  color:var(--s80-text)!important;
+}
+#exercisePage .quiz-meta,
+#exercisePage .timer-sub,
+#exercisePage .setup-label,
+#exercisePage .s58-progress-top,
+#exercisePage .s58-bank-note{
+  color:var(--s80-muted)!important;
+  opacity:1!important;
+}
+#exercisePage .timer-main,
+#exercisePage #remainingTime,
+#exercisePage #requiredTime,
+#exercisePage #requiredTimeUnder,
+#exercisePage .quick-title{
+  color:var(--s80-text-strong)!important;
+}
+#exercisePage .question-summary-link{
+  color:var(--s80-text-strong)!important;
+  background:var(--s80-surface-soft)!important;
+  border-color:var(--s80-border)!important;
+}
+#exercisePage .s58-question-tag{
+  color:var(--s80-accent)!important;
+  border-color:var(--s80-border)!important;
+}
+
+/* Correct/wrong states remain distinguishable without relying on pale text. */
+#exercisePage #choicesBox .choice.correct{
+  color:var(--s80-success)!important;
+  border-color:color-mix(in srgb,var(--s80-success) 62%,var(--s80-border))!important;
+}
+#exercisePage #choicesBox .choice.wrong{
+  color:var(--s80-danger)!important;
+  border-color:color-mix(in srgb,var(--s80-danger) 58%,var(--s80-border))!important;
+}
+body.s55-dark #exercisePage #choicesBox .choice.correct,
+html[data-theme="dark"] body #exercisePage #choicesBox .choice.correct{background:#153a30!important}
+body.s55-dark #exercisePage #choicesBox .choice.wrong,
+html[data-theme="dark"] body #exercisePage #choicesBox .choice.wrong{background:#43242c!important}
+
+/* Larger, unambiguous controls and a live percentage indicator. */
+#exercisePage .quiz-question-card{padding-top:48px!important}
+#exercisePage .question-text-controls{
+  top:10px!important;
+  left:10px!important;
+  opacity:1!important;
+  transform:none!important;
+  gap:6px!important;
+  direction:ltr!important;
+  z-index:20!important;
+}
+#exercisePage .text-size-square{
+  width:34px!important;
+  height:34px!important;
+  min-width:34px!important;
+  border-radius:11px!important;
+  background:var(--s80-surface-soft)!important;
+  border:1px solid var(--s80-border)!important;
+  color:var(--s80-text-strong)!important;
+  box-shadow:0 4px 12px rgba(12,42,70,.09)!important;
+  opacity:1!important;
+}
+#exercisePage .text-size-square .text-a{font-size:15px!important;color:inherit!important}
+#exercisePage .text-size-square .text-mark{font-size:13px!important;color:var(--s80-accent)!important}
+#exercisePage .text-size-square:disabled{opacity:.45!important;cursor:not-allowed!important}
+.s80-font-indicator{
+  min-width:46px;
+  height:30px;
+  padding:0 7px;
+  border-radius:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--s80-surface)!important;
+  border:1px solid var(--s80-border)!important;
+  color:var(--s80-text-strong)!important;
+  font:900 11px/1 'Tajawal',Arial,sans-serif!important;
+  direction:ltr;
+}
+
+/* Final common text contrast pass for student-facing screens. */
+:is(.page,.s54-page,.s55-account-page) :is(.page-title,.section-title,.quick-title,.s54-title,.s54-section-head b,.s55-account-title,.s59-card-copy b,.s59-unit-copy b,.s17-course-title,.s17-unit-title,.s79-title,.s79-section-title){
+  color:var(--s80-text-strong)!important;
+  opacity:1!important;
+}
+:is(.page,.s54-page,.s55-account-page) :is(.page-sub,.s54-subtitle,.s54-section-head span,.s55-row-value,.s59-card-copy small,.s59-unit-copy small,.s17-course-sub,.s17-unit-sub,.s79-sub,.s79-section-sub){
+  color:var(--s80-muted)!important;
+  opacity:1!important;
+}
+body.s55-dark :is(input,textarea,select),
+html[data-theme="dark"] body :is(input,textarea,select){
+  color:var(--s80-text-strong)!important;
+  background:var(--s80-surface-soft)!important;
+  border-color:var(--s80-border)!important;
+}
+body.s55-dark :is(input,textarea)::placeholder,
+html[data-theme="dark"] body :is(input,textarea)::placeholder{color:#b7c7d5!important;opacity:1!important}
+
+@media(max-width:430px){
+  /* Keep live variables on small screens; do not restore the old fixed sizes. */
+  #exercisePage .quiz-question{font-size:var(--s80-font-question)!important}
+  #exercisePage #choicesBox .choice{font-size:var(--s80-font-choice)!important}
+  #exercisePage .question-passage{font-size:var(--s80-font-passage)!important}
+}

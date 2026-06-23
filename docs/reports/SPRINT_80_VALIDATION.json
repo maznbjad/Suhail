@@ -1,0 +1,67 @@
+{
+  "release": "80.0.0",
+  "passed": false,
+  "checks": {
+    "release_manifest": false,
+    "api_release": false,
+    "question_count": true,
+    "tahsili_count": true,
+    "physics_exact_links": true,
+    "nonphysics_not_guessed": true,
+    "link_coverage_25_percent": true,
+    "accessibility_injected": true,
+    "variable_font_override": true,
+    "legacy_sync": true,
+    "font_bounds": true,
+    "global_override": true,
+    "dark_contrast_tokens": true
+  },
+  "tahsili_linkage": {
+    "total": 2400,
+    "linked_exact": 600,
+    "unlinked": 1800,
+    "coverage_percent": 25.0,
+    "subjects": {
+      "فيزياء": {
+        "total": 600,
+        "linked": 600,
+        "unlinked": 0,
+        "statuses": {
+          "linked_exact_scored_v2": 600
+        }
+      },
+      "كيمياء": {
+        "total": 600,
+        "linked": 0,
+        "unlinked": 600,
+        "statuses": {
+          "not_published_no_guess": 600
+        }
+      },
+      "رياضيات": {
+        "total": 600,
+        "linked": 0,
+        "unlinked": 600,
+        "statuses": {
+          "not_published_no_guess": 600
+        }
+      },
+      "الأحياء وعلم البيئة": {
+        "total": 600,
+        "linked": 0,
+        "unlinked": 600,
+        "statuses": {
+          "not_published_no_guess": 600
+        }
+      }
+    },
+    "policy": "No guessed links for unpublished summaries."
+  },
+  "font_control": {
+    "minimum_px": 14,
+    "default_px": 18,
+    "maximum_px": 28,
+    "step_px": 2,
+    "persistent": true
+  }
+}
