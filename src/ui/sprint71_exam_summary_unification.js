@@ -1,7 +1,7 @@
 /* Suhail Sprint 71 — exam stability and one summary-menu language. */
 (function(){
   'use strict';
-  const VERSION='71.0.0';
+  const VERSION='72.0.0';
   const BACK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
   const ICONS={
     summaries:'<svg viewBox="0 0 24 24"><path d="M5 4h12a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2V4Z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>',

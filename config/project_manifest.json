@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 71",
-  "version": "1.0.71",
+  "release": "Sprint 72",
+  "version": "1.0.72",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -134,7 +134,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 71 fixes the exam-only freeze in all three banks, verifies both result-display modes, auto-advances without revealing correctness when result display is off, prevents legacy summary renderers from overwriting the current page, and unifies summary, subject, book and unit lists with accessible light/dark colors.",
+  "notes": "Sprint 72 fixes exact question-to-summary linking, opens the precise lesson and knowledge block, removes guessed links to unpublished summaries, and applies difficulty-aware explanations: no obvious explanation for easy questions, concise pedagogical reasoning for medium questions, and structured reasoning for hard questions.",
   "summary_content": {
     "published_total": 72,
     "published_subjects": {

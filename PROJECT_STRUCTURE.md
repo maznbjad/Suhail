@@ -1,4 +1,4 @@
-# Suhail Sprint 71 — هيكل المشروع
+# Suhail Sprint 72 — هيكل المشروع
 
 ## التشغيل
 
@@ -59,7 +59,7 @@
 
 ## الفحص والتوثيق
 
-- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 71.
+- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 72.
 - `scripts/validate_sprint59.py` — فحص تقسيم الملخصات، منع الخلط، القائمة السفلية، أيقونة العودة، والبحث.
 - `scripts/validate_sprint57.py` — فحص كتالوج الشخصيات، الأصول، فصل الجنسين، التسجيل، والـAPI.
 - `scripts/validate_sprint56.py` — فحص حقن المظهر، التخزين، البنية، وملفات QA.

@@ -1,0 +1,18 @@
+{
+  "version": "72.0.0",
+  "ref_valid": true,
+  "current_link_visible": true,
+  "current_link_text": "↗\nالقياسمقارنة كمية بوحدة معيارية‹",
+  "modal_open": true,
+  "modal_title": "قياس",
+  "opened_unit": "فيزياء 1|مدخل إلى علم الفيزياء",
+  "focus_count": 1,
+  "focus_block_id": "PHY-002-DEFINITION-01",
+  "result_link_count": 3,
+  "result_explanation_count": 2,
+  "easy_explanation_count": 0,
+  "medium_explanation_count": 1,
+  "hard_explanation_count": 1,
+  "errors": [],
+  "passed": true
+}

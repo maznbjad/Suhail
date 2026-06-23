@@ -1,0 +1,13 @@
+{
+  "health_status": 200,
+  "health": {
+    "database": true,
+    "release": "72.0.0",
+    "service": "suhail-api",
+    "status": "ok"
+  },
+  "summaries_status": 200,
+  "summary_payload_type": "dict",
+  "summary_count": 72,
+  "release_header": "72.0.0"
+}

@@ -8968,7 +8968,7 @@ function renderRelatedQuestionsPage() {
   const item = getSummaryByUnit(currentSummarySubject, currentSummaryUnit);
   const all = (questions || []).filter(q => {
     const ref = getQuestionSummaryRef(q);
-    return ref && ref.subject === currentSummarySubject && (ref.unit === currentSummaryUnit || ref.unit);
+    return ref && ref.subject === currentSummarySubject && ref.unit === currentSummaryUnit;
   }).slice(0, 8);
 
   const rows = all.length ? all.map((q, idx) => {
@@ -20362,5 +20362,18 @@ try:
     html_code = html_code.replace("</body>", f"<script>{s71_js}</script></body>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 71 exam/summary module: {exc}")
+
+# Sprint 72 owns exact question-to-summary deep links and difficulty-aware explanations.
+s72_css_path = os.path.join("src", "ui", "sprint72_exact_links_explanations.css")
+s72_js_path = os.path.join("src", "ui", "sprint72_exact_links_explanations.js")
+try:
+    with open(s72_css_path, "r", encoding="utf-8") as style_file:
+        s72_css = style_file.read()
+    with open(s72_js_path, "r", encoding="utf-8") as script_file:
+        s72_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s72_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s72_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 72 link/explanation module: {exc}")
 
 components.html(html_code, height=960, scrolling=False)

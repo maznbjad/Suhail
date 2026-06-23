@@ -1,7 +1,7 @@
 /* Suhail Sprint 55 — final grouped account/settings hub. */
 (function(){
   'use strict';
-  const VERSION='71.0.0';
+  const VERSION='72.0.0';
   const AVATARS=__S55_AVATARS__;
   const AVATAR_ASSETS=__S55_AVATAR_ASSETS__;
   let legacyShowPage=null;
@@ -61,7 +61,7 @@
       ${row('faq','الأسئلة الشائعة',"s55OpenInfo('faq')")}
     </div>
     ${isAdmin()?`<div class="s55-admin-label">إدارة سهيل</div><div class="s55-admin-card">${row('admin','لوحة إعدادات الأدمن',"showPage('adminSettingsPage')")}${row('content','إدارة المحتوى',"showPage('questionManagementPage')")}</div>`:''}
-    <div class="s55-version"><b>V.1.0.71</b><span>2026 سهيل</span></div>
+    <div class="s55-version"><b>V.1.0.72</b><span>2026 سهيل</span></div>
     <div class="s55-company"><b>سهيل — تعلم بذكاء</b><span>تطبيق تعليمي للقدرات والتحصيلي<br>جميع الحقوق محفوظة</span></div>
     <button class="s55-logout" onclick="logoutUser()">تسجيل الخروج</button>
   </div>`;applyTheme();requestAnimationFrame(()=>{document.querySelector('#s54BottomNav [data-s54-nav="profile"]')?.classList.add('active');});}

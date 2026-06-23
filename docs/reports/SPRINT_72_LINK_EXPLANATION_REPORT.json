@@ -1,0 +1,35 @@
+{
+  "version": "72.0.0",
+  "questions": 5400,
+  "summaries": 72,
+  "explanation_modes_before": {
+    "none": 1968,
+    "brief": 3137,
+    "full": 295
+  },
+  "explanation_modes_after": {
+    "none": 1968,
+    "brief": 3137,
+    "full": 295
+  },
+  "difficulty_mode_matrix": {
+    "سهل|none": 1968,
+    "متوسط|brief": 3137,
+    "صعب|full": 295
+  },
+  "medium_hard_missing_explanation": [],
+  "easy_questions_with_visible_explanation": [],
+  "added_exact_skill_blocks": 0,
+  "linking": {
+    "linked": 600,
+    "changed_primary_block": 0,
+    "invalid_nonphysics_fields_removed": 0,
+    "minimum_score": 43.4,
+    "average_score": 61.6,
+    "block_type_counts": {
+      "definition": 86,
+      "comparison": 3,
+      "rule": 511
+    }
+  }
+}

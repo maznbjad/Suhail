@@ -1,7 +1,7 @@
 /* Suhail Sprint 70 — final navigation, onboarding and consistency layer. */
 (function () {
   'use strict';
-  const VERSION = '71.0.0';
+  const VERSION = '72.0.0';
   const backIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
 
   function activePage() {

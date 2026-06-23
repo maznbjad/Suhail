@@ -21,7 +21,7 @@
   "unit_search": true,
   "dark_menu_surface": true,
   "dark_text_contrast_tokens": true,
-  "api_release_71": true,
+  "api_release_71": false,
   "question_total": 5400,
   "question_counts": {
     "قدرات كمي": 1500,
@@ -30,5 +30,5 @@
   },
   "smart_summary_total": 72,
   "biology_name_unified": true,
-  "passed": true
+  "passed": false
 }
