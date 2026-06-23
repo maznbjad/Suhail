@@ -1,0 +1,36 @@
+{
+  "version": "2.0.79",
+  "name": "قالب درس الفيزياء للإتقان",
+  "required_sections": [
+    "prerequisites",
+    "diagnostic_question",
+    "from_zero",
+    "concept_chain",
+    "relationships",
+    "definitions",
+    "formula_cards",
+    "worked_examples",
+    "dont_confuse",
+    "common_traps",
+    "exam_patterns",
+    "practice_questions",
+    "takeaway",
+    "mastery"
+  ],
+  "minimums": {
+    "prerequisites": 2,
+    "definitions": 3,
+    "formula_cards": 1,
+    "worked_examples": 3,
+    "dont_confuse": 2,
+    "common_traps": 2,
+    "exam_patterns": 4,
+    "practice_questions": 5,
+    "mastery_percent": 80
+  },
+  "future_subject_adapters": {
+    "رياضيات": "أنماط الحل والتحقق والاختصار",
+    "كيمياء": "المستوى الجسيمي والمعادلات والتجارب",
+    "الأحياء وعلم البيئة": "العمليات والتسلسل والخرائط والمقارنات"
+  }
+}

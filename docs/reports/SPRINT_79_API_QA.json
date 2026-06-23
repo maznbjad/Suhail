@@ -1,0 +1,31 @@
+{
+  "release": "79.0.0",
+  "health": {
+    "status": 200,
+    "json": {
+      "database": true,
+      "release": "79.0.0",
+      "service": "suhail-api",
+      "status": "ok"
+    }
+  },
+  "summaries": {
+    "status": 200,
+    "count": 5
+  },
+  "catalog": {
+    "status": 200,
+    "rows": 27
+  },
+  "anonymous_questions": {
+    "status": 401,
+    "expected_auth_guard": true
+  },
+  "register_status": 201,
+  "authenticated_questions": {
+    "status": 200,
+    "count": 5,
+    "answers_included": false
+  },
+  "passed": true
+}

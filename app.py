@@ -20376,4 +20376,18 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 72 link/explanation module: {exc}")
 
+# Sprint 79 is the final physics-mastery layer. It turns every physics lesson
+# into a complete learning path and owns the exact deep-link destination.
+s79_css_path = os.path.join("src", "ui", "sprint79_physics_mastery.css")
+s79_js_path = os.path.join("src", "ui", "sprint79_physics_mastery.js")
+try:
+    with open(s79_css_path, "r", encoding="utf-8") as style_file:
+        s79_css = style_file.read()
+    with open(s79_js_path, "r", encoding="utf-8") as script_file:
+        s79_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s79_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s79_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 79 physics mastery module: {exc}")
+
 components.html(html_code, height=960, scrolling=False)

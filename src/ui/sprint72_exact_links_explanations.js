@@ -50,6 +50,9 @@
   }
   function openFull(q){
     const r=ref(q);if(!r)return;
+    if(typeof window.s79OpenReference==='function'){
+      pending=null;window.s79OpenReference({summary_id:r.summary.summary_id||r.summary.id,block_id:r.block.id,stage:r.stage,unit:r.unit,lesson:r.lesson});return;
+    }
     pending=r;
     try{
       if(typeof window.s71OpenUnit==='function')window.s71OpenUnit(r.stage,r.unit);

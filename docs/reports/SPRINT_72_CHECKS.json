@@ -3,7 +3,7 @@
   "javascript_syntax": true,
   "sprint72_assets_injected": true,
   "loaded_after_sprint71": true,
-  "api_release_72": true,
+  "api_release_72": false,
   "question_total": 5400,
   "summary_total": 72,
   "db_question_total": 5400,
@@ -24,5 +24,5 @@
   "medium_hard_min_length": 35,
   "result_render_idempotent": true,
   "runtime_interaction_qa": true,
-  "passed": true
+  "passed": false
 }

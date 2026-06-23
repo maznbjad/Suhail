@@ -1,0 +1,42 @@
+{
+  "release": "79.0.0",
+  "checks": {
+    "release_manifest": true,
+    "api_release": true,
+    "summary_count": true,
+    "question_count": true,
+    "physics_question_count": true,
+    "template_every_lesson": true,
+    "minimum_content": true,
+    "mastery_policy": true,
+    "unique_summary_ids": true,
+    "unique_block_ids": true,
+    "all_physics_exact_links_valid": true,
+    "linked_lesson_policy": true,
+    "practice_answers": true,
+    "practice_unique_per_lesson": true,
+    "difficulty_ladder": true,
+    "ui_injected": true,
+    "deep_link_override": true,
+    "ui_sections": true,
+    "dark_mode": true,
+    "no_mutation_observer_in_s79": true,
+    "projectile_routing": true,
+    "wave_routing": true,
+    "nuclear_routing": true,
+    "db_question_count": true
+  },
+  "passed": true,
+  "metrics": {
+    "summaries": 72,
+    "questions": 5400,
+    "physics_questions": 600,
+    "knowledge_blocks": 1626,
+    "internal_mastery_questions": 360,
+    "exact_external_links": 600,
+    "lessons_with_external_links": 22,
+    "lessons_without_guessed_links": 50
+  },
+  "invalid_physics_links": [],
+  "editorial_status": "قالب ومحتوى داخلي مكتملان آليًا؛ يوصى بمراجعة بشرية تخصصية قبل النشر العام النهائي."
+}

@@ -1,0 +1,18 @@
+{
+  "unit_cards": 3,
+  "lesson_title": "حركة المقذوف",
+  "sections": 11,
+  "formula_cards": 4,
+  "worked_examples": 3,
+  "questions": 5,
+  "result_visible": true,
+  "result_score": "20%",
+  "deep_link_focus": true,
+  "deep_link_block": true,
+  "dark_colors": {
+    "color": "rgb(244, 247, 252)",
+    "bg": "rgb(15, 22, 35)"
+  },
+  "page_errors": [],
+  "passed": true
+}

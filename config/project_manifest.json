@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 72",
-  "version": "1.0.72",
+  "release": "Sprint 79",
+  "version": "1.0.79",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,10 +10,10 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 71,
+  "latest_sprint": 79,
   "question_bank": {
     "count": 5400,
-    "status": "internal_qa_linked_physics_v1",
+    "status": "internal_qa_physics_mastery_v2",
     "format": "unified",
     "qudrat_count": 3000,
     "tahsili_count": 2400,
@@ -119,7 +119,12 @@
       "الوحدة",
       "المحتوى"
     ],
-    "exam_runtime_freeze_guard": true
+    "exam_runtime_freeze_guard": true,
+    "physics_mastery_learning_path": true,
+    "physics_mastery_threshold_percent": 80,
+    "physics_lesson_internal_questions": 5,
+    "physics_exact_reference_opening": true,
+    "physics_lesson_progress_persistence": true
   },
   "admin": {
     "deep_settings": true,
@@ -134,7 +139,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 72 fixes exact question-to-summary linking, opens the precise lesson and knowledge block, removes guessed links to unpublished summaries, and applies difficulty-aware explanations: no obvious explanation for easy questions, concise pedagogical reasoning for medium questions, and structured reasoning for hard questions.",
+  "notes": "Sprint 79 completes the physics mastery experience: 72 lesson-level learning paths with prerequisites, diagnostics, from-zero explanations, concept maps, meaningful law cards, three worked examples, lesson-specific misconceptions, five mastery questions, exact question deep links, and an 80% mastery threshold.",
   "summary_content": {
     "published_total": 72,
     "published_subjects": {
@@ -147,19 +152,24 @@
       "قدرات لفظي": 0,
       "قدرات كمي": 0
     },
-    "policy": "No generated summaries. New content appears only after admin review and approval.",
-    "physics_source": "data/smart_summaries.json"
+    "policy": "Physics is published in the Sprint 79 mastery template. Future subjects remain unpublished until user-provided curriculum is cleaned, reviewed, and approved.",
+    "physics_source": "data/smart_summaries.json",
+    "physics_template_version": "2.0.79"
   },
-  "sprint": 71,
+  "sprint": 79,
   "summary_knowledge": {
     "published_subjects": [
       "فيزياء"
     ],
     "summary_count": 72,
-    "knowledge_block_count": 936,
+    "knowledge_block_count": 1626,
     "linked_question_count": 600,
     "exact_block_deep_link": true,
     "saved_question_explanation": true,
-    "admin_editable_links": true
+    "admin_editable_links": true,
+    "internal_mastery_question_count": 360,
+    "mastery_template_version": "2.0.79",
+    "lessons_with_exact_external_links": 22,
+    "lessons_without_guessed_external_links": 50
   }
 }

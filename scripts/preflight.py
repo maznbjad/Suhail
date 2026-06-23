@@ -19,6 +19,9 @@ REQUIRED_FILES = [
     ROOT / "src" / "ui" / "sprint70_unified_app.js",
     ROOT / "src" / "ui" / "sprint71_exam_summary_unification.css",
     ROOT / "src" / "ui" / "sprint71_exam_summary_unification.js",
+    ROOT / "src" / "ui" / "sprint79_physics_mastery.css",
+    ROOT / "src" / "ui" / "sprint79_physics_mastery.js",
+    ROOT / "data" / "content" / "physics_lesson_template_v2.json",
 ]
 JSON_FILES = [
     ROOT / "data" / "questions.json",

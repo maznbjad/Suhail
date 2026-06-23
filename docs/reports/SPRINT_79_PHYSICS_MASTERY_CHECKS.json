@@ -1,0 +1,28 @@
+{
+  "release": "Sprint 79",
+  "summary_count": 72,
+  "stage_counts": {
+    "فيزياء 1": 18,
+    "فيزياء 2": 13,
+    "فيزياء 3-1": 22,
+    "فيزياء 3-2": 19
+  },
+  "knowledge_block_count": 1626,
+  "internal_practice_question_count": 360,
+  "external_physics_question_count": 600,
+  "lessons_with_exact_external_links": 22,
+  "lessons_without_guessed_external_links": 50,
+  "minimums": {
+    "prerequisites": 2,
+    "definitions": 3,
+    "formula_cards": 1,
+    "worked_examples": 3,
+    "dont_confuse": 3,
+    "exam_patterns": 4,
+    "practice_questions": 5
+  },
+  "valid_practice_answers": true,
+  "unique_summary_ids": true,
+  "source_policy": "Exact external links retained; no guessed links were created for uncovered lessons.",
+  "editorial_note": "Structure and internal QA complete. Public release still requires a physics subject-matter review of all lesson wording and calculations."
+}
