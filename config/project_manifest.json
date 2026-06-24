@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 102 PDF Reader",
-  "version": "1.0.102",
+  "release": "Sprint 103 OCR PDF Reader",
+  "version": "1.0.103",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 102,
+  "latest_sprint": 103,
   "question_bank": {
     "count": 5400,
     "status": "internal_qa_physics_mastery_v2",
@@ -158,13 +158,12 @@
     "avatar_crop_consistent": true,
     "pdf_summary_reader": true,
     "pdf_full_page_mode": true,
-    "pdf_highlight_colors": [
-      "yellow",
-      "green",
-      "blue",
-      "pink"
-    ],
-    "pdf_last_page_persistence": true
+    "pdf_highlight_colors": 4,
+    "pdf_last_page_persistence": true,
+    "pdf_text_selection": "ocr_text_layer",
+    "pdf_reader_persistent_controls": [
+      "back_50_percent_transparent"
+    ]
   },
   "admin": {
     "deep_settings": true,
@@ -179,7 +178,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 102 installs Physics 1 as a full-page PDF-style reader with four-color highlights, eraser, reading-position persistence, and PDF management in content administration.",
+  "notes": "Sprint 103 converts Physics 1 into a distraction-free full-screen reader. The image-only PDF now has an OCR text layer for real text selection and four-color highlighting. All persistent interface elements are hidden; only a 50%-transparent back control remains, while the color palette appears contextually after text selection.",
   "summary_content": {
     "mode": "one_pdf_per_book",
     "installed": {

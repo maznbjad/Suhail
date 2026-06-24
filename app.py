@@ -20608,6 +20608,15 @@ try:
             if filename.lower().endswith((".webp", ".png", ".jpg", ".jpeg")):
                 s102_pages.append(asset_data_uri(os.path.join(s102_pages_dir, filename)))
     s102_js = s102_js.replace("__S102_PHYSICS1_PAGES__", compact_json(s102_pages))
+    s103_ocr = []
+    s103_ocr_path = os.path.join("assets", "summary_pdfs", "physics1_ocr.json")
+    if os.path.isfile(s103_ocr_path):
+        try:
+            with open(s103_ocr_path, "r", encoding="utf-8") as ocr_file:
+                s103_ocr = json.load(ocr_file)
+        except (OSError, ValueError) as exc:
+            print(f"Suhail warning: failed to load Physics 1 OCR layer: {exc}")
+    s102_js = s102_js.replace("__S103_PHYSICS1_OCR__", compact_json(s103_ocr))
     html_code = html_code.replace("</head>", f"<style>{s102_css}</style></head>", 1)
     html_code = html_code.replace("</body>", f"<script>{s102_js}</script></body>", 1)
 except OSError as exc:
