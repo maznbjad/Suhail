@@ -20591,4 +20591,26 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 101 visual-summary module: {exc}")
 
+
+# Sprint 102 replaces the lesson-by-lesson summary detail with one full-page
+# PDF reading experience per book. Physics 1 is installed as an 18-page sample.
+s102_css_path = os.path.join("src", "ui", "sprint102_pdf_reader.css")
+s102_js_path = os.path.join("src", "ui", "sprint102_pdf_reader.js")
+try:
+    with open(s102_css_path, "r", encoding="utf-8") as style_file:
+        s102_css = style_file.read()
+    with open(s102_js_path, "r", encoding="utf-8") as script_file:
+        s102_js = script_file.read()
+    s102_pages = []
+    s102_pages_dir = os.path.join("assets", "summary_pdfs", "physics1")
+    if os.path.isdir(s102_pages_dir):
+        for filename in sorted(os.listdir(s102_pages_dir)):
+            if filename.lower().endswith((".webp", ".png", ".jpg", ".jpeg")):
+                s102_pages.append(asset_data_uri(os.path.join(s102_pages_dir, filename)))
+    s102_js = s102_js.replace("__S102_PHYSICS1_PAGES__", compact_json(s102_pages))
+    html_code = html_code.replace("</head>", f"<style>{s102_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s102_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 102 PDF reader module: {exc}")
+
 components.html(html_code, height=960, scrolling=False)
