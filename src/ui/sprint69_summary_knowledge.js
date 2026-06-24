@@ -58,7 +58,7 @@
   }
 
   function patch(){window.toggleHighlight=enrichedToggle;window.renderHighlights=renderSaved;if(typeof window.loadCurrentQuestion==='function'&&!window.loadCurrentQuestion.__s69){const old=window.loadCurrentQuestion;const fn=function(){const out=old.apply(this,arguments);setTimeout(decorateCurrent,45);return out};fn.__s69=true;window.loadCurrentQuestion=fn}}
-  function install(){ensureModal();patch();setInterval(patch,1000);let observerTimer=null;new MutationObserver(()=>{clearTimeout(observerTimer);observerTimer=setTimeout(()=>{patch();if(document.getElementById('questionCard'))decorateCurrent();if(document.getElementById('savedQuestionsPage')?.classList.contains('active'))renderSaved();renderSummaryKnowledge()},20)}).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['class']});setTimeout(()=>{decorateCurrent();renderSaved();renderSummaryKnowledge()},180)}
+  function install(){ensureModal();patch();setInterval(patch,3000);let observerTimer=null;new MutationObserver(()=>{clearTimeout(observerTimer);observerTimer=setTimeout(()=>{patch();if(document.getElementById('questionCard'))decorateCurrent();if(document.getElementById('savedQuestionsPage')?.classList.contains('active'))renderSaved();renderSummaryKnowledge()},20)}).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['class']});setTimeout(()=>{decorateCurrent();renderSaved();renderSummaryKnowledge()},180)}
   window.SuhailKnowledge69={open:openBlock,close,findBlock,refFor};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();

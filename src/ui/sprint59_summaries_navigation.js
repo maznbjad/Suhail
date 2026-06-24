@@ -276,7 +276,7 @@
   const observer=new MutationObserver(()=>syncNavigation());
   if(document.body)observer.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['class']});
   document.addEventListener('click',()=>setTimeout(syncNavigation,25),true);
-  setInterval(syncNavigation,650);
+  setInterval(syncNavigation,2200);
   setTimeout(()=>{syncNavigation();normalizeBackIcons(document);if(activePage()?.id==='summariesPage')render();},120);
   window.SUHAIL_SUMMARIES_RELEASE=VERSION;
 })();

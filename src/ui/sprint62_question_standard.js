@@ -49,6 +49,6 @@
     if(typeof window.answerQuiz==='function'&&!window.answerQuiz.__s62){const old=window.answerQuiz;const fn=function(button,selected,isCorrect){const r=old.apply(this,arguments);setTimeout(()=>{const q=qNow(),box=document.getElementById('quizResult');if(q&&box){box.innerHTML=renderExplanation(q,selected,!!isCorrect);box.style.display='block';paintCorrect(selected);}},0);return r};fn.__s62=true;window.answerQuiz=fn;}
   }
   function cleanLabels(){document.querySelector('.s58-format-box')?.remove();document.querySelectorAll('.s58-question-tag.format').forEach(x=>x.remove());document.querySelectorAll('.s58-bank-note').forEach(x=>x.remove());}
-  function install(){ensureZoom();patch();cleanLabels();syncQuestion();new MutationObserver(()=>{cleanLabels();patch();}).observe(document.body,{childList:true,subtree:true});setInterval(()=>{patch();cleanLabels();},1200);window.SuhailQuestionStandard62={version:VERSION,sync:syncQuestion};window.SUHAIL_RELEASE=VERSION;}
+  function install(){ensureZoom();patch();cleanLabels();syncQuestion();new MutationObserver(()=>{cleanLabels();patch();}).observe(document.body,{childList:true,subtree:true});setInterval(()=>{patch();cleanLabels();},3500);window.SuhailQuestionStandard62={version:VERSION,sync:syncQuestion};window.SUHAIL_RELEASE=VERSION;}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();

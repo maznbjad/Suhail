@@ -77,18 +77,25 @@ body.s55-dark .s89-account-group-title{color:#b7c9d7!important}
 /* Summary headers: no decorative icon and no instructional filler. */
 .s71-header{
   min-height:118px!important;
-  padding:20px 20px 18px!important;
+  padding:20px 78px 18px 20px!important;
 }
 .s71-header-icon{display:none!important}
-.s71-header-copy{max-width:100%!important;padding-left:0!important}
+.s71-header-copy{max-width:100%!important;padding-left:0!important;padding-right:56px!important}
 .s71-header-copy p:empty{display:none!important}
 .s71-section-label:has(span:empty) span{display:none!important}
 
 @media(max-width:430px){
   .s18-logo{height:70px!important;min-height:70px!important}
   .s18-logo img{height:66px!important;max-height:66px!important;max-width:142px!important}
-  .s71-header{min-height:108px!important;padding:18px 16px 16px!important}
+  .s71-header{min-height:108px!important;padding:18px 74px 16px 16px!important}
+  .s71-header-copy{padding-right:54px!important}
   .s89-account-group-title{font-size:10px!important}
 }
 
 .s89-username bdi,.s55-row-value bdi,.s54-challenge-banner bdi,.s54-setting bdi{direction:ltr!important;unicode-bidi:isolate!important;display:inline-block!important}
+
+
+/* Back-button safe area: never let titles sit under the right-side back icon. */
+.s59-header{padding-right:78px!important}
+.s59-header-copy{padding-right:56px!important}
+.s54-topbar>div,.s71-header-copy,.s59-header-copy{min-width:0!important}

@@ -1,0 +1,17 @@
+{
+  "version": "106.0.0",
+  "passed": true,
+  "checks": {
+    "loaded_after_s104": true,
+    "loaded_before_render": true,
+    "right_forced": true,
+    "left_disabled": true,
+    "logical_right_forced": true,
+    "s71_safe_zone": true,
+    "s59_safe_zone": true,
+    "dynamic_guard": true,
+    "no_new_polling": true,
+    "inline_right_enforcement": true,
+    "inline_left_reset": true
+  }
+}

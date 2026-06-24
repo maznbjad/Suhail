@@ -1,0 +1,80 @@
+/* Suhail Sprint 104 — keep desktop preview inside the iPhone frame and scope dark mode to the device. */
+@media (min-width:521px){
+  html,
+  html[data-theme="dark"]{
+    background:#edf1f4!important;
+    color-scheme:light!important;
+  }
+  body,
+  body.s55-dark,
+  html[data-theme="dark"] body,
+  body.s101-summary-active,
+  body.s102-reader-active{
+    width:100%!important;
+    min-height:100vh!important;
+    margin:0!important;
+    padding:20px 0!important;
+    display:flex!important;
+    align-items:flex-start!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+    background:#edf1f4!important;
+  }
+  .phone,
+  body.s55-dark .phone,
+  html[data-theme="dark"] .phone{
+    position:relative!important;
+    flex:0 0 390px!important;
+    width:390px!important;
+    min-width:390px!important;
+    max-width:390px!important;
+    height:844px!important;
+    min-height:844px!important;
+    max-height:844px!important;
+    padding:12px!important;
+    overflow:visible!important;
+    border-radius:48px!important;
+    background:#0d0d0d!important;
+    box-shadow:0 30px 70px rgba(0,0,0,.22)!important;
+  }
+  .screen,
+  body.s55-dark .screen,
+  html[data-theme="dark"] .screen{
+    position:relative!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    overflow:hidden!important;
+    border-radius:38px!important;
+  }
+  html[data-theme="dark"] .screen,
+  body.s55-dark .screen{
+    background:linear-gradient(180deg,var(--s70-bg,#07131f) 0%,var(--s70-bg-soft,#0b1a28) 52%,var(--s70-bg,#07131f) 100%)!important;
+  }
+  /* Full-page summary modes fill the phone screen, not the browser window. */
+  #summariesPage.s101-active,
+  #summariesPage.s102-reader-host{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    max-width:none!important;
+  }
+  .s102-reader{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+  }
+  .s102-reader-back,
+  .s103-selection-palette{
+    position:absolute!important;
+  }
+  .s101-shell,
+  .s101-detail .s101-shell{
+    max-width:100%!important;
+  }
+  .s102-pages{max-width:100%!important;}
+}

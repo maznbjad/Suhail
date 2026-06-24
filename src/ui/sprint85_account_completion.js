@@ -190,7 +190,7 @@
     window.addEventListener('storage',scheduleSync);
     window.addEventListener('suhail:profile-saved',function(){scheduleSync(0);});
     setTimeout(function(){patchNavigation();patchSave();patchAuth();installSetupObserver();installFastWheel();syncState();updateVersion();},450);
-    setInterval(function(){patchNavigation();patchSave();syncState();},900);
+    setInterval(function(){patchNavigation();patchSave();syncState();},2500);
     window.SuhailUI85={version:VERSION,sync:syncState,onboardingLocked:onboardingLocked};
   }
 

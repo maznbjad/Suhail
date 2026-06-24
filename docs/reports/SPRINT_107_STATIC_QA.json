@@ -1,0 +1,24 @@
+{
+  "version": "107.0.0",
+  "checks": {
+    "python_syntax": true,
+    "javascript_syntax": true,
+    "json_valid": true,
+    "sqlite_integrity": true,
+    "pdf_18_pages": true,
+    "ocr_18_pages": true,
+    "s107_loaded_last": true,
+    "old_s106_guard_not_loaded": true,
+    "no_rtl_logical_inset_conflict": true,
+    "no_new_polling": true
+  },
+  "counts": {
+    "python_files": 51,
+    "javascript_files": 27,
+    "json_files": 125,
+    "pdf_pages": 18,
+    "ocr_pages": 18,
+    "ocr_words": 6778
+  },
+  "passed": true
+}

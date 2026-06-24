@@ -169,7 +169,7 @@
     window.addEventListener('storage', updateMode);
     // Historical modules can re-render a page after their own delayed timers.
     // A light idempotent heartbeat guarantees the final layer is restored.
-    window.setInterval(updateMode, 750);
+    window.setInterval(updateMode, 2500);
     window.SUHAIL_RELEASE = VERSION;
     window.SuhailUI70 = { update: updateMode, version: VERSION };
   }

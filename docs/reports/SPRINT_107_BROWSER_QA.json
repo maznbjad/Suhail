@@ -1,0 +1,100 @@
+{
+  "version": "107.0.0",
+  "checks": {
+    "all_back_buttons_right": true,
+    "no_title_overlap": true,
+    "runtime_guard_passed": true,
+    "outside_stays_light": true,
+    "dark_inside_phone": true,
+    "iphone_frame_390x844": true,
+    "reader_fills_phone_screen": true,
+    "pdf_back_right": true,
+    "pdf_back_50_percent": true,
+    "pdf_bottom_nav_hidden": true,
+    "mobile_reader_fills_viewport": true,
+    "mobile_back_right": true,
+    "mobile_nav_hidden": true
+  },
+  "details": {
+    "back_buttons": [
+      {
+        "case": "s71",
+        "rightGap": 15,
+        "overlap": false
+      },
+      {
+        "case": "s59",
+        "rightGap": 16,
+        "overlap": false
+      },
+      {
+        "case": "s101",
+        "rightGap": 12,
+        "overlap": false
+      },
+      {
+        "case": "s54",
+        "rightGap": 15,
+        "overlap": false
+      },
+      {
+        "case": "s55",
+        "rightGap": 15,
+        "overlap": false
+      },
+      {
+        "case": "s28",
+        "rightGap": 15,
+        "overlap": false
+      },
+      {
+        "case": "s17",
+        "rightGap": 15,
+        "overlap": false
+      },
+      {
+        "case": "s102",
+        "rightGap": 15,
+        "overlap": false
+      },
+      {
+        "case": "s39",
+        "rightGap": 15,
+        "overlap": false
+      },
+      {
+        "case": "s47",
+        "rightGap": 0,
+        "overlap": false
+      },
+      {
+        "case": "s79",
+        "rightGap": 0,
+        "overlap": false
+      },
+      {
+        "case": "s86",
+        "rightGap": 0,
+        "overlap": false
+      }
+    ],
+    "device_pdf": {
+      "htmlBg": "rgb(237, 241, 244)",
+      "bodyBg": "rgb(237, 241, 244)",
+      "screenBg": "linear-gradient(rgb(7, 19, 31) 0%, rgb(11, 26, 40) 52%, rgb(7, 19, 31) 100%)",
+      "phoneW": 390,
+      "phoneH": 844,
+      "readerMatchesScreen": true,
+      "backRightGap": 15,
+      "backBackground": "rgba(255, 255, 255, 0.5)",
+      "navDisplay": "none"
+    },
+    "mobile_pdf": {
+      "readerW": 390,
+      "readerH": 844,
+      "backRightGap": 14,
+      "navDisplay": "none"
+    }
+  },
+  "passed": true
+}

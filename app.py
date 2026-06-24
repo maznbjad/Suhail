@@ -10009,7 +10009,7 @@ function loginUser() {
   document.getElementById("loginPassword").value = "";
   applyAuthState();
 /* Clean Rebuild V1 safety access refresh */
-setInterval(qmCleanUpdateAccess, 800);
+if (!window.__qmCleanAccessInterval) window.__qmCleanAccessInterval = setInterval(qmCleanUpdateAccess, 2500);
   activatePage("homePage");
 }
 
@@ -19770,7 +19770,7 @@ setInterval(()=>{if(document.getElementById('homePage')?.classList.contains('act
     patch();
   };
   setTimeout(startObserver,250);
-  setInterval(patch,900);
+  setInterval(patch,2500);
 })();
 
 
@@ -20027,7 +20027,7 @@ setTimeout(function(){
   document.head.appendChild(css);
   ensureLiftNav();
   setTimeout(refreshNavState,100);
-  setInterval(refreshNavState,700);
+  setInterval(refreshNavState,2000);
 })();
 </script>
 
@@ -20621,5 +20621,29 @@ try:
     html_code = html_code.replace("</body>", f"<script>{s102_js}</script></body>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 102 PDF reader module: {exc}")
+
+# Sprint 104 restores the desktop iPhone preview and scopes dark mode to the
+# device screen; full-screen summary/PDF modes now fill the phone, not the browser.
+s104_css_path = os.path.join("src", "ui", "sprint104_device_frame_scope.css")
+try:
+    with open(s104_css_path, "r", encoding="utf-8") as style_file:
+        s104_css = style_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s104_css}</style></head>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 104 device-frame module: {exc}")
+
+# Sprint 107 is injected last. It uses physical right/left positioning only,
+# avoiding the RTL logical-inset conflict found during the second verification pass.
+s107_css_path = os.path.join("src", "ui", "sprint107_back_button_guard.css")
+s107_js_path = os.path.join("src", "ui", "sprint107_back_button_guard.js")
+try:
+    with open(s107_css_path, "r", encoding="utf-8") as style_file:
+        s107_css = style_file.read()
+    with open(s107_js_path, "r", encoding="utf-8") as script_file:
+        s107_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s107_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s107_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 107 back-button guard: {exc}")
 
 components.html(html_code, height=960, scrolling=False)

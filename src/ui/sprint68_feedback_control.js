@@ -75,7 +75,7 @@
   }
   function install(){
     if(typeof window.SUHAIL_SHOW_RESULT!=='boolean'){let v=false;try{v=localStorage.getItem(KEY)==='1'}catch(_){}window.SUHAIL_SHOW_RESULT=v}
-    ensureToggle();patch();setInterval(()=>{patch();ensureToggle()},1000);let observerTimer=null;new MutationObserver(()=>{clearTimeout(observerTimer);observerTimer=setTimeout(()=>{patch();ensureToggle()},25)}).observe(document.body,{childList:true,subtree:true});window.SuhailFeedback68={set:setOn,sync};
+    ensureToggle();patch();setInterval(()=>{patch();ensureToggle()},2500);let observerTimer=null;new MutationObserver(()=>{clearTimeout(observerTimer);observerTimer=setTimeout(()=>{patch();ensureToggle()},25)}).observe(document.body,{childList:true,subtree:true});window.SuhailFeedback68={set:setOn,sync};
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();
