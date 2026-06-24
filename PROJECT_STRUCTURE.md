@@ -1,114 +1,16 @@
-# Suhail Sprint 88 — هيكل المشروع
+# Suhail Sprint 101 — Project Structure
 
-## التشغيل
-
-- `app.py` — واجهة Streamlit الحالية ومجمّع الصفحات القديمة والطبقة النهائية.
-- `run_suhail.bat` — تشغيل الواجهة محليًا على ويندوز مع حسابات التطوير فقط.
-- `run_api.bat` — تشغيل API المحلي عبر Waitress.
-
-## واجهة المستخدم
-
-- `src/ui/learning_journey.js` — أساس رحلة Sprints 30–39.
-- `src/ui/sprint47_experience.js` و`sprint47.css` — طبقة المرحلة السابقة المحفوظة للتوافق.
-- `src/ui/sprint54_experience.js` — المالك النهائي للرئيسية والتنقل والملف والقياسين والستريك والأدمن والتحديات.
-- `src/ui/sprint54.css` — نظام التصميم النهائي وقواعد Main/Summary/Exam/Auth.
-- `src/ui/sprint55_account.js` — صفحة الحساب المجمعة والصفحات الداخلية التابعة لها.
-- `src/ui/sprint55_account.css` — تصميم الحساب المرجعي، صفوف الإعدادات، الوضع الداكن، والتذييل.
-- `src/ui/sprint56_global_theme.css` — ألوان الوضع الداكن الشامل لجميع الصفحات القديمة والجديدة.
-- `src/ui/sprint56_global_theme.js` — تهيئة المظهر مبكرًا، حفظ الاختيار، وتحديث لون النظام.
-- `src/ui/sprint59_summaries_navigation.js` — المالك النهائي لبوابة الملخصات، ترتيب المسارات، تفاصيل الوحدات، البحث، سلوك القائمة، وأيقونة العودة.
-- `src/ui/sprint59_summaries_navigation.css` — تصميم بوابة الملخصات والمواد والوحدات والتفاصيل مع دعم الوضع الداكن.
-- `src/ui/sprint80_accessibility.css` — الطبقة النهائية لتباين النصوص وأحجام خط السؤال في الوضعين.
-- `src/ui/sprint80_accessibility.js` — تشغيل التكبير والتصغير وحفظ الحجم ومزامنته مع عارض الاختبار القديم.
-- `src/ui/sprint84_contrast_results.css` — المالك الدلالي النهائي لتباين عناوين ونصوص البطاقات وحالة الأسئلة غير المجابة.
-- `src/ui/sprint84_contrast_results.js` — إصلاح ربط متغيرات الاختبار، تمييز «لم تتم الإجابة»، وزر فتح الملخص الدقيق من النتيجة.
-- `src/ui/sprint68_feedback_control.js` — التحكم في عرض النتيجة؛ انتقال تلقائي عند الإخفاء وعرض التفسير عند التفعيل.
-- `src/ui/sprint69_summary_knowledge.js` — ربط السؤال بالمعلومة مع حماية من حلقات تحديث DOM.
-- `src/ui/sprint70_unified_app.js/.css` — طبقة الهوية والتنقل والمود الداكن النهائية.
-- `src/ui/sprint71_exam_summary_unification.js/.css` — حارس ثبات الاختبار والمالك النهائي لقوائم المسارات والمواد والكتب والوحدات.
-
-## النواة
-
-- `src/core/data_loader.py` — تحميل JSON بكاش.
-- `src/core/asset_cache.py` — أصول Data URI بكاش لنسخة Streamlit.
-- `src/core/learning_repository.py` — مستودع بنك الأسئلة SQLite.
-- `src/core/app_config.py` — تحميل الإعدادات المركزية.
-- `src/core/student_scoring.py` — نماذج مؤشر الجاهزية؛ التحصيلي موحد ولا يستخدم المسار.
-- `src/core/auth_repository.py` — حسابات PBKDF2 وتوكنات API.
-- `src/core/challenge_repository.py` — مخطط الملف، القياسات، النشاط، الصداقات والتحديات.
-
-## البيانات
-
-- `data/questions.json` — بنك القدرات الموحد النشط من 3000 سؤال، مع إبقاء بنك التطوير السابق داخل `data/archive/`.
-- `data/suhail_learning.db` — الأسئلة وجداول الحسابات والقياسات والنشاط والأصدقاء والتحديات.
-- `data/admin/admin_settings.json` — إعدادات الرحلة والقياس والستريك والتحديات والأداء.
-- `data/admin/feature_flags.json` — مفاتيح Sprint 54.
-- `data/admin/content_workflow.json` — صلاحيات ومسار اعتماد المحتوى.
-- `data/avatars/avatars.json` — كتالوج 8 شخصيات مصنفة حسب نوع الحساب، مع مسارات قصّات card/avatar/half/full.
-- `data/challenges/challenge_templates.json` — قوالب التحديات.
-- `data/scoring/score_models.json` — قدرات علمي/أدبي + تحصيلي موحد.
-- `data/users.json` — فارغ في الحزمة؛ لا توجد كلمات مرور نصية للإنتاج.
-
-## الأصول
-
-- `assets/avatars/generated/` — 32 أصل WebP محسّنًا: أربع قصّات لكل واحدة من الشخصيات الثماني.
-- `assets/runtime/` — أصول WebP المستخدمة أثناء التشغيل.
-- `assets/source/` — المصادر الأصلية.
-- `assets/brand/` — هوية سهيل.
-- `assets/images/splash/` — افتتاحية 3 ثوانٍ.
-
-## API
-
-- `src/api/server.py` — حسابات، ملف الطالب، قياسان مستقلان، نشاط/ستريك، أسئلة، ملخصات، أصدقاء، تحديات، وإعدادات أدمن محمية.
-
-## الفحص والتوثيق
-
-- `scripts/validate_project.py` — المدخل الرئيسي لفحص Sprint 72.
-- `scripts/validate_sprint59.py` — فحص تقسيم الملخصات، منع الخلط، القائمة السفلية، أيقونة العودة، والبحث.
-- `scripts/validate_sprint57.py` — فحص كتالوج الشخصيات، الأصول، فصل الجنسين، التسجيل، والـAPI.
-- `scripts/validate_sprint56.py` — فحص حقن المظهر، التخزين، البنية، وملفات QA.
-- `scripts/validate_sprint54.py` — فحص تفصيلي مع API مؤقت دون تلويث قاعدة التسليم.
-- `scripts/audit_question_bank.py` — تدقيق وإصلاحات بنك التطوير.
-- `docs/reports/SPRINT_48_54_IMPLEMENTATION_REPORT.md`
-- `docs/reports/SPRINT_54_ARCHITECTURE_AND_LIMITS.md`
-- `docs/reports/SPRINT_54_CHECKS.json`
-- `docs/reports/SPRINT_54_VISUAL_QA.json`
-- `docs/reports/SPRINT_55_ACCOUNT_PAGE_REPORT.md`
-- `docs/reports/SPRINT_55_CHECKS.json`
-
-- `docs/reports/SPRINT_57_CHARACTER_SYSTEM.md` — تقرير نظام الشخصيات الرسمية.
-- `docs/reports/SPRINT_57_CHECKS.json` — نتائج فحص Sprint 57.
-
-- `docs/reports/SPRINT_59_SUMMARIES_NAVIGATION_REPORT.md` — تقرير إصلاح الملخصات والتنقل.
-- `docs/reports/SPRINT_59_CHECKS.json` — نتائج فحص Sprint 59.
-
-### Sprint 61
-- `src/ui/sprint60_summary_cleanup.css`: تحسين تباين الوضع الداكن وتوحيد حالات الأقسام غير المنشورة.
-- `docs/reports/SPRINT_60_SUMMARY_CLEANUP_REPORT.md`: تقرير التنفيذ.
-- `docs/reports/SPRINT_60_CHECKS.json`: نتائج الفحص.
-
-## Sprint 64
-- `src/ui/sprint63_test_entry.css`: prominent home-page test button.
-- `src/ui/sprint63_test_entry.js`: resilient test-entry injection and routing.
-
-
-## Sprint 86
-- `src/ui/sprint86_summary_cards.css`: شبكة البطاقات، درج القوانين، وضبط قص الشخصية.
-- `src/ui/sprint86_summary_cards.js`: عارض الدرس الجديد والتفاعل مع الأمثلة والأسئلة والقوانين.
-- `scripts/validate_sprint86.py`: فحص الإصدار والبنك والروابط والقالب.
-- `docs/reports/SPRINT_86_SUMMARY_DESIGN_REPORT.md`: تقرير التصميم والاختبارات.
-
-## Sprint 87
-- `src/ui/sprint87_motivation.css`: بطاقة رحلة سهيل، نافذة الدرع، تفاعلات الشخصية، الاحتفال، والوضع الداكن.
-- `src/ui/sprint87_motivation.js`: حالة التحفيز لكل مستخدم، رصيد الدرع الشهري، السلسلة، العودة بعد الانقطاع، وربط التفاعلات بالأسئلة والاختبارات وخطة اليوم.
-- `scripts/validate_sprint87.py`: فحص الإصدار والحقن وقواعد الدرع وبنك المحتوى.
-- `docs/reports/SPRINT_87_MOTIVATION_REPORT.md`: تقرير التنفيذ والاختبارات.
-- `docs/reports/SPRINT_87_CHECKS.json`: نتائج التحقق الآلي.
-
-
-## Sprint 88
-- `src/ui/sprint88_exam_dates_plan.css`: بطاقة مواعيد الاختبارات في الحساب، الخطة الزمنية، حصة اليوم، والوضع الداكن.
-- `src/ui/sprint88_exam_dates_plan.js`: حفظ المواعيد لكل مستخدم، حساب الأيام، تحليل الأداء، وتوزيع عدد الأسئلة المتغير حتى موعد الاختبار.
-- `scripts/validate_sprint88.py`: فحص الإصدار، الحقن، قواعد الخطة، وبنك الأسئلة.
-- `docs/reports/SPRINT_88_ADAPTIVE_EXAM_PLAN.md`: شرح طريقة الحساب ونتائج الاختبارات.
-- `docs/reports/SPRINT_88_CHECKS.json`: نتائج التحقق الآلي.
+- `app.py` — واجهة Streamlit وحقن وحدات الواجهة.
+- `data/questions.json` — بنك 5,400 سؤال مع روابط الكيمياء والفيزياء.
+- `data/smart_summaries.json` — 155 ملخصًا: 72 فيزياء و83 كيمياء.
+- `data/chemistry_books_manifest.json` — الكتب والفصول والدروس والمصادر.
+- `data/chemistry_coverage_matrix.json` — تغطية الدروس والأسئلة والرسومات.
+- `data/suhail_learning.db` — مستودع SQLite المحدث.
+- `assets/summary_visuals/sprint101/` — الرسومات الأصلية SVG وWebP.
+- `src/ui/sprint101_visual_summaries.css` — التصميم كامل الشاشة.
+- `src/ui/sprint101_visual_summaries.js` — التنقل والعرض والتفاعل والروابط.
+- `src/api/server.py` — API الإصدار 101.0.0.
+- `tools/generate_sprint101_visuals.py` — مولد الرسومات.
+- `tools/verify_sprint101.py` — فحص Sprint 101.
+- `docs/reports/SPRINT_101_FINAL_REPORT.md` — التقرير النهائي.
+- `run_suhail.bat` — تشغيل التطبيق على Windows.

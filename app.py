@@ -7221,6 +7221,7 @@ body.suhail-passage-lock .question-passage{
 
           <div class="auth-pane hidden" id="registerPane">
             <input class="auth-input rtl" id="registerName" type="text" placeholder="الاسم">
+            <input class="auth-input ltr" id="registerUsername" type="text" maxlength="20" autocomplete="username" placeholder="اسم المستخدم، مثال: mazen_01">
             <input class="auth-input ltr" id="registerEmail" type="email" placeholder="student@gmail.com">
             <input class="auth-input ltr" id="registerPassword" type="password" placeholder="كلمة المرور">
             <div class="auth-gender-title">نوع الحساب</div>
@@ -9132,6 +9133,36 @@ function saveExtraUsers(users) {
   localStorage.setItem("suhail_extra_users", JSON.stringify(users));
 }
 
+function normalizeUsername(value) {
+  return String(value || "").trim().toLowerCase().replace(/^@+/, "").replace(/[^a-z0-9_]/g, "").slice(0, 20);
+}
+
+function fallbackUsername(user, reserved) {
+  const baseRaw = normalizeUsername(user?.username || String(user?.email || "").split("@")[0] || user?.name || "student") || "student";
+  const taken = reserved || new Set();
+  let candidate = baseRaw.length >= 3 ? baseRaw : (baseRaw + "_user").slice(0, 20);
+  let index = 1;
+  while (taken.has(candidate)) {
+    const suffix = "_" + index++;
+    candidate = (baseRaw.slice(0, Math.max(3, 20 - suffix.length)) + suffix).slice(0, 20);
+  }
+  return candidate;
+}
+
+function ensureUsernames(users) {
+  const list = Array.isArray(users) ? users : [];
+  const taken = new Set();
+  list.forEach(user => {
+    let candidate = normalizeUsername(user?.username);
+    if (candidate.length < 3 || taken.has(candidate)) {
+      candidate = fallbackUsername(user, taken);
+    }
+    user.username = candidate;
+    taken.add(candidate);
+  });
+  return list;
+}
+
 function getAllUsers() {
   const merged = [...fileUsers];
   const qmBuiltIn = [
@@ -9143,12 +9174,14 @@ function getAllUsers() {
       merged.push(u);
     }
   });
-  getExtraUsers().forEach(u => {
+  const extras = ensureUsernames(getExtraUsers());
+  saveExtraUsers(extras);
+  extras.forEach(u => {
     if (!merged.some(x => String(x.email || "").toLowerCase() === String(u.email || "").toLowerCase())) {
       merged.push(u);
     }
   });
-  return merged;
+  return ensureUsernames(merged);
 }
 
 function getAuthSession() {
@@ -9965,8 +9998,10 @@ function loginUser() {
   }
 
   setAuthSession({
+    id: user.id || null,
     email: user.email || email,
-    name: user.name || email.split("@")[0],
+    name: user.name || user.display_name || email.split("@")[0],
+    username: normalizeUsername(user.username) || fallbackUsername(user, new Set(getAllUsers().filter(x => x !== user).map(x => normalizeUsername(x.username)).filter(Boolean))),
     role: user.role || "student",
     gender: user.gender === "female" ? "female" : "male"
   });
@@ -9989,12 +10024,17 @@ function selectRegisterGender(gender) {
 
 function registerUser() {
   const name = document.getElementById("registerName").value.trim();
+  const username = normalizeUsername(document.getElementById("registerUsername")?.value);
   const email = document.getElementById("registerEmail").value.trim().toLowerCase();
   const password = document.getElementById("registerPassword").value.trim();
   const gender = document.getElementById("registerGender").value;
 
-  if (!name || !email || !password || !["male", "female"].includes(gender)) {
-    showAuthMessage("error", "أكمل بيانات التسجيل واختر ولد أو بنت");
+  if (!name || !username || !email || !password || !["male", "female"].includes(gender)) {
+    showAuthMessage("error", "أكمل الاسم واليوزر والبريد وكلمة المرور واختر ولد أو بنت");
+    return;
+  }
+  if (!/^[a-z0-9_]{3,20}$/.test(username)) {
+    showAuthMessage("error", "اليوزر من 3 إلى 20 حرفًا إنجليزيًا أو رقمًا، ويمكن استخدام _");
     return;
   }
   if (!email.includes("@")) {
@@ -10005,8 +10045,13 @@ function registerUser() {
     showAuthMessage("error", "كلمة المرور لازم تكون 6 أحرف أو أكثر");
     return;
   }
-  if (getAllUsers().some(u => String(u.email || "").trim().toLowerCase() === email)) {
+  const allUsers = getAllUsers();
+  if (allUsers.some(u => String(u.email || "").trim().toLowerCase() === email)) {
     showAuthMessage("error", "هذا البريد مسجل مسبقًا");
+    return;
+  }
+  if (allUsers.some(u => normalizeUsername(u.username) === username)) {
+    showAuthMessage("error", "هذا اليوزر مستخدم؛ اختر يوزرًا آخر");
     return;
   }
 
@@ -10014,6 +10059,7 @@ function registerUser() {
   extras.push({
     id: Date.now(),
     email: email,
+    username: username,
     password: password,
     role: "student",
     name: name,
@@ -10024,6 +10070,7 @@ function registerUser() {
 
   showAuthMessage("success", "تم إنشاء الحساب بنجاح — تقدر تدخل الآن");
   document.getElementById("registerName").value = "";
+  document.getElementById("registerUsername").value = "";
   document.getElementById("registerEmail").value = "";
   document.getElementById("registerPassword").value = "";
   document.getElementById("registerGender").value = "";
@@ -20502,5 +20549,46 @@ try:
     html_code = html_code.replace("</body>", f"<script>{s88_js}</script></body>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 88 exam-plan module: {exc}")
+
+# Sprint 89 is the final identity and account ownership layer. It keeps the
+# current user consistent across home/account, introduces unique usernames and
+# username-based friends, installs the supplied tower-free logo, and removes
+# decorative summary-header clutter requested in review.
+s89_css_path = os.path.join("src", "ui", "sprint89_identity_cleanup.css")
+s89_js_path = os.path.join("src", "ui", "sprint89_identity_cleanup.js")
+try:
+    with open(s89_css_path, "r", encoding="utf-8") as style_file:
+        s89_css = style_file.read()
+    with open(s89_js_path, "r", encoding="utf-8") as script_file:
+        s89_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s89_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s89_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 89 identity module: {exc}")
+
+# Sprint 101 replaces the summary experience with a full-screen visual lesson
+# system for physics and chemistry. Lesson detail pages contain only the top
+# back action and educational content; all diagrams are original optimized
+# assets generated for the application.
+s101_css_path = os.path.join("src", "ui", "sprint101_visual_summaries.css")
+s101_js_path = os.path.join("src", "ui", "sprint101_visual_summaries.js")
+try:
+    with open(s101_css_path, "r", encoding="utf-8") as style_file:
+        s101_css = style_file.read()
+    with open(s101_js_path, "r", encoding="utf-8") as script_file:
+        s101_js = script_file.read()
+    s101_visual_dir = os.path.join("assets", "summary_visuals", "sprint101")
+    s101_visuals = {}
+    if os.path.isdir(s101_visual_dir):
+        for filename in sorted(os.listdir(s101_visual_dir)):
+            if filename.lower().endswith(".webp"):
+                visual_id = os.path.splitext(filename)[0]
+                relative_path = os.path.join(s101_visual_dir, filename)
+                s101_visuals[visual_id] = asset_data_uri(relative_path)
+    s101_js = s101_js.replace("__S101_VISUALS__", compact_json(s101_visuals))
+    html_code = html_code.replace("</head>", f"<style>{s101_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s101_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 101 visual-summary module: {exc}")
 
 components.html(html_code, height=960, scrolling=False)

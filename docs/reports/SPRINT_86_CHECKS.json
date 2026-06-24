@@ -1,9 +1,9 @@
 {
   "release": "86.0.0",
-  "passed": true,
+  "passed": false,
   "checks": {
-    "release_manifest": true,
-    "api_release": true,
+    "release_manifest": false,
+    "api_release": false,
     "module_injected": true,
     "paired_card_grid": true,
     "laws_next_to_back": true,

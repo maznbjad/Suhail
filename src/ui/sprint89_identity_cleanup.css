@@ -1,0 +1,94 @@
+/* Suhail Sprint 89 — identity consistency, username social flow, summary cleanup. */
+
+/* The supplied tower-free wordmark is the only visible brand mark. */
+.auth-logo img,
+.brand-icon img,
+.s18-logo img{
+  object-fit:contain!important;
+  object-position:center!important;
+  filter:none!important;
+}
+.s18-logo{height:76px!important;min-height:76px!important}
+.s18-logo img{width:auto!important;max-width:154px!important;height:72px!important;max-height:72px!important}
+
+/* Avatar source remains identical across setup, home, account and motivation. */
+.s54-avatar,
+.s55-profile-strip .s55-avatar,
+.s87-motivation-avatar,
+.s87-reaction-avatar,
+.s87-modal-avatar{
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+.s54-avatar img,
+.s55-profile-strip .s55-avatar img,
+.s87-motivation-avatar img,
+.s87-reaction-avatar img,
+.s87-modal-avatar img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  background:transparent!important;
+}
+.s54-avatar-stage img{
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  transform:none!important;
+}
+
+/* Registration username. */
+#registerUsername{
+  direction:ltr!important;
+  text-align:left!important;
+  letter-spacing:.1px;
+}
+
+/* Account identity and clear grouping. */
+.s89-username{
+  display:inline-flex!important;
+  width:max-content;
+  max-width:100%;
+  color:#2482c7!important;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  direction:ltr!important;
+  unicode-bidi:isolate!important;
+  text-align:left!important;
+}
+.s89-account-group-title{
+  margin:14px 4px 7px;
+  color:#61778a;
+  font-size:10.5px!important;
+  font-weight:950;
+  text-align:right;
+}
+.s89-about-title{margin-top:18px}
+.s89-account-activity,
+.s89-about-card{overflow:hidden}
+.s55-profile-strip .s55-profile-copy{min-width:0}
+.s55-profile-strip .s55-profile-copy b{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body.s55-dark .s89-username{color:#8fd0ff!important}
+body.s55-dark .s89-account-group-title{color:#b7c9d7!important}
+
+/* Summary headers: no decorative icon and no instructional filler. */
+.s71-header{
+  min-height:118px!important;
+  padding:20px 20px 18px!important;
+}
+.s71-header-icon{display:none!important}
+.s71-header-copy{max-width:100%!important;padding-left:0!important}
+.s71-header-copy p:empty{display:none!important}
+.s71-section-label:has(span:empty) span{display:none!important}
+
+@media(max-width:430px){
+  .s18-logo{height:70px!important;min-height:70px!important}
+  .s18-logo img{height:66px!important;max-height:66px!important;max-width:142px!important}
+  .s71-header{min-height:108px!important;padding:18px 16px 16px!important}
+  .s89-account-group-title{font-size:10px!important}
+}
+
+.s89-username bdi,.s55-row-value bdi,.s54-challenge-banner bdi,.s54-setting bdi{direction:ltr!important;unicode-bidi:isolate!important;display:inline-block!important}

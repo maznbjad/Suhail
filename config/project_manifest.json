@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 88",
-  "version": "1.0.88",
+  "release": "Sprint 89",
+  "version": "1.0.89",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 88,
+  "latest_sprint": 89,
   "question_bank": {
     "count": 5400,
     "status": "internal_qa_physics_mastery_v2",
@@ -148,7 +148,14 @@
     "exam_plan_paths": [
       "qudrat",
       "tahsili"
-    ]
+    ],
+    "unique_username_per_account": true,
+    "friends_added_by_username": true,
+    "canonical_identity_home_account": true,
+    "tower_free_logo": true,
+    "account_sections_separated": true,
+    "summary_header_decorative_icon_removed": true,
+    "avatar_crop_consistent": true
   },
   "admin": {
     "deep_settings": true,
@@ -163,7 +170,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 87 adds two monthly streak shields and selected-character reactions for answers, returns, exam results, and daily-plan completion.",
+  "notes": "Sprint 89 installs the supplied tower-free logo, canonical per-account identity, unique usernames and username-based friend search, grouped account sections, safe avatar containment, and cleaner summary headers.",
   "summary_content": {
     "published_total": 72,
     "published_subjects": {
@@ -180,7 +187,7 @@
     "physics_source": "data/smart_summaries.json",
     "physics_template_version": "2.0.79"
   },
-  "sprint": 86,
+  "sprint": 89,
   "summary_knowledge": {
     "published_subjects": [
       "فيزياء"

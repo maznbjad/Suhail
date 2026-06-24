@@ -1,7 +1,7 @@
 /* Suhail Sprint 55 — final grouped account/settings hub. */
 (function(){
   'use strict';
-  const VERSION='87.0.0';
+  const VERSION='89.0.0';
   const AVATARS=__S55_AVATARS__;
   const AVATAR_ASSETS=__S55_AVATAR_ASSETS__;
   let legacyShowPage=null;
@@ -14,7 +14,10 @@
   function userId(){const raw=String(session()?.email||'guest').toLowerCase();return raw.replace(/[^a-z0-9]/g,'_')||'guest';}
   function hash(text){let h=2166136261;for(const c of String(text)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
   function friendCode(){return `SH-${String(hash(userId())).slice(-6).padStart(6,'0')}`;}
-  function profile(){const s=session()||{};const p=parse(localStorage.getItem(`s54_profile_${userId()}`)||'',{});return {displayName:p.displayName||s.name||'طالب سهيل',gender:p.gender||s.gender||(String(p.avatarId||'').startsWith('female_')?'female':'male'),academicTrack:p.academicTrack||'scientific',examGoals:Array.isArray(p.examGoals)&&p.examGoals.length?p.examGoals:['qudrat','tahsili'],avatarId:p.avatarId||AVATARS.default||'male_02'};}
+  function normalizeUsername(v){return String(v||'').trim().toLowerCase().replace(/^@+/,'').replace(/[^a-z0-9_]/g,'').slice(0,20);}
+  function currentUser(){const s=session()||{};try{const users=typeof getAllUsers==='function'?getAllUsers():[];return users.find(x=>String(x.email||'').toLowerCase()===String(s.email||'').toLowerCase())||s;}catch(_){return s;}}
+  function currentUsername(){const s=session()||{},u=currentUser()||{};return normalizeUsername(s.username||u.username||String(s.email||'student').split('@')[0])||'student';}
+  function profile(){const s=session()||{};const p=parse(localStorage.getItem(`s54_profile_${userId()}`)||'',{});const studentName=s.name||s.display_name||p.displayName||'طالب سهيل';return {displayName:studentName,username:currentUsername(),gender:p.gender||s.gender||(String(p.avatarId||'').startsWith('female_')?'female':'male'),academicTrack:p.academicTrack||'scientific',examGoals:Array.isArray(p.examGoals)&&p.examGoals.length?p.examGoals:['qudrat','tahsili'],avatarId:p.avatarId||AVATARS.default||'male_02'};}
   function avatarSrc(id){return AVATAR_ASSETS[id]||AVATAR_ASSETS[AVATARS.default]||'';}
   function goalsLabel(gs){const g=Array.isArray(gs)?gs:[];return g.includes('qudrat')&&g.includes('tahsili')?'قدرات وتحصيلي':g.includes('tahsili')?'تحصيلي':'قدرات';}
   function trackLabel(t){return t==='literary'?'أدبي':'علمي';}
@@ -40,20 +43,24 @@
   function applyTheme(){const dark=isDark();document.body.classList.toggle('s55-dark',dark);document.documentElement.setAttribute('data-theme',dark?'dark':'light');}
   function notifyPrefs(){return Object.assign({daily:true,streak:true,reviews:true,challenges:true},parse(localStorage.getItem(`s55_notifications_${userId()}`)||'',{}));}
   function saveNotify(v){localStorage.setItem(`s55_notifications_${userId()}`,JSON.stringify(v));}
-  function row(iconName,label,action,value){return `<button class="s55-menu-row" onclick="${action}"><span class="s55-row-icon">${icon(iconName)}</span><span class="s55-row-label">${esc(label)}</span><span class="s55-row-value">${value?esc(value):''}</span><span class="s55-row-arrow">${icon('arrow')}</span></button>`;}
+  function row(iconName,label,action,value){const valueHtml=value?(String(value).startsWith('@')?`<bdi dir="ltr">${esc(value)}</bdi>`:esc(value)):'';return `<button class="s55-menu-row" onclick="${action}"><span class="s55-row-icon">${icon(iconName)}</span><span class="s55-row-label">${esc(label)}</span><span class="s55-row-value">${valueHtml}</span><span class="s55-row-arrow">${icon('arrow')}</span></button>`;}
   function themeRow(){return `<div class="s55-menu-row"><span class="s55-row-icon">${icon('moon')}</span><span class="s55-row-label">الوضع الداكن</span><button class="s55-switch ${isDark()?'on':''}" onclick="s55ToggleTheme(event)" role="switch" aria-checked="${isDark()}"><i></i></button></div>`;}
   function page(){return document.getElementById('profilePage');}
 
   function renderMain(){currentView='main';const el=page();if(!el)return;const p=profile();el.innerHTML=`<div class="s55-account-page" data-s55-account="main">
     <h1 class="s55-account-title">الحساب</h1>
-    <section class="s55-profile-strip"><div class="s55-avatar"><img src="${avatarSrc(p.avatarId)}" alt="${esc(p.displayName)}"></div><div class="s55-profile-copy"><b>${esc(p.displayName)}</b><span>${goalsLabel(p.examGoals)}${p.examGoals.includes('qudrat')?` • ${trackLabel(p.academicTrack)} للقدرات`:''}</span><span class="s55-friend-code">كود الصداقة: ${friendCode()}</span></div></section>
-    <div class="s55-menu-card">
+    <section class="s55-profile-strip"><div class="s55-avatar"><img src="${avatarSrc(p.avatarId)}" alt="${esc(p.displayName)}"></div><div class="s55-profile-copy"><b>${esc(p.displayName)}</b><span class="s89-username"><bdi dir="ltr">&#64;${esc(p.username)}</bdi></span><span>${goalsLabel(p.examGoals)}${p.examGoals.includes('qudrat')?` • ${trackLabel(p.academicTrack)} للقدرات`:''}</span></div></section>
+    <div class="s89-account-group-title">الحساب والنشاط</div>
+    <div class="s55-menu-card s89-account-activity">
       ${row('journey','رحلتي التعليمية',"showPage('studentSetupPage')")}
       ${row('target','تحديد المستوى',"showPage('diagnosticChoicePage')")}
       ${themeRow()}
       ${row('bell','الإشعارات',"s55OpenInfo('notifications')")}
-      ${row('trophy','الأصدقاء والتحديات',"showPage('challengePage')")}
+      ${row('trophy','الأصدقاء والتحديات',"showPage('challengePage')",`@${p.username}`)}
       ${row('bookmark','الأسئلة المحفوظة',"showPage('savedQuestionsPage')",savedCount()?`${savedCount()} محفوظة`:'')}
+    </div>
+    <div class="s89-account-group-title s89-about-title">عن سهيل</div>
+    <div class="s55-menu-card s89-about-card">
       ${row('info','عن سهيل',"s55OpenInfo('about')")}
       ${row('contact','تواصل معنا',"s55OpenInfo('contact')")}
       ${row('shield','سياسة الخصوصية',"s55OpenInfo('privacy')")}
@@ -61,10 +68,11 @@
       ${row('faq','الأسئلة الشائعة',"s55OpenInfo('faq')")}
     </div>
     ${isAdmin()?`<div class="s55-admin-label">إدارة سهيل</div><div class="s55-admin-card">${row('admin','لوحة إعدادات الأدمن',"showPage('adminSettingsPage')")}${row('content','إدارة المحتوى',"showPage('questionManagementPage')")}</div>`:''}
-    <div class="s55-version"><b>V.1.0.87</b><span>2026 سهيل</span></div>
+    <div class="s55-version"><b>V.1.0.89</b><span>2026 سهيل</span></div>
     <div class="s55-company"><b>سهيل — تعلم بذكاء</b><span>تطبيق تعليمي للقدرات والتحصيلي<br>جميع الحقوق محفوظة</span></div>
     <button class="s55-logout" onclick="logoutUser()">تسجيل الخروج</button>
-  </div>`;applyTheme();requestAnimationFrame(()=>{document.querySelector('#s54BottomNav [data-s54-nav="profile"]')?.classList.add('active');});}
+  </div>`;applyTheme();requestAnimationFrame(()=>{document.querySelector('#s54BottomNav [data-s54-nav="profile"]')?.classList.add('active');window.SuhailExamPlan88?.renderAccount?.();});}
+
 
   const text={
     about:{title:'عن سهيل',body:`<h2>سهيل يختصر لك الطريق</h2><p>سهيل رفيق تعليمي للقدرات والتحصيلي. يجمع الملخصات الذكية، التدريب، مراجعة الأخطاء، قياس الجاهزية، الخطة اليومية، والتحديات مع الأصدقاء في رحلة واحدة واضحة.</p><ul><li>القدرات لها قياس مستقل ويتغير نموذجها بحسب المسار العلمي أو الأدبي.</li><li>التحصيلي له قياس مستقل موحد ولا يتأثر بمسار القدرات.</li><li>مؤشر الجاهزية إرشادي ويتحدث مع تقدم الطالب.</li></ul>`},

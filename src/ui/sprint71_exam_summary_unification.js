@@ -51,7 +51,7 @@
   function summariesPage(){return document.getElementById('summariesPage');}
 
   function header(title,subtitle,back){
-    return `<header class="s71-header"><button class="s71-back" type="button" onclick="${back}" aria-label="العودة">${BACK}</button><div class="s71-header-copy"><span>الملخصات</span><h1>${esc(title)}</h1><p>${esc(subtitle||'')}</p></div><div class="s71-header-icon">${icon('summaries')}</div></header>`;
+    return `<header class="s71-header"><button class="s71-back" type="button" onclick="${back}" aria-label="العودة">${BACK}</button><div class="s71-header-copy"><span>الملخصات</span><h1>${esc(title)}</h1>${subtitle?`<p>${esc(subtitle)}</p>`:''}</div></header>`;
   }
   function card({title,subtitle,iconName,badge,action,disabled=false}){
     return `<button class="s71-menu-card${disabled?' is-disabled':''}" type="button" ${disabled?'disabled':`onclick="${action}"`}><span class="s71-menu-icon">${icon(iconName)}</span><span class="s71-menu-copy"><b>${esc(title)}</b><small>${esc(subtitle)}</small>${badge?`<em>${esc(badge)}</em>`:''}</span><span class="s71-menu-arrow">‹</span></button>`;
@@ -60,7 +60,7 @@
 
   function renderGateway(page){
     const count=physicsBank().length;
-    page.innerHTML=shell(`${header('اختر مسارك','كل القوائم بنفس التصميم وطريقة الاستخدام',"showPage('homePage')")}<div class="s71-list">${card({title:'تحصيلي',subtitle:'رياضيات، فيزياء، كيمياء، والأحياء وعلم البيئة',iconName:'tahsili',badge:`${count} ملخص منشور`,action:"s71OpenExam('تحصيلي')"})}${card({title:'قدرات كمي',subtitle:'المهارات الحسابية والهندسية والجبر وتحليل البيانات',iconName:'quant',badge:'المحتوى قيد الاعتماد',action:"s71OpenExam('قدرات كمي')"})}${card({title:'قدرات لفظي',subtitle:'التناظر والاستيعاب وإكمال الجمل وبقية المهارات',iconName:'verbal',badge:'المحتوى قيد الاعتماد',action:"s71OpenExam('قدرات لفظي')"})}</div>`);
+    page.innerHTML=shell(`${header('اختر مسارك','',"showPage('homePage')")}<div class="s71-list">${card({title:'تحصيلي',subtitle:'رياضيات، فيزياء، كيمياء، والأحياء وعلم البيئة',iconName:'tahsili',badge:`${count} ملخص منشور`,action:"s71OpenExam('تحصيلي')"})}${card({title:'قدرات كمي',subtitle:'المهارات الحسابية والهندسية والجبر وتحليل البيانات',iconName:'quant',badge:'المحتوى قيد الاعتماد',action:"s71OpenExam('قدرات كمي')"})}${card({title:'قدرات لفظي',subtitle:'التناظر والاستيعاب وإكمال الجمل وبقية المهارات',iconName:'verbal',badge:'المحتوى قيد الاعتماد',action:"s71OpenExam('قدرات لفظي')"})}</div>`);
   }
   function renderTahsili(page){
     const p=physicsBank().length;
@@ -70,7 +70,7 @@
       {title:'رياضيات',subtitle:'تظهر الملخصات بعد المراجعة والاعتماد',iconName:'math',badge:'غير منشور',action:"s71OpenEmpty('رياضيات','math')"},
       {title:'الأحياء وعلم البيئة',subtitle:'تظهر الملخصات بعد المراجعة والاعتماد',iconName:'biology',badge:'غير منشور',action:"s71OpenEmpty('الأحياء وعلم البيئة','biology')"}
     ];
-    page.innerHTML=shell(`${header('مواد التحصيلي','اختر المادة التي تريد مراجعتها',"s71OpenGateway()")}<div class="s71-section-label"><b>المواد</b><span>نفس البطاقة في جميع المستويات</span></div><div class="s71-list">${rows.map(card).join('')}</div>`);
+    page.innerHTML=shell(`${header('مواد التحصيلي','اختر المادة التي تريد مراجعتها',"s71OpenGateway()")}<div class="s71-section-label"><b>المواد</b></div><div class="s71-list">${rows.map(card).join('')}</div>`);
   }
   function abilityRows(exam){
     if(exam==='قدرات كمي')return [

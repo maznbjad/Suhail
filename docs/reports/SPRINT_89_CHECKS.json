@@ -1,0 +1,98 @@
+{
+  "sprint": 89,
+  "ok": true,
+  "checks": {
+    "release": {
+      "ok": true,
+      "detail": "1.0.89"
+    },
+    "s89_files": {
+      "ok": true,
+      "detail": ""
+    },
+    "s89_injected": {
+      "ok": true,
+      "detail": ""
+    },
+    "registration_username": {
+      "ok": true,
+      "detail": ""
+    },
+    "username_api": {
+      "ok": true,
+      "detail": ""
+    },
+    "canonical_identity": {
+      "ok": true,
+      "detail": ""
+    },
+    "friends_by_username": {
+      "ok": true,
+      "detail": ""
+    },
+    "account_grouping": {
+      "ok": true,
+      "detail": ""
+    },
+    "summary_cleanup": {
+      "ok": true,
+      "detail": ""
+    },
+    "avatar_containment": {
+      "ok": true,
+      "detail": ""
+    },
+    "logo_assets_match": {
+      "ok": true,
+      "detail": "93a0512121f077cc814b37647869d2ee5c1606cecccafad424e177f15bc9cfa7"
+    },
+    "splash_logo_replaced": {
+      "ok": true,
+      "detail": "embedded=156268 source=156268"
+    },
+    "question_bank": {
+      "ok": true,
+      "detail": "5400"
+    },
+    "summaries": {
+      "ok": true,
+      "detail": "72"
+    },
+    "physics_links_preserved": {
+      "ok": true,
+      "detail": "tahsili=2400 linked=600"
+    },
+    "py_app.py": {
+      "ok": true,
+      "detail": ""
+    },
+    "py_src_api_server.py": {
+      "ok": true,
+      "detail": ""
+    },
+    "py_src_core_auth_repository.py": {
+      "ok": true,
+      "detail": ""
+    },
+    "js_sprint54_experience": {
+      "ok": true,
+      "detail": ""
+    },
+    "js_sprint55_account": {
+      "ok": true,
+      "detail": ""
+    },
+    "js_sprint71_exam_summary_unification": {
+      "ok": true,
+      "detail": ""
+    },
+    "js_sprint89_identity_cleanup": {
+      "ok": true,
+      "detail": ""
+    },
+    "auth_runtime": {
+      "ok": true,
+      "detail": ""
+    }
+  }
+}

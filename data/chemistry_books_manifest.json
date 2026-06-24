@@ -1,0 +1,588 @@
+{
+  "version": "101.0.0",
+  "generated_at": "2026-06-24",
+  "books": [
+    {
+      "book": "كيمياء 1",
+      "stage": "كيمياء 1",
+      "source_file": "كيمياء 1(2).pdf",
+      "chapters": [
+        {
+          "title": "مقدمة في علم الكيمياء",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "قصة مادتين",
+              "page": 14,
+              "visual_id": "chem_lab"
+            },
+            {
+              "title": "الكيمياء والمادة",
+              "page": 19,
+              "visual_id": "chem_lab"
+            },
+            {
+              "title": "الطرائق العلمية",
+              "page": 22,
+              "visual_id": "chem_lab"
+            },
+            {
+              "title": "البحث العلمي",
+              "page": 27,
+              "visual_id": "chem_lab"
+            }
+          ]
+        },
+        {
+          "title": "المادة - الخواص والتغيرات",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "خواص المادة",
+              "page": 44,
+              "visual_id": "chem_matter"
+            },
+            {
+              "title": "تغيرات المادة",
+              "page": 50,
+              "visual_id": "chem_matter"
+            },
+            {
+              "title": "المخاليط",
+              "page": 54,
+              "visual_id": "chem_mixture"
+            },
+            {
+              "title": "العناصر والمركبات",
+              "page": 58,
+              "visual_id": "chem_matter"
+            }
+          ]
+        },
+        {
+          "title": "تركيب الذرة",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "الأفكار القديمة للمادة",
+              "page": 76,
+              "visual_id": "chem_atom_history"
+            },
+            {
+              "title": "تعريف الذرة",
+              "page": 80,
+              "visual_id": "chem_atom"
+            },
+            {
+              "title": "كيف تختلف الذرات؟",
+              "page": 89,
+              "visual_id": "chem_isotopes"
+            },
+            {
+              "title": "الأنوية غير المستقرة والتحلل الإشعاعي",
+              "page": 96,
+              "visual_id": "chem_nuclear"
+            }
+          ]
+        },
+        {
+          "title": "التفاعلات الكيميائية",
+          "lesson_count": 3,
+          "lessons": [
+            {
+              "title": "التفاعلات والمعادلات",
+              "page": 112,
+              "visual_id": "chem_equation"
+            },
+            {
+              "title": "تصنيف التفاعلات الكيميائية",
+              "page": 123,
+              "visual_id": "chem_reactions"
+            },
+            {
+              "title": "التفاعلات في المحاليل المائية",
+              "page": 133,
+              "visual_id": "chem_aqueous"
+            }
+          ]
+        },
+        {
+          "title": "المول",
+          "lesson_count": 3,
+          "lessons": [
+            {
+              "title": "قياس المادة",
+              "page": 154,
+              "visual_id": "chem_mole"
+            },
+            {
+              "title": "الكتلة والمول",
+              "page": 160,
+              "visual_id": "chem_mole"
+            },
+            {
+              "title": "مولات المركبات",
+              "page": 168,
+              "visual_id": "chem_mole"
+            }
+          ]
+        }
+      ],
+      "lesson_count": 18
+    },
+    {
+      "book": "كيمياء 2-1",
+      "stage": "كيمياء 2-1",
+      "source_file": "كيمياء 2 الجزء الاول(2).pdf",
+      "chapters": [
+        {
+          "title": "الإلكترونات في الذرات",
+          "lesson_count": 3,
+          "lessons": [
+            {
+              "title": "الضوء وطاقة الكم",
+              "page": 12,
+              "visual_id": "chem_quantum"
+            },
+            {
+              "title": "نظرية الكم والذرة",
+              "page": 22,
+              "visual_id": "chem_atom"
+            },
+            {
+              "title": "التوزيع الإلكتروني",
+              "page": 32,
+              "visual_id": "chem_orbitals"
+            }
+          ]
+        },
+        {
+          "title": "الجدول الدوري والتدرج في خواص العناصر",
+          "lesson_count": 3,
+          "lessons": [
+            {
+              "title": "تطور الجدول الدوري الحديث",
+              "page": 50,
+              "visual_id": "chem_periodic"
+            },
+            {
+              "title": "تصنيف العناصر",
+              "page": 58,
+              "visual_id": "chem_periodic"
+            },
+            {
+              "title": "تدرج خواص العناصر",
+              "page": 63,
+              "visual_id": "chem_periodic"
+            }
+          ]
+        },
+        {
+          "title": "المركبات الأيونية والفلزات",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "تكون الأيون",
+              "page": 84,
+              "visual_id": "chem_ions"
+            },
+            {
+              "title": "الروابط الأيونية والمركبات الأيونية",
+              "page": 88,
+              "visual_id": "chem_ionic"
+            },
+            {
+              "title": "صيغ المركبات الأيونية وأسماؤها",
+              "page": 96,
+              "visual_id": "chem_ionic"
+            },
+            {
+              "title": "الروابط الفلزية وخواص الفلزات",
+              "page": 103,
+              "visual_id": "chem_metallic"
+            }
+          ]
+        },
+        {
+          "title": "الروابط التساهمية",
+          "lesson_count": 5,
+          "lessons": [
+            {
+              "title": "الرابطة التساهمية",
+              "page": 118,
+              "visual_id": "chem_covalent"
+            },
+            {
+              "title": "تسمية الجزيئات",
+              "page": 126,
+              "visual_id": "chem_covalent"
+            },
+            {
+              "title": "التراكيب الجزيئية",
+              "page": 131,
+              "visual_id": "chem_lewis"
+            },
+            {
+              "title": "أشكال الجزيئات",
+              "page": 140,
+              "visual_id": "chem_geometry"
+            },
+            {
+              "title": "الكهروسالبية والقطبية",
+              "page": 144,
+              "visual_id": "chem_polarity"
+            }
+          ]
+        },
+        {
+          "title": "الحسابات الكيميائية",
+          "lesson_count": 6,
+          "lessons": [
+            {
+              "title": "الصيغة الأولية والصيغة الجزيئية",
+              "page": 162,
+              "visual_id": "chem_stoich"
+            },
+            {
+              "title": "صيغ الأملاح المائية",
+              "page": 172,
+              "visual_id": "chem_stoich"
+            },
+            {
+              "title": "المقصود بالحسابات الكيميائية",
+              "page": 176,
+              "visual_id": "chem_stoich"
+            },
+            {
+              "title": "حسابات المعادلات الكيميائية",
+              "page": 181,
+              "visual_id": "chem_stoich"
+            },
+            {
+              "title": "المادة المحددة للتفاعل",
+              "page": 187,
+              "visual_id": "chem_limiting"
+            },
+            {
+              "title": "نسبة المردود المئوية",
+              "page": 194,
+              "visual_id": "chem_yield"
+            }
+          ]
+        },
+        {
+          "title": "حالات المادة",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "الغازات",
+              "page": 218,
+              "visual_id": "chem_gas"
+            },
+            {
+              "title": "قوى التجاذب",
+              "page": 228,
+              "visual_id": "chem_forces"
+            },
+            {
+              "title": "المواد السائلة والمواد الصلبة",
+              "page": 233,
+              "visual_id": "chem_states"
+            },
+            {
+              "title": "تغيرات الحالة الفيزيائية",
+              "page": 243,
+              "visual_id": "chem_phase"
+            }
+          ]
+        },
+        {
+          "title": "الغازات",
+          "lesson_count": 3,
+          "lessons": [
+            {
+              "title": "قوانين الغازات",
+              "page": 262,
+              "visual_id": "chem_gas"
+            },
+            {
+              "title": "قانون الغاز المثالي",
+              "page": 273,
+              "visual_id": "chem_gas"
+            },
+            {
+              "title": "الحسابات المتعلقة بالغازات",
+              "page": 281,
+              "visual_id": "chem_gas"
+            }
+          ]
+        }
+      ],
+      "lesson_count": 28
+    },
+    {
+      "book": "كيمياء 2-2",
+      "stage": "كيمياء 2-2",
+      "source_file": "كيمياء 2 الجزء الثاني(1).pdf",
+      "chapters": [
+        {
+          "title": "الطاقة والتغيرات الكيميائية",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "الطاقة",
+              "page": 12,
+              "visual_id": "chem_energy"
+            },
+            {
+              "title": "الحرارة",
+              "page": 19,
+              "visual_id": "chem_heat"
+            },
+            {
+              "title": "المعادلات الكيميائية الحرارية",
+              "page": 25,
+              "visual_id": "chem_thermo"
+            },
+            {
+              "title": "حساب التغير في المحتوى الحراري",
+              "page": 31,
+              "visual_id": "chem_hess"
+            }
+          ]
+        },
+        {
+          "title": "سرعة التفاعلات الكيميائية",
+          "lesson_count": 3,
+          "lessons": [
+            {
+              "title": "نظرية التصادم وسرعة التفاعل الكيميائي",
+              "page": 50,
+              "visual_id": "chem_collision"
+            },
+            {
+              "title": "العوامل المؤثرة في سرعة التفاعل الكيميائي",
+              "page": 58,
+              "visual_id": "chem_rate"
+            },
+            {
+              "title": "قوانين سرعة التفاعل الكيميائي",
+              "page": 63,
+              "visual_id": "chem_rate"
+            }
+          ]
+        },
+        {
+          "title": "الاتزان الكيميائي",
+          "lesson_count": 3,
+          "lessons": [
+            {
+              "title": "حالة الاتزان الديناميكي",
+              "page": 78,
+              "visual_id": "chem_equilibrium"
+            },
+            {
+              "title": "العوامل المؤثرة في الاتزان الكيميائي",
+              "page": 91,
+              "visual_id": "chem_equilibrium"
+            },
+            {
+              "title": "استعمال ثوابت الاتزان",
+              "page": 98,
+              "visual_id": "chem_equilibrium"
+            }
+          ]
+        },
+        {
+          "title": "الهيدروكربونات",
+          "lesson_count": 5,
+          "lessons": [
+            {
+              "title": "مقدمة إلى الهيدروكربونات",
+              "page": 120,
+              "visual_id": "chem_hydrocarbon"
+            },
+            {
+              "title": "الألكانات",
+              "page": 126,
+              "visual_id": "chem_hydrocarbon"
+            },
+            {
+              "title": "الألكينات والألكاينات",
+              "page": 136,
+              "visual_id": "chem_hydrocarbon"
+            },
+            {
+              "title": "متشكلات الهيدروكربونات",
+              "page": 143,
+              "visual_id": "chem_hydrocarbon"
+            },
+            {
+              "title": "الهيدروكربونات الأروماتية",
+              "page": 149,
+              "visual_id": "chem_hydrocarbon"
+            }
+          ]
+        },
+        {
+          "title": "مشتقات المركبات الهيدروكربونية وتفاعلاتها",
+          "lesson_count": 5,
+          "lessons": [
+            {
+              "title": "هاليدات الألكيل وهاليدات الأريل",
+              "page": 168,
+              "visual_id": "chem_organic"
+            },
+            {
+              "title": "الكحولات والإيثرات والأمينات",
+              "page": 174,
+              "visual_id": "chem_organic"
+            },
+            {
+              "title": "مركبات الكربونيل",
+              "page": 178,
+              "visual_id": "chem_organic"
+            },
+            {
+              "title": "تفاعلات أخرى للمركبات العضوية",
+              "page": 184,
+              "visual_id": "chem_organic"
+            },
+            {
+              "title": "البوليمرات",
+              "page": 191,
+              "visual_id": "chem_polymer"
+            }
+          ]
+        },
+        {
+          "title": "المركبات العضوية الحيوية",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "البروتينات",
+              "page": 210,
+              "visual_id": "chem_protein"
+            },
+            {
+              "title": "الكربوهيدرات",
+              "page": 216,
+              "visual_id": "chem_carbohydrate"
+            },
+            {
+              "title": "الليبيدات",
+              "page": 219,
+              "visual_id": "chem_lipid"
+            },
+            {
+              "title": "الأحماض النووية",
+              "page": 224,
+              "visual_id": "chem_nucleic"
+            }
+          ]
+        }
+      ],
+      "lesson_count": 24
+    },
+    {
+      "book": "كيمياء 3",
+      "stage": "كيمياء 3",
+      "source_file": "كيمياء 3(1).pdf",
+      "chapters": [
+        {
+          "title": "المخاليط والمحاليل",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "أنواع المخاليط",
+              "page": 14,
+              "visual_id": "chem_mixture"
+            },
+            {
+              "title": "تركيز المحلول",
+              "page": 19,
+              "visual_id": "chem_concentration"
+            },
+            {
+              "title": "العوامل المؤثرة في الذوبان",
+              "page": 29,
+              "visual_id": "chem_solubility"
+            },
+            {
+              "title": "الخواص الجامعة للمحاليل",
+              "page": 38,
+              "visual_id": "chem_colligative"
+            }
+          ]
+        },
+        {
+          "title": "الأحماض والقواعد",
+          "lesson_count": 4,
+          "lessons": [
+            {
+              "title": "مقدمة في الأحماض والقواعد",
+              "page": 56,
+              "visual_id": "chem_acid"
+            },
+            {
+              "title": "قوة الأحماض والقواعد",
+              "page": 66,
+              "visual_id": "chem_acid"
+            },
+            {
+              "title": "أيونات الهيدروجين والرقم الهيدروجيني",
+              "page": 72,
+              "visual_id": "chem_ph"
+            },
+            {
+              "title": "التعادل",
+              "page": 81,
+              "visual_id": "chem_neutralization"
+            }
+          ]
+        },
+        {
+          "title": "تفاعلات الأكسدة والاختزال",
+          "lesson_count": 2,
+          "lessons": [
+            {
+              "title": "الأكسدة والاختزال",
+              "page": 104,
+              "visual_id": "chem_redox"
+            },
+            {
+              "title": "وزن معادلات الأكسدة والاختزال",
+              "page": 113,
+              "visual_id": "chem_redox"
+            }
+          ]
+        },
+        {
+          "title": "الكيمياء الكهربائية",
+          "lesson_count": 3,
+          "lessons": [
+            {
+              "title": "الخلايا الجلفانية",
+              "page": 134,
+              "visual_id": "chem_electrochemical"
+            },
+            {
+              "title": "البطاريات",
+              "page": 144,
+              "visual_id": "chem_battery"
+            },
+            {
+              "title": "التحليل الكهربائي",
+              "page": 154,
+              "visual_id": "chem_electrolysis"
+            }
+          ]
+        }
+      ],
+      "lesson_count": 13
+    }
+  ],
+  "book_count": 4,
+  "chapter_count": 22,
+  "lesson_count": 83
+}

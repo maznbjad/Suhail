@@ -36,7 +36,7 @@ from src.core.challenge_repository import ensure_social_schema, friend_code_for_
 ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = ROOT / "data" / "suhail_learning.db"
 SUMMARIES_PATH = ROOT / "data" / "smart_summaries.json"
-RELEASE = "88.0.0"
+RELEASE = "101.0.0"
 ALLOWED_EXAMS = {"قدرات كمي", "قدرات لفظي", "تحصيلي"}
 AUTH_WINDOW_SEC = 60
 AUTH_MAX_ATTEMPTS = 10
@@ -224,6 +224,7 @@ def _profile_payload(row: sqlite3.Row) -> dict[str, Any]:
     return {
         "user_id": row["user_id"],
         "display_name": row["display_name"],
+        "username": row["username"] if "username" in row.keys() else None,
         "academic_track": row["academic_track"],
         "gender": row["gender"] if "gender" in row.keys() else "male",
         "exam_goals": goals,
@@ -288,6 +289,7 @@ def create_app() -> Flask:
                 email=str(payload.get("email", "")),
                 password=str(payload.get("password", "")),
                 display_name=str(payload.get("display_name", "")),
+                username=str(payload.get("username", "")),
             )
         except sqlite3.IntegrityError:
             return jsonify({"error": "email_exists"}), 409
@@ -318,7 +320,13 @@ def create_app() -> Flask:
         if error:
             return error
         with _connect(query_only=True) as connection:
-            row = connection.execute("SELECT * FROM student_profiles WHERE user_id = ?", (str(user["id"]),)).fetchone()
+            row = connection.execute(
+                """SELECT p.*, u.username
+                   FROM student_profiles p
+                   LEFT JOIN auth_users u ON CAST(u.id AS TEXT) = p.user_id
+                   WHERE p.user_id = ?""",
+                (str(user["id"]),),
+            ).fetchone()
         if not row:
             return jsonify({"profile": None})
         return jsonify({"profile": _profile_payload(row)})
@@ -576,9 +584,9 @@ def create_app() -> Flask:
             value = (request.args.get(field) or "").strip()
             if value:
                 items = [x for x in items if str(x.get(field, "")) == value]
-        limit = _bounded_int(request.args.get("limit"), 100, 1, 500)
+        limit = _bounded_int(request.args.get("limit"), 200, 1, 500)
         result = items[:limit]
-        return jsonify({"items": result, "count": len(result)})
+        return jsonify({"items": result, "count": len(items), "returned": len(result)})
 
     @app.post("/api/v1/activity")
     def activity_post():
@@ -614,10 +622,29 @@ def create_app() -> Flask:
             return error
         payload = request.get_json(silent=True) or {}
         receiver_code = str(payload.get("receiver_code", "")).strip().upper()
-        if not receiver_code.startswith("SH-") or len(receiver_code) < 7:
-            return jsonify({"error": "invalid_friend_code"}), 400
+        receiver_username = str(payload.get("receiver_username", "")).strip().lower().lstrip("@")
+        if not receiver_code and not receiver_username:
+            return jsonify({"error": "username_required"}), 400
         sender_id = str(user["id"])
         sender_code = friend_code_for_user(sender_id)
+        with _connect() as connection:
+            if receiver_username:
+                receiver = connection.execute(
+                    """SELECT p.user_id, p.friend_code
+                       FROM auth_users u
+                       JOIN student_profiles p ON p.user_id = CAST(u.id AS TEXT)
+                       WHERE u.username = ?""",
+                    (receiver_username,),
+                ).fetchone()
+                if not receiver:
+                    return jsonify({"error": "username_not_found"}), 404
+                receiver_code = str(receiver["friend_code"] or friend_code_for_user(receiver["user_id"])).upper()
+            else:
+                if not receiver_code.startswith("SH-") or len(receiver_code) < 7:
+                    return jsonify({"error": "invalid_friend_code"}), 400
+                receiver = connection.execute(
+                    "SELECT user_id, friend_code FROM student_profiles WHERE friend_code = ?", (receiver_code,)
+                ).fetchone()
         if receiver_code == sender_code:
             return jsonify({"error": "cannot_add_self"}), 400
         with _connect() as connection:
