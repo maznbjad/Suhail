@@ -1,0 +1,127 @@
+/* Suhail Sprint 87 — streak shields and character motivation. */
+:root{
+  --s87-blue:#2f83e8;
+  --s87-green:#42c989;
+  --s87-ink:#17304f;
+  --s87-muted:#667b91;
+  --s87-card:#ffffff;
+  --s87-line:#dce8f2;
+}
+.s87-motivation-card{
+  margin:10px 0 12px;
+  min-height:78px;
+  border:1px solid var(--s87-line);
+  border-radius:22px;
+  background:linear-gradient(135deg,#f4f9ff 0%,#f4fff9 100%);
+  box-shadow:0 10px 26px rgba(28,74,120,.07);
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr) auto;
+  gap:10px;
+  align-items:center;
+  padding:9px 11px;
+  direction:rtl;
+  cursor:pointer;
+}
+.s87-motivation-avatar{
+  width:56px;height:58px;border-radius:18px;overflow:hidden;
+  background:linear-gradient(160deg,#e7f5ff,#e8fbf2);
+  border:1px solid rgba(47,131,232,.14);
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.s87-motivation-avatar img{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block}
+.s87-motivation-copy{min-width:0;text-align:right}
+.s87-motivation-copy b{display:block;color:var(--s87-ink);font-size:13.5px;line-height:1.35;font-weight:950}
+.s87-motivation-copy span{display:block;color:var(--s87-muted);font-size:10.8px;line-height:1.45;margin-top:3px;font-weight:750}
+.s87-motivation-metrics{display:flex;gap:6px;align-items:center;direction:ltr}
+.s87-metric{
+  min-width:43px;height:46px;border-radius:15px;background:#fff;border:1px solid #dfebf4;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;
+}
+.s87-metric strong{font-size:13px;color:var(--s87-ink);font-weight:950}
+.s87-metric small{font-size:8px;color:var(--s87-muted);font-weight:850;margin-top:4px}
+.s87-metric.shield{background:#eef7ff;border-color:#cfe4f7}.s87-metric.shield strong{color:#2476c8}
+.s87-metric.risk{animation:s87Pulse 1.5s infinite;background:#fff6e9;border-color:#ffd7a2}
+@keyframes s87Pulse{50%{box-shadow:0 0 0 6px rgba(245,167,57,.10)}}
+
+.s87-reaction{
+  position:absolute;z-index:10050;left:14px;right:14px;bottom:91px;
+  display:grid;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:10px;
+  min-height:72px;padding:8px 10px;border-radius:22px;
+  background:rgba(255,255,255,.98);border:1px solid #dbe8f1;
+  box-shadow:0 18px 42px rgba(16,42,75,.20);
+  direction:rtl;transform:translateY(25px) scale(.97);opacity:0;pointer-events:none;
+  transition:opacity .22s ease,transform .25s ease;
+}
+.s87-reaction.show{transform:translateY(0) scale(1);opacity:1;pointer-events:auto}
+.s87-reaction.celebrate{border-color:#bdebd8;background:linear-gradient(135deg,#fff,#effcf7)}
+.s87-reaction.warn{border-color:#ffd7a2;background:linear-gradient(135deg,#fff,#fff8ed)}
+.s87-reaction-avatar{width:52px;height:58px;border-radius:17px;overflow:hidden;background:#edf7ff;display:flex;align-items:flex-end;justify-content:center}
+.s87-reaction-avatar img{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block}
+.s87-reaction.s87-correct .s87-reaction-avatar img{animation:s87AvatarNod .55s ease}
+.s87-reaction.s87-celebrate .s87-reaction-avatar img{animation:s87AvatarCelebrate .95s ease-in-out 2}
+.s87-reaction.s87-return .s87-reaction-avatar img{animation:s87AvatarWelcome .75s ease}
+@keyframes s87AvatarNod{35%{transform:translateY(-3px) scale(1.025)}70%{transform:translateY(1px)}}
+@keyframes s87AvatarCelebrate{30%{transform:translateY(-5px) rotate(-2deg) scale(1.025)}65%{transform:translateY(-2px) rotate(2deg) scale(1.02)}}
+@keyframes s87AvatarWelcome{35%{transform:translateX(-3px) rotate(-1.5deg)}70%{transform:translateX(2px) rotate(1deg)}}
+.s87-reaction-copy{min-width:0;text-align:right}
+.s87-reaction-copy b{display:block;font-size:12.8px;color:var(--s87-ink);font-weight:950;line-height:1.4}
+.s87-reaction-copy span{display:block;font-size:10.6px;color:var(--s87-muted);font-weight:750;line-height:1.5;margin-top:2px}
+.s87-reaction button{border:0;border-radius:13px;background:linear-gradient(135deg,var(--s87-blue),var(--s87-green));color:#fff;font-family:inherit;font-size:10px;font-weight:950;padding:9px 10px;white-space:nowrap}
+.s87-reaction-close{position:absolute!important;top:5px;left:6px!important;width:24px!important;height:24px!important;border-radius:50%!important;padding:0!important;background:#edf3f7!important;color:#557087!important;font-size:14px!important}
+
+.s87-modal-overlay{
+  position:absolute;z-index:10100;inset:0;background:rgba(9,25,43,.50);display:none;
+  align-items:flex-end;justify-content:center;padding:12px;backdrop-filter:blur(4px);
+}
+.s87-modal-overlay.open{display:flex}
+.s87-modal{
+  width:100%;max-height:82%;overflow:auto;border-radius:26px;background:#fff;border:1px solid #e0eaf2;
+  box-shadow:0 24px 70px rgba(9,27,51,.28);padding:16px;direction:rtl;text-align:right;
+  animation:s87Sheet .22s ease;
+}
+@keyframes s87Sheet{from{transform:translateY(24px);opacity:.4}to{transform:none;opacity:1}}
+.s87-modal-head{display:flex;align-items:center;gap:11px;padding-bottom:12px;border-bottom:1px solid #edf2f6}
+.s87-modal-head .s87-modal-avatar{width:62px;height:68px;border-radius:20px;overflow:hidden;background:#edf8ff;display:flex;align-items:flex-end;justify-content:center}
+.s87-modal-head img{width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.s87-modal-title{flex:1}.s87-modal-title b{display:block;font-size:16px;color:var(--s87-ink);font-weight:950}.s87-modal-title span{display:block;font-size:10.8px;color:var(--s87-muted);line-height:1.55;margin-top:3px}
+.s87-modal-x{width:34px;height:34px;border:0;border-radius:13px;background:#eef3f7;color:#526b80;font-size:18px}
+.s87-shield-balance{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}
+.s87-shield-box{border:1px solid #dde9f2;border-radius:18px;background:#f8fbfd;padding:12px;text-align:center}
+.s87-shield-box strong{display:block;font-size:24px;color:var(--s87-ink)}.s87-shield-box span{display:block;font-size:9.7px;color:var(--s87-muted);margin-top:4px;font-weight:800}
+.s87-rescue-box{border:1px solid #cae4f7;background:#f1f9ff;border-radius:18px;padding:12px;margin-top:10px}
+.s87-rescue-box b{display:block;color:#195d9a;font-size:13px}.s87-rescue-box p{font-size:10.8px;line-height:1.65;color:#5a7085;margin:5px 0 0}
+.s87-modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
+.s87-modal-actions button{height:43px;border-radius:15px;border:0;font-family:inherit;font-weight:950;font-size:11px}
+.s87-modal-actions .primary{color:#fff;background:linear-gradient(135deg,var(--s87-blue),var(--s87-green))}
+.s87-modal-actions .secondary{color:#546b80;background:#eef3f7}
+.s87-rule-list{display:grid;gap:7px;margin-top:12px}.s87-rule{display:flex;gap:8px;align-items:flex-start;border-radius:15px;background:#f7fafc;padding:9px;font-size:10.5px;color:#536b80;line-height:1.55}.s87-rule i{font-style:normal;font-size:15px}
+
+.s87-confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:22px}
+.s87-confetti i{position:absolute;top:-10px;width:7px;height:12px;border-radius:3px;animation:s87Fall 1.7s ease-in forwards}
+@keyframes s87Fall{to{transform:translateY(110px) rotate(500deg);opacity:0}}
+
+body.s55-dark .s87-motivation-card{background:linear-gradient(135deg,#122334,#142a27);border-color:#385269;box-shadow:none}
+body.s55-dark .s87-motivation-copy b,body.s55-dark .s87-metric strong{color:#f4f8fc}
+body.s55-dark .s87-motivation-copy span,body.s55-dark .s87-metric small{color:#b6c8d8}
+body.s55-dark .s87-metric{background:#172b3b;border-color:#3b5368}
+body.s55-dark .s87-metric.shield{background:#153044;border-color:#38617d}
+body.s55-dark .s87-reaction{background:rgba(18,34,49,.98);border-color:#3b5368;box-shadow:0 18px 42px rgba(0,0,0,.34)}
+body.s55-dark .s87-reaction.celebrate{background:linear-gradient(135deg,#142b27,#15293a);border-color:#326657}
+body.s55-dark .s87-reaction.warn{background:linear-gradient(135deg,#30281b,#192b39);border-color:#6a5634}
+body.s55-dark .s87-reaction-copy b{color:#f5f9fc}body.s55-dark .s87-reaction-copy span{color:#b9cbd9}
+body.s55-dark .s87-modal{background:#122334;border-color:#3b5368}
+body.s55-dark .s87-modal-title b,body.s55-dark .s87-shield-box strong{color:#f5f9fc}
+body.s55-dark .s87-modal-title span,body.s55-dark .s87-shield-box span{color:#b7c9d8}
+body.s55-dark .s87-modal-head{border-color:#31495d}
+body.s55-dark .s87-shield-box,body.s55-dark .s87-rule{background:#172b3b;border-color:#3a5367;color:#c1d0dc}
+body.s55-dark .s87-rescue-box{background:#153044;border-color:#35607c}body.s55-dark .s87-rescue-box b{color:#77c2ff}body.s55-dark .s87-rescue-box p{color:#bad0df}
+body.s55-dark .s87-modal-actions .secondary{background:#263b4d;color:#d4e0e8}
+
+@media(max-width:430px){
+  .s87-motivation-card{grid-template-columns:52px minmax(0,1fr) auto;padding:8px 9px;border-radius:20px}
+  .s87-motivation-avatar{width:50px;height:54px;border-radius:16px}
+  .s87-motivation-copy b{font-size:12.5px}.s87-motivation-copy span{font-size:9.8px}
+  .s87-motivation-metrics{gap:4px}.s87-metric{min-width:39px;height:42px;border-radius:13px}.s87-metric strong{font-size:12px}.s87-metric small{font-size:7.5px}
+  .s87-reaction{bottom:82px;left:9px;right:9px;grid-template-columns:48px minmax(0,1fr) auto;min-height:66px;border-radius:20px}
+  .s87-reaction-avatar{width:47px;height:52px}.s87-reaction-copy b{font-size:11.8px}.s87-reaction-copy span{font-size:9.8px}
+}

@@ -1,7 +1,7 @@
 /* Suhail Sprint 85 — reliable account completion, route lock, avatar continuity and faster wheel scrolling. */
 (function(){
   'use strict';
-  const VERSION='86.0.0';
+  const VERSION='87.0.0';
   let internalNavigation=false;
   let setupObserver=null;
   let syncTimer=null;
@@ -181,7 +181,7 @@
   }
 
   function updateVersion(){
-    document.querySelectorAll('.s55-version b').forEach(el=>el.textContent='V.1.0.86');
+    document.querySelectorAll('.s55-version b').forEach(el=>el.textContent='V.1.0.87');
     window.SUHAIL_RELEASE=VERSION;
   }
 

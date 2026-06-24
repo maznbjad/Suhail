@@ -1,0 +1,36 @@
+{
+  "release": "87.0.0",
+  "passed": true,
+  "checks": {
+    "release_manifest": true,
+    "api_release": true,
+    "module_injected_last": true,
+    "avatar_assets_embedded": true,
+    "monthly_two_shields": true,
+    "one_shield_per_missed_day": true,
+    "maximum_two_consecutive_days": true,
+    "meaningful_activity_only": true,
+    "hidden_result_neutral": true,
+    "selected_character_reactions": true,
+    "return_reaction": true,
+    "daily_plan_celebration_once": true,
+    "home_journey_card": true,
+    "dark_mode_supported": true,
+    "question_bank_5400": true,
+    "physics_summaries_72": true,
+    "javascript_syntax": true
+  },
+  "counts": {
+    "question_bank": 5400,
+    "physics_summaries": 72,
+    "monthly_shields": 2,
+    "maximum_consecutive_protected_days": 2
+  },
+  "interaction_qa": {
+    "shield_balance_scenario": "2 -> 1 after protecting one missed day",
+    "streak_scenario": "three connected days after shield and current activity",
+    "hidden_result": "neutral reaction with no correctness disclosure",
+    "daily_plan": "single celebration after practice, errors, and summary are complete",
+    "javascript_errors": 0
+  }
+}

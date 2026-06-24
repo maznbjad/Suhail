@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 86",
-  "version": "1.0.86",
+  "release": "Sprint 88",
+  "version": "1.0.88",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 86,
+  "latest_sprint": 88,
   "question_bank": {
     "count": 5400,
     "status": "internal_qa_physics_mastery_v2",
@@ -46,6 +46,7 @@
     "grouped_account_hub": true,
     "account_sections": [
       "learning_journey",
+      "exam_dates_and_adaptive_plan",
       "diagnostics",
       "dark_mode",
       "notifications",
@@ -141,7 +142,13 @@
     "summary_laws_top_drawer": true,
     "summary_single_example_focus": true,
     "summary_single_question_focus": true,
-    "avatar_picker_safe_contain_crop": true
+    "avatar_picker_safe_contain_crop": true,
+    "exam_date_planning": true,
+    "adaptive_variable_daily_load": true,
+    "exam_plan_paths": [
+      "qudrat",
+      "tahsili"
+    ]
   },
   "admin": {
     "deep_settings": true,
@@ -156,7 +163,7 @@
     "api_tokens": true,
     "rate_limit_foundation": true
   },
-  "notes": "Sprint 86 redesigns physics lessons into paired visual cards, moves laws to a dedicated drawer beside the back button, focuses examples and practice one at a time, and fixes full-character crop safety.",
+  "notes": "Sprint 87 adds two monthly streak shields and selected-character reactions for answers, returns, exam results, and daily-plan completion.",
   "summary_content": {
     "published_total": 72,
     "published_subjects": {

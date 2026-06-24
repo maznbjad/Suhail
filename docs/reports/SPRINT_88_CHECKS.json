@@ -1,0 +1,50 @@
+{
+  "sprint": 88,
+  "ok": true,
+  "checks": {
+    "files": {
+      "ok": true,
+      "detail": ""
+    },
+    "injection": {
+      "ok": true,
+      "detail": ""
+    },
+    "version": {
+      "ok": true,
+      "detail": ""
+    },
+    "dates": {
+      "ok": true,
+      "detail": ""
+    },
+    "variable_load": {
+      "ok": true,
+      "detail": ""
+    },
+    "taper": {
+      "ok": true,
+      "detail": ""
+    },
+    "performance": {
+      "ok": true,
+      "detail": ""
+    },
+    "bank_count": {
+      "ok": true,
+      "detail": "5400"
+    },
+    "bank_distribution": {
+      "ok": true,
+      "detail": "{'قدرات كمي': 1500, 'قدرات لفظي': 1500, 'تحصيلي': 2400}"
+    },
+    "javascript_syntax": {
+      "ok": true,
+      "detail": ""
+    },
+    "python_syntax": {
+      "ok": true,
+      "detail": ""
+    }
+  }
+}

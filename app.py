@@ -20462,4 +20462,45 @@ try:
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 86 summary-cards module: {exc}")
 
+# Sprint 87 adds meaningful streak shields and selected-character reactions.
+# It is injected after Sprint 86 so motivation can observe the final exam,
+# summary, home and daily-plan components without replacing them.
+s87_css_path = os.path.join("src", "ui", "sprint87_motivation.css")
+s87_js_path = os.path.join("src", "ui", "sprint87_motivation.js")
+try:
+    with open(s87_css_path, "r", encoding="utf-8") as style_file:
+        s87_css = style_file.read()
+    s87_avatars = load_json(os.path.join("data", "avatars", "avatars.json"), {"items": []})
+    s87_portraits = {}
+    s87_half = {}
+    for avatar in s87_avatars.get("items", []):
+        avatar_id = str(avatar.get("id", "")).strip()
+        portrait_path = str(avatar.get("avatar_asset") or avatar.get("asset", "")).strip()
+        half_path = str(avatar.get("half_asset") or portrait_path).strip()
+        if avatar_id and portrait_path:
+            s87_portraits[avatar_id] = asset_data_uri(portrait_path)
+            s87_half[avatar_id] = asset_data_uri(half_path)
+    with open(s87_js_path, "r", encoding="utf-8") as script_file:
+        s87_js = script_file.read()
+    s87_js = s87_js.replace("__S87_AVATARS__", compact_json(s87_avatars))
+    s87_js = s87_js.replace("__S87_AVATAR_PORTRAITS__", compact_json(s87_portraits))
+    s87_js = s87_js.replace("__S87_AVATAR_HALF__", compact_json(s87_half))
+    html_code = html_code.replace("</head>", f"<style>{s87_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s87_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 87 motivation module: {exc}")
+
+# Sprint 88 adds exam dates and a variable-load adaptive study plan.
+s88_css_path = os.path.join("src", "ui", "sprint88_exam_dates_plan.css")
+s88_js_path = os.path.join("src", "ui", "sprint88_exam_dates_plan.js")
+try:
+    with open(s88_css_path, "r", encoding="utf-8") as style_file:
+        s88_css = style_file.read()
+    with open(s88_js_path, "r", encoding="utf-8") as script_file:
+        s88_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s88_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s88_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 88 exam-plan module: {exc}")
+
 components.html(html_code, height=960, scrolling=False)

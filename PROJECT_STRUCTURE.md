@@ -1,4 +1,4 @@
-# Suhail Sprint 86 — هيكل المشروع
+# Suhail Sprint 88 — هيكل المشروع
 
 ## التشغيل
 
@@ -97,3 +97,18 @@
 - `src/ui/sprint86_summary_cards.js`: عارض الدرس الجديد والتفاعل مع الأمثلة والأسئلة والقوانين.
 - `scripts/validate_sprint86.py`: فحص الإصدار والبنك والروابط والقالب.
 - `docs/reports/SPRINT_86_SUMMARY_DESIGN_REPORT.md`: تقرير التصميم والاختبارات.
+
+## Sprint 87
+- `src/ui/sprint87_motivation.css`: بطاقة رحلة سهيل، نافذة الدرع، تفاعلات الشخصية، الاحتفال، والوضع الداكن.
+- `src/ui/sprint87_motivation.js`: حالة التحفيز لكل مستخدم، رصيد الدرع الشهري، السلسلة، العودة بعد الانقطاع، وربط التفاعلات بالأسئلة والاختبارات وخطة اليوم.
+- `scripts/validate_sprint87.py`: فحص الإصدار والحقن وقواعد الدرع وبنك المحتوى.
+- `docs/reports/SPRINT_87_MOTIVATION_REPORT.md`: تقرير التنفيذ والاختبارات.
+- `docs/reports/SPRINT_87_CHECKS.json`: نتائج التحقق الآلي.
+
+
+## Sprint 88
+- `src/ui/sprint88_exam_dates_plan.css`: بطاقة مواعيد الاختبارات في الحساب، الخطة الزمنية، حصة اليوم، والوضع الداكن.
+- `src/ui/sprint88_exam_dates_plan.js`: حفظ المواعيد لكل مستخدم، حساب الأيام، تحليل الأداء، وتوزيع عدد الأسئلة المتغير حتى موعد الاختبار.
+- `scripts/validate_sprint88.py`: فحص الإصدار، الحقن، قواعد الخطة، وبنك الأسئلة.
+- `docs/reports/SPRINT_88_ADAPTIVE_EXAM_PLAN.md`: شرح طريقة الحساب ونتائج الاختبارات.
+- `docs/reports/SPRINT_88_CHECKS.json`: نتائج التحقق الآلي.
