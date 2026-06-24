@@ -1,0 +1,35 @@
+{
+  "version": "108.0.0",
+  "books": [
+    {
+      "key": "physics1",
+      "title": "ملخص فيزياء 1",
+      "stage": "فيزياء 1",
+      "pages": 18,
+      "ocr_pages": 18,
+      "ocr_words": 6778,
+      "pdf_bytes": 3296866,
+      "sha256": "92f8663a692ca3b6ba29bb80981fb206c42423b9ba49ce57f3182997b27d4c4b"
+    },
+    {
+      "key": "physics2",
+      "title": "ملخص فيزياء 2",
+      "stage": "فيزياء 2",
+      "pages": 13,
+      "ocr_pages": 13,
+      "ocr_words": 6672,
+      "pdf_bytes": 2735097,
+      "sha256": "04c8e479363b5d304c49df646ba451015587da9ec3416c6fd6c61c6df495f337"
+    },
+    {
+      "key": "physics31",
+      "title": "ملخص فيزياء 3 - الفصل الأول",
+      "stage": "فيزياء 3-1",
+      "pages": 22,
+      "ocr_pages": 22,
+      "ocr_words": 9932,
+      "pdf_bytes": 5788377,
+      "sha256": "72ccb0aeb3d9128e760795edc3dc896b537f499ebf5e27ebe1d5917d45ac24a1"
+    }
+  ]
+}

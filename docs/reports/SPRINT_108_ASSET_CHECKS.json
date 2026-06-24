@@ -1,0 +1,24 @@
+{
+  "physics1": {
+    "pages": 18,
+    "ocr_pages": 18,
+    "ocr_words": 6778,
+    "min_words_on_page": 288
+  },
+  "physics2": {
+    "pages": 13,
+    "ocr_pages": 13,
+    "ocr_words": 6672,
+    "min_words_on_page": 435,
+    "max_pixel_mae": 1.983,
+    "avg_pixel_mae": 1.793
+  },
+  "physics31": {
+    "pages": 22,
+    "ocr_pages": 22,
+    "ocr_words": 9932,
+    "min_words_on_page": 221,
+    "max_pixel_mae": 1.747,
+    "avg_pixel_mae": 1.613
+  }
+}

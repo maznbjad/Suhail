@@ -1,0 +1,52 @@
+/* Suhail Sprint 108 — iPhone containment and Apple-oriented UX polish. */
+:root{
+  --s108-safe-top:env(safe-area-inset-top,0px);
+  --s108-safe-right:env(safe-area-inset-right,0px);
+  --s108-safe-bottom:env(safe-area-inset-bottom,0px);
+  --s108-safe-left:env(safe-area-inset-left,0px);
+}
+html,body{touch-action:manipulation}
+button,[role="button"],a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button:focus-visible,[role="button"]:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(35,137,232,.34)!important;outline-offset:2px!important}
+
+/* The reader keeps one compact Apple-sized target and no persistent chrome. */
+.s102-reader-back{
+  top:calc(var(--s108-safe-top) + 10px)!important;
+  right:calc(var(--s108-safe-right) + 10px)!important;
+  width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;
+  border-radius:50%!important;background:rgba(255,255,255,.50)!important;
+  border:1px solid rgba(255,255,255,.48)!important;
+  -webkit-touch-callout:none;
+}
+.s102-reader-back svg{width:19px!important;height:19px!important}
+.s103-ocr-word,.s103-ocr-text{-webkit-touch-callout:default}
+.s102-page img{content-visibility:auto;contain-intrinsic-size:923px 1306px}
+.s102-admin-pdf .s102-current-badge.waiting{background:#edf2f6;color:#6f8191}
+
+/* Real iPhone: don't draw a fake status bar; rely on the native system area. */
+@media(max-width:520px){
+  .status-bar{display:none!important}
+  #appShell,.auth-page{height:100%!important}
+  .content{padding-top:calc(12px + var(--s108-safe-top))!important;padding-bottom:calc(96px + var(--s108-safe-bottom))!important}
+  #s54BottomNav,.s54-bottom-nav,.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav{bottom:max(8px,var(--s108-safe-bottom))!important}
+  .s71-header,.s59-header,.s101-top{padding-top:calc(14px + var(--s108-safe-top))!important}
+  .s102-reader{padding-bottom:var(--s108-safe-bottom)!important}
+}
+
+/* Desktop preview: every overlay remains clipped to the iPhone screen. */
+@media(min-width:521px){
+  .screen{isolation:isolate!important;contain:layout paint!important}
+  .screen :is(.s26-sheet-backdrop,.s26-sheet,.s64-test-chooser-backdrop,.s103-selection-palette,.s102-reader-back){position:absolute!important}
+  .screen .s26-sheet-backdrop{inset:0!important}
+  .screen .s26-sheet{left:12px!important;right:12px!important;bottom:12px!important}
+  .screen :is(#s54BottomNav,.s54-bottom-nav,.bottom-nav,.clean-bottom-nav,.premium-bottom-nav,.final-bottom-nav){position:absolute!important;max-width:calc(100% - 16px)!important;margin-inline:auto!important}
+  .s102-reader-back{top:10px!important;right:10px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* Keep the only persistent reader control outside the PDF artwork. */
+.s102-pages{padding-top:calc(var(--s108-safe-top) + 64px)!important;background:#fff!important}
+@media(min-width:521px){.s102-pages{padding-top:64px!important}}

@@ -352,7 +352,10 @@ html_code = r"""
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content" />
+<meta name="theme-color" content="#07131f" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
 :root {
@@ -20592,8 +20595,8 @@ except OSError as exc:
     print(f"Suhail warning: missing Sprint 101 visual-summary module: {exc}")
 
 
-# Sprint 102 replaces the lesson-by-lesson summary detail with one full-page
-# PDF reading experience per book. Physics 1 is installed as an 18-page sample.
+# Sprint 109 uses one lightweight full-page PDF reader per book.
+# OCR/text highlighting was removed to improve speed, memory use and battery.
 s102_css_path = os.path.join("src", "ui", "sprint102_pdf_reader.css")
 s102_js_path = os.path.join("src", "ui", "sprint102_pdf_reader.js")
 try:
@@ -20601,26 +20604,28 @@ try:
         s102_css = style_file.read()
     with open(s102_js_path, "r", encoding="utf-8") as script_file:
         s102_js = script_file.read()
-    s102_pages = []
-    s102_pages_dir = os.path.join("assets", "summary_pdfs", "physics1")
-    if os.path.isdir(s102_pages_dir):
-        for filename in sorted(os.listdir(s102_pages_dir)):
-            if filename.lower().endswith((".webp", ".png", ".jpg", ".jpeg")):
-                s102_pages.append(asset_data_uri(os.path.join(s102_pages_dir, filename)))
-    s102_js = s102_js.replace("__S102_PHYSICS1_PAGES__", compact_json(s102_pages))
-    s103_ocr = []
-    s103_ocr_path = os.path.join("assets", "summary_pdfs", "physics1_ocr.json")
-    if os.path.isfile(s103_ocr_path):
-        try:
-            with open(s103_ocr_path, "r", encoding="utf-8") as ocr_file:
-                s103_ocr = json.load(ocr_file)
-        except (OSError, ValueError) as exc:
-            print(f"Suhail warning: failed to load Physics 1 OCR layer: {exc}")
-    s102_js = s102_js.replace("__S103_PHYSICS1_OCR__", compact_json(s103_ocr))
+    s102_book_specs = [
+        {"key": "physics1", "title": "ملخص فيزياء 1", "subject": "فيزياء", "stage": "فيزياء 1"},
+        {"key": "physics2", "title": "ملخص فيزياء 2", "subject": "فيزياء", "stage": "فيزياء 2"},
+        {"key": "physics31", "title": "ملخص فيزياء 3 - الفصل الأول", "subject": "فيزياء", "stage": "فيزياء 3-1"},
+    ]
+    s102_books = []
+    for spec in s102_book_specs:
+        book = dict(spec)
+        pages = []
+        pages_dir = os.path.join("assets", "summary_pdfs", spec["key"])
+        if os.path.isdir(pages_dir):
+            for filename in sorted(os.listdir(pages_dir)):
+                if filename.lower().endswith((".webp", ".png", ".jpg", ".jpeg")):
+                    pages.append(asset_data_uri(os.path.join(pages_dir, filename)))
+        book["pages"] = pages
+        book["pageCount"] = len(pages)
+        s102_books.append(book)
+    s102_js = s102_js.replace("__S102_BOOKS__", compact_json(s102_books))
     html_code = html_code.replace("</head>", f"<style>{s102_css}</style></head>", 1)
     html_code = html_code.replace("</body>", f"<script>{s102_js}</script></body>", 1)
 except OSError as exc:
-    print(f"Suhail warning: missing Sprint 102 PDF reader module: {exc}")
+    print(f"Suhail warning: missing Sprint 109 PDF reader module: {exc}")
 
 # Sprint 104 restores the desktop iPhone preview and scopes dark mode to the
 # device screen; full-screen summary/PDF modes now fill the phone, not the browser.
@@ -20645,5 +20650,15 @@ try:
     html_code = html_code.replace("</body>", f"<script>{s107_js}</script></body>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 107 back-button guard: {exc}")
+
+# Sprint 108 is the final UI containment layer. It preserves the desktop iPhone
+# preview while removing fake system chrome on a real iPhone and applies safe areas.
+s108_css_path = os.path.join("src", "ui", "sprint108_ios_ux.css")
+try:
+    with open(s108_css_path, "r", encoding="utf-8") as style_file:
+        s108_css = style_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s108_css}</style></head>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 108 iOS UX module: {exc}")
 
 components.html(html_code, height=960, scrolling=False)

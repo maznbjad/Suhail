@@ -1,16 +1,17 @@
-# Suhail Sprint 101 — Project Structure
+# Suhail Sprint 108 — Project Structure
 
-- `app.py` — واجهة Streamlit وحقن وحدات الواجهة.
-- `data/questions.json` — بنك 5,400 سؤال مع روابط الكيمياء والفيزياء.
-- `data/smart_summaries.json` — 155 ملخصًا: 72 فيزياء و83 كيمياء.
-- `data/chemistry_books_manifest.json` — الكتب والفصول والدروس والمصادر.
-- `data/chemistry_coverage_matrix.json` — تغطية الدروس والأسئلة والرسومات.
-- `data/suhail_learning.db` — مستودع SQLite المحدث.
-- `assets/summary_visuals/sprint101/` — الرسومات الأصلية SVG وWebP.
-- `src/ui/sprint101_visual_summaries.css` — التصميم كامل الشاشة.
-- `src/ui/sprint101_visual_summaries.js` — التنقل والعرض والتفاعل والروابط.
-- `src/api/server.py` — API الإصدار 101.0.0.
-- `tools/generate_sprint101_visuals.py` — مولد الرسومات.
-- `tools/verify_sprint101.py` — فحص Sprint 101.
-- `docs/reports/SPRINT_101_FINAL_REPORT.md` — التقرير النهائي.
-- `run_suhail.bat` — تشغيل التطبيق على Windows.
+- `app.py` — واجهة Streamlit وحقن وحدات التطبيق.
+- `assets/summary_pdfs/physics1.pdf` — ملخص فيزياء 1 الأصلي.
+- `assets/summary_pdfs/physics2.pdf` — ملخص فيزياء 2 الأصلي.
+- `assets/summary_pdfs/physics31.pdf` — ملخص فيزياء 3، الفصل الأول.
+- `assets/summary_pdfs/<book>/` — صفحات WebP محسنة للقراءة.
+- `assets/summary_pdfs/<book>_ocr.json` — طبقات تحديد النص والتظليل.
+- `data/content/pdf_books_manifest.json` — سجل الكتب وعدد الصفحات والبصمات.
+- `src/ui/sprint102_pdf_reader.js` — قارئ PDF متعدد الكتب.
+- `src/ui/sprint102_pdf_reader.css` — تصميم وضع القراءة.
+- `src/ui/sprint104_device_frame_scope.css` — إطار الآيفون في معاينة الكمبيوتر.
+- `src/ui/sprint107_back_button_guard.css/js` — تثبيت زر العودة يمينًا ومنع التداخل.
+- `src/ui/sprint108_ios_ux.css` — Safe Areas وتهيئة تجربة iPhone.
+- `mobile/APP_STORE_READINESS.md` — حالة الجاهزية والمتطلبات المتبقية للرفع.
+- `docs/reports/SPRINT_108_PDF_AND_IOS_UX_REPORT.md` — تقرير التنفيذ.
+- `run_suhail.bat` — التشغيل على Windows.

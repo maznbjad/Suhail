@@ -1,0 +1,25 @@
+{
+  "version": "108.0.0",
+  "ok": true,
+  "checks": {
+    "python_syntax": true,
+    "javascript_syntax": true,
+    "books": {
+      "physics1": {
+        "pages": 18,
+        "ocr_words": 6778
+      },
+      "physics2": {
+        "pages": 13,
+        "ocr_words": 6672
+      },
+      "physics31": {
+        "pages": 22,
+        "ocr_words": 9932
+      }
+    },
+    "ios_ux_source": true,
+    "runtime_containment": true
+  },
+  "errors": []
+}
