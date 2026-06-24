@@ -386,6 +386,7 @@
     const observer=new MutationObserver(()=>{clearTimeout(navObserverTimer);navObserverTimer=setTimeout(refreshNavigationMode,30);});observer.observe(content,{subtree:true,childList:true,attributes:true,attributeFilter:['class']});
   }
   function install() {
+    if (window.SUHAIL_FOCUS_MODE) return;
     document.body.classList.add('s47-ready'); ['studentSetupPage','diagnosticChoicePage','s47DiagnosticPage','challengePage','adminSettingsPage'].forEach(ensurePage);
     ensureNavigation(); patchShowPage(); patchExistingLinks(); patchActivityHooks(); patchLogin(); installObserver();
     const active=activePage(); if(active&&active.id==='homePage')renderHome(); else if(active&&active.id==='profilePage')renderProfile();

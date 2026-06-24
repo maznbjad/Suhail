@@ -222,6 +222,7 @@
     window.SUHAIL_RELEASE=VERSION;document.documentElement.dataset.suhailRelease=VERSION;
   }
   function install(){
+    if(window.SUHAIL_FOCUS_MODE)return;
     if(installed)return;installed=true;load();installHooks();installDelegated();updateVersion();
     setTimeout(()=>{installHooks();evaluateReturn(true);patchHome();checkPlanCompletion();},350);
     window.addEventListener('suhail:profile-saved',()=>setTimeout(()=>{load();patchHome();},80));

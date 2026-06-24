@@ -7168,7 +7168,6 @@ body.suhail-passage-lock .question-passage{
 <div class="phone">
   <div class="screen">
     <div class="suhail-splash" id="suhailSplash">
-      <audio id="suhailSplashAudio" preload="auto" playsinline src="__SPLASH_SOUND_SRC__"></audio>
       <div class="suhail-splash-inner">
         <div class="suhail-splash-stage">
           <img class="suhail-splash-svg" src="__SPLASH_SVG_SRC__" alt="سهيل">
@@ -7821,6 +7820,7 @@ body.suhail-passage-lock .question-passage{
 </div>
 
 <script>
+window.SUHAIL_FOCUS_MODE = true;
 const questions = __QUESTIONS_JSON__;
 const imageMap = __IMAGE_MAP__;
 const summaries = __SUMMARIES_JSON__;
@@ -7860,7 +7860,7 @@ let currentSummaryTerm = null;
 const SUHAIL_SPLASH_DURATION = 3000;
 const SUHAIL_SPLASH_MIN_VISIBLE = 2950;
 const SUHAIL_SPLASH_SHOW_EVERY_LOAD = true; // Sprint testing: show it on every fresh app load.
-const SUHAIL_SPLASH_SEEN_KEY = "suhail_splash_seen_v4";
+const SUHAIL_SPLASH_SEEN_KEY = "suhail_splash_seen_v110";
 let splashHideTimer = null;
 let splashGestureAudioBound = false;
 let splashStartedAt = 0;
@@ -8017,8 +8017,7 @@ function hideSuhailSplash() {
     return;
   }
 
-  armSplashAudioOnUserGesture();
-  playSplashSound();
+  // Sprint 110: the supplied SVG owns the opening; no autoplay sound or gesture prompt.
   splashHideTimer = setTimeout(() => closeSuhailSplash(true, true), SUHAIL_SPLASH_DURATION);
 }
 
@@ -20660,5 +20659,19 @@ try:
     html_code = html_code.replace("</head>", f"<style>{s108_css}</style></head>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 108 iOS UX module: {exc}")
+
+# Sprint 110 is the final student-experience layer. It removes student-facing
+# clutter and keeps only summaries, collections, performance and one next step.
+s110_css_path = os.path.join("src", "ui", "sprint110_focus_core.css")
+s110_js_path = os.path.join("src", "ui", "sprint110_focus_core.js")
+try:
+    with open(s110_css_path, "r", encoding="utf-8") as style_file:
+        s110_css = style_file.read()
+    with open(s110_js_path, "r", encoding="utf-8") as script_file:
+        s110_js = script_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s110_css}</style></head>", 1)
+    html_code = html_code.replace("</body>", f"<script>{s110_js}</script></body>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 110 focused-experience module: {exc}")
 
 components.html(html_code, height=960, scrolling=False)

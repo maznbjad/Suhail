@@ -196,6 +196,7 @@
   function patchExamFinish(){if(typeof window.finishExam!=='function'||window.__s88Finish)return;window.__s88Finish=true;const old=window.finishExam.bind(window);window.finishExam=function(){const r=old.apply(this,arguments);setTimeout(()=>{loadPlan(true);renderAccount();patchTasks();},260);return r;};}
   function updateVersion(){document.querySelectorAll('.s55-version b').forEach(el=>el.textContent='V.1.0.88');window.SUHAIL_RELEASE=VERSION;document.documentElement.dataset.suhailRelease=VERSION;}
   function install(){
+    if(window.SUHAIL_FOCUS_MODE)return;
     if(installed)return;installed=true;patchShowPage();updateVersion();
     setTimeout(()=>{patchShowPage();patchAccountRenders();patchExamFinish();if(document.getElementById('profilePage')?.classList.contains('active'))renderAccount();if(document.getElementById('tasksPage')?.classList.contains('active'))patchTasks();updateVersion();},180);
     setTimeout(()=>{patchShowPage();patchAccountRenders();patchExamFinish();renderAccount();patchTasks();updateVersion();},650);

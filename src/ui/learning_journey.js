@@ -658,6 +658,7 @@
     };
   }
   function install() {
+    if (window.SUHAIL_FOCUS_MODE) return;
     installStyles();
     ['diagnosticPage', 'tasksPage', 'errorReviewPage', 'skillHubPage'].forEach(ensurePage);
     updateVisit(); syncMasterySchedule();

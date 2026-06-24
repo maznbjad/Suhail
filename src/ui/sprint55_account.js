@@ -92,6 +92,6 @@
   window.s55SubmitSupport=function(){const box=document.getElementById('s55ContactText');const value=box?.value.trim();if(!value){alert('اكتب رسالتك أولًا');return;}const items=parse(localStorage.getItem('suhail_feedback')||'[]',[]);items.unshift({id:Date.now(),text:value,date:new Date().toLocaleDateString('ar-SA'),source:'account_support'});localStorage.setItem('suhail_feedback',JSON.stringify(items));box.value='';alert('تم حفظ رسالتك');};
 
   function patchShowPage(){if(window.__s55ShowPatched||typeof window.showPage!=='function')return;window.__s55ShowPatched=true;legacyShowPage=window.showPage.bind(window);window.showPage=function(id){if(id==='profilePage'){currentView='main';const result=legacyShowPage(id);setTimeout(renderMain,125);return result;}return legacyShowPage(id);};}
-  function install(){applyTheme();patchShowPage();if(document.getElementById('profilePage')?.classList.contains('active'))setTimeout(renderMain,140);window.SUHAIL_RELEASE=VERSION;}
+  function install(){if(window.SUHAIL_FOCUS_MODE)return;applyTheme();patchShowPage();if(document.getElementById('profilePage')?.classList.contains('active'))setTimeout(renderMain,140);window.SUHAIL_RELEASE=VERSION;}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(install,80));else setTimeout(install,80);
 })();

@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 103 OCR PDF Reader",
-  "version": "1.0.103",
+  "release": "Sprint 110 Focused Student Experience",
+  "version": "1.0.110",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 103,
+  "latest_sprint": 110,
   "question_bank": {
     "count": 5400,
     "status": "internal_qa_physics_mastery_v2",
@@ -26,7 +26,7 @@
     "summary_lift_navigation": false,
     "exam_navigation_hidden": true,
     "auth_navigation_hidden": true,
-    "svg_streak_fire": true,
+    "svg_streak_fire": false,
     "streak_rescue_hourglass_hours": 6,
     "exam_goals_can_coexist": [
       "qudrat",
@@ -42,21 +42,13 @@
       "tahsili"
     ],
     "avatars": 8,
-    "friend_challenges": true,
-    "grouped_account_hub": true,
+    "friend_challenges": false,
+    "grouped_account_hub": false,
     "account_sections": [
-      "learning_journey",
-      "exam_dates_and_adaptive_plan",
-      "diagnostics",
       "dark_mode",
-      "notifications",
-      "friends_challenges",
-      "saved_questions",
-      "about",
       "contact",
-      "privacy",
-      "terms",
-      "faq"
+      "privacy_terms",
+      "admin_content_if_authorized"
     ],
     "global_dark_mode": true,
     "dark_mode_scope": [
@@ -163,7 +155,19 @@
     "pdf_text_selection": "ocr_text_layer",
     "pdf_reader_persistent_controls": [
       "back_50_percent_transparent"
-    ]
+    ],
+    "student_core_sections": [
+      "summaries",
+      "collections",
+      "performance",
+      "one_next_step"
+    ],
+    "performance_first_home": true,
+    "legacy_student_clutter_hidden": true,
+    "ocr_text_layer": false,
+    "text_highlighting": false,
+    "splash_asset": "assets/images/splash/suhail_intro_iphone_animated_v12.svg",
+    "splash_sound": false
   },
   "admin": {
     "deep_settings": true,
