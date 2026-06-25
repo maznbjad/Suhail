@@ -98,6 +98,73 @@ CREATE INDEX IF NOT EXISTS idx_friendships_owner ON friendships(owner_id, status
 CREATE INDEX IF NOT EXISTS idx_challenges_owner ON challenges(owner_id, status);
 CREATE INDEX IF NOT EXISTS idx_challenges_opponent ON challenges(opponent_code, status);
 CREATE INDEX IF NOT EXISTS idx_activity_user_date ON learning_activity(user_id, activity_date);
+
+-- Sprint 113: server-authoritative group challenges (2–10 players).
+CREATE TABLE IF NOT EXISTS group_challenges (
+    id TEXT PRIMARY KEY,
+    owner_id TEXT NOT NULL,
+    exam TEXT NOT NULL,
+    question_count INTEGER NOT NULL DEFAULT 10,
+    question_time_sec INTEGER NOT NULL DEFAULT 30,
+    question_ids_json TEXT NOT NULL DEFAULT '[]',
+    status TEXT NOT NULL DEFAULT 'pending',
+    current_index INTEGER NOT NULL DEFAULT 0,
+    question_started_at TEXT,
+    last_event TEXT,
+    last_winner_user_id TEXT,
+    last_winner_name TEXT,
+    last_winner_elapsed_ms INTEGER,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    started_at TEXT,
+    completed_at TEXT,
+    expires_at TEXT
+);
+CREATE TABLE IF NOT EXISTS group_challenge_members (
+    room_id TEXT NOT NULL,
+    user_id TEXT NOT NULL,
+    friend_code TEXT NOT NULL,
+    display_name TEXT NOT NULL,
+    username TEXT,
+    status TEXT NOT NULL DEFAULT 'invited',
+    score INTEGER NOT NULL DEFAULT 0,
+    correct_count INTEGER NOT NULL DEFAULT 0,
+    total_response_ms INTEGER NOT NULL DEFAULT 0,
+    joined_at TEXT,
+    last_seen_at TEXT,
+    PRIMARY KEY(room_id, user_id)
+);
+CREATE TABLE IF NOT EXISTS group_challenge_answers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    room_id TEXT NOT NULL,
+    question_index INTEGER NOT NULL,
+    question_id TEXT NOT NULL,
+    user_id TEXT NOT NULL,
+    selected_index INTEGER,
+    is_correct INTEGER NOT NULL DEFAULT 0,
+    elapsed_ms INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(room_id, question_index, user_id)
+);
+CREATE INDEX IF NOT EXISTS idx_group_challenges_owner ON group_challenges(owner_id, status, created_at);
+CREATE INDEX IF NOT EXISTS idx_group_members_user ON group_challenge_members(user_id, status, room_id);
+CREATE INDEX IF NOT EXISTS idx_group_answers_room_question ON group_challenge_answers(room_id, question_index, is_correct);
+
+-- Sprint 114: lightweight safety controls; there is no messaging feature.
+CREATE TABLE IF NOT EXISTS user_blocks (
+    owner_id TEXT NOT NULL,
+    blocked_code TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(owner_id, blocked_code)
+);
+CREATE TABLE IF NOT EXISTS user_reports (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    reporter_id TEXT NOT NULL,
+    reported_code TEXT NOT NULL,
+    reason TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'open',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_user_reports_status ON user_reports(status, created_at);
 '''
 
 

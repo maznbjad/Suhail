@@ -7233,7 +7233,7 @@ body.suhail-passage-lock .question-passage{
             </div>
             <input id="registerGender" type="hidden" value="">
             <button class="auth-btn" onclick="registerUser()">إنشاء حساب جديد</button>
-            <div class="auth-note">الحسابات الجديدة تُحفظ محليًا على نفس الجهاز والمتصفح.</div>
+            <div class="auth-note">يُنشأ الحساب للملخصات والتقارير والأصدقاء والتحديات، مع إمكانية حذفه من داخل التطبيق.</div>
           </div>
 
           <div class="auth-msg" id="authMessage"></div>
@@ -8386,37 +8386,52 @@ function scoreLevel(percent) {
   percent = Number(percent || 0);
   if (percent < 40) {
     return {
-      label: "ضعيف",
-      title: "تحتاج تأسيس ومراجعة",
-      message: "نتيجتك منخفضة. ابدأ بمراجعة الأساسيات ثم اختبر عددًا أقل من الأسئلة."
+      label: "تحتاج دعم",
+      title: "تحتاج دعم",
+      message: "ابدأ بمراجعة الأساسيات ثم اختبر نفسك في تجميعة قصيرة."
     };
   }
   if (percent < 60) {
     return {
-      label: "مقبول",
-      title: "بداية مقبولة",
-      message: "أداؤك مقبول كبداية، لكن تحتاج تدريبًا أكثر على الأخطاء والمواضيع الضعيفة."
+      label: "بداية جيدة",
+      title: "بداية جيدة",
+      message: "ثبّت الأساسيات وركّز على القسم الأضعف قبل الاختبار التالي."
     };
   }
   if (percent < 75) {
     return {
       label: "جيد",
       title: "مستوى جيد",
-      message: "أداؤك جيد. ركّز على الأخطاء المتكررة وارفع ثباتك في الأقسام الأضعف."
+      message: "راجع الأخطاء المتكررة ثم حل اختبارًا قصيرًا لرفع الثبات."
     };
   }
   if (percent < 90) {
     return {
       label: "جيد جدًا",
-      title: "قريب من الإتقان",
-      message: "مستواك جيد جدًا. تحتاج تثبيت السرعة وتقليل الأخطاء البسيطة."
+      title: "أداء قوي",
+      message: "حافظ على الدقة ودرّب نفسك على الحسم في وقت أقل."
     };
   }
   return {
     label: "ممتاز",
-    title: "أحسنت",
-    message: "أحسنت، نتيجتك ممتازة. حافظ على مستواك بتدريب قصير ومتنوع."
+    title: "ممتاز",
+    message: "مستواك ممتاز. حافظ عليه بتدريب قصير ومتنوّع."
   };
+}
+
+function sectionPerformanceLevel(percent) {
+  const p = Number(percent || 0);
+  if (p < 40) return { label: "يحتاج دعم", cls: "risk" };
+  if (p < 70) return { label: "متوسط", cls: "steady" };
+  return { label: "قوي", cls: "strong" };
+}
+
+function timeManagementLevel(avgSec) {
+  const s = Number(avgSec || 0);
+  if (!s) return { label: "غير محسوب", cls: "neutral", message: "أكمل اختبارًا زمنيًا لقياس إدارة الوقت." };
+  if (s <= 20) return { label: "ممتازة", cls: "strong", message: "سرعتك ممتازة؛ حافظ على الدقة ولا تتعجل." };
+  if (s <= 35) return { label: "متوازنة", cls: "steady", message: "إيقاعك جيد؛ اقرأ المطلوب أولًا ثم احسم الإجابة." };
+  return { label: "تحتاج تحسين", cls: "risk", message: "لا تتوقف طويلًا عند سؤال واحد؛ انتقل ثم عد إليه إن أمكن." };
 }
 
 function readinessState(score) {
@@ -10007,6 +10022,9 @@ function loginUser() {
     role: user.role || "student",
     gender: user.gender === "female" ? "female" : "male"
   });
+  if (typeof window.s112SyncApiLogin === "function") {
+    window.s112SyncApiLogin(email, password).catch(() => false);
+  }
 
   document.getElementById("loginPassword").value = "";
   applyAuthState();
@@ -10069,6 +10087,9 @@ function registerUser() {
     active: true
   });
   saveExtraUsers(extras);
+  if (typeof window.s112SyncApiRegister === "function") {
+    window.s112SyncApiRegister({name, username, email, password, gender}).catch(() => false);
+  }
 
   showAuthMessage("success", "تم إنشاء الحساب بنجاح — تقدر تدخل الآن");
   document.getElementById("registerName").value = "";
@@ -11259,19 +11280,24 @@ function finishExam(message, forceFinish = false) {
     if (qr && qr.timeSpentSec) sections[name].timeSpent += qr.timeSpentSec;
   });
 
-  const sectionHtml = Object.keys(sections).map(name => {
+  const sectionEntries = Object.keys(sections).map(name => {
     const item = sections[name];
     const p = item.total ? Math.round((item.correct / item.total) * 100) : 0;
-    return `
-      <div class="section-result">
+    return { name, ...item, percent: p, status: sectionPerformanceLevel(p) };
+  }).sort((a, b) => a.percent - b.percent);
+  const weakestSection = sectionEntries[0] || null;
+  const avgSec = total ? Math.max(1, Math.round(elapsed / total)) : 0;
+  const timeLevel = timeManagementLevel(avgSec);
+
+  const sectionHtml = sectionEntries.map(item => `
+      <div class="section-result s111-section-result ${item.status.cls}">
         <div class="section-result-top">
-          <span>${name}</span>
-          <span>${item.correct} / ${item.total} — ${p}%</span>
+          <div><span>${item.name}</span><small>${item.correct} من ${item.total} صحيحة</small></div>
+          <div class="s111-section-score"><strong>${item.percent}%</strong><em>${item.status.label}</em></div>
         </div>
-        <div class="section-bar"><div class="section-bar-fill" style="width:${p}%"></div></div>
+        <div class="section-bar"><div class="section-bar-fill" style="width:${item.percent}%"></div></div>
       </div>
-    `;
-  }).join("");
+    `).join("");
 
   const resultQuestionsHtml = activeQuestions.map((q, idx) => {
     const qr = questionResults[idx] || {};
@@ -11312,30 +11338,43 @@ function finishExam(message, forceFinish = false) {
     summary.classList.remove("hidden");
     summary.style.display = "block";
     summary.innerHTML = `
-      <div class="summary-hero" style="background:${scoreGradient(percent)}">
-        <div class="summary-sub">${message}</div>
-        <div class="summary-score">${correct} / ${total}</div>
-        <div class="summary-sub">درجتك النهائية: ${percent}% — ${level.label}</div>
-        <div class="summary-sub">${level.message}</div>
-      </div>
-      <div class="summary-grid">
-        <div class="summary-mini">
-          <div class="summary-mini-label">الوقت المستغرق</div>
-          <div class="summary-mini-value">${formatDuration(elapsed)}</div>
+      <section class="s111-result-hero ${percent < 40 ? 'risk' : percent < 70 ? 'steady' : 'strong'}">
+        <div class="s111-result-kicker">تقييمك الحالي</div>
+        <div class="s111-result-main">
+          <div class="s111-result-percent">${percent}<span>%</span></div>
+          <div class="s111-result-copy"><h2>${level.title}</h2><p>${level.message}</p></div>
         </div>
-        <div class="summary-mini">
-          <div class="summary-mini-label">عدد الأقسام</div>
-          <div class="summary-mini-value">${Object.keys(sections).length}</div>
+        <div class="s111-result-actions">
+          <button class="primary" type="button" onclick="s111ReviewBasics()">راجع الأساسيات</button>
+          <button class="secondary" type="button" onclick="s111ShortRetry()">اختبار قصير</button>
         </div>
+      </section>
+
+      <div class="s111-metrics-grid">
+        <div class="s111-metric"><span>الإجابات الصحيحة</span><b>${correct} / ${total}</b></div>
+        <div class="s111-metric"><span>متوسط السؤال</span><b>${avgSec} ثانية</b></div>
+        <div class="s111-metric"><span>الوقت الكلي</span><b>${formatDuration(elapsed)}</b></div>
+        <div class="s111-metric"><span>عدد الأقسام</span><b>${sectionEntries.length}</b></div>
       </div>
-      <div class="section-head" style="margin-top:16px;">
-        <div class="section-title">نتيجة كل قسم</div>
-      </div>
+
+      <section class="s111-time-card ${timeLevel.cls}">
+        <div><span>إدارة الوقت</span><b>${timeLevel.label}</b></div>
+        <p>${timeLevel.message}</p>
+      </section>
+
+      <section class="s111-next-card">
+        <span>خطوتك التالية</span>
+        <h3>${weakestSection ? `ابدأ بـ ${weakestSection.name}` : 'راجع الأساسيات'}</h3>
+        <p>${weakestSection ? `دقتك في هذا القسم ${weakestSection.percent}%. راجع الأساسيات ثم حل 10 أسئلة فقط.` : 'ابدأ بمراجعة قصيرة ثم اختبر نفسك في 10 أسئلة.'}</p>
+      </section>
+
+      <div class="section-head s111-section-head"><div class="section-title">تحليل الأقسام</div><span>الأضعف أولًا</span></div>
       ${sectionHtml}
-      <div class="section-head" style="margin-top:16px;">
-        <div class="section-title">تفاصيل الأسئلة</div>
-      </div>
-      <div class="result-questions-list">${resultQuestionsHtml}</div>
+
+      <details class="s111-question-details">
+        <summary>عرض تفاصيل الأسئلة <span>${total} سؤالًا</span></summary>
+        <div class="result-questions-list">${resultQuestionsHtml}</div>
+      </details>
     `;
   }
 
@@ -11400,6 +11439,22 @@ function finishExam(message, forceFinish = false) {
 
   const contentScroller = document.querySelector(".content");
   if (contentScroller) contentScroller.scrollTop = 0;
+}
+
+
+
+function s111ReviewBasics() {
+  if (typeof showPage === "function") showPage("summariesPage");
+}
+
+function s111ShortRetry() {
+  resetExam();
+  setTimeout(() => {
+    try {
+      const count = Math.min(10, Number(maxQuestionCount || 10));
+      if (typeof setQuestionCount === "function") setQuestionCount(count, false);
+    } catch (_) {}
+  }, 80);
 }
 
 function resetExam() {
@@ -20673,5 +20728,30 @@ try:
     html_code = html_code.replace("</body>", f"<script>{s110_js}</script></body>", 1)
 except OSError as exc:
     print(f"Suhail warning: missing Sprint 110 focused-experience module: {exc}")
+
+
+# Sprint 111 redesigns the exam result around honest evaluation, section analysis
+# and time-management guidance. It is injected after the focused student layer.
+s111_css_path = os.path.join("src", "ui", "sprint111_result_redesign.css")
+try:
+    with open(s111_css_path, "r", encoding="utf-8") as style_file:
+        s111_css = style_file.read()
+    html_code = html_code.replace("</head>", f"<style>{s111_css}</style></head>", 1)
+except OSError as exc:
+    print(f"Suhail warning: missing Sprint 111 result redesign: {exc}")
+
+# Sprint 112 adds username-based friendship requests. There is no messaging.
+for module_name in ("sprint112_friends", "sprint113_group_challenge", "sprint114_legal_qa"):
+    css_path = os.path.join("src", "ui", f"{module_name}.css")
+    js_path = os.path.join("src", "ui", f"{module_name}.js")
+    try:
+        with open(css_path, "r", encoding="utf-8") as style_file:
+            module_css = style_file.read()
+        with open(js_path, "r", encoding="utf-8") as script_file:
+            module_js = script_file.read()
+        html_code = html_code.replace("</head>", f"<style>{module_css}</style></head>", 1)
+        html_code = html_code.replace("</body>", f"<script>{module_js}</script></body>", 1)
+    except OSError as exc:
+        print(f"Suhail warning: missing {module_name}: {exc}")
 
 components.html(html_code, height=960, scrolling=False)

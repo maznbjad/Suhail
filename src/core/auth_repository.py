@@ -94,7 +94,7 @@ def create_user(
 ) -> dict:
     email = email.strip().lower()
     username = _normalize_username(username or email.split("@")[0])
-    if "@" not in email or len(password) < 8 or len(username) < 3:
+    if "@" not in email or len(password) < 6 or len(username) < 3:
         raise ValueError("invalid_credentials")
     salt = secrets.token_bytes(16)
     digest = _hash_password(password, salt, iterations)

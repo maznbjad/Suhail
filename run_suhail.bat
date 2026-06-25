@@ -89,6 +89,15 @@ echo اترك هذه النافذة مفتوحة. للإيقاف اضغط Ctrl+C
 echo إذا ظهر تنبيه جدار الحماية اختر السماح للشبكات الخاصة فقط.
 echo.
 
+rem Sprint 114: start the social/challenge API automatically when port 5000 is free.
+netstat -ano | findstr /R /C:":5000 .*LISTENING" >nul 2>nul
+if errorlevel 1 (
+  echo تشغيل خادم الأصدقاء والتحديات على المنفذ 5000...
+  "%PYEXE%" %PYARGS% scriptsuild_learning_db.py >nul 2>nul
+  start "Suhail API" /min "%PYEXE%" %PYARGS% -m waitress.runner --host=0.0.0.0 --port=5000 src.api.server:app
+  timeout /t 2 /nobreak >nul
+)
+
 "%PYEXE%" %PYARGS% -m streamlit run app.py ^
   --server.address 0.0.0.0 ^
   --server.port !PORT! ^

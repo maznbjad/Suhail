@@ -1,7 +1,7 @@
 {
   "name": "Suhail",
-  "release": "Sprint 110 Focused Student Experience",
-  "version": "1.0.110",
+  "release": "Sprint 114 Group Challenge & Legal",
+  "version": "1.0.114",
   "runtime": "streamlit-web-prototype",
   "entrypoint": "app.py",
   "api_entrypoint": "src.api.server:app",
@@ -10,7 +10,7 @@
   "runtime_assets_root": "assets/runtime",
   "future_mobile_root": "mobile",
   "organization_version": "4.0",
-  "latest_sprint": 110,
+  "latest_sprint": 114,
   "question_bank": {
     "count": 5400,
     "status": "internal_qa_physics_mastery_v2",
@@ -42,12 +42,15 @@
       "tahsili"
     ],
     "avatars": 8,
-    "friend_challenges": false,
+    "friend_challenges": true,
     "grouped_account_hub": false,
     "account_sections": [
       "dark_mode",
+      "friends",
+      "group_challenges",
       "contact",
       "privacy_terms",
+      "account_deletion",
       "admin_content_if_authorized"
     ],
     "global_dark_mode": true,
@@ -167,7 +170,38 @@
     "ocr_text_layer": false,
     "text_highlighting": false,
     "splash_asset": "assets/images/splash/suhail_intro_iphone_animated_v12.svg",
-    "splash_sound": false
+    "splash_sound": false,
+    "result_evaluation_bands": [
+      "تحتاج دعم",
+      "بداية جيدة",
+      "جيد",
+      "جيد جدًا",
+      "ممتاز"
+    ],
+    "time_management_feedback": true,
+    "friend_addition": "username_request_accept",
+    "messaging": false,
+    "group_challenge": {
+      "minimum_players": 2,
+      "maximum_players": 10,
+      "question_time_sec": 30,
+      "scoring": "first_server-accepted_correct_answer_gets_point",
+      "advance": "immediate_for_all_after_first_correct",
+      "friends_only": true,
+      "server_authoritative": true
+    },
+    "performance_focus": [
+      "accuracy",
+      "time_per_question",
+      "weakest_section",
+      "group_challenge_time_management"
+    ],
+    "legal": {
+      "terms_in_app": true,
+      "privacy_in_app": true,
+      "account_deletion_in_app": true,
+      "last_updated": "2026-06-25"
+    }
   },
   "admin": {
     "deep_settings": true,

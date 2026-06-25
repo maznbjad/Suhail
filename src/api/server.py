@@ -6,6 +6,7 @@ import os
 import secrets
 import sqlite3
 import time
+import uuid
 from collections import defaultdict, deque
 from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
@@ -36,7 +37,7 @@ from src.core.challenge_repository import ensure_social_schema, friend_code_for_
 ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = ROOT / "data" / "suhail_learning.db"
 SUMMARIES_PATH = ROOT / "data" / "smart_summaries.json"
-RELEASE = "101.0.0"
+RELEASE = "114.0.0"
 ALLOWED_EXAMS = {"قدرات كمي", "قدرات لفظي", "تحصيلي"}
 AUTH_WINDOW_SEC = 60
 AUTH_MAX_ATTEMPTS = 10
@@ -115,6 +116,142 @@ def _public_question(question: dict[str, Any]) -> dict[str, Any]:
         "rights_status", "source", "source_url", "review_notes",
     }
     return {key: value for key, value in question.items() if key not in hidden}
+
+def _ensure_profile_for_user(connection: sqlite3.Connection, user: dict[str, Any]) -> sqlite3.Row:
+    """Create the minimal student profile required for friends/challenges."""
+    user_id = str(user["id"])
+    row = connection.execute(
+        """SELECT p.*, u.username FROM student_profiles p
+           LEFT JOIN auth_users u ON CAST(u.id AS TEXT) = p.user_id
+           WHERE p.user_id = ?""",
+        (user_id,),
+    ).fetchone()
+    if row:
+        return row
+    gender = "male"
+    connection.execute(
+        """INSERT INTO student_profiles
+           (user_id, display_name, academic_track, gender, exam_goals_json, avatar_id, friend_code, updated_at)
+           VALUES (?, ?, 'scientific', ?, '["qudrat","tahsili"]', ?, ?, CURRENT_TIMESTAMP)""",
+        (
+            user_id,
+            str(user.get("display_name") or user.get("username") or "طالب سهيل"),
+            gender,
+            "male_02",
+            friend_code_for_user(user_id),
+        ),
+    )
+    return connection.execute(
+        """SELECT p.*, u.username FROM student_profiles p
+           LEFT JOIN auth_users u ON CAST(u.id AS TEXT) = p.user_id
+           WHERE p.user_id = ?""",
+        (user_id,),
+    ).fetchone()
+
+
+def _parse_utc(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
+
+def _group_member_profile(connection: sqlite3.Connection, friend_code: str) -> sqlite3.Row | None:
+    return connection.execute(
+        """SELECT p.user_id, p.display_name, p.avatar_id, p.friend_code, u.username
+           FROM student_profiles p
+           LEFT JOIN auth_users u ON CAST(u.id AS TEXT) = p.user_id
+           WHERE p.friend_code = ?""",
+        (friend_code,),
+    ).fetchone()
+
+
+def _advance_group_if_expired(connection: sqlite3.Connection, room_id: str) -> sqlite3.Row | None:
+    """Advance one expired question using server time; callers hold a write transaction."""
+    room = connection.execute("SELECT * FROM group_challenges WHERE id = ?", (room_id,)).fetchone()
+    if not room or room["status"] != "active":
+        return room
+    started = _parse_utc(room["question_started_at"])
+    if not started:
+        return room
+    elapsed = (datetime.now(timezone.utc) - started).total_seconds()
+    if elapsed < int(room["question_time_sec"] or 30):
+        return room
+    next_index = int(room["current_index"] or 0) + 1
+    if next_index >= int(room["question_count"] or 0):
+        connection.execute(
+            """UPDATE group_challenges SET status='completed', current_index=?, completed_at=?,
+               last_event='timeout', last_winner_user_id=NULL, last_winner_name=NULL,
+               last_winner_elapsed_ms=NULL WHERE id=?""",
+            (next_index, datetime.now(timezone.utc).isoformat(), room_id),
+        )
+    else:
+        connection.execute(
+            """UPDATE group_challenges SET current_index=?, question_started_at=?,
+               last_event='timeout', last_winner_user_id=NULL, last_winner_name=NULL,
+               last_winner_elapsed_ms=NULL WHERE id=?""",
+            (next_index, datetime.now(timezone.utc).isoformat(), room_id),
+        )
+    return connection.execute("SELECT * FROM group_challenges WHERE id = ?", (room_id,)).fetchone()
+
+
+def _group_state_payload(connection: sqlite3.Connection, room: sqlite3.Row, user_id: str) -> dict[str, Any]:
+    member = connection.execute(
+        "SELECT * FROM group_challenge_members WHERE room_id = ? AND user_id = ?",
+        (room["id"], user_id),
+    ).fetchone()
+    if not member:
+        raise PermissionError("group_challenge_access_denied")
+    members = connection.execute(
+        """SELECT user_id, friend_code, display_name, username, status, score, correct_count,
+                  total_response_ms, joined_at
+           FROM group_challenge_members WHERE room_id = ?
+           ORDER BY score DESC, total_response_ms ASC, display_name ASC""",
+        (room["id"],),
+    ).fetchall()
+    question_ids = json.loads(room["question_ids_json"] or "[]")
+    current_index = int(room["current_index"] or 0)
+    current_question: dict[str, Any] | None = None
+    already_answered = False
+    if room["status"] == "active" and current_index < len(question_ids):
+        question_id = str(question_ids[current_index])
+        qrow = connection.execute("SELECT payload_json FROM questions WHERE id = ?", (question_id,)).fetchone()
+        if qrow:
+            current_question = _public_question(json.loads(qrow[0]))
+        already_answered = bool(connection.execute(
+            "SELECT 1 FROM group_challenge_answers WHERE room_id = ? AND question_index = ? AND user_id = ?",
+            (room["id"], current_index, user_id),
+        ).fetchone())
+    now = datetime.now(timezone.utc)
+    started = _parse_utc(room["question_started_at"])
+    elapsed_ms = max(0, int((now - started).total_seconds() * 1000)) if started else 0
+    duration_ms = int(room["question_time_sec"] or 30) * 1000
+    return {
+        "id": room["id"],
+        "owner_id": room["owner_id"],
+        "exam": room["exam"],
+        "status": room["status"],
+        "question_count": int(room["question_count"] or 0),
+        "question_time_sec": int(room["question_time_sec"] or 30),
+        "current_index": current_index,
+        "current_number": min(current_index + 1, int(room["question_count"] or 0)),
+        "question": current_question,
+        "remaining_ms": max(0, duration_ms - elapsed_ms) if room["status"] == "active" else 0,
+        "server_time": now.isoformat(),
+        "question_started_at": room["question_started_at"],
+        "last_event": room["last_event"],
+        "last_winner_user_id": room["last_winner_user_id"],
+        "last_winner_name": room["last_winner_name"],
+        "last_winner_elapsed_ms": room["last_winner_elapsed_ms"],
+        "already_answered": already_answered,
+        "is_owner": str(room["owner_id"]) == str(user_id),
+        "my_status": member["status"],
+        "my_user_id": str(user_id),
+        "members": [dict(row) for row in members],
+    }
 
 
 def _score_diagnostic_items(
@@ -267,7 +404,8 @@ def create_app() -> Flask:
     ensure_auth_schema(DB_PATH)
     app = Flask(__name__)
     app.json.ensure_ascii = False
-    allowed_origins = [x.strip() for x in os.environ.get("SUHAIL_ALLOWED_ORIGINS", "http://127.0.0.1:8501,http://localhost:8501").split(",") if x.strip()]
+    configured_origins = os.environ.get("SUHAIL_ALLOWED_ORIGINS", "").strip()
+    allowed_origins: str | list[str] = [x.strip() for x in configured_origins.split(",") if x.strip()] if configured_origins else "*"
     CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
 
     @app.get("/health")
@@ -295,6 +433,9 @@ def create_app() -> Flask:
             return jsonify({"error": "email_exists"}), 409
         except ValueError:
             return jsonify({"error": "invalid_credentials"}), 400
+        with _connect() as connection:
+            _ensure_profile_for_user(connection, user)
+            connection.commit()
         token = issue_token(DB_PATH, int(user["id"]))
         return jsonify({"user": user, "token": token}), 201
 
@@ -306,6 +447,9 @@ def create_app() -> Flask:
         user = authenticate(DB_PATH, str(payload.get("email", "")), str(payload.get("password", "")))
         if not user:
             return jsonify({"error": "invalid_credentials"}), 401
+        with _connect() as connection:
+            _ensure_profile_for_user(connection, user)
+            connection.commit()
         token = issue_token(DB_PATH, int(user["id"]))
         return jsonify({"user": user, "token": token})
 
@@ -806,9 +950,10 @@ def create_app() -> Flask:
         with _connect(query_only=True) as connection:
             incoming = connection.execute(
                 """SELECT r.*, p.display_name AS sender_name, p.avatar_id AS sender_avatar,
-                          p.friend_code AS sender_code
+                          p.friend_code AS sender_code, u.username AS sender_username
                    FROM friendship_requests r
                    LEFT JOIN student_profiles p ON p.user_id = r.sender_id
+                   LEFT JOIN auth_users u ON CAST(u.id AS TEXT) = r.sender_id
                    WHERE r.receiver_code = ? ORDER BY r.created_at DESC LIMIT 100""",
                 (own_code,),
             ).fetchall()
@@ -869,7 +1014,14 @@ def create_app() -> Flask:
             return error
         with _connect(query_only=True) as connection:
             rows = connection.execute(
-                "SELECT friend_code, friend_name, avatar_id, created_at FROM friendships WHERE owner_id = ? AND status = 'accepted' ORDER BY friend_name",
+                """SELECT f.friend_code, f.friend_name, f.avatar_id, f.created_at, u.username,
+                          CASE WHEN b.blocked_code IS NULL THEN 0 ELSE 1 END AS blocked
+                   FROM friendships f
+                   LEFT JOIN student_profiles p ON p.friend_code = f.friend_code
+                   LEFT JOIN auth_users u ON CAST(u.id AS TEXT) = p.user_id
+                   LEFT JOIN user_blocks b ON b.owner_id = f.owner_id AND b.blocked_code = f.friend_code
+                   WHERE f.owner_id = ? AND f.status = 'accepted'
+                   ORDER BY f.friend_name""",
                 (str(user["id"]),),
             ).fetchall()
         return jsonify({"items": [dict(row) for row in rows]})
@@ -1015,6 +1167,373 @@ def create_app() -> Flask:
             "winner": winner,
             "scoreboard": scoreboard,
         })
+
+    @app.post("/api/v1/blocks")
+    def block_user():
+        user, error = _require_user()
+        if error:
+            return error
+        payload = request.get_json(silent=True) or {}
+        blocked_code = str(payload.get("friend_code", "")).strip().upper()
+        if not blocked_code.startswith("SH-"):
+            return jsonify({"error": "invalid_friend_code"}), 400
+        own_id = str(user["id"])
+        if blocked_code == friend_code_for_user(own_id):
+            return jsonify({"error": "cannot_block_self"}), 400
+        with _connect() as connection:
+            connection.execute(
+                "INSERT OR IGNORE INTO user_blocks(owner_id, blocked_code) VALUES (?, ?)",
+                (own_id, blocked_code),
+            )
+            connection.commit()
+        return jsonify({"status": "blocked", "friend_code": blocked_code}), 201
+
+    @app.post("/api/v1/reports")
+    def report_user():
+        user, error = _require_user()
+        if error:
+            return error
+        payload = request.get_json(silent=True) or {}
+        reported_code = str(payload.get("friend_code", "")).strip().upper()
+        reason = str(payload.get("reason", "اسم أو يوزر غير مناسب")).strip()[:300]
+        if not reported_code.startswith("SH-") or not reason:
+            return jsonify({"error": "invalid_report"}), 400
+        with _connect() as connection:
+            cursor = connection.execute(
+                "INSERT INTO user_reports(reporter_id, reported_code, reason) VALUES (?, ?, ?)",
+                (str(user["id"]), reported_code, reason),
+            )
+            connection.commit()
+        return jsonify({"id": cursor.lastrowid, "status": "received"}), 201
+
+    @app.post("/api/v1/group-challenges")
+    def group_challenge_create():
+        user, error = _require_user()
+        if error:
+            return error
+        payload = request.get_json(silent=True) or {}
+        exam = str(payload.get("exam", "")).strip()
+        if exam not in ALLOWED_EXAMS:
+            return jsonify({"error": "invalid_exam"}), 400
+        try:
+            requested_count = int(payload.get("question_count", 10))
+        except (TypeError, ValueError):
+            requested_count = 10
+        question_count = requested_count if requested_count in {5, 10, 15, 20} else 10
+        friend_codes = []
+        for raw in payload.get("friend_codes", []) if isinstance(payload.get("friend_codes"), list) else []:
+            code = str(raw).strip().upper()
+            if code and code not in friend_codes:
+                friend_codes.append(code)
+        if not friend_codes:
+            return jsonify({"error": "at_least_one_friend_required"}), 400
+        if len(friend_codes) > 9:
+            return jsonify({"error": "participant_limit", "maximum_players": 10}), 400
+        owner_id = str(user["id"])
+        room_id = "SHG-" + uuid.uuid4().hex[:10].upper()
+        expiry = datetime.now(timezone.utc) + timedelta(hours=24)
+        with _connect() as connection:
+            connection.execute("BEGIN IMMEDIATE")
+            owner_profile = _ensure_profile_for_user(connection, user)
+            members: list[sqlite3.Row] = []
+            for code in friend_codes:
+                if code == owner_profile["friend_code"]:
+                    return jsonify({"error": "cannot_invite_self"}), 400
+                friendship = connection.execute(
+                    "SELECT 1 FROM friendships WHERE owner_id = ? AND friend_code = ? AND status='accepted'",
+                    (owner_id, code),
+                ).fetchone()
+                blocked = connection.execute(
+                    "SELECT 1 FROM user_blocks WHERE (owner_id = ? AND blocked_code = ?) OR (owner_id = (SELECT user_id FROM student_profiles WHERE friend_code = ?) AND blocked_code = ?)",
+                    (owner_id, code, code, owner_profile["friend_code"]),
+                ).fetchone()
+                member = _group_member_profile(connection, code)
+                if not friendship or not member or blocked:
+                    connection.rollback()
+                    return jsonify({"error": "accepted_friendship_required", "friend_code": code}), 409
+                members.append(member)
+            allow_development = os.environ.get("SUHAIL_ALLOW_DEVELOPMENT_QUESTIONS", "1") == "1"
+            if allow_development:
+                rows = connection.execute(
+                    "SELECT id FROM questions WHERE exam = ? ORDER BY RANDOM() LIMIT ?",
+                    (exam, question_count),
+                ).fetchall()
+            else:
+                rows = connection.execute(
+                    """SELECT id FROM questions WHERE exam = ?
+                       AND json_extract(payload_json, '$.release_eligible') = 1
+                       ORDER BY RANDOM() LIMIT ?""",
+                    (exam, question_count),
+                ).fetchall()
+            question_ids = [str(row[0]) for row in rows]
+            if len(question_ids) < question_count:
+                connection.rollback()
+                return jsonify({"error": "insufficient_approved_questions", "required": question_count, "available": len(question_ids)}), 409
+            connection.execute(
+                """INSERT INTO group_challenges
+                   (id, owner_id, exam, question_count, question_time_sec, question_ids_json, status, expires_at)
+                   VALUES (?, ?, ?, ?, 30, ?, 'pending', ?)""",
+                (room_id, owner_id, exam, question_count, json.dumps(question_ids), expiry.isoformat()),
+            )
+            connection.execute(
+                """INSERT INTO group_challenge_members
+                   (room_id, user_id, friend_code, display_name, username, status, joined_at, last_seen_at)
+                   VALUES (?, ?, ?, ?, ?, 'owner', ?, ?)""",
+                (
+                    room_id,
+                    owner_id,
+                    owner_profile["friend_code"],
+                    owner_profile["display_name"],
+                    owner_profile["username"],
+                    datetime.now(timezone.utc).isoformat(),
+                    datetime.now(timezone.utc).isoformat(),
+                ),
+            )
+            for member in members:
+                connection.execute(
+                    """INSERT INTO group_challenge_members
+                       (room_id, user_id, friend_code, display_name, username, status)
+                       VALUES (?, ?, ?, ?, ?, 'invited')""",
+                    (room_id, str(member["user_id"]), member["friend_code"], member["display_name"], member["username"]),
+                )
+            connection.commit()
+        return jsonify({
+            "id": room_id,
+            "status": "pending",
+            "maximum_players": 10,
+            "invited": len(members),
+            "question_count": question_count,
+            "question_time_sec": 30,
+            "expires_at": expiry.isoformat(),
+        }), 201
+
+    @app.get("/api/v1/group-challenges")
+    def group_challenges_list():
+        user, error = _require_user()
+        if error:
+            return error
+        user_id = str(user["id"])
+        with _connect() as connection:
+            rows = connection.execute(
+                """SELECT g.id, g.exam, g.status, g.question_count, g.question_time_sec,
+                          g.current_index, g.owner_id, g.created_at, g.started_at, g.completed_at,
+                          m.status AS my_status,
+                          (SELECT COUNT(*) FROM group_challenge_members x WHERE x.room_id=g.id AND x.status IN ('owner','accepted')) AS accepted_players,
+                          (SELECT COUNT(*) FROM group_challenge_members x WHERE x.room_id=g.id) AS total_invited
+                   FROM group_challenges g
+                   JOIN group_challenge_members m ON m.room_id=g.id AND m.user_id=?
+                   ORDER BY g.created_at DESC LIMIT 100""",
+                (user_id,),
+            ).fetchall()
+        return jsonify({"items": [dict(row) for row in rows], "maximum_players": 10, "question_time_sec": 30})
+
+    @app.post("/api/v1/group-challenges/<room_id>/respond")
+    def group_challenge_respond(room_id: str):
+        user, error = _require_user()
+        if error:
+            return error
+        action = str((request.get_json(silent=True) or {}).get("action", "")).strip().lower()
+        if action not in {"accept", "decline"}:
+            return jsonify({"error": "invalid_action"}), 400
+        user_id = str(user["id"])
+        with _connect() as connection:
+            row = connection.execute(
+                "SELECT status FROM group_challenge_members WHERE room_id=? AND user_id=?",
+                (room_id, user_id),
+            ).fetchone()
+            room = connection.execute("SELECT * FROM group_challenges WHERE id=?", (room_id,)).fetchone()
+            if not row or not room:
+                return jsonify({"error": "group_challenge_not_found"}), 404
+            if row["status"] != "invited" or room["status"] != "pending":
+                return jsonify({"error": "invite_not_pending"}), 409
+            status = "accepted" if action == "accept" else "declined"
+            connection.execute(
+                "UPDATE group_challenge_members SET status=?, joined_at=?, last_seen_at=? WHERE room_id=? AND user_id=?",
+                (status, datetime.now(timezone.utc).isoformat(), datetime.now(timezone.utc).isoformat(), room_id, user_id),
+            )
+            connection.commit()
+        return jsonify({"id": room_id, "status": status})
+
+    @app.post("/api/v1/group-challenges/<room_id>/start")
+    def group_challenge_start(room_id: str):
+        user, error = _require_user()
+        if error:
+            return error
+        user_id = str(user["id"])
+        with _connect() as connection:
+            connection.execute("BEGIN IMMEDIATE")
+            room = connection.execute("SELECT * FROM group_challenges WHERE id=?", (room_id,)).fetchone()
+            if not room:
+                connection.rollback()
+                return jsonify({"error": "group_challenge_not_found"}), 404
+            if str(room["owner_id"]) != user_id:
+                connection.rollback()
+                return jsonify({"error": "owner_required"}), 403
+            if room["status"] != "pending":
+                connection.rollback()
+                return jsonify({"error": "group_challenge_not_pending"}), 409
+            accepted = connection.execute(
+                "SELECT COUNT(*) FROM group_challenge_members WHERE room_id=? AND status IN ('owner','accepted')",
+                (room_id,),
+            ).fetchone()[0]
+            if int(accepted) < 2:
+                connection.rollback()
+                return jsonify({"error": "at_least_two_players_required"}), 409
+            now = datetime.now(timezone.utc).isoformat()
+            connection.execute(
+                """UPDATE group_challenges SET status='active', current_index=0,
+                   question_started_at=?, started_at=?, last_event='started' WHERE id=?""",
+                (now, now, room_id),
+            )
+            connection.commit()
+        return jsonify({"id": room_id, "status": "active", "question_time_sec": 30})
+
+    @app.get("/api/v1/group-challenges/<room_id>/state")
+    def group_challenge_state(room_id: str):
+        user, error = _require_user()
+        if error:
+            return error
+        user_id = str(user["id"])
+        try:
+            with _connect() as connection:
+                connection.execute("BEGIN IMMEDIATE")
+                room = _advance_group_if_expired(connection, room_id)
+                if not room:
+                    connection.rollback()
+                    return jsonify({"error": "group_challenge_not_found"}), 404
+                connection.execute(
+                    "UPDATE group_challenge_members SET last_seen_at=? WHERE room_id=? AND user_id=?",
+                    (datetime.now(timezone.utc).isoformat(), room_id, user_id),
+                )
+                payload = _group_state_payload(connection, room, user_id)
+                connection.commit()
+            return jsonify(payload)
+        except PermissionError:
+            return jsonify({"error": "group_challenge_access_denied"}), 403
+
+    @app.post("/api/v1/group-challenges/<room_id>/answer")
+    def group_challenge_answer(room_id: str):
+        user, error = _require_user()
+        if error:
+            return error
+        payload = request.get_json(silent=True) or {}
+        try:
+            selected_index = int(payload.get("selected_index"))
+            expected_index = int(payload.get("question_index"))
+        except (TypeError, ValueError):
+            return jsonify({"error": "invalid_answer"}), 400
+        user_id = str(user["id"])
+        with _connect() as connection:
+            connection.execute("BEGIN IMMEDIATE")
+            room = _advance_group_if_expired(connection, room_id)
+            member = connection.execute(
+                "SELECT * FROM group_challenge_members WHERE room_id=? AND user_id=? AND status IN ('owner','accepted')",
+                (room_id, user_id),
+            ).fetchone()
+            if not room or not member:
+                connection.rollback()
+                return jsonify({"error": "group_challenge_access_denied"}), 403
+            if room["status"] != "active":
+                state = _group_state_payload(connection, room, user_id)
+                connection.commit()
+                return jsonify({"error": "group_challenge_not_active", "state": state}), 409
+            current_index = int(room["current_index"] or 0)
+            if current_index != expected_index:
+                state = _group_state_payload(connection, room, user_id)
+                connection.commit()
+                return jsonify({"error": "question_advanced", "state": state}), 409
+            duplicate = connection.execute(
+                "SELECT 1 FROM group_challenge_answers WHERE room_id=? AND question_index=? AND user_id=?",
+                (room_id, current_index, user_id),
+            ).fetchone()
+            if duplicate:
+                state = _group_state_payload(connection, room, user_id)
+                connection.commit()
+                return jsonify({"error": "already_answered", "state": state}), 409
+            question_ids = json.loads(room["question_ids_json"] or "[]")
+            if current_index >= len(question_ids):
+                connection.rollback()
+                return jsonify({"error": "question_not_found"}), 404
+            question_id = str(question_ids[current_index])
+            qrow = connection.execute("SELECT payload_json FROM questions WHERE id=?", (question_id,)).fetchone()
+            if not qrow:
+                connection.rollback()
+                return jsonify({"error": "question_not_found"}), 404
+            question = json.loads(qrow[0])
+            is_correct = int(selected_index == int(question.get("correct", -1)))
+            started = _parse_utc(room["question_started_at"])
+            elapsed_ms = max(0, min(30_000, int((datetime.now(timezone.utc) - started).total_seconds() * 1000))) if started else 30_000
+            connection.execute(
+                """INSERT INTO group_challenge_answers
+                   (room_id, question_index, question_id, user_id, selected_index, is_correct, elapsed_ms)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                (room_id, current_index, question_id, user_id, selected_index, is_correct, elapsed_ms),
+            )
+            won = False
+            if is_correct:
+                won = True
+                connection.execute(
+                    """UPDATE group_challenge_members SET score=score+1, correct_count=correct_count+1,
+                       total_response_ms=total_response_ms+? WHERE room_id=? AND user_id=?""",
+                    (elapsed_ms, room_id, user_id),
+                )
+                next_index = current_index + 1
+                now = datetime.now(timezone.utc).isoformat()
+                if next_index >= int(room["question_count"]):
+                    connection.execute(
+                        """UPDATE group_challenges SET status='completed', current_index=?, completed_at=?,
+                           last_event='correct', last_winner_user_id=?, last_winner_name=?, last_winner_elapsed_ms=?
+                           WHERE id=?""",
+                        (next_index, now, user_id, member["display_name"], elapsed_ms, room_id),
+                    )
+                else:
+                    connection.execute(
+                        """UPDATE group_challenges SET current_index=?, question_started_at=?,
+                           last_event='correct', last_winner_user_id=?, last_winner_name=?, last_winner_elapsed_ms=?
+                           WHERE id=?""",
+                        (next_index, now, user_id, member["display_name"], elapsed_ms, room_id),
+                    )
+            room = connection.execute("SELECT * FROM group_challenges WHERE id=?", (room_id,)).fetchone()
+            state = _group_state_payload(connection, room, user_id)
+            connection.commit()
+        return jsonify({"correct": bool(is_correct), "won_point": won, "elapsed_ms": elapsed_ms, "state": state})
+
+    @app.delete("/api/v1/account")
+    def account_delete():
+        user, error = _require_user()
+        if error:
+            return error
+        user_id = str(user["id"])
+        own_code = friend_code_for_user(user_id)
+        with _connect() as connection:
+            connection.execute("BEGIN IMMEDIATE")
+            owned_room_ids = [row[0] for row in connection.execute(
+                "SELECT id FROM group_challenges WHERE owner_id=?", (user_id,)
+            ).fetchall()]
+            for room_id in owned_room_ids:
+                connection.execute("DELETE FROM group_challenge_answers WHERE room_id=?", (room_id,))
+                connection.execute("DELETE FROM group_challenge_members WHERE room_id=?", (room_id,))
+                connection.execute("DELETE FROM group_challenges WHERE id=?", (room_id,))
+            member_room_ids = [row[0] for row in connection.execute(
+                "SELECT room_id FROM group_challenge_members WHERE user_id=?", (user_id,)
+            ).fetchall()]
+            for room_id in member_room_ids:
+                connection.execute("DELETE FROM group_challenge_answers WHERE room_id=? AND user_id=?", (room_id, user_id))
+                connection.execute("DELETE FROM group_challenge_members WHERE room_id=? AND user_id=?", (room_id, user_id))
+            connection.execute("DELETE FROM friendship_requests WHERE sender_id=? OR receiver_code=?", (user_id, own_code))
+            connection.execute("DELETE FROM friendships WHERE owner_id=? OR friend_code=?", (user_id, own_code))
+            connection.execute("DELETE FROM challenges WHERE owner_id=? OR opponent_code=?", (user_id, own_code))
+            connection.execute("DELETE FROM challenge_answers WHERE user_id=?", (user_id,))
+            connection.execute("DELETE FROM diagnostic_sessions WHERE user_id=?", (user_id,))
+            connection.execute("DELETE FROM diagnostic_results WHERE user_id=?", (user_id,))
+            connection.execute("DELETE FROM learning_activity WHERE user_id=?", (user_id,))
+            connection.execute("DELETE FROM user_blocks WHERE owner_id=? OR blocked_code=?", (user_id, own_code))
+            connection.execute("DELETE FROM user_reports WHERE reporter_id=? OR reported_code=?", (user_id, own_code))
+            connection.execute("DELETE FROM student_profiles WHERE user_id=?", (user_id,))
+            connection.execute("DELETE FROM auth_tokens WHERE user_id=?", (int(user["id"]),))
+            connection.execute("DELETE FROM auth_users WHERE id=?", (int(user["id"]),))
+            connection.commit()
+        return jsonify({"status": "deleted"})
 
     @app.get("/api/v1/admin/settings")
     def admin_settings_get():

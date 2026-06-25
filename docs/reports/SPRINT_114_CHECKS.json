@@ -1,0 +1,33 @@
+{
+  "release": "114.0.0",
+  "status": "passed",
+  "date": "2026-06-25",
+  "features": {
+    "friends_by_username": true,
+    "messages": false,
+    "group_challenge": true,
+    "minimum_players": 2,
+    "maximum_players": 10,
+    "question_time_sec": 30,
+    "first_correct_advances_all": true,
+    "server_authoritative": true,
+    "terms_in_app": true,
+    "privacy_in_app": true,
+    "account_deletion_in_app": true,
+    "challenge_time_management_report": true
+  },
+  "validation": {
+    "preflight": "passed",
+    "python_compile": "passed",
+    "javascript_syntax": "passed",
+    "json_parse": "passed",
+    "api_end_to_end": "passed",
+    "render_placeholders": "passed",
+    "ocr_removed": true,
+    "desktop_phone_screen": [
+      390,
+      844
+    ],
+    "mobile_width": 390
+  }
+}
